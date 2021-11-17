@@ -5,7 +5,7 @@ This repository is for participants to get general information and ask questions
 
 ## Agenda & Planning
 * workshop will be entirely virtual
-* dates : 2022-03-07/2022-03-08
+* dates : 
 * [agenda (WiP)](https://docs.google.com/document/d/1wlEkVAUvC7IoaokCypnGWKZ3nZWMoQtKLpIaNfXrALY/edit)
 
 --------------------------------------------------------------------------------
