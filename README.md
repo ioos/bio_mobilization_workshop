@@ -27,7 +27,7 @@ This repository is for participants to get general information and ask questions
 ## 2021-11-08
 **Ocean Sciences is all virtual and so are we!**
 Since the Ocean Sciences conference will not be in person this year, our workshop will be entirely online.
-Dates for the workshop will be 2022-03-07/2022-03-08.
+Dates for the workshop will be 2022-03-14 and 2022-03-15.
 Hopefully even more will be able to join this way!
 
 ## 2021-09-24 : Workshop Announcement
@@ -35,7 +35,7 @@ Join us for a Marine Data Mobilization Workshop for Biology and Ecosystem Essent
 The workshop is jointly hosted by CIOOS, IOOS, MBON, OBIS-USA, and OTN.
 
 This workshop is intended to be a small hands-on, interactive in-person OR virtual workshop (to be decided by November 20) focused on mobilizing marine biological observation datasets to the Ocean Biodiversity Information System (OBIS) by helping data providers standardize their data using Darwin Core including species observations from any type of sampling methodologies (e.g. visual surveys, net tows, microscopy, fish trawls, imaging, 'omics, acoustics, telemetry). 
-The workshop will be held in association with the February Ocean Sciences Meeting (in-person: February 27, 2022 OR virtual: March 7 - 8, 2022).
+The workshop will be held in association with the February Ocean Sciences Meeting (virtual: March 14 - 15, 2022).
 
 Requirements to participate? 
 
@@ -44,9 +44,7 @@ Requirements to participate?
 * Must have a basic knowledge of Github. 
 * Participants must bring a laptop with R and RStudio or Python software installed. 
 
-If in-person, the event will take place in Honolulu, Hawaii, as an all-day workshop (approximately 9am - 5pm) on February 27, 2022.
-
-If the event is held virtually, formal daily activities will take place over a period of up to 4 hours per day March 7 - 8, 2022 and will be optimized for timezones in the Americas. 
+Formal daily activities will take place over a period of up to 4 hours per day March 14 - 15, 2022 and will be optimized for timezones in the Americas. 
 
 To apply, please fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLSdNvQwrdG-xg5CqUoJbo0iV35B3X0-CUFYDbbNOqMdc8Lg-eg/viewform). Application deadline: November 1, 2021. Accepted applicants will be notified no later than November 20, 2021.
 
