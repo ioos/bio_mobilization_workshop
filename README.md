@@ -39,3 +39,5 @@ To cite this lesson, please consult with [CITATION](CITATION)
 See [this documentation](https://carpentries.github.io/lesson-example/setup.html).
 
 Navigate to the folder that contains the lesson, and use `bundle exec jekyll serve` to preview the lessons.
+
+If changing headers and menus `bundle exec jekyll clean` before serving.
