@@ -8,10 +8,10 @@
 # lc: Library Carpentry
 # cp: Carpentries (to use for instructor traning for instance)
 # incubator: Carpentries Incubator
-carpentry: "swc"
+carpentry: ""
 
 # Overall title for pages.
-title: "Marine Biological Data Mobilization Workshop 2021"
+title: "Marine Biological Data Mobilization Workshop 2022"
 
 # Life cycle stage of the lesson
 # See this page for more details: https://cdh.carpentries.org/the-lesson-life-cycle.html

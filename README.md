@@ -1,4 +1,4 @@
-# Marine Biological Data Mobilization Workshop 2021
+# Marine Biological Data Mobilization Workshop 2022
 
 ## Contributing
 
