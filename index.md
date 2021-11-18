@@ -22,4 +22,5 @@ net tows, microscopy, fish trawls, imaging, 'omics, acoustics, telemetry).
 > * Participants must bring a laptop with R and RStudio or Python software installed.
 {: .prereq}
 
+**Times are in EDT**
 {% include links.md %}

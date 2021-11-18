@@ -7,7 +7,7 @@ import shutil
 
 BOILERPLATE = (
     'AUTHORS',
-    'CITATION',
+    'CITATION.cff',
     'CONTRIBUTING.md',
     'README.md',
     '_config.yml',
