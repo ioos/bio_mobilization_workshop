@@ -1,7 +1,7 @@
 ---
 title: "Validating and publishing"
 teaching: 0
-exercises: 0
+exercises: 90
 questions:
 - "How can I validate and publish my data?"
 objectives:

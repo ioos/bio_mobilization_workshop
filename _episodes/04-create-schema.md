@@ -1,7 +1,8 @@
 ---
 title: "Creating schema"
+start: true
 teaching: 0
-exercises: 0
+exercises: 120
 questions:
 - "How do I create Darwin Core files?"
 objectives:

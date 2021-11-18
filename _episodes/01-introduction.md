@@ -1,7 +1,8 @@
 ---
 title: "Introduction to Darwin Core and NERC"
+start: true
 teaching: 0
-exercises: 30
+exercises: 90
 questions:
 - "How and why do I map to Darwin Core?"
 objectives:

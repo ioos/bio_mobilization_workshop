@@ -1,7 +1,7 @@
 ---
 layout: break
 title: "Social Break"
-break: 0
+break: 30
 ---
 
 {% include links.md %}

@@ -1,7 +1,7 @@
 ---
 title: "Data Cleaning"
 teaching: 0
-exercises: 0
+exercises: 120
 questions:
 - "How do I clean my data?"
 objectives:
