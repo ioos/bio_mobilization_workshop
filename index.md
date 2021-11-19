@@ -3,7 +3,7 @@ layout: lesson
 root: .  # Is the only page that doesn't follow the pattern /:path/index.html
 permalink: index.html  # Is the only page that doesn't follow the pattern /:path/index.html
 ---
-**Dates:** March 14 - 15, 2022 *(4 hours each day)*
+**Dates:** March 14 - 15, 2022 from **13:00-17:00 EDT** *(4 hours each day)*
 
 **Location:** Virtual
 
