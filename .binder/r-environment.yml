@@ -1,0 +1,28 @@
+name: r-bmw
+channels:
+  - conda-forge
+dependencies:
+  - jupyter
+  - jupyter_contrib_nbextensions
+  - jupyter_nbextensions_configurator
+  - rpy2
+  - r-base=4
+  - r-dt
+  - r-finch
+  - r-ggfortify
+  - r-ggplot2
+  - r-gsw
+  - r-httr
+  - r-irkernel
+  - r-lubridate
+  - r-mapdata
+  - r-ncdf4
+  - r-oce
+  - r-obistools
+  - r-rcolorbrewer
+  - r-rerddap
+  - r-reshape2
+  - r-robis>=2.3.9
+  - r-sp
+  - r-xtractomatic
+  - r-xts
