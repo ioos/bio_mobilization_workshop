@@ -24,6 +24,10 @@ This repository is for participants to get general information and ask questions
 --------------------------------------------------------------------------------
 
 # News
+## 2021-12-14
+Jupyter R+Python: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ioos/ocean_sciences_bio_workshop_2021/adding_envs) Took about 20 mins to build and deploy.
+
+RStudio: [![RStudio](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ioos/ocean_sciences_bio_workshop_2021/adding_envs?urlpath=rstudio)
 ## 2021-11-08
 **Ocean Sciences is all virtual and so are we!**
 Since the Ocean Sciences conference will not be in person this year, our workshop will be entirely online.
