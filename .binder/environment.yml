@@ -3,35 +3,16 @@ channels:
   - conda-forge
 dependencies:
   - python=3.9
-  - erddapy
-  - geopandas
-  - jupyter
-  - jupyter_contrib_nbextensions
-  - jupyter_nbextensions_configurator
-  - matplotlib-base
-  - nbval
+  - numpy
   - pandas
   - pyworms
-  - xarray
   # R packages
-  - rpy2
   - r-base=4
-  - r-dt
+  - r-tidyverse
   - r-finch
-  - r-ggfortify
-  - r-ggplot2
-  - r-gsw
-  - r-httr
-  - r-irkernel
-  - r-lubridate
-  - r-mapdata
-  - r-ncdf4
-  - r-oce
   - r-obistools
-  - r-rcolorbrewer
-  - r-rerddap
-  - r-reshape2
   - r-robis>=2.3.9
-  - r-sp
   - r-xtractomatic
-  - r-xts
+  - r-worrms
+  - r-taxize
+  - r-hmsic
