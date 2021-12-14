@@ -11,15 +11,15 @@ This repository is for participants to get general information and ask questions
 --------------------------------------------------------------------------------
 
 ## Participant Checklist
-* create a github account
-* upload your "raw" data using [the registration form](https://docs.google.com/forms/d/e/1FAIpQLSdNvQwrdG-xg5CqUoJbo0iV35B3X0-CUFYDbbNOqMdc8Lg-eg/viewform)
+- [ ] create a github account
+- [ ] upload your "raw" data using [the registration form](https://docs.google.com/forms/d/e/1FAIpQLSdNvQwrdG-xg5CqUoJbo0iV35B3X0-CUFYDbbNOqMdc8Lg-eg/viewform)
     * if you cannot upload this way please open an issue in this github
 
 ### participant requirments
-* Must have a dataset to work on. 
-* Must have some R or Python experience. 
-* Must have a basic knowledge of Github. 
-* Must have a system with R+RStudio and/or Python installed. 
+- [ ] Must have a dataset to work on. 
+- [ ] Must have some R or Python experience. 
+- [ ] Must have a basic knowledge of Github. 
+- [ ] Must have a system with R+RStudio and/or Python installed. 
 
 --------------------------------------------------------------------------------
 
