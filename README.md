@@ -24,10 +24,15 @@ This repository is for participants to get general information and ask questions
 --------------------------------------------------------------------------------
 
 # News
-## 2021-12-14
-Jupyter R+Python: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ioos/ocean_sciences_bio_workshop_2021/adding_envs) Took about 20 mins to build and deploy.
+## 2021-12-15
+mybinder environment for Python and R (RStudio): 
 
-RStudio: [![RStudio](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ioos/ocean_sciences_bio_workshop_2021/adding_envs?urlpath=rstudio) Can't get this to work, gives 500: Internal Server Error.
+Jupyter R+Python: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ioos/ocean_sciences_bio_workshop_2021/main) 
+
+RStudio: [![RStudio](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ioos/ocean_sciences_bio_workshop_2021/main?urlpath=rstudio)
+
+_Caution_ Initially it will take a little while to build the environment in mybinder. Be patient.
+
 ## 2021-11-08
 **Ocean Sciences is all virtual and so are we!**
 Since the Ocean Sciences conference will not be in person this year, our workshop will be entirely online.
