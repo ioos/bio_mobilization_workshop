@@ -27,9 +27,9 @@ This repository is for participants to get general information and ask questions
 ## 2021-12-15
 mybinder environment for Python and R (RStudio): 
 
-Jupyter R+Python: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ioos/ocean_sciences_bio_workshop_2021/main) 
+Jupyter R+Python: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ioos/bio_mobilization_workshop/main) 
 
-RStudio: [![RStudio](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ioos/ocean_sciences_bio_workshop_2021/main?urlpath=rstudio)
+RStudio: [![RStudio](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ioos/bio_mobilization_workshop/main?urlpath=rstudio)
 
 _Caution_ Initially it will take a little while to build the environment in mybinder. Be patient.
 
