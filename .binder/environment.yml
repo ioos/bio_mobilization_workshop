@@ -2,7 +2,7 @@ name: bio-work
 channels:
   - conda-forge
 dependencies:
-  - python=3.9
+  - python
   - pandas
   - numpy
   - pyworms
