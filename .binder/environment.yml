@@ -2,6 +2,6 @@ name: bio-work
 channels:
   - conda-forge
 dependencies:
-  - python
+  - python=3.9
   # R packages
-  - r-base
+  - r-base=4.0.5
