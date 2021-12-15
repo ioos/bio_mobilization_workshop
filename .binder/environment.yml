@@ -3,16 +3,5 @@ channels:
   - conda-forge
 dependencies:
   - python=3.9
-  - numpy
-  - pandas
-  - pyworms
   # R packages
   - r-base=4
-  - r-tidyverse
-  - r-finch
-  - r-obistools
-  - r-robis>=2.3.9
-  - r-xtractomatic
-  - r-worrms
-  - r-taxize
-  - r-hmisc
