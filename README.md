@@ -11,19 +11,28 @@ This repository is for participants to get general information and ask questions
 --------------------------------------------------------------------------------
 
 ## Participant Checklist
-* create a github account
-* upload your "raw" data using [the registration form](https://docs.google.com/forms/d/e/1FAIpQLSdNvQwrdG-xg5CqUoJbo0iV35B3X0-CUFYDbbNOqMdc8Lg-eg/viewform)
+- [ ] create a github account
+- [ ] upload your "raw" data using [the registration form](https://docs.google.com/forms/d/e/1FAIpQLSdNvQwrdG-xg5CqUoJbo0iV35B3X0-CUFYDbbNOqMdc8Lg-eg/viewform)
     * if you cannot upload this way please open an issue in this github
 
 ### participant requirments
-* Must have a dataset to work on. 
-* Must have some R or Python experience. 
-* Must have a basic knowledge of Github. 
-* Must have a system with R+RStudio and/or Python installed. 
+- [ ] Must have a dataset to work on. 
+- [ ] Must have some R or Python experience. 
+- [ ] Must have a basic knowledge of Github. 
+- [ ] Must have a system with R+RStudio and/or Python installed. 
 
 --------------------------------------------------------------------------------
 
 # News
+## 2021-12-15
+mybinder environment for Python and R (RStudio): 
+
+Jupyter R+Python: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ioos/ocean_sciences_bio_workshop_2021/main) 
+
+RStudio: [![RStudio](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ioos/ocean_sciences_bio_workshop_2021/main?urlpath=rstudio)
+
+_Caution_ Initially it will take a little while to build the environment in mybinder. Be patient.
+
 ## 2021-11-08
 **Ocean Sciences is all virtual and so are we!**
 Since the Ocean Sciences conference will not be in person this year, our workshop will be entirely online.

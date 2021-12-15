@@ -1,0 +1,14 @@
+name: bio-work
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - pandas
+  - numpy
+  - pyworms
+  # R packages
+  - r-base
+  - r-tidyverse
+  - r-hmisc
+  - r-worrms
+  - r-robis
