@@ -3,5 +3,12 @@ channels:
   - conda-forge
 dependencies:
   - python=3.9
+  - pandas
+  - numpy
+  - pyworms
   # R packages
-  - r-base=4.0.5
+  - r-base
+  - r-tidyverse
+  - r-hmisc
+  - r-worrms
+  - r-robis
