@@ -22,15 +22,17 @@ keypoints:
 > 2. 31/01/2021 12:00 EST
 > 3. January, 01 2021 5:00 PM GMT
 > 4. noon Jan 01, 2021 EST 
-> 5. 1612112400 seconds since 1970
+> 5. 1612112400
+> 6. 44227.70833
 > 
 > > ## Solution
 > > 1. 2021-01-31T1700Z
 > > 2. 2021-01-31T1700Z
 > > 3. 2021-01-31T1700Z
 > > 4. 2021-01-31T1700Z
-> > 5. 2021-01-31T1700Z
-> > 
+> > 5. 2021-01-31T1700Z (was in seconds since 1970)
+> > 6. 2021-01-31T1700Z (was an Excel date value)
+> >
 > > {: .output}
 > {: .solution}
 {: .challenge}
