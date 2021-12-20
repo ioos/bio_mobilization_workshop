@@ -33,6 +33,8 @@ RStudio: [![RStudio](https://mybinder.org/badge_logo.svg)](https://mybinder.org/
 
 _Caution_ Initially it will take a little while to build the environment in mybinder. Be patient.
 
+**Note** The repository was changed from `ocean_sciences_bio_workshop_2021` to `bio_mobilization_workshop`.
+
 ## 2021-11-08
 **Ocean Sciences is all virtual and so are we!**
 Since the Ocean Sciences conference will not be in person this year, our workshop will be entirely online.
