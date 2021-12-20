@@ -16,7 +16,7 @@ keypoints:
 
 > ## Exercise
 > 
-> Challenge: Convert the following dates to ISO-8601
+> Challenge: Convert the following dates to [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601).
 > 
 > 1. 01/31/2021 17:00 GMT
 > 2. 31/01/2021 12:00 EST
@@ -27,9 +27,9 @@ keypoints:
 > 
 > > ## Solution
 > > 1. 2021-01-31T1700Z
-> > 2. 2021-01-31T1700Z
-> > 3. 2021-01-31T1700Z
-> > 4. 2021-01-31T1700Z
+> > 2. 2021-01-31T1700Z (note time zone)
+> > 3. 2021-01-31T1700Z (note AM/PM)
+> > 4. 2021-01-31T1700Z (note timezone and time in text)
 > > 5. 2021-01-31T1700Z (was in seconds since 1970)
 > > 6. 2021-01-31T1700Z (was an Excel date value)
 > >
@@ -42,11 +42,12 @@ keypoints:
 > 
 > Challenge: Match the following names to a taxonomic authority.
 > 
-> - Great white shark
+> 1. White shark
 > 
 > > ## Solution
-> > - [Great White Shark](https://www.marinespecies.org/aphia.php?p=taxdetails&id=105838)
-> >   - AphiaID - `urn:lsid:marinespecies.org:taxname:105838`
+> > 1. [_Carcharodon carcharias_](https://www.marinespecies.org/aphia.php?p=taxdetails&id=105838)
+> >    - AphiaID - `urn:lsid:marinespecies.org:taxname:105838`
+> >
 > > {: .output}
 > {: .solution}
 {: .challenge}
@@ -59,7 +60,7 @@ keypoints:
 > Challenge: Convert the following latitude and longitude values to decimal degrees north and east, respectively.
 > 
 > 1. `17°51'57.96"S` `149°39'13.32"W` 
-> 
+> 2. easting and northing values
 > 
 > > ## Solution
 > > 1. [Map](https://goo.gl/maps/PuxANV1bdYuq3ja79)
