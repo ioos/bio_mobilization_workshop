@@ -59,14 +59,17 @@ keypoints:
 > 
 > Challenge: Convert the following latitude and longitude values to decimal degrees north and east, respectively.
 > 
-> 1. `17°51'57.96"S` `149°39'13.32"W` 
-> 2. easting and northing values
+> 1. `17° 51' 57.96" S` `149° 39' 13.32" W` 
+> 2. `33° 22.967' N` `117° 35.321' W`
 > 
 > > ## Solution
-> > 1. [Map](https://goo.gl/maps/PuxANV1bdYuq3ja79)
+> > 1. [Teahupoo, Tahiti](https://www.google.com/maps/search/?api=1&query=-17.8658056%2C-149.2560498)
 > >    1. latitude = -17.8661 degrees north
-> >    1. longitude = -149.6537 degrees east
-> > 
+> >    2. longitude = -149.6537 degrees east
+> > 2. [Trestles, CA](https://www.google.com/maps/search/?api=1&query=33.3828%2C-117.5886)
+> >    1. latitude = 33.3828 degrees north
+> >    2. longitude = -117.5886 degrees east
+>>
 > > {: .output}
 > {: .solution}
 {: .challenge}
