@@ -9,13 +9,24 @@ objectives:
 - "QA/QC"
 - "Validation of records."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "Use the [GBIF data validator](https://www.gbif.org/tools/data-validator) to check your DwC archives & `.csv` files."
 ---
 
 1. Creating EML metadata text file
 2. QA/QC
-3. Validation of records: https://www.gbif.org/tools/data-validator
 
+
+> ## Exercise : Try the GBIF DwC Validator
+> 
+> Challenge: Use the GBIF data validator to check a DwC archive file & see the issues with it.
+> 
+> TODO: provide a sample DwC file to submit?
+>
+> > ## Solution
+> > TODO: list the issues here?
+> > {: .output}
+> {: .solution}
+{: .challenge}
 
 
 {% include links.md %}
