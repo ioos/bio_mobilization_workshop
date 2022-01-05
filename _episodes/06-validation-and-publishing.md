@@ -9,6 +9,8 @@ objectives:
 - "QA/QC"
 - "Validation of records."
 keypoints:
+- "Highlight required metadata fields for the IPT."
+- "Discuss different packages (e.g. obistools, robis) that can be used to QA/QC data." 
 - "Use the [GBIF data validator](https://www.gbif.org/tools/data-validator) to check your DwC archives & `.csv` files."
 ---
 
@@ -21,6 +23,8 @@ keypoints:
 > Challenge: Use the GBIF data validator to check a DwC archive file & see the issues with it.
 > 
 > TODO: provide a sample DwC file to submit?
+>
+> Challenge #2: Run multiple QA/QC checks on your Event and Occurrence table
 >
 > > ## Solution
 > > TODO: list the issues here?
