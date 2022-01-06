@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Darwin Core and NERC"
+title: "Introduction to Darwin Core"
 start: true
 teaching: 0
 exercises: 90
