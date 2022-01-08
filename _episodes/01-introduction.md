@@ -71,13 +71,13 @@ When doing your mapping some required information may be missing. These are the 
 | [`basisOfRecord`](https://dwc.tdwg.org/terms/#dwc:basisOfRecord) | The specific nature of the data record.  | Controlled vocabulary: HumanObservation, MachineObservation, PreservedSpecimen, LivingSpecimen, FossilSpecimen|
 | [`scientificName`](https://dwc.tdwg.org/terms/#dwc:scientificName) | The full scientific name, with authorship and date information if known. When forming part of an Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the IdentificationQualifier term. | Note that cf., aff., etc. need to be parsed out to the `identificationQualifier` term |
 | [`scientificNameID`](https://dwc.tdwg.org/terms/#dwc:scientificNameID) | An identifier for the nomenclatural (not taxonomic) details of a scientific name. | Must be a WoRMS LSID for sharing to OBIS. Example: urn:lsid:marinespecies.org:taxname:218214. Note that the numbers at the end are the AphiaID from WoRMS. |
-| [`eventDate`]() |  | |
-| [`decimalLatitude`]() |  | |
-| [`decimalLongitude`]() |  | |
-| [`occurrenceStatus`]() |  | |
-| [`countryCode`]() |  | |
-| [`kingdom`]() |  |  |
-| [`geodeticDatum`]() | | |
+| [`eventDate`](https://dwc.tdwg.org/terms/#dwc:eventDate) | The date-time or interval during which an Event occurred. For occurrences, this is the date-time when the event was recorded. Not suitable for a time in a geological context. | Must follow [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) |
+| [`decimalLatitude`](https://dwc.tdwg.org/terms/#dwc:decimalLatitude) | The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. | For OBIS and GBIF the required `geodeticDatum` is WGS84. |
+| [`decimalLongitude`](https://dwc.tdwg.org/terms/#dwc:decimalLongitude) | The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive | For OBIS and GBIF the required `geodeticDatum` is WGS84. |
+| [`occurrenceStatus`](https://dwc.tdwg.org/terms/#dwc:occurrenceStatus) | For Occurrences, the default vocabulary is recommended to consist of "present" and "absent", but can be extended by implementers with good justification. | For OBIS, only valid values are "present" and "absent". |
+| [`countryCode`](https://dwc.tdwg.org/terms/#dwc:countryCode) | The standard code for the country in which the Location occurs. | 	Use an [ISO 3166](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)-1-alpha-2 country code. Not required for OBIS but GBIF needs this for their system.|
+| [`kingdom`](https://dwc.tdwg.org/terms/#dwc:kingdom) | The full scientific name of the kingdom in which the taxon is classified. | Not required for OBIS but GBIF needs this to disambiguate scientific names that are the same in different kingdoms. |
+| [`geodeticDatum`](https://dwc.tdwg.org/terms/#dwciri:geodeticDatum) | The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in decimalLatitude and decimalLongitude as based. | Must be WGS84 for data shared to OBIS and GBIF but it's best to state explicitly that it is. |
 
 1. Intro / background
    1. to DwC https://github.com/OBISCanada/obis-workshop/blob/master/README.md 
