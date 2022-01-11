@@ -35,12 +35,14 @@ OBIS performs a number of quality checks on the data it receives. Red quality fl
 > Challenge #2: [download the following dataset] and the [robis] and [obistools] R packages. Then, perform the following minimal quality assurance and control checks: i) run a diagnostics report for the data quality, ii) ensure the data is in the correct structure, iii) plot the occurrences in a map, and iv) determine whether reported depths are accurate. _To do: create easy dataset to work with or link to dataset in JupyterNotebooks?_
 > 
 > > ## Solution
+> > ```
 > > i. obistools::report(), or alternatively hmisc::describe()
 > > ii. check_eventids() # checks if both eventID and parentEventID fields as present in the table, and whether all parentEventIDs have a corresponding eventID
 > >     check_extension_eventids() # checks if eventIDs in an extension have matching eventIDs in the core table.
 > >     flatten_event() and flatten_occurrence() # recursively adds event information from parent events to child events. 
 > > iii. obistools::plot_map(), or robis::map_ggplot() # to plot occurrence records
 > > iv. obistools::check_onland(), or check_depth()
+> > ```
 > >  {: .output}
 > {: .solution}
 {: .challenge}
