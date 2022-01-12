@@ -57,19 +57,26 @@ iii. CSV files containing Darwin Core terms in the first _row_.
 
 The validation tool provides an indication of whether the dataset can be indexed by GBIF and OBIS or not, and provides a summary of issues found during interpretation of the dataset. The main advantage is that you don't have to publish your data through the IPT (and hence make it publicly visible) prior to determining any issues related to the data or metadata. You will be able to view the metadata as a draft version of the dataset page as it would appear when the dataset is published and registered with GBIF. It is typically the final step to be done prior to going through the IPT and publish your dataset. 
 
-> ## Exercise : Try the GBIF DwC Validator
+> ## Example : Using the GBIF DwC Validator
 > 
-> Challenge: Use the GBIF data validator to check a [DwC archive file] & document the issues with it.
+> The GBIF data validator can be used to check a DwC archive `.zip`. 
+> The validator will highlight issues with the archive like bad rows, missing columns, and much more.
 > 
-> _TODO: provide a sample DwC file to submit?_
+> You can try using the validator with [this example DwC `.zip` file (hosted on gdrive)](https://drive.google.com/file/d/1iQ5TJg-GvZIhv-gdNrmx1ieTBZdEJE8a/view?usp=sharing) and see the issues with it.
 >
 >  > ## Solution
-> > i. issue 1
-> > 2. issue 2
+> > The following are issues with the provided DwC archive reported by the GBIF validator (as of 2022-01):
+> > 1. Country derived from coordinates
+> > 2. Taxon match fuzzy
+> > 3. Taxon match higherrank
+> > 4. Taxon match none
+> > 5. Basis of record invalid
+> > 6. Coordinate rounded
+> > 7. Geodetic datum assumed WGS84
 > > {: .output}
 > {: .solution}
 {: .challenge}
 
-
+TODO: add exercise: do this w/ your own DwC archive
 
 {% include links.md %}
