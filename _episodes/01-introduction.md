@@ -107,6 +107,17 @@ Over at the IOOS Bio Data Guide Github you can see [a script](https://github.com
 <img width="555" alt="ProcessingScriptScreenshot" src="https://user-images.githubusercontent.com/7586150/148693542-00040e22-bce0-4123-8848-e97064c7027b.PNG">
 
 
+> ## Exercise
+> 
+> Challenge: Create some crosswalk notes for your datset.
+> 
+> Compare your data files and the table(s) above to devise a plan to crosswalk your data columns into the DwC terms. 
+> Use [this google form](https://docs.google.com/forms/d/e/1FAIpQLScOUKLA5t-hxWlPUBe1hJQXxwsd1hb94x-fopC9m2fot8h0pA/viewform?usp=sf_link) to submit your notes.
+> 
+{: .challenge}
+
+---------------------------------------------------------
+# notes on page content (TODO rm this?)
 1. Intro / background
    1. to DwC https://github.com/OBISCanada/obis-workshop/blob/master/README.md 
    2. To OBIS https://www.youtube.com/channel/UCokyj9fP5DMQfIdUhtZT9tw/featured 
