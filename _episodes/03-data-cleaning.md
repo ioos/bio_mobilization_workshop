@@ -22,7 +22,7 @@ Below is a short summary of each of those conversions as well as some example co
 
 # Getting your dates in order
 
-> ## Exercise
+> ## Example
 > 
 > Challenge: Convert the following dates to [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601).
 > 
@@ -35,19 +35,40 @@ Below is a short summary of each of those conversions as well as some example co
 > 
 > > ## Solution
 > > 1. ```python
-> > df = pd.DataFrame({'time':['01/31/2021 17:00 GMT']})
-> > df['time'] = pd.to_datetime(df['time'],format="%m/%d/%Y %H:%M %Z",utc=True)
-> > 0   2021-01-31 17:00:00+00:00
-> > Name: time, dtype: datetime64[ns, UTC]
-> > df
-> >                        time
-> > 0 2021-01-31 17:00:00+00:00
-> > df.to_csv(date_format='%Y-%m-%dT%H:%MZ')
-> > ,time
-> > 0,2021-01-31T17:00Z
-> > ``` 
-> > 2021-01-31T1700Z
-> > 2. 2021-01-31T1700Z (note time zone)
+> >    import pandas as pd
+> >    date_str = '01/31/2021 17:00 GMT'
+> >    date = pd.to_datetime(date_str, format="%m/%d/%Y %H:%M %Z").tz_convert(tz="UTC")
+> >    print(date)
+> >    ```
+> >    ```output
+> >    Timestamp('2021-01-31 17:00:00+0000', tz='GMT')
+> >    ``` 
+> >    ```r
+> >    library(lubridate)
+> >    date_str <- '01/31/2021 17:00 GMT'
+> >    lubridate::mdy_hm(date_str,tz="UTC")
+> >    ```
+> >    ```output
+> >    [1] "2021-01-31 17:00:00 UTC"
+> >    ```
+> > 2. ```python
+> >    import pandas as pd
+> >    date_str = '31/01/2021 12:00 EST'
+> >    date = pd.to_datetime(date_str, format="%d/%m/%Y %H:%M %Z").tz_convert(tz="UTC")
+> >    print(date)
+> >    ```
+> >    ```output
+> >    Timestamp('2021-01-31 17:00:00+0000', tz='UTC')
+> >    ``` 
+> >    ```r
+> >    library(lubridate)
+> >    date_str <- '31/01/2021 12:00 EST'
+> >    date <- lubridate::dmy_hm(date_str,tz="EST")
+> >    lubridate::with_tz(date,tz="UTC")
+> >    ```
+> >    ```output
+> >    [1] "2021-01-31 17:00:00 UTC"
+> >    ```
 > > 3. 2021-01-31T1700Z (note AM/PM)
 > > 4. 2021-01-31T1700Z (note timezone and time in text)
 > > 5. 2021-01-31T1700Z (was in seconds since 1970)
@@ -58,7 +79,7 @@ Below is a short summary of each of those conversions as well as some example co
 {: .challenge}
 
 # Matching your scientific names to WoRMS
-> ## Exercise
+> ## Example
 > 
 > Challenge: Match the following names to a taxonomic authority.
 > 
@@ -81,7 +102,7 @@ Below is a short summary of each of those conversions as well as some example co
 | [dwc:decimalLatitude](https://dwc.tdwg.org/list/#dwc_decimalLatitude) | The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. | -41.0983423 |
 | [dwc:decimalLongitude](https://dwc.tdwg.org/list/#dwc_decimalLongitude) | The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive. | -121.1761111 |
 
-> ## Exercise
+> ## Example
 > 
 > Challenge: Convert the following latitude and longitude values to decimal degrees north and east, respectively.
 > 
