@@ -12,6 +12,14 @@ keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
 
+Now that you know what the mapping is between your raw data and the Darwin Core standard, it's time to start cleaning up the data to align with the conventions described in the standard. The following activities are the three most common conversions a dataset will undergo to align to the Darwin Core standard. This includes:
+1. Ensuring dates follow the [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) standard,
+2. Matching scientific names to an authoritative resource,
+3. Ensuring Latitude and Longitude values are in decimal degrees (with North and East as positive values). 
+
+Below is a short summary of each of those conversions as well as some example conversion scripts. The exercises are intended to give you a sense of the variability we've seen in datasets and how we went about converting them.
+
+
 # Getting your dates in order
 
 > ## Exercise
@@ -26,7 +34,19 @@ keypoints:
 > 6. 44227.70833
 > 
 > > ## Solution
-> > 1. 2021-01-31T1700Z
+> > 1. ```python
+> > df = pd.DataFrame({'time':['01/31/2021 17:00 GMT']})
+> > df['time'] = pd.to_datetime(df['time'],format="%m/%d/%Y %H:%M %Z",utc=True)
+> > 0   2021-01-31 17:00:00+00:00
+> > Name: time, dtype: datetime64[ns, UTC]
+> > df
+> >                        time
+> > 0 2021-01-31 17:00:00+00:00
+> > df.to_csv(date_format='%Y-%m-%dT%H:%MZ')
+> > ,time
+> > 0,2021-01-31T17:00Z
+> > ``` 
+> > 2021-01-31T1700Z
 > > 2. 2021-01-31T1700Z (note time zone)
 > > 3. 2021-01-31T1700Z (note AM/PM)
 > > 4. 2021-01-31T1700Z (note timezone and time in text)
@@ -55,6 +75,12 @@ keypoints:
 
 
 # Getting lat/lon to decimal degrees
+
+| Darwin Core Term | Description | Example |
+|------------------|-------------|---------|
+| [dwc:decimalLatitude](https://dwc.tdwg.org/list/#dwc_decimalLatitude) | The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. | -41.0983423 |
+| [dwc:decimalLongitude](https://dwc.tdwg.org/list/#dwc_decimalLongitude) | The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive. | -121.1761111 |
+
 > ## Exercise
 > 
 > Challenge: Convert the following latitude and longitude values to decimal degrees north and east, respectively.
