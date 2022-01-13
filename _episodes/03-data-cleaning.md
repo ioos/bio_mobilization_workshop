@@ -97,6 +97,10 @@ Below is a short summary of each of those conversions as well as some example co
 
 # Getting lat/lon to decimal degrees
 
+To note, latitude and longitude data pulled from OBIS into GBIF will be assumed to be in the geodetic datum `WGS84`. 
+We highly recommend checking the coordinate reference system of your observations to confirm they are using the same 
+datum. If your coordinates are not using `WGS84`, we highly recommend converting the coordinates to 
+
 | Darwin Core Term | Description | Example |
 |------------------|-------------|---------|
 | [dwc:decimalLatitude](https://dwc.tdwg.org/list/#dwc_decimalLatitude) | The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. | -41.0983423 |
