@@ -100,9 +100,9 @@ Other than these just take the data that you have and crosswalk it to the Darwin
 
 > ## Exercise
 > 
-> Challenge: Create some crosswalk notes for your datset.
+> Challenge: Create some crosswalk notes for your dataset.
 > 
-> Compare your data files and the table(s) above to devise a plan to crosswalk your data columns into the DwC terms. 
+> Compare your data files to the table(s) above to devise a plan to crosswalk your data columns into the DwC terms. 
 > Use [this google form](https://docs.google.com/forms/d/e/1FAIpQLScOUKLA5t-hxWlPUBe1hJQXxwsd1hb94x-fopC9m2fot8h0pA/viewform?usp=sf_link) to submit your notes.
 > 
 {: .challenge}
