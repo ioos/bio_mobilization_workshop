@@ -9,8 +9,8 @@ objectives:
 - "Data enhancement and quality control"
 - "Validation of records."
 keypoints:
-- "Highlight required metadata fields in the Ecological Markup Language (EML)."
-- "Discuss different packages (e.g. obistools, robis) that can be used to QA/QC data." 
+- "Some metadata fields in the Ecological Markup Language (EML) are required for publishing to OBIS."
+- "Several packages (e.g. obistools, robis, Hmisc) can be used to QA/QC data." 
 - "Use the [GBIF data validator](https://www.gbif.org/tools/data-validator) to check your DwC archives & `.csv` files."
 ---
 
@@ -18,13 +18,35 @@ keypoints:
 2. Data enhancement and quality control
 3. Validation of DwC archive files
 
+# Integrated Publishing Toolkit
+The GBIF Integrated Publishing Toolkit (IPT) is currently the only way to publish data to OBIS. [OBIS nodes](https://obis.org/contact/) host an IPT instance for their region or theme. The [OBIS-USA IPT](https://www1.usgs.gov/obis-usa/ipt/) is available for anyone in the US to publish their data to OBIS and GBIF. To publish using this IPT work with Abby Benson. You can choose to download and install your own instance of the IPT but it might be difficult to register it with OBIS. Instead it's recommended to work with one of the OBIS nodes to publish your data through their IPT. The requirements for publishing via an OBIS node IPT are that the data follows Darwin Core, includes the required Darwin Core and EML metadata elements, and you have contacted the node to ensure the data are a good fit for that node. 
+
 # Ecological Markup Language (EML)
 
-Both OBIS and GBIF have the Ecological Markup Language (EML) as metadata standard. When publishing your data through GBIF's Integrated Publisher Toolkit (IPT), this tool helps you create an EML, which is implemented as XML (eml.xml), which will be one of the files in the Darwin Core Archive (DwC-A). As such, if you publish your own data through the IPT, there is no need for innate knowledge on the EML format. To produce an EML extension however, there are a minimum required number of fields that would need to be filled out through the IPT, these are: title, abstract, citation, and contact. 
+Both OBIS and GBIF use Ecological Markup Language (EML) as the metadata standard associated with the data. When publishing your data through IPT, this tool helps you create an EML XML file, one of the files in the Darwin Core Archive (DwC-A). As such, if you publish your own data through the IPT, there is no need for innate knowledge on the EML format. However, there are a minimum required number of fields that would need to be filled out in the IPT: title, abstract, citation, and several contacts.
 
-_to do: create table like in 01-introduction_
+### Required EML metadata fields for sharing to OBIS
+| EML Fields| Definition | Comment |
+|------------------|------------------------------------|---------------------------------------|
+| `Title`| A good descriptive title is indispensable and can provide the user with valuable information, making the discovery of data easier.| The IPT requires you to provide a Shortname. Shortnames serve as an identifier for the resource within the IPT installation. Spell out acronyms in Title but they are ok to use in the shortname.|
+| `Abstract` | The abstract or description of a dataset provides basic information on the content of the dataset. The information in the abstract should improve understanding and interpretation of the data. |  |
+| `Data License`| The licence that you apply to the resource. The license provides a standardized way to define appropriate uses of your work. | Must use CC-0, CC-BY, or CC-BY-NC. |
+| `Resource Contact(s)`| The list of people and organizations that should be contacted to get more information about the resource, that curate the resource or to whom putative problems with the resource or its data should be addressed. | Last name, Postition, and Organization are required, helpful to include a contact method like email or phone number. |
+| `Resource Creator(s)`| The people and organizations who created the resource, in priority order. The list will be used to auto-generate the resource citation (if auto-generation is turned on). | |
+| `Metadata Provider(s)`| the people and organizations responsible for producing the resource metadata. | |
+| `Citation`| The dataset citation allows users to properly cite the datasets in further publications or other uses of the data. The OBIS download function provides a list of the dataset citations packaged with the data in a zipped file. | |
 
-Additional metadata terms to be considered adding (_include these in table above?_). If you are not publishing data yourself, it is important to provide the relevant information for someone else to fill out the IPT on your behalf, or for the extension to be included in the DwC-A .zip file. There are R packages that can help in developing an EML.xml file that includes all the relevant information. These packages are e.g. [EML](https://github.com/ropensci/EML), [emld](https://github.com/ropensci/emld) or [EMLassemblyline](https://ediorg.github.io/EMLassemblyline/articles/overview.html). 
+### Other EML fields to consider
+| EML Fields| Definition | Comment |
+|------------------|------------------------------------|---------------------------------------|
+| `Bounding Box`| Fatherest North, South, East, and West coordinate. |  |
+| `Geographic Description`| A textual description of the geographic coverage. |  |
+| `Temporal Coverage`|  |  |
+| ``|  |  |
+| ``|  |  |
+* A note from Abby- I'm struggling with this section because most of it seems redundant to what's in the data. I'm not sure what other EML fields should really be considered. Maybe others have an opinion on this?
+
+If you are interested to create an EML XML file associated with your data it is possible to upload those into the IPT. There are R packages that can help in developing an EML.xml file. These packages are e.g. [EML](https://github.com/ropensci/EML), [emld](https://github.com/ropensci/emld) or [EMLassemblyline](https://ediorg.github.io/EMLassemblyline/articles/overview.html). 
 
 # Data enhancement and quality control
 
@@ -32,15 +54,15 @@ OBIS performs a number of quality checks on the data it receives. Red quality fl
 
 > ## Exercise 
 >
-> Challenge #2: [download the following dataset] and the [robis] and [obistools] R packages. Then, perform the following minimal quality assurance and control checks: i) run a diagnostics report for the data quality, ii) ensure the data is in the correct structure, iii) plot the occurrences in a map, and iv) determine whether reported depths are accurate. _To do: create easy dataset to work with or link to dataset in JupyterNotebooks?_
+> Challenge #2: Install [obistools](https://github.com/iobis/obistools) and [Hmisc](https://cran.r-project.org/web/packages/Hmisc/Hmisc.pdf) R packages. Then, perform the following minimal quality assurance and control checks: i) run a diagnostics report for the data quality, ii) ensure the data is in the correct structure, iii) plot the occurrences in a map, and iv) determine whether reported depths are accurate. _To do: create easy dataset to work with or link to dataset in JupyterNotebooks?_
 > 
 > > ## Solution
 > > ```
-> > i. obistools::report(), or alternatively hmisc::describe()
+> > i. obistools::report(), and hmisc::describe()
 > > ii. check_eventids() # checks if both eventID and parentEventID fields as present in the table, and whether all parentEventIDs have a corresponding eventID
 > >     check_extension_eventids() # checks if eventIDs in an extension have matching eventIDs in the core table.
 > >     flatten_event() and flatten_occurrence() # recursively adds event information from parent events to child events. 
-> > iii. obistools::plot_map(), or robis::map_ggplot() # to plot occurrence records
+> > iii. obistools::plot_map() # to plot occurrence records
 > > iv. obistools::check_onland(), or check_depth()
 > > ```
 > >  {: .output}
