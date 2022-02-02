@@ -26,24 +26,27 @@ The GBIF Integrated Publishing Toolkit (IPT) is currently the only way to publis
 Both OBIS and GBIF use Ecological Markup Language (EML) as the metadata standard associated with the data. When publishing your data through IPT, this tool helps you create an EML XML file, one of the files in the Darwin Core Archive (DwC-A). As such, if you publish your own data through the IPT, there is no need for innate knowledge on the EML format. However, there are a minimum required number of fields that would need to be filled out in the IPT: title, abstract, citation, and several contacts.
 
 ### Required EML metadata fields for sharing to OBIS
-| EML Fields| Definition | Comment |
-|------------------|------------------------------------|---------------------------------------|
-| `Title`| A good descriptive title is indispensable and can provide the user with valuable information, making the discovery of data easier.| The IPT requires you to provide a Shortname. Shortnames serve as an identifier for the resource within the IPT installation. Spell out acronyms in Title but they are ok to use in the shortname.|
-| `Abstract` | The abstract or description of a dataset provides basic information on the content of the dataset. The information in the abstract should improve understanding and interpretation of the data. |  |
-| `Data License`| The licence that you apply to the resource. The license provides a standardized way to define appropriate uses of your work. | Must use CC-0, CC-BY, or CC-BY-NC. |
-| `Resource Contact(s)`| The list of people and organizations that should be contacted to get more information about the resource, that curate the resource or to whom putative problems with the resource or its data should be addressed. | Last name, Postition, and Organization are required, helpful to include a contact method like email or phone number. |
-| `Resource Creator(s)`| The people and organizations who created the resource, in priority order. The list will be used to auto-generate the resource citation (if auto-generation is turned on). | |
-| `Metadata Provider(s)`| the people and organizations responsible for producing the resource metadata. | |
-| `Citation`| The dataset citation allows users to properly cite the datasets in further publications or other uses of the data. The OBIS download function provides a list of the dataset citations packaged with the data in a zipped file. | |
+
+| EML Fields | Definition | Comment |
+| ---------- | ---------- | ------- |
+| `Title` | A good descriptive title is indispensable and can provide the user with valuable information, making the discovery of data easier. | The IPT requires you to provide a Shortname. Shortnames serve as an identifier for the resource within the IPT installation. Spell out acronyms in Title but they are ok to use in the shortname. |
+| `Abstract`             | The abstract or description of a dataset provides basic information on the content of the dataset. The information in the abstract should improve understanding and interpretation of the data.                                |                                                                                                                                                                                      |
+| `Data License`         | The licence that you apply to the resource. The license provides a standardized way to define appropriate uses of your work.                                                                                                   | Must use CC-0, CC-BY, or CC-BY-NC.                                                                                                                                                   |
+| `Resource Contact(s)`  | The list of people and organizations that should be contacted to get more information about the resource, that curate the resource or to whom putative problems with the resource or its data should be addressed.             | Last name, Postition, and Organization are required, helpful to include a contact method like email or phone number.                                                                 |
+| `Resource Creator(s)`  | The people and organizations who created the resource, in priority order. The list will be used to auto-generate the resource citation (if auto-generation is turned on).                                                      |                                                                                                                                                                                      |
+| `Metadata Provider(s)` | the people and organizations responsible for producing the resource metadata.                                                                                                                                                  |                                                                                                                                                                                      |
+| `Citation`             | The dataset citation allows users to properly cite the datasets in further publications or other uses of the data. The OBIS download function provides a list of the dataset citations packaged with the data in a zipped file. |                                                                                                                                                                                      |
 
 ### Other EML fields to consider
-| EML Fields| Definition | Comment |
-|------------------|------------------------------------|---------------------------------------|
-| `Bounding Box`| Fatherest North, South, East, and West coordinate. |  |
-| `Geographic Description`| A textual description of the geographic coverage. |  |
-| `Temporal Coverage`|  |  |
-| ``|  |  |
-| ``|  |  |
+
+| EML Fields               | Definition | Comment |
+|--------------------------|------------|---------|
+| `Bounding Box`           | Fatherest North, South, East, and West coordinate. |  |
+| `Geographic Description` | A textual description of the geographic coverage.  |  |
+| `Temporal Coverage`      |  |  |
+|                          |  |  |
+|                          |  |  |
+
 * A note from Abby- I'm struggling with this section because most of it seems redundant to what's in the data. I'm not sure what other EML fields should really be considered. Maybe others have an opinion on this?
 
 If you are interested to create an EML XML file associated with your data it is possible to upload those into the IPT. There are R packages that can help in developing an EML.xml file. These packages are e.g. [EML](https://github.com/ropensci/EML), [emld](https://github.com/ropensci/emld) or [EMLassemblyline](https://ediorg.github.io/EMLassemblyline/articles/overview.html). 
