@@ -32,6 +32,7 @@ Below is a short summary of each of those conversions as well as some example co
 > 4. noon Jan 01, 2021 EST 
 > 5. 1612112400
 > 6. 44227.70833
+> 7. 2021-01-30 to 2021-01-31
 > 
 > > ## Solution
 > > 1. ```python
@@ -73,6 +74,7 @@ Below is a short summary of each of those conversions as well as some example co
 > > 4. 2021-01-31T1700Z (note timezone and time in text)
 > > 5. 2021-01-31T1700Z (was in seconds since 1970)
 > > 6. 2021-01-31T1700Z (was an Excel date value)
+> > 7. 2021-01-30/2021-01-31 (date ranges are represented)
 > >
 > > {: .output}
 > {: .solution}
