@@ -15,12 +15,13 @@ keypoints:
 Now that you know what the mapping is between your raw data and the Darwin Core standard, it's time to start cleaning up the data to align with the conventions described in the standard. The following activities are the three most common conversions a dataset will undergo to align to the Darwin Core standard. This includes:
 1. Ensuring dates follow the [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) standard,
 2. Matching scientific names to an authoritative resource,
-3. Ensuring Latitude and Longitude values are in decimal degrees (with North and East as positive values). 
+3. Ensuring latitude and longitude values are in decimal degrees (with North and East as positive values). 
 
 Below is a short summary of each of those conversions as well as some example conversion scripts. The exercises are intended to give you a sense of the variability we've seen in datasets and how we went about converting them.
 
 
 # Getting your dates in order
+Dates can be surprisingly tricky because people record them in many different ways. For our purposes we must follow [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) which means using a four digit year, two digit month, two digit year with dashes as separators (i.e. YYYY-MM-DD). You can also record time in ISO 8601 but make sure to include time zone which can also get tricky if your data take place across time zones and throughout the year where daylight savings time may or may not be in effect (and start and end times of daylight savings vary across years). There are packages in R and Python that can help you with these vagaries. Finally, it is possible to record time intervals in ISO 8601 using a slash (e.g. 2022-01-02/2022-01-12). Examine the dates in your data to determine what format they are following and what amendments need to be made to ensure they are following ISO 8601. Below are some examples and solutions in Python and R for them.
 
 > ## Example
 > 
@@ -81,6 +82,13 @@ Below is a short summary of each of those conversions as well as some example co
 {: .challenge}
 
 # Matching your scientific names to WoRMS
+OBIS uses the [World Register of Marine Species (WoRMS)](https://www.marinespecies.org/) as the taxonomic backbone for its system. GBIF uses the [Catalog of Life](https://www.catalogueoflife.org/). Since WoRMS contributes to the Catalog of Life and WoRMS is a requirement for OBIS we will teach you how to do your taxonomic lookups using WoRMS. The key Darwin Core terms that we need from WoRMS are `scientificNameID` also known as the WoRMS LSID which looks something like this "urn:lsid:marinespecies.org:taxname:105838" and `kindgom` but you can grab the other parts of the taxonomic hierarchy if you want as well as `taxonRank`. 
+
+There are two ways to grab the taxonomic information necessary. First you can use the [WoRMS Taxon Match Tool](https://www.marinespecies.org/aphia.php?p=match). The tool accepts lists of scientific names (each unique name as a separate row in a .txt, .csv, or .xlsx file) up to 1500 names and provides an interface for selecting the match you want for ambiguous matches. A step by step guide on using WoRMS Taxa Match Tool for the MBON Pole to Pole found here: https://marinebon.org/p2p/protocols/WoRMS_quality_check.pdf (NOTE from Abby: the instructions are very specific to the mbon pole to pole data. I wonder if we rewrite this guide here in this page but more generically?)
+
+The other way to get the taxonomic information you need is to use [worrms](https://cran.r-project.org/web/packages/worrms/worrms.pdf) or [pyworms](https://github.com/iobis/pyworms). 
+
+(NOTE from Abby- I think we should remove this example challenge. I'm not sure it helps people with what to do. Instead some example lookups using worrms and pyworms seems like it would be better to have.)
 > ## Example
 > 
 > Challenge: Match the following names to a taxonomic authority.
@@ -99,9 +107,7 @@ Below is a short summary of each of those conversions as well as some example co
 
 # Getting lat/lon to decimal degrees
 
-To note, latitude and longitude data pulled from OBIS into GBIF will be assumed to be in the geodetic datum `WGS84`. 
-We highly recommend checking the coordinate reference system of your observations to confirm they are using the same 
-datum. If your coordinates are not using `WGS84`, we highly recommend converting the coordinates to 
+Note, that the requirement for `decimalLatitude` and `decmailLongitude` is they must be in decimal degrees in WGS84. Since this is the requirement for Darwin Core, OBIS and GBIF will assume data shared using those Darwin Core terms are in the geodetic datum `WGS84`. We highly recommend checking the coordinate reference system of your observations to confirm they are using the same datum. If your coordinates are not using `WGS84`, they will need to be converted in order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLongitude` are required terms.
 
 | Darwin Core Term | Description | Example |
 |------------------|-------------|---------|
