@@ -6,15 +6,11 @@ exercises: 90
 questions:
 - "What is Darwin Core?"
 - "What is a Darwin Core Archive?"
-- "What is a core and what is an extension in Darwin Core?"
 - "Why do people use Darwin Core for their data?"
-- "What is OBIS-ENV-DATA aka (Event with Extended Measurement or Fact)?"
 - "What are the required Darwin Core terms for sharing to OBIS?"
 objectives:
 - "Understand the purpose of Darwin Core."
 - "Understand how to map data to Darwin Core."
-- "Interact with GitHub and biological data."
-- "Get data loaded into program of choice."
 - "Plan for mapping to Darwin Core."
 keypoints:
 - "Darwin Core isn't difficult to apply, it just takes a little bit of time."
@@ -106,19 +102,6 @@ Other than these just take the data that you have and crosswalk it to the Darwin
 > Use [this google form](https://docs.google.com/forms/d/e/1FAIpQLScOUKLA5t-hxWlPUBe1hJQXxwsd1hb94x-fopC9m2fot8h0pA/viewform?usp=sf_link) to submit your notes.
 > 
 {: .challenge}
-
----------------------------------------------------------
-# notes on page content (TODO rm this?)
-1. Intro / background
-   1. to DwC https://github.com/OBISCanada/obis-workshop/blob/master/README.md 
-   2. To OBIS https://www.youtube.com/channel/UCokyj9fP5DMQfIdUhtZT9tw/featured 
-2. How to interact with the SMBD, Github
-3. Get data loaded into R or Python
-4. Planning for mapping into DwC
-   1. What DwC terms are included in your dataset: exercise
-   2. Searching in NERC
-
-
 
 {% include links.md %}
 
