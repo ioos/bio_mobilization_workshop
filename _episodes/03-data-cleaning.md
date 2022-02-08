@@ -63,54 +63,67 @@ for them.
 > > function to read various date formats. The process can be applied to entire columns (or Series) within a DataFrame.
 > > 1. ```python
 > >    import pandas as pd
-> >    date_str = '01/31/2021 17:00 GMT'
-> >    date = pd.to_datetime(date_str, format="%m/%d/%Y %H:%M %Z").tz_convert(tz="UTC")
-> >    print(date)
+> >    df = pd.DataFrame({'date':['01/31/2021 17:00 GMT']})
+> >    df['eventDate'] = pd.to_datetime(df['date'], format="%m/%d/%Y %H:%M %Z")
+> >    df
 > >    ```
 > >    ```output
-> >    2021-01-31 17:00:00+0000
+> >                       date                 eventDate
+> >    0  01/31/2021 17:00 GMT 2021-01-31 17:00:00+00:00
 > >    ``` 
 > > 2. ```python
 > >    import pandas as pd
-> >    date_str = '31/01/2021 12:00 EST'
-> >    date = pd.to_datetime(date_str, format="%d/%m/%Y %H:%M %Z").tz_convert(tz="UTC")
-> >    print(date)
+> >    df = pd.DataFrame({'date':['31/01/2021 12:00 EST']})
+> >    df['eventDate'] = pd.to_datetime(df['date'], format="%d/%m/%Y %H:%M %Z")
+> >    df
 > >    ```
 > >    ```output
-> >    2021-01-31 17:00:00+0000
+> >                       date                 eventDate
+> >    0  31/01/2021 12:00 EST 2021-01-31 12:00:00-05:00
 > >    ``` 
 > >    
 > > 3. ```python
 > >    import pandas as pd
-> >    date_str = 'January, 01 2021 5:00 PM GMT'
-> >    date = pd.to_datetime(date_str,format='%B, %d %Y %I:%M %p %Z')
-> >    print(date)
+> >    df = pd.DataFrame({'date':['January, 01 2021 5:00 PM GMT']})
+> >    df['eventDate'] = pd.to_datetime(df['date'],format='%B, %d %Y %I:%M %p %Z')
+> >    df
 > >    ```
 > >    ```output
-> >    2021-01-31 17:00:00+00:00
+> >                               date                 eventDate
+> >    0  January, 01 2021 5:00 PM GMT 2021-01-01 17:00:00+00:00
 > >    ```
 > >    
 > > 4. ```python
 > >    import pandas as pd
-> >    date_str = '1612112400'
-> >    date = pd.to_datetime(date_str, unit='s', origin='unix')
-> >    print(date)
+> >    df = pd.DataFrame({'date':['1612112400']})
+> >    df['eventDate'] = pd.to_datetime(df['date'], unit='s', origin='unix')
+> >    df
 > >    ```
 > >    ```output
-> >    2021-01-31 17:00:00
+> >             date           eventDate
+> >    0  1612112400 2021-01-31 17:00:00
 > >    ```
 > > 5. ```python
 > >    import pandas as pd
-> >    date_str = '44227.708333333333'
-> >    date = pd.to_datetime(float(date_str), unit='D', origin='1899-12-30')
-> >    print(date)
+> >    df = pd.DataFrame({'date':['44227.708333333333']})
+> >    df['eventDate'] = pd.to_datetime(df['date'].astype(float), unit='D', origin='1899-12-30')
+> >    df
 > >    ```
 > >    ```output
-> >    2021-01-31 17:00:00.000000256
+> >                     date                     eventDate
+> >    0  44227.708333333333 2021-01-31 17:00:00.000000256
 > >    ```
 > > 6. ```python
-> >    pd.DataFrame({'start_time':'2021-01-30','end_time':'2021-01-31'})
-> >    ```2021-01-30/2021-01-31 (date ranges are represented)
+> >    import pandas as pd
+> >    df = pd.DataFrame({'start_date':['2021-01-30'],
+> >                       'end_date':['2021-01-31']})
+> >    df['eventDate'] = df['start_time']+'/'+df['end_time']
+> >    df
+> >    ```
+> >    ```output
+> >       start_time    end_time              eventDate
+> >    0  2021-01-30  2021-01-31  2021-01-30/2021-01-31
+> >    ```
 > >
 > > {: .output}
 > {: .solution}
