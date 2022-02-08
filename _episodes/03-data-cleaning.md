@@ -40,7 +40,7 @@ for them.
 > ## Tip 
 > Focus on getting your package of choice to read the dates appropriately. While you can use [regular expressions](https://en.wikipedia.org/wiki/Regular_expression)
 > to replace and substitute strings to align with the ISO convention, it's typically more reusable and saves you time 
-> if you work in your package pf choice to translate the dates. 
+> if you work in your package of choice to translate the dates.
 {: .callout}
 
 > ## Examples
@@ -50,9 +50,8 @@ for them.
 > 1. 01/31/2021 17:00 GMT
 > 2. 31/01/2021 12:00 EST
 > 3. January, 31 2021 5:00 PM GMT
-> 4. noon Jan 01, 2021 EST 
 > 5. 1612112400
-> 6. 44227.70833
+> 6. 44227.708333333333
 > 7. 2021-01-30 to 2021-01-31
 > 
 > > ## Solution (python)
@@ -84,16 +83,34 @@ for them.
 > > 3. ```python
 > >    import pandas as pd
 > >    date_str = 'January, 01 2021 5:00 PM GMT'
-> >    date = pd.to_datetime(date_str)
+> >    date = pd.to_datetime(date_str,format='%B, %d %Y %I:%M %p %Z')
 > >    print(date)
 > >    ```
 > >    ```output
 > >    2021-01-31 17:00:00+00:00
 > >    ```
-> > 4. 2021-01-31T1700Z (note timezone and time in text)
-> > 5. 2021-01-31T1700Z (was in seconds since 1970)
-> > 6. 2021-01-31T1700Z (was an Excel date value)
-> > 7. 2021-01-30/2021-01-31 (date ranges are represented)
+> >    
+> > 4. ```python
+> >    import pandas as pd
+> >    date_str = '1612112400'
+> >    date = pd.to_datetime(date_str, unit='s', origin='unix')
+> >    print(date)
+> >    ```
+> >    ```output
+> >    2021-01-31 17:00:00
+> >    ```
+> > 5. ```python
+> >    import pandas as pd
+> >    date_str = '44227.708333333333'
+> >    date = pd.to_datetime(float(date_str), unit='D', origin='1899-12-30')
+> >    print(date)
+> >    ```
+> >    ```output
+> >    2021-01-31 17:00:00.000000256
+> >    ```
+> > 6. ```python
+> >    pd.DataFrame({'start_time':'2021-01-30','end_time':'2021-01-31'})
+> >    ```2021-01-30/2021-01-31 (date ranges are represented)
 > >
 > > {: .output}
 > {: .solution}
