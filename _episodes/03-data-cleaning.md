@@ -43,6 +43,10 @@ for them.
 > if you work in your package of choice to translate the dates.
 {: .callout}
 
+| Darwin Core Term | Description | Example   |
+|------------------|-------------|-----------|
+| [dwc:eventDate](https://dwc.tdwg.org/list/#dwc_eventDate) | The date-time or interval during which an Event occurred. For occurrences, this is the date-time when the event was recorded. Not suitable for a time in a geological context. | `1963-03-08T14:07-0600` (8 Mar 1963 at 2:07pm in the time zone six hours earlier than UTC). `2009-02-20T08:40Z` (20 February 2009 8:40am UTC). `2018-08-29T15:19` (3:19pm local time on 29 August 2018). `1809-02-12` (some time during 12 February 1809). `1906-06` (some time in June 1906). `1971` (some time in the year 1971). `2007-03-01T13:00:00Z/2008-05-11T15:30:00Z` (some time during the interval between 1 March 2007 1pm UTC and 11 May 2008 3:30pm UTC). `1900/1909` (some time during the interval between the beginning of the year 1900 and the end of the year 1909). `2007-11-13/15` (some time in the interval between 13 November 2007 and 15 November 2007). |
+
 > ## Examples
 > 
 > Converting the following dates to [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601).
@@ -113,7 +117,8 @@ for them.
 > >                     date                     eventDate
 > >    0  44227.708333333333 2021-01-31 17:00:00.000000256
 > >    ```
-> > 6. ```python
+> > 6. In some cases, it is easier to use a regular expression or simply paste strings together:
+> >    ```python
 > >    import pandas as pd
 > >    df = pd.DataFrame({'start_date':['2021-01-30'],
 > >                       'end_date':['2021-01-31']})
@@ -150,13 +155,32 @@ for them.
 {: .challenge}
 
 # Matching your scientific names to WoRMS
-OBIS uses the [World Register of Marine Species (WoRMS)](https://www.marinespecies.org/) as the taxonomic backbone for its system. GBIF uses the [Catalog of Life](https://www.catalogueoflife.org/). Since WoRMS contributes to the Catalog of Life and WoRMS is a requirement for OBIS we will teach you how to do your taxonomic lookups using WoRMS. The key Darwin Core terms that we need from WoRMS are `scientificNameID` also known as the WoRMS LSID which looks something like this "urn:lsid:marinespecies.org:taxname:105838" and `kindgom` but you can grab the other parts of the taxonomic hierarchy if you want as well as `taxonRank`. 
+OBIS uses the [World Register of Marine Species (WoRMS)](https://www.marinespecies.org/) as the taxonomic backbone for 
+its system. GBIF uses the [Catalog of Life](https://www.catalogueoflife.org/). Since WoRMS contributes to the Catalog of 
+Life and WoRMS is a requirement for OBIS we will teach you how to do your taxonomic lookups using WoRMS. The key Darwin 
+Core terms that we need from WoRMS are `scientificNameID` also known as the WoRMS LSID which looks something like this 
+`"urn:lsid:marinespecies.org:taxname:105838"` and `kindgom` but you can grab the other parts of the taxonomic hierarchy if 
+you want as well as `taxonRank`. 
 
-There are two ways to grab the taxonomic information necessary. First you can use the [WoRMS Taxon Match Tool](https://www.marinespecies.org/aphia.php?p=match). The tool accepts lists of scientific names (each unique name as a separate row in a .txt, .csv, or .xlsx file) up to 1500 names and provides an interface for selecting the match you want for ambiguous matches. A step by step guide on using WoRMS Taxa Match Tool for the MBON Pole to Pole found here: https://marinebon.org/p2p/protocols/WoRMS_quality_check.pdf (NOTE from Abby: the instructions are very specific to the mbon pole to pole data. I wonder if we rewrite this guide here in this page but more generically?)
+There are two ways to grab the taxonomic information necessary. First you can use the [WoRMS Taxon Match Tool](https://www.marinespecies.org/aphia.php?p=match). 
+The tool accepts lists of scientific names (each unique name as a separate row in a .txt, .csv, or .xlsx file) up to 
+1500 names and provides an interface for selecting the match you want for ambiguous matches. A step by step guide on 
+using WoRMS Taxa Match Tool for the MBON Pole to Pole found here: https://marinebon.org/p2p/protocols/WoRMS_quality_check.pdf 
+(NOTE from Abby: the instructions are very specific to the mbon pole to pole data. I wonder if we rewrite this guide 
+here in this page but more generically?)
 
-The other way to get the taxonomic information you need is to use [worrms](https://cran.r-project.org/web/packages/worrms/worrms.pdf) or [pyworms](https://github.com/iobis/pyworms). 
+The other way to get the taxonomic information you need is to use [worrms](https://cran.r-project.org/web/packages/worrms/worrms.pdf) 
+or [pyworms](https://github.com/iobis/pyworms). 
 
-(NOTE from Abby- I think we should remove this example challenge. I'm not sure it helps people with what to do. Instead some example lookups using worrms and pyworms seems like it would be better to have.)
+(NOTE from Abby- I think we should remove this example challenge. I'm not sure it helps people with what to do. Instead 
+some example lookups using worrms and pyworms seems like it would be better to have.)
+
+| Darwin Core Term         | Description                                                                       | Example                                               |
+|--------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------|
+| [dwc:scientificNameID](https://dwc.tdwg.org/list/#dwc_scientificNameID) | An identifier for the nomenclatural (not taxonomic) details of a scientific name. | `urn:lsid:ipni.org:names:37829-1:1.3` |                
+| [dwc:kingdom](https://dwc.tdwg.org/list/#dwc_kingdom) | The full scientific name of the kingdom in which the taxon is classified.         |   `Animalia`, `Archaea`, `Bacteria`, `Chromista`, `Fungi`, `Plantae`, `Protozoa`, `Viruses` |
+| [dwc:taxonRank](https://dwc.tdwg.org/list/#dwc_taxonRank) | The taxonomic rank of the most specific name in the scientificName.               | `subspecies`, `varietas`, `forma`, `species`, `genus` |
+
 > ## Example
 > 
 > Challenge: Match the following names to a taxonomic authority.
@@ -175,12 +199,16 @@ The other way to get the taxonomic information you need is to use [worrms](https
 
 # Getting lat/lon to decimal degrees
 
-Note, that the requirement for `decimalLatitude` and `decmailLongitude` is they must be in decimal degrees in WGS84. Since this is the requirement for Darwin Core, OBIS and GBIF will assume data shared using those Darwin Core terms are in the geodetic datum `WGS84`. We highly recommend checking the coordinate reference system of your observations to confirm they are using the same datum. If your coordinates are not using `WGS84`, they will need to be converted in order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLongitude` are required terms.
+Note, that the requirement for `decimalLatitude` and `decmailLongitude` is they must be in decimal degrees in WGS84. 
+Since this is the requirement for Darwin Core, OBIS and GBIF will assume data shared using those Darwin Core terms are 
+in the geodetic datum `WGS84`. We highly recommend checking the coordinate reference system of your observations to 
+confirm they are using the same datum. If your coordinates are not using `WGS84`, they will need to be converted in 
+order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLongitude` are required terms.
 
-| Darwin Core Term | Description | Example |
-|------------------|-------------|---------|
-| [dwc:decimalLatitude](https://dwc.tdwg.org/list/#dwc_decimalLatitude) | The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. | -41.0983423 |
-| [dwc:decimalLongitude](https://dwc.tdwg.org/list/#dwc_decimalLongitude) | The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive. | -121.1761111 |
+| Darwin Core Term | Description | Example     |
+|------------------|-------------|-------------|
+| [dwc:decimalLatitude](https://dwc.tdwg.org/list/#dwc_decimalLatitude) | The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. | `-41.0983423` |
+| [dwc:decimalLongitude](https://dwc.tdwg.org/list/#dwc_decimalLongitude) | The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive. | `-121.1761111` |
 
 > ## Example
 > 
