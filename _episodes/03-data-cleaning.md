@@ -12,30 +12,56 @@ keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
 
-Now that you know what the mapping is between your raw data and the Darwin Core standard, it's time to start cleaning up the data to align with the conventions described in the standard. The following activities are the three most common conversions a dataset will undergo to align to the Darwin Core standard. This includes:
-1. Ensuring dates follow the [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) standard,
-2. Matching scientific names to an authoritative resource,
-3. Ensuring latitude and longitude values are in decimal degrees (with North and East as positive values). 
+Now that you know what the mapping is between your raw data and the Darwin Core standard, it's time to start cleaning up 
+the data to align with the conventions described in the standard. The following activities are the three most common 
+conversions a dataset will undergo to align to the Darwin Core standard. This includes:
+1. [Ensuring dates follow the ISO-8601 standard](#getting-your-dates-in-order)
+2. [Matching scientific names to an authoritative resource](#matching-your-scientific-names-to-worms)
+3. [Ensuring latitude and longitude values are in decimal degrees](#getting-latlon-to-decimal-degrees)
 
-Below is a short summary of each of those conversions as well as some example conversion scripts. The exercises are intended to give you a sense of the variability we've seen in datasets and how we went about converting them.
+Below is a short summary of each of those conversions as well as some example conversion scripts. The exercises are 
+intended to give you a sense of the variability we've seen in datasets and how we went about converting them. While the
+examples use the [pandas package for Python](https://pandas.pydata.org/) and the [tidyverse collection of packages for R](https://www.tidyverse.org/), 
+those are not the only options for managing these conversions. Simply the ones we recommend and use more frequently in 
+our experiences. 
 
 
 # Getting your dates in order
-Dates can be surprisingly tricky because people record them in many different ways. For our purposes we must follow [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) which means using a four digit year, two digit month, two digit year with dashes as separators (i.e. YYYY-MM-DD). You can also record time in ISO 8601 but make sure to include time zone which can also get tricky if your data take place across time zones and throughout the year where daylight savings time may or may not be in effect (and start and end times of daylight savings vary across years). There are packages in R and Python that can help you with these vagaries. Finally, it is possible to record time intervals in ISO 8601 using a slash (e.g. 2022-01-02/2022-01-12). Examine the dates in your data to determine what format they are following and what amendments need to be made to ensure they are following ISO 8601. Below are some examples and solutions in Python and R for them.
+Dates can be surprisingly tricky because people record them in many different ways. For our purposes we must follow 
+[ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) which means using a four digit year, two digit month, and two digit 
+day with dashes as separators (i.e. `YYYY-MM-DD`). You can also record time in ISO 8601 but make sure to include the time 
+zone which can also get tricky if your data take place across time zones and throughout the year where daylight savings 
+time may or may not be in effect (and start and end times of daylight savings vary across years). There are packages in 
+R and Python that can help you with these vagaries. Finally, it is possible to record time intervals in ISO 8601 using a 
+slash (e.g. `2022-01-02/2022-01-12`). Examine the dates in your data to determine what format they are following and what 
+amendments need to be made to ensure they are following ISO 8601. Below are some examples and solutions in Python and R 
+for them.
 
-> ## Example
+> ## Tip 
+> Focus on getting your package of choice to read the dates appropriately. While you can use [regular expressions](https://en.wikipedia.org/wiki/Regular_expression)
+> to replace and substitute strings to align with the ISO convention, it's typically more reusable and saves you time 
+> if you work in your package pf choice to translate the dates. 
+{: .callout}
+
+> ## Examples
 > 
-> Challenge: Convert the following dates to [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601).
+> Converting the following dates to [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601).
 > 
 > 1. 01/31/2021 17:00 GMT
 > 2. 31/01/2021 12:00 EST
-> 3. January, 01 2021 5:00 PM GMT
+> 3. January, 31 2021 5:00 PM GMT
 > 4. noon Jan 01, 2021 EST 
 > 5. 1612112400
 > 6. 44227.70833
 > 7. 2021-01-30 to 2021-01-31
 > 
-> > ## Solution
+> > ## Solution (python)
+> > When dealing with dates using pandas in Python it is best to create a Series as your time column with the appropriate 
+> > datatype. Then, when writing your file using [.to_csv()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html)
+> > you can specify the format which your date will be written using the `date_format` parameter. 
+> >
+> > The examples below show how to use the [pandas.to_datetime](https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html)
+> > function to read various date formats. The process can be applied to entire columns (or Series) within a DataFrame.
 > > 1. ```python
 > >    import pandas as pd
 > >    date_str = '01/31/2021 17:00 GMT'
@@ -43,16 +69,8 @@ Dates can be surprisingly tricky because people record them in many different wa
 > >    print(date)
 > >    ```
 > >    ```output
-> >    Timestamp('2021-01-31 17:00:00+0000', tz='GMT')
+> >    2021-01-31 17:00:00+0000
 > >    ``` 
-> >    ```r
-> >    library(lubridate)
-> >    date_str <- '01/31/2021 17:00 GMT'
-> >    lubridate::mdy_hm(date_str,tz="UTC")
-> >    ```
-> >    ```output
-> >    [1] "2021-01-31 17:00:00 UTC"
-> >    ```
 > > 2. ```python
 > >    import pandas as pd
 > >    date_str = '31/01/2021 12:00 EST'
@@ -60,9 +78,35 @@ Dates can be surprisingly tricky because people record them in many different wa
 > >    print(date)
 > >    ```
 > >    ```output
-> >    Timestamp('2021-01-31 17:00:00+0000', tz='UTC')
+> >    2021-01-31 17:00:00+0000
 > >    ``` 
-> >    ```r
+> >    
+> > 3. ```python
+> >    import pandas as pd
+> >    date_str = 'January, 01 2021 5:00 PM GMT'
+> >    date = pd.to_datetime(date_str)
+> >    print(date)
+> >    ```
+> >    ```output
+> >    2021-01-31 17:00:00+00:00
+> >    ```
+> > 4. 2021-01-31T1700Z (note timezone and time in text)
+> > 5. 2021-01-31T1700Z (was in seconds since 1970)
+> > 6. 2021-01-31T1700Z (was an Excel date value)
+> > 7. 2021-01-30/2021-01-31 (date ranges are represented)
+> >
+> > {: .output}
+> {: .solution}
+> > ## Solution (R)
+> > 1.  ```r
+> >    library(lubridate)
+> >    date_str <- '01/31/2021 17:00 GMT'
+> >    lubridate::mdy_hm(date_str,tz="UTC")
+> >    ```
+> >    ```output
+> >    [1] "2021-01-31 17:00:00 UTC"
+> >    ```
+> > 2. ```r
 > >    library(lubridate)
 > >    date_str <- '31/01/2021 12:00 EST'
 > >    date <- lubridate::dmy_hm(date_str,tz="EST")
@@ -71,13 +115,7 @@ Dates can be surprisingly tricky because people record them in many different wa
 > >    ```output
 > >    [1] "2021-01-31 17:00:00 UTC"
 > >    ```
-> > 3. 2021-01-31T1700Z (note AM/PM)
-> > 4. 2021-01-31T1700Z (note timezone and time in text)
-> > 5. 2021-01-31T1700Z (was in seconds since 1970)
-> > 6. 2021-01-31T1700Z (was an Excel date value)
-> > 7. 2021-01-30/2021-01-31 (date ranges are represented)
-> >
-> > {: .output}
+> > {: output}
 > {: .solution}
 {: .challenge}
 
