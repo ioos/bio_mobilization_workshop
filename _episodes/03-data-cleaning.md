@@ -22,8 +22,8 @@ conversions a dataset will undergo to align to the Darwin Core standard. This in
 Below is a short summary of each of those conversions as well as some example conversion scripts. The exercises are 
 intended to give you a sense of the variability we've seen in datasets and how we went about converting them. While the
 examples use the [pandas package for Python](https://pandas.pydata.org/) and the [tidyverse collection of packages for R](https://www.tidyverse.org/), 
-those are not the only options for managing these conversions. Simply the ones we recommend and use more frequently in 
-our experiences. 
+those are not the only options for dealing with these conversions. Simply the ones we use more frequently in our 
+experiences. 
 
 
 # Getting your dates in order
@@ -39,120 +39,137 @@ for them.
 
 > ## Tip 
 > Focus on getting your package of choice to read the dates appropriately. While you can use [regular expressions](https://en.wikipedia.org/wiki/Regular_expression)
-> to replace and substitute strings to align with the ISO convention, it's typically more reusable and saves you time 
-> if you work in your package of choice to translate the dates.
+> to replace and substitute strings to align with the ISO convention, it will typically saves you time if you work in 
+> your package of choice to translate the dates.
 {: .callout}
-
+ 
 | Darwin Core Term | Description | Example   |
 |------------------|-------------|-----------|
-| [dwc:eventDate](https://dwc.tdwg.org/list/#dwc_eventDate) | The date-time or interval during which an Event occurred. For occurrences, this is the date-time when the event was recorded. Not suitable for a time in a geological context. | `1963-03-08T14:07-0600` (8 Mar 1963 at 2:07pm in the time zone six hours earlier than UTC). `2009-02-20T08:40Z` (20 February 2009 8:40am UTC). `2018-08-29T15:19` (3:19pm local time on 29 August 2018). `1809-02-12` (some time during 12 February 1809). `1906-06` (some time in June 1906). `1971` (some time in the year 1971). `2007-03-01T13:00:00Z/2008-05-11T15:30:00Z` (some time during the interval between 1 March 2007 1pm UTC and 11 May 2008 3:30pm UTC). `1900/1909` (some time during the interval between the beginning of the year 1900 and the end of the year 1909). `2007-11-13/15` (some time in the interval between 13 November 2007 and 15 November 2007). |
+| [dwc:eventDate](https://dwc.tdwg.org/list/#dwc_eventDate) | The date-time or interval during which an Event occurred. For occurrences, this is the date-time when the event was recorded. Not suitable for a time in a geological context. | `1963-03-08T14:07-0600` (8 Mar 1963 at 2:07pm in the time zone six hours earlier than UTC).<br/>`2009-02-20T08:40Z` (20 February 2009 8:40am UTC).<br/>`2018-08-29T15:19` (3:19pm local time on 29 August 2018).<br/>`1809-02-12` (some time during 12 February 1809).<br/>`1906-06` (some time in June 1906).<br/>`1971` (some time in the year 1971).<br/>`2007-03-01T13:00:00Z/2008-05-11T15:30:00Z` (some time during the interval between 1 March 2007 1pm UTC and 11 May 2008 3:30pm UTC).<br/>`1900/1909` (some time during the interval between the beginning of the year 1900 and the end of the year 1909).<br/>`2007-11-13/15` (some time in the interval between 13 November 2007 and 15 November 2007). |
 
-> ## Examples
+> ## Examples in Python
 > 
-> Converting the following dates to [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601).
+> When dealing with dates using pandas in Python it is best to create a Series as your time column with the appropriate 
+> datatype. Then, when writing your file(s) using [.to_csv()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html)
+> you can specify the format which your date will be written using the `date_format` parameter. 
+>
+> The examples below show how to use the [pandas.to_datetime()](https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html)
+> function to read various date formats. The process can be applied to entire columns (or Series) within a DataFrame.
+> <br/>
+> 1. `01/31/2021 17:00 GMT`
 > 
-> 1. 01/31/2021 17:00 GMT
-> 2. 31/01/2021 12:00 EST
-> 3. January, 31 2021 5:00 PM GMT
-> 5. 1612112400
-> 6. 44227.708333333333
-> 7. 2021-01-30 to 2021-01-31
+>    This date follows a typical date construct of `month`**/**`day`**/**`year` `24-hour`**:**`minute` `time-zone`. The 
+>    pandas `.to_datetime()` function will correctly interpret these dates without the `format` parameter.
 > 
-> > ## Solution (python)
-> > When dealing with dates using pandas in Python it is best to create a Series as your time column with the appropriate 
-> > datatype. Then, when writing your file using [.to_csv()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html)
-> > you can specify the format which your date will be written using the `date_format` parameter. 
-> >
-> > The examples below show how to use the [pandas.to_datetime](https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html)
-> > function to read various date formats. The process can be applied to entire columns (or Series) within a DataFrame.
-> > 1. ```python
-> >    import pandas as pd
-> >    df = pd.DataFrame({'date':['01/31/2021 17:00 GMT']})
-> >    df['eventDate'] = pd.to_datetime(df['date'], format="%m/%d/%Y %H:%M %Z")
-> >    df
-> >    ```
-> >    ```output
-> >                       date                 eventDate
-> >    0  01/31/2021 17:00 GMT 2021-01-31 17:00:00+00:00
-> >    ``` 
-> > 2. ```python
-> >    import pandas as pd
-> >    df = pd.DataFrame({'date':['31/01/2021 12:00 EST']})
-> >    df['eventDate'] = pd.to_datetime(df['date'], format="%d/%m/%Y %H:%M %Z")
-> >    df
-> >    ```
-> >    ```output
-> >                       date                 eventDate
-> >    0  31/01/2021 12:00 EST 2021-01-31 12:00:00-05:00
-> >    ``` 
-> >    
-> > 3. ```python
-> >    import pandas as pd
-> >    df = pd.DataFrame({'date':['January, 01 2021 5:00 PM GMT']})
-> >    df['eventDate'] = pd.to_datetime(df['date'],format='%B, %d %Y %I:%M %p %Z')
-> >    df
-> >    ```
-> >    ```output
-> >                               date                 eventDate
-> >    0  January, 01 2021 5:00 PM GMT 2021-01-01 17:00:00+00:00
-> >    ```
-> >    
-> > 4. ```python
-> >    import pandas as pd
-> >    df = pd.DataFrame({'date':['1612112400']})
-> >    df['eventDate'] = pd.to_datetime(df['date'], unit='s', origin='unix')
-> >    df
-> >    ```
-> >    ```output
-> >             date           eventDate
-> >    0  1612112400 2021-01-31 17:00:00
-> >    ```
-> > 5. ```python
-> >    import pandas as pd
-> >    df = pd.DataFrame({'date':['44227.708333333333']})
-> >    df['eventDate'] = pd.to_datetime(df['date'].astype(float), unit='D', origin='1899-12-30')
-> >    df
-> >    ```
-> >    ```output
-> >                     date                     eventDate
-> >    0  44227.708333333333 2021-01-31 17:00:00.000000256
-> >    ```
-> > 6. In some cases, it is easier to use a regular expression or simply paste strings together:
-> >    ```python
-> >    import pandas as pd
-> >    df = pd.DataFrame({'start_date':['2021-01-30'],
-> >                       'end_date':['2021-01-31']})
-> >    df['eventDate'] = df['start_time']+'/'+df['end_time']
-> >    df
-> >    ```
-> >    ```output
-> >       start_time    end_time              eventDate
-> >    0  2021-01-30  2021-01-31  2021-01-30/2021-01-31
-> >    ```
-> >
-> > {: .output}
-> {: .solution}
-> > ## Solution (R)
-> > 1.  ```r
-> >    library(lubridate)
-> >    date_str <- '01/31/2021 17:00 GMT'
-> >    lubridate::mdy_hm(date_str,tz="UTC")
-> >    ```
-> >    ```output
-> >    [1] "2021-01-31 17:00:00 UTC"
-> >    ```
-> > 2. ```r
-> >    library(lubridate)
-> >    date_str <- '31/01/2021 12:00 EST'
-> >    date <- lubridate::dmy_hm(date_str,tz="EST")
-> >    lubridate::with_tz(date,tz="UTC")
-> >    ```
-> >    ```output
-> >    [1] "2021-01-31 17:00:00 UTC"
-> >    ```
-> > {: output}
-> {: .solution}
-{: .challenge}
+>    ```python
+>    import pandas as pd
+>    df = pd.DataFrame({'date':['01/31/2021 17:00 GMT']})
+>    df['eventDate'] = pd.to_datetime(df['date'], format="%m/%d/%Y %H:%M %Z")
+>    df
+>    ```
+>    ```output
+>                       date                 eventDate
+>    0  01/31/2021 17:00 GMT 2021-01-31 17:00:00+00:00
+>    ``` 
+>    
+> 2. `31/01/2021 12:00 EST`
+> 
+>    This date is similar to the first date but switches the `month` and `day` and identifies a different `time-zone`.
+>    The construct looks like `day`**/**`month`**/**`year` `24-hour`**:**`minute` `time-zone`
+>    ```python
+>    import pandas as pd
+>    df = pd.DataFrame({'date':['31/01/2021 12:00 EST']})
+>    df['eventDate'] = pd.to_datetime(df['date'], format="%d/%m/%Y %H:%M %Z")
+>    df
+>    ```
+>    ```output
+>                       date                 eventDate
+>    0  31/01/2021 12:00 EST 2021-01-31 12:00:00-05:00
+>    ``` 
+>    
+> 3. `January, 01 2021 5:00 PM GMT`
+>    
+>    ```python
+>    import pandas as pd
+>    df = pd.DataFrame({'date':['January, 01 2021 5:00 PM GMT']})
+>    df['eventDate'] = pd.to_datetime(df['date'],format='%B, %d %Y %I:%M %p %Z')
+>    df
+>    ```
+>    ```output
+>                               date                 eventDate
+>    0  January, 01 2021 5:00 PM GMT 2021-01-01 17:00:00+00:00
+>    ```
+>    
+> 4. `1612112400` in seconds since 1970
+>    
+>    This uses the units of `seconds since 1970` which is common when working with data in [netCDF](https://www.unidata.ucar.edu/software/netcdf/).
+>    ```python
+>    import pandas as pd
+>    df = pd.DataFrame({'date':['1612112400']})
+>    df['eventDate'] = pd.to_datetime(df['date'], unit='s', origin='unix')
+>    df
+>    ```
+>    ```output
+>             date           eventDate
+>    0  1612112400 2021-01-31 17:00:00
+>    ```
+> 5. `44227.708333333333`
+>    
+>    This is the numerical value for dates in Excel because Excel stores dates as sequential serial numbers so that they 
+>    can be used in calculations. In some cases, when you export an Excel spreadsheet to CSV, the 
+>    dates are preserved as a floating point number.
+>    ```python
+>    import pandas as pd
+>    df = pd.DataFrame({'date':['44227.708333333333']})
+>    df['eventDate'] = pd.to_datetime(df['date'].astype(float), unit='D', origin='1899-12-30')
+>    df
+>    ```
+>    ```output
+>                     date                     eventDate
+>    0  44227.708333333333 2021-01-31 17:00:00.000000256
+>    ```
+> 6. Observations with a start date of `2021-01-30` and an end date of `2021-01-31`.
+> 
+>    Here we store the date as a duration following the ISO convention. In some cases, it is easier to use a regular 
+>    expression or simply paste strings together:
+>    ```python
+>    import pandas as pd
+>    df = pd.DataFrame({'start_date':['2021-01-30'],
+>                       'end_date':['2021-01-31']})
+>    df['eventDate'] = df['start_time']+'/'+df['end_time']
+>    df
+>    ```
+>    ```output
+>       start_time    end_time              eventDate
+>    0  2021-01-30  2021-01-31  2021-01-30/2021-01-31
+>    ```
+>
+{: .solution}
+
+> ## Examples in R
+> 1.  ```r
+>    library(lubridate)
+>    date_str <- '01/31/2021 17:00 GMT'
+>    lubridate::mdy_hm(date_str,tz="UTC")
+>    ```
+>    ```output
+>    [1] "2021-01-31 17:00:00 UTC"
+>    ```
+> 2. ```r
+>    library(lubridate)
+>    date_str <- '31/01/2021 12:00 EST'
+>    date <- lubridate::dmy_hm(date_str,tz="EST")
+>    lubridate::with_tz(date,tz="UTC")
+>    ```
+>    ```output
+>    [1] "2021-01-31 17:00:00 UTC"
+>    ```
+{: .solution}
+
+> ## Tip 
+> When all else fails, treat the dates as strings and use substitutions/regular expressions to manipulate the strings 
+> into the correct format. 
+{: .callout}
 
 # Matching your scientific names to WoRMS
 OBIS uses the [World Register of Marine Species (WoRMS)](https://www.marinespecies.org/) as the taxonomic backbone for 
@@ -169,7 +186,8 @@ using WoRMS Taxa Match Tool for the MBON Pole to Pole found here: https://marine
 (NOTE from Abby: the instructions are very specific to the mbon pole to pole data. I wonder if we rewrite this guide 
 here in this page but more generically?)
 
-The other way to get the taxonomic information you need is to use [worrms](https://cran.r-project.org/web/packages/worrms/worrms.pdf) 
+The other way to get the taxonomic information you need is to use [worrms](https://cran.r-project.org/web/packages/worrms/worrms.pdf)
+(yes there are two `r`'s in the package name)
 or [pyworms](https://github.com/iobis/pyworms). 
 
 (NOTE from Abby- I think we should remove this example challenge. I'm not sure it helps people with what to do. Instead 
@@ -181,21 +199,25 @@ some example lookups using worrms and pyworms seems like it would be better to h
 | [dwc:kingdom](https://dwc.tdwg.org/list/#dwc_kingdom) | The full scientific name of the kingdom in which the taxon is classified.         |   `Animalia`, `Archaea`, `Bacteria`, `Chromista`, `Fungi`, `Plantae`, `Protozoa`, `Viruses` |
 | [dwc:taxonRank](https://dwc.tdwg.org/list/#dwc_taxonRank) | The taxonomic rank of the most specific name in the scientificName.               | `subspecies`, `varietas`, `forma`, `species`, `genus` |
 
-> ## Example
+> ## Using the worrms R package
 > 
-> Challenge: Match the following names to a taxonomic authority.
-> 
-> 1. White shark
-> 
-> > ## Solution
-> > 1. [_Carcharodon carcharias_](https://www.marinespecies.org/aphia.php?p=taxdetails&id=105838)
-> >    - AphiaID - `urn:lsid:marinespecies.org:taxname:105838`
-> >
-> > {: .output}
-> {: .solution}
+> 1. [_Carcharodon carcharias_](https://www.marinespecies.org/aphia.php?p=taxdetails&id=105838) (White shark)
+>    ```r
+>    library(worrms)
+>    worms_record <- worrms::wm_records_taxamatch("Carcharodon carcharias", fuzzy=TRUE)
+>    worms_record[[1]]$lsid;  worms_record[[1]]$rank; worms_record[[1]]$kingdom
+>    ```
+>    ```output
+>    [1] "urn:lsid:marinespecies.org:taxname:105838"
+>    [1] "Species"
+>    [1] "Animalia"
+>    ```
+>
 {: .challenge}
 
-
+> ## Using the pyworms python package
+> 
+{: .challenge}
 
 # Getting lat/lon to decimal degrees
 
