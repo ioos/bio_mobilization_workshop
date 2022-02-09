@@ -179,21 +179,52 @@ Core terms that we need from WoRMS are `scientificNameID` also known as the WoRM
 `"urn:lsid:marinespecies.org:taxname:105838"` and `kindgom` but you can grab the other parts of the taxonomic hierarchy if 
 you want as well as `taxonRank`. 
 
-There are two ways to grab the taxonomic information necessary. First you can use the [WoRMS Taxon Match Tool](https://www.marinespecies.org/aphia.php?p=match). 
+There are two ways to grab the taxonomic information necessary. First, you can use the [WoRMS Taxon Match Tool](https://www.marinespecies.org/aphia.php?p=match). 
 The tool accepts lists of scientific names (each unique name as a separate row in a .txt, .csv, or .xlsx file) up to 
-1500 names and provides an interface for selecting the match you want for ambiguous matches. A step by step guide on 
-using WoRMS Taxa Match Tool for the MBON Pole to Pole found [here](https://marinebon.org/p2p/protocols/WoRMS_quality_check.pdf). 
+1500 names and provides an interface for selecting the match you want for ambiguous matches. A brief walk-through using 
+the service is included [below](#using-the-worms-taxon-match-tool). A more detailed step-by-step guide on 
+using WoRMS Taxa Match Tool for the MBON Pole to Pole can be found [here](https://marinebon.org/p2p/protocols/WoRMS_quality_check.pdf). 
+
 
 
 The other way to get the taxonomic information you need is to use [worrms](https://cran.r-project.org/web/packages/worrms/worrms.pdf)
-(yes there are two `r`'s in the package name)
-or [pyworms](https://github.com/iobis/pyworms). 
+(yes there are two **r**'s in the package name) or [pyworms](https://github.com/iobis/pyworms). 
 
 | Darwin Core Term         | Description                                                                       | Example                                               |
 |--------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------|
 | [dwc:scientificNameID](https://dwc.tdwg.org/list/#dwc_scientificNameID) | An identifier for the nomenclatural (not taxonomic) details of a scientific name. | `urn:lsid:ipni.org:names:37829-1:1.3` |                
 | [dwc:kingdom](https://dwc.tdwg.org/list/#dwc_kingdom) | The full scientific name of the kingdom in which the taxon is classified.         |   `Animalia`, `Archaea`, `Bacteria`, `Chromista`, `Fungi`, `Plantae`, `Protozoa`, `Viruses` |
 | [dwc:taxonRank](https://dwc.tdwg.org/list/#dwc_taxonRank) | The taxonomic rank of the most specific name in the scientificName.               | `subspecies`, `varietas`, `forma`, `species`, `genus` |
+
+> ## Using the WoRMS Taxon Match Tool
+> 1. Create a CSV (comma separated value) file with the scientific name of the species of interest. Here we are showing 
+>    the contents of the file `animal.csv`.
+>    ```bash
+>    > head animal.csv
+>    Carcharodon carcharias,
+>    ```
+> 2. Upload that file to the [WoRMS Taxon match service](https://www.marinespecies.org/aphia.php?p=match)
+>    * **make sure the option LSID is checked**  
+>  ![screenshot](/fig/WoRMS_upload.png){: .image-with-shadow }
+> 
+> 3. Identify which columns to match to which WoRMS term.
+>  ![screenshot](/fig/WoRMS_match.png){: .image-with-shadow }
+> 
+> 4. Click `Match` 
+>
+> 5. Hopefully, a WoRMS exact match will return
+>
+>    1. In some cases you will have mismatches. Resolve the mismatched rows by using the pull down menu to select the appropriate match.
+>    2. Non-matched taxa will appear in red. You will have to go back to your source file and determine what the appropriate text should be.      
+> ![screenshot](/fig/WoRMS_response.png){: .image-with-shadow }
+>    
+> 6. Download the response as and XLS, XLSX, or text file and use the information when building the Darwin Core file(s).
+>   ```bash
+>   > head animal_matched.txt
+>   ScientificName,,AphiaID,Match type,LSID,ScientificName,Taxon status,AphiaID_accepted,ScientificName_accepted
+>   Carcharodon carcharias,,105838,exact,urn:lsid:marinespecies.org:taxname:105838,Carcharodon carcharias,accepted,105838,Carcharodon carcharias
+>   ```
+{: .solution}
 
 > ## Using the worrms R package
 > 
@@ -209,7 +240,7 @@ or [pyworms](https://github.com/iobis/pyworms).
 >    [1] "Animalia"
 >    ```
 >
-{: .challenge}
+{: .solution}
 
 > ## Using the pyworms python package
 > 1. [_Carcharodon carcharias_](https://www.marinespecies.org/aphia.php?p=taxdetails&id=105838) (White shark)
@@ -225,13 +256,7 @@ or [pyworms](https://github.com/iobis/pyworms).
 >    Species
 >    Animalia
 >    ```
-{: .challenge}
-
-> ## Using the WoRMS Taxon Match Tool
->  (NOTE from Abby: the instructions are very specific to the mbon pole to pole data. I wonder if we rewrite this guide 
->  here in this page but more generically?)
-> 
-{: .challenge}
+{: .solution}
 
 # Getting lat/lon to decimal degrees
 
