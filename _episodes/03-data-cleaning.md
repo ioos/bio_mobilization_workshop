@@ -69,7 +69,7 @@ for them.
 >    ```
 >    ```output
 >                       date                 eventDate
->    0  01/31/2021 17:00 GMT 2021-01-31 17:00:00+00:00
+>       01/31/2021 17:00 GMT 2021-01-31 17:00:00+00:00
 >    ``` 
 >    
 > 2. `31/01/2021 12:00 EST`
@@ -84,7 +84,7 @@ for them.
 >    ```
 >    ```output
 >                       date                 eventDate
->    0  31/01/2021 12:00 EST 2021-01-31 12:00:00-05:00
+>       31/01/2021 12:00 EST 2021-01-31 12:00:00-05:00
 >    ``` 
 >    
 > 3. `January, 01 2021 5:00 PM GMT`
@@ -97,7 +97,7 @@ for them.
 >    ```
 >    ```output
 >                               date                 eventDate
->    0  January, 01 2021 5:00 PM GMT 2021-01-01 17:00:00+00:00
+>       January, 01 2021 5:00 PM GMT 2021-01-01 17:00:00+00:00
 >    ```
 >    
 > 4. `1612112400` in seconds since 1970
@@ -111,7 +111,7 @@ for them.
 >    ```
 >    ```output
 >             date           eventDate
->    0  1612112400 2021-01-31 17:00:00
+>       1612112400 2021-01-31 17:00:00
 >    ```
 > 5. `44227.708333333333`
 >    
@@ -126,7 +126,7 @@ for them.
 >    ```
 >    ```output
 >                     date                     eventDate
->    0  44227.708333333333 2021-01-31 17:00:00.000000256
+>       44227.708333333333 2021-01-31 17:00:00.000000256
 >    ```
 > 6. Observations with a start date of `2021-01-30` and an end date of `2021-01-31`.
 > 
@@ -141,7 +141,7 @@ for them.
 >    ```
 >    ```output
 >       start_time    end_time              eventDate
->    0  2021-01-30  2021-01-31  2021-01-30/2021-01-31
+>       2021-01-30  2021-01-31  2021-01-30/2021-01-31
 >    ```
 >
 {: .solution}
@@ -266,6 +266,13 @@ in the geodetic datum `WGS84`. We highly recommend checking the coordinate refer
 confirm they are using the same datum. If your coordinates are not using `WGS84`, they will need to be converted in 
 order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLongitude` are required terms.
 
+> ## Tip 
+> If at all possible, it's best to extract out the components of the information you have in order to compile the 
+> appropriate field. For example, if you have the coordinates as one lone string `17° 51' 57.96" S 149° 39' 13.32" W`, 
+> try to split it out into its component pieces: `17`, `51`, `57.96`, `S`, `149`, `39`, `13.32`, and `W` just be sure to 
+> track which values are latitude and which are longitude.
+{: .callout}
+
 | Darwin Core Term | Description | Example     |
 |------------------|-------------|-------------|
 | [dwc:decimalLatitude](https://dwc.tdwg.org/list/#dwc_decimalLatitude) | The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. | `-41.0983423` |
@@ -274,6 +281,8 @@ order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLon
 > ## Examples in Python
 > 
 > 1. `17° 51' 57.96" S` `149° 39' 13.32" W`
+>    * This example assumes you have already split the two strings into discrete components (as shown in the table). An 
+>      example converting the full strings `17° 51' 57.96" S` `149° 39' 13.32" W` to decimal degrees can be found [here](https://github.com/MathewBiddle/misc/blob/07d643da831255069fd1f6e936ca0902e21c0d0c/data302_DON_Oxidation_working_hollibaugh_20190514_process.py#L24-L62).
 > 
 >    lat_degrees | lat_minutes | lat_seconds | lat_hemisphere | lon_degrees | lon_minutes | lon_seconds | lon_hemisphere
 >    ------------|----|-------------|----------------|-------------|-------------|-------------|---------------
@@ -292,16 +301,22 @@ order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLon
 >    
 >    df['decimalLatitude'] = df['lat_degrees'] + ( (df['lat_minutes'] + (df['lat_seconds']/60) )/60)
 >    df['decimalLongitude'] = df['lon_degrees'] + ( (df['lon_minutes'] + (df['lon_seconds']/60) )/60)
->    
+> 
+>    # Convert hemisphere S and W to negative values as units should be `degrees North` and `degrees East`
+>    df.loc[df['lat_hemisphere']=='S','decimalLatitude'] = df.loc[df['lat_hemisphere']=='S','decimalLatitude']*-1
+>    df.loc[df['lon_hemisphere']=='W','decimalLongitude'] = df.loc[df['lon_hemisphere']=='W','decimalLongitude']*-1
+>       
 >    df[['decimalLatitude','decimalLongitude']]
 >    ```
 >    ```output
 >       decimalLatitude  decimalLongitude
->    0          17.8661          149.6537
+>               17.8661         -149.6537
 >    ```
->    
+>
 > 2. `33° 22.967' N` `117° 35.321' W`
-> 
+>    * Similar to above, this example assumes you have already split the two strings into discrete components (as shown 
+>      in the table).
+>  
 >    lat_degrees | lat_dec_minutes | lat_hemisphere | lon_degrees | lon_dec_minutes | lon_hemisphere
 >    ------------|-----------------|----------------|-------------|-----------------|---------------
 >    33 | 22.967 | N | 117 | 35.321 | W
@@ -318,11 +333,15 @@ order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLon
 >    df['decimalLatitude'] = df['lat_degrees'] + (df['lat_dec_minutes']/60)
 >    df['decimalLongitude'] = df['lon_degrees'] + (df['lon_dec_minutes']/60)
 >    
+>    # Convert hemisphere S and W to negative values as units should be `degrees North` and `degrees East`
+>    df.loc[df['lat_hemisphere']=='S','decimalLatitude'] = df.loc[df['lat_hemisphere']=='S','decimalLatitude']*-1
+>    df.loc[df['lon_hemisphere']=='W','decimalLongitude'] = df.loc[df['lon_hemisphere']=='W','decimalLongitude']*-1
+>    
 >    df[['decimalLatitude','decimalLongitude']]
 >    ```
 >    ```output
 >       decimalLatitude  decimalLongitude
->    0        17.382783        149.588683
+>    0        17.382783       -149.588683
 >    ```
 > 
 {: .solution}
