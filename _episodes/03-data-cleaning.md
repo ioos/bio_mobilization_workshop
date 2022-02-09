@@ -204,8 +204,8 @@ some example lookups using worrms and pyworms seems like it would be better to h
 > 1. [_Carcharodon carcharias_](https://www.marinespecies.org/aphia.php?p=taxdetails&id=105838) (White shark)
 >    ```r
 >    library(worrms)
->    worms_record <- worrms::wm_records_taxamatch("Carcharodon carcharias", fuzzy=TRUE)
->    worms_record[[1]]$lsid;  worms_record[[1]]$rank; worms_record[[1]]$kingdom
+>    worms_record <- worrms::wm_records_taxamatch("Carcharodon carcharias", fuzzy = TRUE, marine_only = TRUE)[[1]]
+>    worms_record$lsid;  worms_record$rank; worms_record$kingdom
 >    ```
 >    ```output
 >    [1] "urn:lsid:marinespecies.org:taxname:105838"
@@ -216,7 +216,19 @@ some example lookups using worrms and pyworms seems like it would be better to h
 {: .challenge}
 
 > ## Using the pyworms python package
-> 
+> 1. [_Carcharodon carcharias_](https://www.marinespecies.org/aphia.php?p=taxdetails&id=105838) (White shark)
+>    ```python
+>    import pyworms
+>    worms = pyworms.aphiaRecordsByMatchNames('Carcharodon carcharias', marine_only=True)[0][0]
+>    print(worms['lsid'])
+>    print(worms['rank'])
+>    print(worms['kingdom'])
+>    ```
+>    ```output
+>    urn:lsid:marinespecies.org:taxname:105838
+>    Species
+>    Animalia
+>    ```
 {: .challenge}
 
 # Getting lat/lon to decimal degrees
