@@ -182,16 +182,12 @@ you want as well as `taxonRank`.
 There are two ways to grab the taxonomic information necessary. First you can use the [WoRMS Taxon Match Tool](https://www.marinespecies.org/aphia.php?p=match). 
 The tool accepts lists of scientific names (each unique name as a separate row in a .txt, .csv, or .xlsx file) up to 
 1500 names and provides an interface for selecting the match you want for ambiguous matches. A step by step guide on 
-using WoRMS Taxa Match Tool for the MBON Pole to Pole found here: https://marinebon.org/p2p/protocols/WoRMS_quality_check.pdf 
-(NOTE from Abby: the instructions are very specific to the mbon pole to pole data. I wonder if we rewrite this guide 
-here in this page but more generically?)
+using WoRMS Taxa Match Tool for the MBON Pole to Pole found [here](https://marinebon.org/p2p/protocols/WoRMS_quality_check.pdf). 
+
 
 The other way to get the taxonomic information you need is to use [worrms](https://cran.r-project.org/web/packages/worrms/worrms.pdf)
 (yes there are two `r`'s in the package name)
 or [pyworms](https://github.com/iobis/pyworms). 
-
-(NOTE from Abby- I think we should remove this example challenge. I'm not sure it helps people with what to do. Instead 
-some example lookups using worrms and pyworms seems like it would be better to have.)
 
 | Darwin Core Term         | Description                                                                       | Example                                               |
 |--------------------------|-----------------------------------------------------------------------------------|-------------------------------------------------------|
@@ -231,6 +227,12 @@ some example lookups using worrms and pyworms seems like it would be better to h
 >    ```
 {: .challenge}
 
+> ## Using the WoRMS Taxon Match Tool
+>  (NOTE from Abby: the instructions are very specific to the mbon pole to pole data. I wonder if we rewrite this guide 
+>  here in this page but more generically?)
+> 
+{: .challenge}
+
 # Getting lat/lon to decimal degrees
 
 Note, that the requirement for `decimalLatitude` and `decmailLongitude` is they must be in decimal degrees in WGS84. 
@@ -244,23 +246,88 @@ order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLon
 | [dwc:decimalLatitude](https://dwc.tdwg.org/list/#dwc_decimalLatitude) | The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. | `-41.0983423` |
 | [dwc:decimalLongitude](https://dwc.tdwg.org/list/#dwc_decimalLongitude) | The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive. | `-121.1761111` |
 
-> ## Example
+> ## Examples in Python
 > 
-> Challenge: Convert the following latitude and longitude values to decimal degrees north and east, respectively.
+> 1. `17° 51' 57.96" S` `149° 39' 13.32" W`
 > 
-> 1. `17° 51' 57.96" S` `149° 39' 13.32" W` 
+>    lat_degrees | lat_minutes | lat_seconds | lat_hemisphere | lon_degrees | lon_minutes | lon_seconds | lon_hemisphere
+>    ------------|----|-------------|----------------|-------------|-------------|-------------|---------------
+>    17 | 51 | 57.96 | S | 149 | 39 | 13.32 | W
+> 
+>    ```python
+>    df = pd.DataFrame({'lat_degrees':[17],
+>                       'lat_minutes':[51],
+>                       'lat_seconds':[57.96],
+>                       'lat_hemisphere':['S'],
+>                       'lon_degrees': [149], 
+>                       'lon_minutes': [39], 
+>                       'lon_seconds':[13.32], 
+>                       'lon_hemisphere': ['W'],
+>                      })
+>    
+>    df['decimalLatitude'] = df['lat_degrees'] + ( (df['lat_minutes'] + (df['lat_seconds']/60) )/60)
+>    df['decimalLongitude'] = df['lon_degrees'] + ( (df['lon_minutes'] + (df['lon_seconds']/60) )/60)
+>    
+>    df[['decimalLatitude','decimalLongitude']]
+>    ```
+>    ```output
+>       decimalLatitude  decimalLongitude
+>    0          17.8661          149.6537
+>    ```
+>    
 > 2. `33° 22.967' N` `117° 35.321' W`
 > 
-> > ## Solution
-> > 1. [Teahupoo, Tahiti](https://www.google.com/maps/search/?api=1&query=-17.8658056%2C-149.2560498)
-> >    1. latitude = -17.8661 degrees north
-> >    2. longitude = -149.6537 degrees east
-> > 2. [Trestles, CA](https://www.google.com/maps/search/?api=1&query=33.3828%2C-117.5886)
-> >    1. latitude = 33.3828 degrees north
-> >    2. longitude = -117.5886 degrees east
->>
-> > {: .output}
-> {: .solution}
-{: .challenge}
+>    lat_degrees | lat_dec_minutes | lat_hemisphere | lon_degrees | lon_dec_minutes | lon_hemisphere
+>    ------------|-----------------|----------------|-------------|-----------------|---------------
+>    33 | 22.967 | N | 117 | 35.321 | W
+> 
+>    ```python
+>    df = pd.DataFrame({'lat_degrees':[17],
+>                       'lat_dec_minutes':[22.967],
+>                       'lat_hemisphere':['N'],
+>                       'lon_degrees': [149], 
+>                       'lon_dec_minutes': [35.321], 
+>                       'lon_hemisphere': ['W'],
+>                      })
+>    
+>    df['decimalLatitude'] = df['lat_degrees'] + (df['lat_dec_minutes']/60)
+>    df['decimalLongitude'] = df['lon_degrees'] + (df['lon_dec_minutes']/60)
+>    
+>    df[['decimalLatitude','decimalLongitude']]
+>    ```
+>    ```output
+>       decimalLatitude  decimalLongitude
+>    0        17.382783        149.588683
+>    ```
+> 
+{: .solution}
+
+> ## Examples in R
+> 1. `17° 51' 57.96" S` `149° 39' 13.32" W`
+>
+>    lat_degrees | lat_minutes | lat_seconds | lat_hemisphere | lon_degrees | lon_minutes | lon_seconds | lon_hemisphere
+>    ------------|----|-------------|----------------|-------------|-------------|-------------|---------------
+>    17 | 51 | 57.96 | S | 149 | 39 | 13.32 | W
+> 
+>    ```r
+>
+>    ```
+>    ```output
+>    ```
+>    
+>    
+> 2. `33° 22.967' N` `117° 35.321' W` 
+>
+>    lat_degrees | lat_dec_minutes | lat_hemisphere | lon_degrees | lon_dec_minutes | lon_hemisphere
+>    ------------|-----------------|----------------|-------------|-----------------|---------------
+>    33 | 22.967 | N | 117 | 35.321 | W
+>
+>    ```r
+>      
+>    ```
+>    ```output
+>    ```
+> 
+{: .solution}
 
 {% include links.md %}
