@@ -310,7 +310,7 @@ order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLon
 >    ```
 >    ```output
 >       decimalLatitude  decimalLongitude
->               17.8661         -149.6537
+>              -17.8661         -149.6537
 >    ```
 >
 > 2. `33° 22.967' N` `117° 35.321' W`
@@ -322,10 +322,10 @@ order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLon
 >    33 | 22.967 | N | 117 | 35.321 | W
 > 
 >    ```python
->    df = pd.DataFrame({'lat_degrees':[17],
+>    df = pd.DataFrame({'lat_degrees':[33],
 >                       'lat_dec_minutes':[22.967],
 >                       'lat_hemisphere':['N'],
->                       'lon_degrees': [149], 
+>                       'lon_degrees': [117], 
 >                       'lon_dec_minutes': [35.321], 
 >                       'lon_hemisphere': ['W'],
 >                      })
@@ -340,8 +340,8 @@ order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLon
 >    df[['decimalLatitude','decimalLongitude']]
 >    ```
 >    ```output
->       decimalLatitude  decimalLongitude
->    0        17.382783       -149.588683
+>    decimalLatitude  decimalLongitude
+>    0        33.382783       -117.588683
 >    ```
 > 
 {: .solution}
@@ -366,17 +366,15 @@ order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLon
 >    
 >    tbl$decimalLatitude <- tbl$lat_degrees + ( (tbl$lat_minutes + (tbl$lat_seconds/60)) / 60 )
 >    tbl$decimalLongitude <- tbl$lon_degrees + ( (tbl$lon_minutes + (tbl$lon_seconds/60)) / 60 )
+>    
+>    tbl$decimalLatitude = as.numeric(as.character(tbl$decimalLatitude))*(-1)
+>    tbl$decimalLongitude = as.numeric(as.character(tbl$decimalLongitude))*(-1)
 >    ```
 >    ```output
->    > tbl
->    # A tibble: 1 x 10
->      lat_degrees lat_minutes lat_seconds lat_hemisphere lon_degrees lon_minutes lon_seconds lon_hemisphere decimalLatitude decimalLongitude
->            <dbl>       <dbl>       <dbl> <chr>                <dbl>       <dbl>       <dbl> <chr>                    <dbl>            <dbl>
->    1          17          51        58.0 S                      149          39        13.3 W                         17.9             150.
 >    > tbl$decimalLatitude
->    [1] 17.8661
+>    [1] -17.8661
 >    > tbl$decimalLongitude
->    [1] 149.6537
+>    [1] -149.6537
 >   ```
 >    
 >    
@@ -398,19 +396,34 @@ order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLon
 >    tbl$decimalLatitude <- tbl$lat_degrees + ( tbl$lat_dec_minutes/60 )
 >    tbl$decimalLongitude <- tbl$lon_degrees + ( tbl$lon_dec_minutes/60 )
 >    
+>    tbl$decimalLongitude = as.numeric(as.character(tbl$decimalLongitude))*(-1)
 >    ```
 >    ```output
->    > tbl
->    # A tibble: 1 x 8
->      lat_degrees lat_dec_minutes lat_hemisphere lon_degrees lon_dec_minutes lon_hemisphere decimalLatitude decimalLongitude
->            <dbl>           <dbl> <chr>                <dbl>           <dbl> <chr>                    <dbl>            <dbl>
->    1          33            23.0 N                      117            35.3 W                         33.4             118.
 >    > tbl$decimalLatitude
 >    [1] 33.38278
 >    > tbl$decimalLongitude
->    [1] 117.5887
+>    [1] -117.5887
 >    ```
 > 
+> 3. `33° 22.967' N` `117° 35.321' W`
+>    * Using the [measurements package](https://cran.r-project.org/web/packages/measurements/measurements.pdf) the `conv_unit()` can work with space separated strings for coordinates.
+>
+>   ```r
+>    tbl <- tibble(lat = "33 22.967",
+>                  lat_hemisphere = "N",
+>                  lon = "117 35.321", 
+>                  lon_hemisphere = "W")
+>   
+>   tbl$decimalLongitude = measurements::conv_unit(tbl$lon, from = 'deg_dec_min', to = 'dec_deg')
+>   tbl$decimalLongitude = as.numeric(as.character(tbl$decimalLongitude))*(-1)
+>   tbl$decimalLatitude = measurements::conv_unit(tbl$lat, from = 'deg_dec_min', to = 'dec_deg')
+>   ``` 
+>   ```output
+>    > tbl$decimalLatitude
+>    [1] 33.38278
+>    > tbl$decimalLongitude
+>    [1] -117.5887
+>   ```
 {: .solution}
 
 {% include links.md %}
