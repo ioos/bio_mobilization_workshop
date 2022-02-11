@@ -3,13 +3,18 @@ title: "Data Cleaning"
 teaching: 0
 exercises: 120
 questions:
-- "How do I clean my data?"
+- "How to convert dates to ISO?"
+- "How to match scientific names to WoRMS?"
+- "How to convert latitudes and longitudes to decimal degrees?"
 objectives:
-- "Getting your dates in order."
+- "Aligning dates to the ISO 8601 standard."
 - "Matching scientific names to WoRMS."
-- "Getting latitude and longitude to decimal degrees."
+- "Converting latitude and longitude variations to decimal degrees North and East."
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "When doing conversions it's best to break out your data into it's component pieces."
+- "Dates are messy to deal with. Some packages have easy solutions, otherwise use regular expressions to align date strings to ISO 8601."
+- "WoRMS LSIDs are a requirement for OBIS."
+- "Latitude and longitudes are like dates, they can be messy to deal with. Take a similar approach."
 ---
 
 Now that you know what the mapping is between your raw data and the Darwin Core standard, it's time to start cleaning up 
@@ -168,7 +173,7 @@ for them.
 
 > ## Tip 
 > When all else fails, treat the dates as strings and use substitutions/regular expressions to manipulate the strings 
-> into the correct format. 
+> into ISO 8601. 
 {: .callout}
 
 # Matching your scientific names to WoRMS
@@ -408,6 +413,10 @@ order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLon
 > 3. `33° 22.967' N` `117° 35.321' W`
 >    * Using the [measurements package](https://cran.r-project.org/web/packages/measurements/measurements.pdf) the `conv_unit()` can work with space separated strings for coordinates.
 >
+>    lat | lat_hemisphere | lon | lon_hemisphere
+>    ----|----------------|-----|---------------
+>    33 22.967 | N | 117 35.321 | W
+>    
 >   ```r
 >    tbl <- tibble(lat = "33 22.967",
 >                  lat_hemisphere = "N",
@@ -416,6 +425,7 @@ order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLon
 >   
 >   tbl$decimalLongitude = measurements::conv_unit(tbl$lon, from = 'deg_dec_min', to = 'dec_deg')
 >   tbl$decimalLongitude = as.numeric(as.character(tbl$decimalLongitude))*(-1)
+>   
 >   tbl$decimalLatitude = measurements::conv_unit(tbl$lat, from = 'deg_dec_min', to = 'dec_deg')
 >   ``` 
 >   ```output
