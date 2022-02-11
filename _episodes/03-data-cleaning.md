@@ -152,7 +152,9 @@ for them.
 {: .solution}
 
 > ## Examples in R
-> 1.  ```r
+> 1.  `01/31/2021 17:00 GMT`
+> 
+>    ```r
 >    library(lubridate)
 >    date_str <- '01/31/2021 17:00 GMT'
 >    lubridate::mdy_hm(date_str,tz="UTC")
@@ -160,7 +162,9 @@ for them.
 >    ```output
 >    [1] "2021-01-31 17:00:00 UTC"
 >    ```
-> 2. ```r
+> 2. `31/01/2021 12:00 EST`
+> 
+>    ```r
 >    library(lubridate)
 >    date_str <- '31/01/2021 12:00 EST'
 >    date <- lubridate::dmy_hm(date_str,tz="EST")
@@ -169,6 +173,56 @@ for them.
 >    ```output
 >    [1] "2021-01-31 17:00:00 UTC"
 >    ```
+>
+> 3. `January, 01 2021 5:00 PM GMT`
+>
+>    ```r
+>    library(lubridate)
+>    date_str <- 'January, 01 2021 5:00 PM GMT'
+>    date <- lubridate::mdy_hm(date_str, format = '%B, %d %Y %H:%M', tz="GMT")
+>    lubridate::with_tz(date,tz="UTC")
+>    ```
+>    ```output
+>    [1] "2021-01-01 17:00:00 UTC"
+>    ```
+>    
+> 4. `1612112400` in seconds since 1970
+>
+>    This uses the units of `seconds since 1970` which is common when working with data in [netCDF](https://www.unidata.ucar.edu/software/netcdf/).
+>
+>    ```r
+>    library(lubridate)
+>    date_str <- '1612112400'
+>    date_str <- as.numeric(date_str)
+>    date <- lubridate::as_datetime(date_str, origin = lubridate::origin, tz = "UTC")
+>    print(date)
+>    ```
+>    ```output
+>    [1] "2021-01-31 17:00:00 UTC"
+> 5. `44227.708333333333`
+>    
+>    This is the numerical value for dates in Excel because Excel stores dates as sequential serial numbers so that they 
+>    can be used in calculations. In some cases, when you export an Excel spreadsheet to CSV, the 
+>    dates are preserved as a floating point number.
+>
+>    ```r
+>    library(openxlsx)
+>    date_str <- 44227.708333333333
+>    date <- as.Date(date_str, origin = "1899-12-30") # If you're only interested in the YYYY-MM-DD
+>    fulldate <- openxlsx::convertToDateTime(date_str, tz = "UTC")
+>    print(date)
+>    print(fulldate)
+>    ```
+>    ```output
+>    [1] "2021-01-31"
+>    [1] "2021-01-31 17:00:00 PST"
+>    ```
+> 6. Observations with a start date of `2021-01-30` and an end date of `2021-01-31`.
+> 
+>    Here we store the date as a duration following the ISO convention. In some cases, it is easier to use a regular 
+>    expression or simply paste strings together:
+>    ```r
+>    
 {: .solution}
 
 > ## Tip 
