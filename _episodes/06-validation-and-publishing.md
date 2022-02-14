@@ -106,6 +106,6 @@ The validation tool provides an indication of whether the dataset can be indexed
 > {: .solution}
 {: .challenge}
 
-TODO: add exercise: do this w/ your own DwC archive
+If you are at this stage with your own DwC-standardized dataset, run the GBIF validation tool to determine if there are any issues with your dataset!
 
 {% include links.md %}
