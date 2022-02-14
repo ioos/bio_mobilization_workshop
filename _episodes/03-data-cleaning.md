@@ -42,6 +42,8 @@ slash (e.g. `2022-01-02/2022-01-12`). Examine the dates in your data to determin
 amendments need to be made to ensure they are following ISO 8601. Below are some examples and solutions in Python and R 
 for them.
 
+ISO 8601 dates can represent moments in time at different resolutions, as well as time intervals, which use / as a separator. Date and time are separated by T. Times can have a time zone indicator at the end, if this is not the case then the time is assumed to be local time. When a time is UTC, a Z is added. 
+
 > ## Tip 
 > Focus on getting your package of choice to read the dates appropriately. While you can use [regular expressions](https://en.wikipedia.org/wiki/Regular_expression)
 > to replace and substitute strings to align with the ISO convention, it will typically saves you time if you work in 
@@ -158,9 +160,11 @@ for them.
 >    library(lubridate)
 >    date_str <- '01/31/2021 17:00 GMT'
 >    lubridate::mdy_hm(date_str,tz="UTC")
+>    date <- lubridate::format_ISO8601(date) # Separates date and time with a T.
+>    date <- paste0(date, "Z") # Add a Z because time is in UTC.
 >    ```
 >    ```output
->    [1] "2021-01-31 17:00:00 UTC"
+>    [1] "2021-01-31T17:00:00Z"
 >    ```
 > 2. `31/01/2021 12:00 EST`
 > 
@@ -169,9 +173,11 @@ for them.
 >    date_str <- '31/01/2021 12:00 EST'
 >    date <- lubridate::dmy_hm(date_str,tz="EST")
 >    lubridate::with_tz(date,tz="UTC")
+>    date <- lubridate::format_ISO8601(date)
+>    date <- paste0(date, "Z")
 >    ```
 >    ```output
->    [1] "2021-01-31 17:00:00 UTC"
+>    [1] "2021-01-31T17:00:00Z"
 >    ```
 >
 > 3. `January, 01 2021 5:00 PM GMT`
@@ -181,9 +187,11 @@ for them.
 >    date_str <- 'January, 01 2021 5:00 PM GMT'
 >    date <- lubridate::mdy_hm(date_str, format = '%B, %d %Y %H:%M', tz="GMT")
 >    lubridate::with_tz(date,tz="UTC")
+>    lubridate::format_ISO8601(date)
+>    date <- paste0(date, "Z")
 >    ```
 >    ```output
->    [1] "2021-01-01 17:00:00 UTC"
+>    [1] "2021-01-01T17:00:00Z"
 >    ```
 >    
 > 4. `1612112400` in seconds since 1970
@@ -195,10 +203,14 @@ for them.
 >    date_str <- '1612112400'
 >    date_str <- as.numeric(date_str)
 >    date <- lubridate::as_datetime(date_str, origin = lubridate::origin, tz = "UTC")
+>    date <- lubridate::format_ISO8601(date)
+>    date <- paste0(date, "Z")
 >    print(date)
 >    ```
 >    ```output
->    [1] "2021-01-31 17:00:00 UTC"
+>    [1] "2021-01-31T17:00:00Z"
+>    ```
+>    
 > 5. `44227.708333333333`
 >    
 >    This is the numerical value for dates in Excel because Excel stores dates as sequential serial numbers so that they 
@@ -207,22 +219,48 @@ for them.
 >
 >    ```r
 >    library(openxlsx)
+>    library(lubridate)
 >    date_str <- 44227.708333333333
 >    date <- as.Date(date_str, origin = "1899-12-30") # If you're only interested in the YYYY-MM-DD
 >    fulldate <- openxlsx::convertToDateTime(date_str, tz = "UTC")
+>    fulldate <- lubridate::format_ISO8601(fulldate)
+>    fulldate <- paste0(fulldate, "Z")
 >    print(date)
 >    print(fulldate)
 >    ```
 >    ```output
 >    [1] "2021-01-31"
->    [1] "2021-01-31 17:00:00 PST"
+>    [1] "2021-01-31T17:00:00Z"
 >    ```
 > 6. Observations with a start date of `2021-01-30` and an end date of `2021-01-31`.
 > 
 >    Here we store the date as a duration following the ISO convention. In some cases, it is easier to use a regular 
 >    expression or simply paste strings together:
 >    ```r
+>    event_start <- '2021-01-30'
+>    event_finish <- '2021-01-31'
 >    
+>    deployment_time <- 1002
+>    retrieval_time <- 1102
+> 
+>    # Time is recorded numerically (1037 instead of 10:37), so need to change these columns:
+>    deployment_time <- substr(as.POSIXct(sprintf("%04.0f", deployment_time), format = "%H%M"), 12, 16)
+>    retrieval_time <- substr(as.POSIXct(sprintf("%04.0f", retrieval_time, format = "%H%M"), 12, 16)
+
+>    eventDate <- paste(event_start, event_finish, sep = "/") # If you're interested in just pasting the event _dates_ together.
+>    
+>    eventDateTime_start <- lubridate::format_ISO8601(as.POSIXct(paste(event_start, deployment_time), tz = "UTC"))
+>    eventDateTime_start <- paste0(eventDateTime_start, "Z")
+>    eventDateTime_finish <- lubridate::format_ISO8601(as.POSIXct(paste(event_finish, retrieval_time), tz = "UTC))
+>    eventDateTim_finish <- paste0(eventdateTime_finish, "Z")
+>    eventDateTime <- paste(eventDateTime_start, eventDateTime_finish, sep = "/") # If you're interested in pasting event _dates_ and _times_ together.
+>    
+>    print(eventDate)
+>    print(eventDateTime)
+>    ```
+>    ```output
+>    [1] "2021-01-30/2021-01-31"
+>    [1] "2021-01-30T10:02:00Z/2021-01-31T11:02:00Z"
 {: .solution}
 
 > ## Tip 
