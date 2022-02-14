@@ -248,7 +248,7 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 >    Time is recorded numerically (1037 instead of 10:37), so need to change these columns:
 >    deployment_time <- substr(as.POSIXct(sprintf("%04.0f", deployment_time), format = "%H%M"), 12, 16)
 >    retrieval_time <- substr(as.POSIXct(sprintf("%04.0f", retrieval_time, format = "%H%M"), 12, 16)
-
+>
 >    eventDate <- paste(event_start, event_finish, sep = "/") # If you're interested in just pasting the event _dates_ together.
 >    
 >    eventDateTime_start <- lubridate::format_ISO8601(as.POSIXct(paste(event_start, deployment_time), tz = "UTC"))
