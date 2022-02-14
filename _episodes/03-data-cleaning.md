@@ -236,6 +236,7 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 > 
 >    Here we store the date as a duration following the ISO convention. In some cases, it is easier to use a regular 
 >    expression or simply paste strings together:
+>    
 >    ```r
 >    library(lubridate)
 >    event_start <- '2021-01-30'
