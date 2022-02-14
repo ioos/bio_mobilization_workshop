@@ -253,7 +253,7 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 >    
 >    eventDateTime_start <- lubridate::format_ISO8601(as.POSIXct(paste(event_start, deployment_time), tz = "UTC"))
 >    eventDateTime_start <- paste0(eventDateTime_start, "Z")
->    eventDateTime_finish <- lubridate::format_ISO8601(as.POSIXct(paste(event_finish, retrieval_time), tz = "UTC))
+>    eventDateTime_finish <- lubridate::format_ISO8601(as.POSIXct(paste(event_finish, retrieval_time), tz = "UTC"))
 >    eventDateTim_finish <- paste0(eventdateTime_finish, "Z")
 >    eventDateTime <- paste(eventDateTime_start, eventDateTime_finish, sep = "/") # If you're interested in pasting event _dates_ and _times_ together.
 >    
