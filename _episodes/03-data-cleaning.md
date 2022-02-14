@@ -237,13 +237,14 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 >    Here we store the date as a duration following the ISO convention. In some cases, it is easier to use a regular 
 >    expression or simply paste strings together:
 >    ```r
+>    library(lubridate)
 >    event_start <- '2021-01-30'
 >    event_finish <- '2021-01-31'
 >    
 >    deployment_time <- 1002
 >    retrieval_time <- 1102
 > 
->    # Time is recorded numerically (1037 instead of 10:37), so need to change these columns:
+>    Time is recorded numerically (1037 instead of 10:37), so need to change these columns:
 >    deployment_time <- substr(as.POSIXct(sprintf("%04.0f", deployment_time), format = "%H%M"), 12, 16)
 >    retrieval_time <- substr(as.POSIXct(sprintf("%04.0f", retrieval_time, format = "%H%M"), 12, 16)
 
@@ -261,6 +262,7 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 >    ```output
 >    [1] "2021-01-30/2021-01-31"
 >    [1] "2021-01-30T10:02:00Z/2021-01-31T11:02:00Z"
+>    ```
 {: .solution}
 
 > ## Tip 
