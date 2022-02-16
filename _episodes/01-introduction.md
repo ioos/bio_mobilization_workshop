@@ -33,7 +33,7 @@ Darwin Core Archives are what OBIS and GBIF harvest into their systems. Fortunat
 > 
 > > ## Solution
 > > ```bash
-> > tree dwca-ambon_zooplankton_2017-v1.2
+> > tree dwca-ambon_zooplankton_2017-v1.2/
 > > ```
 > > ```output
 > >  dwca-ambon_zooplankton_2017-v1.2/
@@ -47,11 +47,16 @@ Darwin Core Archives are what OBIS and GBIF harvest into their systems. Fortunat
 {: .challenge}
 
 ### Darwin Core Mapping
-Now that we understand a bit more about why Darwin Core was created and how it's used today we can begin the work of mapping data to the standard. The key place you need when mapping data to Darwin Core is the [Darwin Core Quick Reference Guide](https://dwc.tdwg.org/terms/). But there are a lot of terms there and you won't use them all for every dataset (or even use them all on any dataset). You might use all the terms once you've mapped many datasets though 😊
+Now that we understand a bit more about why Darwin Core was created and how it's used today we can begin the work of 
+mapping data to the standard. The key resource you need when mapping data to Darwin Core is the [Darwin Core Quick Reference Guide](https://dwc.tdwg.org/terms/). 
+Which provides an easy-to-read reference of the currently recommended terms for the Darwin Core standard. Keep in mind
+there are a lot of terms there, and you won't use them all for every dataset (or even use them all on any dataset). As 
+your experience grows with mapping to these terms you might gain experience with each term 😊
+
 
 > ## Exercise
 > 
-> Challenge: Find the matching Darwin Core term for these column headers.
+> **Challenge:** Find the matching Darwin Core term for these column headers.
 > 
 > 1. SAMPLE_DATE (example data: 09-MAR-21 05.45.00.000000000 PM)
 > 2. lat (example data: 32.6560)
