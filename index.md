@@ -8,7 +8,7 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 **Location:** Virtual
 
 This workshop is intended to be a small hands-on, interactive virtual workshop focused on mobilizing marine biological 
-observation datasets to the [Ocean Biodiversity Information System (OBIS)](http://swcarpentry.github.io/r-novice-inflammation/setup.html) by helping data providers standardize their 
+observation datasets to the [Ocean Biodiversity Information System (OBIS)](https://obis.org) by helping data providers standardize their 
 data using Darwin Core including species observations from any type of sampling methodologies (e.g. visual surveys, 
 net tows, microscopy, fish trawls, imaging, 'omics, acoustics, telemetry). 
 <!-- this is an html comment -->
