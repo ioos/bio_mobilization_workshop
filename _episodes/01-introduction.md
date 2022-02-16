@@ -30,8 +30,20 @@ Darwin Core Archives are what OBIS and GBIF harvest into their systems. Fortunat
 > ## Exercise
 > 
 > Challenge: Download this [Darwin Core Archive](https://www1.usgs.gov/obis-usa/ipt/archive.do?r=tpwd_harc_texasaransasbay_bagseine&v=2.3) and examine what's in it. Did you find anything unusual or that you don't understand what it is?
-> >
-> > {: .output}
+> 
+> > ## Solution
+> > ```bash
+> > tree dwca-ambon_zooplankton_2017-v1.2
+> > ```
+> > ```output
+> >  dwca-ambon_zooplankton_2017-v1.2/
+> >  |-- eml.xml
+> >  |-- event.txt
+> >  |-- extendedmeasurementorfact.txt
+> >  |-- meta.xml
+> >  |-- occurrence.txt
+> > ```
+> {: .solution}
 {: .challenge}
 
 ### Darwin Core Mapping
