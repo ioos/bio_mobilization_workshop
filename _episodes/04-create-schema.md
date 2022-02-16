@@ -26,8 +26,9 @@ Using the occurrence core plus [relevant extensions](https://tools.gbif.org/dwca
 #### Event Core with Extended Measurement or Fact extension
 An innovation that OBIS made in this space was introducing the Extended Measurement or Fact extension (also sometimes referred to as OBIS-ENV-DATA). This uses the event core with an occurrence extension + the [extended measurement or fact extension](https://tools.gbif.org/dwca-validator/extension.do?id=http://rs.iobis.org/obis/terms/ExtendedMeasurementOrFact). This extension makes it possible to include measurements for both the events (salinity, temperature, dissolved oxygen, gear type, etc.) as well as measurements about the occurrences (weight, length, etc.). Prior to this you were only able to include measurements of the occurrence. 
 
+<img width="800" alt="EventCoreSchema" src="https://obis.org/images/EventCoreSchema.png" style="background-color:white;" />
+
 Over at the [IOOS Bio Data Guide repository](https://github.com/ioos/bio_data_guide) you can see [a script](https://github.com/ioos/bio_data_guide/blob/main/datasets/TPWD_HARC_BagSeine/TPWD_HARC_BagSeine_OBISENV.md) that was used to take data in its original form and align it to Darwin Core Event Core with Extended Measurement or Fact.
 <img width="555" alt="ProcessingScriptScreenshot" src="{{ page.root }}/fig/processing_script_screenshot.png">{: .image-with-shadow }
-
 
 {% include links.md %}
