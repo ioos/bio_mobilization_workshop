@@ -30,16 +30,28 @@ Darwin Core Archives are what OBIS and GBIF harvest into their systems. Fortunat
 > ## Exercise
 > 
 > Challenge: Download this [Darwin Core Archive](https://www1.usgs.gov/obis-usa/ipt/archive.do?r=tpwd_harc_texasaransasbay_bagseine&v=2.3) and examine what's in it. Did you find anything unusual or that you don't understand what it is?
-> >
-> > {: .output}
+> 
+> > ## Solution
+> > ```bash
+> > tree dwca-ambon_zooplankton_2017-v1.2/
+> > ```
+> > ```output
+> >  dwca-ambon_zooplankton_2017-v1.2/
+> >  |-- eml.xml
+> >  |-- event.txt
+> >  |-- extendedmeasurementorfact.txt
+> >  |-- meta.xml
+> >  |-- occurrence.txt
+> > ```
+> {: .solution}
 {: .challenge}
 
 ### Darwin Core Mapping
-Now that we understand a bit more about why Darwin Core was created and how it's used today we can begin the work of mapping data to the standard. The key place you need when mapping data to Darwin Core is the [Darwin Core Quick Reference Guide](https://dwc.tdwg.org/terms/). But there are a lot of terms there and you won't use them all for every dataset (or even use them all on any dataset). You might use all the terms once you've mapped many datasets though 😊
+Now that we understand a bit more about why Darwin Core was created and how it's used today we can begin the work of mapping data to the standard. The key resource you need when mapping data to Darwin Core is the [Darwin Core Quick Reference Guide](https://dwc.tdwg.org/terms/). Which provides an easy-to-read reference of the currently recommended terms for the Darwin Core standard. Keep in mind there are a lot of terms there, and you won't use them all for every dataset (or even use them all on any dataset). As your experience grows with mapping to these terms you might gain experience with each term 😊 While it is not a requirement to have your column headers match the Darwin Core terms, as there are mechanisms to do the mapping, we highly recommend changing the column names to match the Darwin Core term verbatim. **Matt comment: My attempt at explaining that the column headers should be the Darwin Core terms verbatim. While hinting at how the meta.xml file can be used to do the mapping.**
 
 > ## Exercise
 > 
-> Challenge: Find the matching Darwin Core term for these column headers.
+> **Challenge:** Find the matching Darwin Core term for these column headers.
 > 
 > 1. SAMPLE_DATE (example data: 09-MAR-21 05.45.00.000000000 PM)
 > 2. lat (example data: 32.6560)
@@ -60,25 +72,36 @@ Now that we understand a bit more about why Darwin Core was created and how it's
 > {: .solution}
 {: .challenge}
 
-### What are the Required Darwin Core terms for Publishing to OBIS?
+> ## Tip 
+> To make the mapping step easier on yourself, we recommend starting a mapping document/spreadsheet (or document it as a comment in your script). List out all of your column headers in one column and document the appropriate Dawin Core term(s) in a second column. For example:
+> 
+> | my term | DwC term |
+> |---------|----------|
+> | lat | decimalLatitude |
+> | date | eventDate |
+> | species | scientificName |
+{: .callout}
+
+
+### What are the **required** Darwin Core terms for publishing to OBIS?
 When doing your mapping some required information may be missing. These are the Darwin Core terms that are required to share your data to OBIS plus a few that are needed for GBIF.
 
 | Darwin Core Term | Definition | Comment |
 |------------------|------------------------------------|---------------------------------------|
-| [`occurrenceID`](https://dwc.tdwg.org/terms/#dwc:occurrenceID) | An identifier for the Occurrence (as opposed to a particular digital record of the occurrence). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the occurrenceID globally unique. | To construct a globally unique identifier for each occurrence you can usually concatenate station + date + scientific name (or something similar) but you'll need to check this is unique for each row in your data |
-| [`basisOfRecord`](https://dwc.tdwg.org/terms/#dwc:basisOfRecord) | The specific nature of the data record.  | Controlled vocabulary: HumanObservation, MachineObservation, PreservedSpecimen, LivingSpecimen, FossilSpecimen |
-| [`scientificName`](https://dwc.tdwg.org/terms/#dwc:scientificName) | The full scientific name, with authorship and date information if known. When forming part of an Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the IdentificationQualifier term. | Note that cf., aff., etc. need to be parsed out to the `identificationQualifier` term |
-| [`scientificNameID`](https://dwc.tdwg.org/terms/#dwc:scientificNameID) | An identifier for the nomenclatural (not taxonomic) details of a scientific name. | Must be a WoRMS LSID for sharing to OBIS. Example: urn:lsid:marinespecies.org:taxname:218214. Note that the numbers at the end are the AphiaID from WoRMS. |
-| [`eventDate`](https://dwc.tdwg.org/terms/#dwc:eventDate) | The date-time or interval during which an Event occurred. For occurrences, this is the date-time when the event was recorded. Not suitable for a time in a geological context. | Must follow [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) |
-| [`decimalLatitude`](https://dwc.tdwg.org/terms/#dwc:decimalLatitude) | The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. | For OBIS and GBIF the required `geodeticDatum` is WGS84. Uncertainty around the geographic center of a Location (e.g. when sampling event was a transect) can be recorded in coordinateUncertaintyInMeters |
-| [`decimalLongitude`](https://dwc.tdwg.org/terms/#dwc:decimalLongitude) | The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive | For OBIS and GBIF the required `geodeticDatum` is WGS84. |
-| [`occurrenceStatus`](https://dwc.tdwg.org/terms/#dwc:occurrenceStatus) | For Occurrences, the default vocabulary is recommended to consist of "present" and "absent", but can be extended by implementers with good justification. | For OBIS, only valid values are "present" and "absent". |
-| [`countryCode`](https://dwc.tdwg.org/terms/#dwc:countryCode) | The standard code for the country in which the Location occurs. | 	Use an [ISO 3166](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes)-1-alpha-2 country code. Not required for OBIS but GBIF needs this for their system.|
-| [`kingdom`](https://dwc.tdwg.org/terms/#dwc:kingdom) | The full scientific name of the kingdom in which the taxon is classified. | Not required for OBIS but GBIF needs this to disambiguate scientific names that are the same in different kingdoms. |
-| [`geodeticDatum`](https://dwc.tdwg.org/terms/#dwciri:geodeticDatum) | The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in decimalLatitude and decimalLongitude as based. | Must be WGS84 for data shared to OBIS and GBIF but it's best to state explicitly that it is. |
+| [`occurrenceID`](https://dwc.tdwg.org/terms/#dwc:occurrenceID) | An identifier for the Occurrence (as opposed to a particular digital record of the occurrence). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the occurrenceID globally unique. | To construct a globally unique identifier for each occurrence you can usually concatenate station + date + scientific name (or something similar) but you'll need to check this is unique for each row in your data.<br/>Example: `Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula` |
+| [`basisOfRecord`](https://dwc.tdwg.org/terms/#dwc:basisOfRecord) | The specific nature of the data record.  | Pick from these controlled vocabulary terms: [HumanObservation](http://rs.tdwg.org/dwc/terms/HumanObservation), [MachineObservation](http://rs.tdwg.org/dwc/terms/MachineObservation), [PreservedSpecimen](http://rs.tdwg.org/dwc/terms/PreservedSpecimen), [LivingSpecimen](http://rs.tdwg.org/dwc/terms/LivingSpecimen), [FossilSpecimen](http://rs.tdwg.org/dwc/terms/FossilSpecimen)<br/>Example: `HumanObservation` |
+| [`scientificName`](https://dwc.tdwg.org/terms/#dwc:scientificName) | The full scientific name, with authorship and date information if known. When forming part of an Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the `identificationQualifier` term. | Note that cf., aff., etc. need to be parsed out to the `identificationQualifier` term.<br/>Example: `Atractosteus spatula`  |
+| [`scientificNameID`](https://dwc.tdwg.org/terms/#dwc:scientificNameID) | An identifier for the nomenclatural (not taxonomic) details of a scientific name. | Must be a WoRMS LSID for sharing to OBIS. Note that the numbers at the end are the AphiaID from WoRMS.<br/>Example: `urn:lsid:marinespecies.org:taxname:218214`  |
+| [`eventDate`](https://dwc.tdwg.org/terms/#dwc:eventDate) | The date-time or interval during which an Event occurred. For occurrences, this is the date-time when the event was recorded. Not suitable for a time in a geological context. | Must follow [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). See more information on dates in the [Data Cleaning]({{ page.root }}/03-data-cleaning/index.html) section of the workshop.<br/>Example: `2009-02-20T08:40Z` |
+| [`decimalLatitude`](https://dwc.tdwg.org/terms/#dwc:decimalLatitude) | The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. | For OBIS and GBIF the required `geodeticDatum` is WGS84. Uncertainty around the geographic center of a Location (e.g. when sampling event was a transect) can be recorded in `coordinateUncertaintyInMeters`. See more information on coordinates in the [Data Cleaning]({{ page.root }}/03-data-cleaning/index.html) section of the workshop.<br/>Example: `-41.0983423` |
+| [`decimalLongitude`](https://dwc.tdwg.org/terms/#dwc:decimalLongitude) | The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive | For OBIS and GBIF the required `geodeticDatum` is WGS84. See more information on coordinates in the [Data Cleaning]({{ page.root }}/03-data-cleaning/index.html) section of the workshop.<br/>Example: `-121.1761111`  |
+| [`occurrenceStatus`](https://dwc.tdwg.org/terms/#dwc:occurrenceStatus) | For occurrences, the default vocabulary is recommended to consist of `present` and `absent`, but can be extended by implementers with good justification. | For OBIS, only valid values are `present` and `absent`. |
+| [`countryCode`](https://dwc.tdwg.org/terms/#dwc:countryCode) | The standard code for the country in which the location occurs. | Use an [ISO 3166-1-alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code. Not required for OBIS but GBIF needs this for their system.<br/>Example: `US` |
+| [`kingdom`](https://dwc.tdwg.org/terms/#dwc:kingdom) | The full scientific name of the kingdom in which the taxon is classified.| Not required for OBIS but GBIF needs this to disambiguate scientific names that are the same but in different kingdoms.<br/>Example: `Animalia`  |
+| [`geodeticDatum`](https://dwc.tdwg.org/terms/#dwciri:geodeticDatum) | The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in decimalLatitude and decimalLongitude as based. | Must be [WGS84](https://epsg.io/4326) for data shared to OBIS and GBIF but it's best to state explicitly that it is. <br/>Example: `WGS84`  |
 
 ### What other terms should be considered?
-While these terms are not required for publishing data to OBIS, they are extremely helpful for downstream users because without them the data are less useful for future analyses. For instance depth is a crucial piece of information for marine observations but it is not always included. For the most part the ones listed below are not going to be sitting there in the data so you'll have to determine what the values should be and add these in. Really try your hardest to include these ones if you can.
+While these terms are not required for publishing data to OBIS, they are extremely helpful for downstream users because without them the data are less useful for future analyses. For instance, `depth` is a crucial piece of information for marine observations, but it is not always included. For the most part the ones listed below are not going to be sitting there in the data, so you'll have to determine what the values should be and add them in. Really try your hardest to include them if you can.
 
 | Darwin Core Term | Definition | Comment |
 |------------------|------------------------------------|---------------------------------------|
@@ -94,7 +117,7 @@ While these terms are not required for publishing data to OBIS, they are extreme
 | [`informationWithheld`](https://dwc.tdwg.org/terms/#dwc:informationWithheld) | 	Additional information that exists, but that has not been shared in the given record. | Also useful if the data have been modified this way for sensitive species or for other reasons. |
 | [`institutionCode`](https://dwc.tdwg.org/terms/#dwc:institutionCode) | 	The name (or acronym) in use by the institution having custody of the object(s) or information referred to in the record. |  |
 
-Other than these just take the data that you have and crosswalk it to the Darwin Core terms that match best. 
+Other than these specific terms, work through the data that you have and try to crosswalk it to the Darwin Core terms that match best. 
 
 > ## Exercise
 > 
