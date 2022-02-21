@@ -27,7 +27,7 @@ conversions a dataset will undergo to align to the Darwin Core standard. This in
 Below is a short summary of each of those conversions as well as some example conversion scripts. The exercises are 
 intended to give you a sense of the variability we've seen in datasets and how we went about converting them. While the
 examples use the [pandas package for Python](https://pandas.pydata.org/) and the [tidyverse collection of packages for R](https://www.tidyverse.org/), 
-those are not the only options for dealing with these conversions. Simply the ones we use more frequently in our 
+those are not the only options for dealing with these conversions but simply the ones we use more frequently in our 
 experiences. 
 
 
@@ -42,7 +42,7 @@ slash (e.g. `2022-01-02/2022-01-12`). Examine the dates in your data to determin
 amendments need to be made to ensure they are following ISO 8601. Below are some examples and solutions in Python and R 
 for them.
 
-ISO 8601 dates can represent moments in time at different resolutions, as well as time intervals, which use / as a separator. Date and time are separated by T. Times can have a time zone indicator at the end, if this is not the case then the time is assumed to be local time. When a time is UTC, a Z is added. 
+ISO 8601 dates can represent moments in time at different resolutions, as well as time intervals, which use "/" as a separator. Date and time are separated by "T". Timestamps can have a time zone indicator at the end. If not, then they are assumed to be local time. When a time is UTC, the letter "Z" is added at the end (e.g. 2009-02-20T08:40Z). 
 
 > ## Tip 
 > Focus on getting your package of choice to read the dates appropriately. While you can use [regular expressions](https://en.wikipedia.org/wiki/Regular_expression)
@@ -283,7 +283,7 @@ There are two ways to grab the taxonomic information necessary. First, you can u
 The tool accepts lists of scientific names (each unique name as a separate row in a .txt, .csv, or .xlsx file) up to 
 1500 names and provides an interface for selecting the match you want for ambiguous matches. A brief walk-through using 
 the service is included [below](#using-the-worms-taxon-match-tool). A more detailed step-by-step guide on 
-using WoRMS Taxa Match Tool for the MBON Pole to Pole can be found [here](https://marinebon.org/p2p/protocols/WoRMS_quality_check.pdf). 
+using WoRMS Taxa Match Tool for the [MBON Pole to Pole](https://marinebon.org/p2p/) can be found [here](https://marinebon.org/p2p/protocols/WoRMS_quality_check.pdf). 
 
 
 
