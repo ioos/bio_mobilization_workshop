@@ -24,9 +24,9 @@ The [GBIF Integrated Publishing Toolkit (IPT)](https://www.gbif.org/ipt) is curr
 **Matt comment: Does anyone have a diagram of this IPT-OBIS-GBIF interaction? Might be nice to visually represent this 
 paragraph as a supplement to the text.**
 
-# Ecological Markup Language (EML)
+# Ecological Markup [Metadata?] Language (EML) 
 
-Both OBIS and GBIF use [Ecological Markup Language (EML)](https://eml.ecoinformatics.org/) as the metadata standard associated with the data. For the purposes of this workshop we will not dive into the world of EML. However, we should note that when publishing your data through the IPT, the IPT helps you create an EML file as part of the Darwin Core Archive (DwC-A). As such, if you publish your own data through the IPT, there is no need for innate knowledge on the EML format. But there are a minimum required number of fields that would need to be filled out in the IPT: `title`, `abstract`, `citation`, and several `contacts`.
+Both OBIS and GBIF use [Ecological Markup [Metadata?] Language (EML)](https://eml.ecoinformatics.org/) as the metadata standard associated with the data. For the purposes of this workshop we will not dive into the world of EML. However, we should note that when publishing your data through the IPT, the IPT helps you create an EML file as part of the Darwin Core Archive (DwC-A). As such, if you publish your own data through the IPT, there is no need for innate knowledge on the EML format. But there are a minimum required number of fields that would need to be filled out in the IPT: `title`, `abstract`, `citation`, and several `contacts`.
 
 > ## Tip 
 > Try to collect as much of this information as possible before and during the Darwin Core alignment process. It will 
@@ -67,10 +67,10 @@ If you are interested in creating an EML metadata file, it is possible to upload
 OBIS performs a number of quality checks on the data it receives. Red quality flags are attached to occurrence records if errors are encountered, and records may also be rejected if they do not meet minimum requirements. The checks that OBIS performs are documented [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4309024/pdf/bau125.pdf) and a python implementation is available [here](https://github.com/iobis/obis-qc). Therefore, prior to publishing your data to OBIS and/or GBIF, it is important to perform quality control on your standardized data. This can help identify any outliers or "faulty" data. It will also help with ensuring that your data is compatible and interoperable with other datasets published to OBIS. There are numerous functions within the [robis](https://www.rdocumentation.org/packages/robis/versions/2.3.9) or [obistools](https://github.com/iobis/obistools) R packages that can serve to identify outliers, inspect quality or 
 ensure that the dataset structure fits the required format for both the Event and Occurrence tables. 
 
-> ## Initial checks on your data
-> * It's always good to make a map from your data to ensure the coordinates are valid and within your expected range before looking at other parts.
-> * It's good to run basic statistics on each column of numeric data (min, max, mean, std. dev., etc.) to identify potential issues.
-> * It's good to look at unique values of columns containing string entries to identify potential issues (mainly spelling). 
+> ## Recommended initial checks on your data
+> * Make a map from your data to ensure the coordinates are valid and within your expected range.
+> * Run basic statistics on each column of numeric data (min, max, mean, std. dev., etc.) to identify potential issues.
+> * Look at unique values of columns containing string entries to identify potential issues (mainly spelling). 
 > * Check for uniqueness of `occurrenceID` field.
 > * Check for uniqueness of `eventID` for each event, if applicable. 
 > * If recording `depth`, check the values are within your expected range.
@@ -81,7 +81,7 @@ ensure that the dataset structure fits the required format for both the Event an
 >
 > **Challenge:** Install [obistools](https://github.com/iobis/obistools) and [Hmisc](https://cran.r-project.org/web/packages/Hmisc/Hmisc.pdf) R packages. Then, perform the following minimal quality assurance and control checks: i) run a diagnostics report for the data quality, ii) ensure the data is in the correct structure, iii) plot the occurrences in a map, and iv) determine whether reported depths are accurate. 
 > 
-> * Note from Tim: Do we want participants to do this with their own dataset? Or do we want to create an easy dataset to work with or link to dataset?
+> * Note from Tim: Do we want participants to do this with their own dataset? Or do we want to create an easy dataset to work with or link to dataset? [Enrique]: I suggest participants use a provided dataset with a few errors, e.g. occurrences on land or outside geographic range (wrong coordinates).
 > 
 > > ## Solution
 > > ```
