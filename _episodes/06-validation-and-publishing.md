@@ -22,7 +22,8 @@ keypoints:
 The [GBIF Integrated Publishing Toolkit (IPT)](https://www.gbif.org/ipt) is currently the only way to publish data to OBIS. [OBIS nodes](https://obis.org/contact/) host an IPT instance for their region or theme. The [OBIS-USA IPT](https://www1.usgs.gov/obis-usa/ipt/) (hosted at the USGS) is available for anyone in the US to publish their data to OBIS and GBIF. To publish using this IPT work with the OBIS-USA node manager, Abby Benson. You can choose to download and install your own instance of the IPT but it might be difficult to register it with OBIS. Instead it's recommended to work with one of the OBIS nodes to publish your data through their IPT. The requirements for publishing via an OBIS node IPT are that the data follows Darwin Core, includes the required Darwin Core and EML metadata elements, and you have contacted the node to ensure the data are a good fit for that node. 
 
 **Matt comment: Does anyone have a diagram of this IPT-OBIS-GBIF interaction? Might be nice to visually represent this 
-paragraph as a supplement to the text.**
+paragraph as a supplement to the text.** [Enrique] Added a figure to fig folder: DwC_workflow.jpg
+
 
 # Ecological Markup [Metadata?] Language (EML) 
 
