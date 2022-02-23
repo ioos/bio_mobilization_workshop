@@ -5,9 +5,10 @@ import sys
 import os
 import shutil
 
+
 BOILERPLATE = (
     'AUTHORS',
-    'CITATION.cff',
+    'CITATION',
     'CONTRIBUTING.md',
     'README.md',
     '_config.yml',
