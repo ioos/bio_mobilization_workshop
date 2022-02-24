@@ -154,7 +154,12 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 {: .solution}
 
 > ## Examples in R
-> 1.  `01/31/2021 17:00 GMT`
+>
+> When dealing with dates using R, there are a few base functions that are useful to wrangle your dates in the correct format. Additionally R packages that are useful include [lubridate](https://cran.r-project.org/web/packages/lubridate/lubridate.pdf), which is part of the `tidyverse`. It is recommended to bookmark this [lubridate cheatsheet](https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_lubridate.pdf).
+>
+> The examples below show how to use the `lubridate` package and format your data to the ISO-8601 standard.
+> <br/>
+> > 1.  `01/31/2021 17:00 GMT`
 > 
 >    ```r
 >    library(lubridate)
