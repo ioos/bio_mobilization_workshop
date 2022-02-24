@@ -159,7 +159,7 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 >
 > The examples below show how to use the `lubridate` package and format your data to the ISO-8601 standard.
 > <br/>
-> > 1.  `01/31/2021 17:00 GMT`
+> 1.  `01/31/2021 17:00 GMT`
 > 
 >    ```r
 >    library(lubridate)
