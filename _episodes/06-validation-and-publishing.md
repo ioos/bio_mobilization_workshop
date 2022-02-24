@@ -1,5 +1,5 @@
 ---
-title: "Validating and publishing"
+title: "Metadata, validating, and publishing"
 teaching: 0
 exercises: 90
 questions:
