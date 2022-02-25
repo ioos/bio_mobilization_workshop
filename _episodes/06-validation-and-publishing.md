@@ -78,6 +78,7 @@ ensure that the dataset structure fits the required format for both the Event an
 >
 > **Challenge:** Install [obistools](https://github.com/iobis/obistools) and [Hmisc](https://cran.r-project.org/web/packages/Hmisc/Hmisc.pdf) R packages. Then, perform the following minimal quality assurance and control checks: i) run a diagnostics report for the data quality, ii) ensure that the eventIDs are unique, iii) make sure that the eventDates follow ISO-8601 standards, and iv) determine whether reported depths are accurate. 
 > 
+> The event core data used in the checks below can be found in [this Excel file]({{ page.root }}/data/trawl_fish.xlsx).
 > 
 > > ## Solution
 > > 
@@ -87,10 +88,7 @@ ensure that the dataset structure fits the required format for both the Event an
 > > report <- obistools::report(trawl_fish)
 > > report
 > > ```
-> > ```output
-> > [include screenshot here]
-> > # A plot of the measurement coordinates can also be obtained using obistools::plot_map(trawl_fish)
-> > ```
+> > ![screenshot]({{ page.root }}/fig/screenshot_obistools_report.png){: .image-with-shadow }
 > >
 > > ii. Check to make sure eventIDs are unique
 > >
