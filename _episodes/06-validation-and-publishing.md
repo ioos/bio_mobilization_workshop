@@ -78,17 +78,67 @@ ensure that the dataset structure fits the required format for both the Event an
 >
 > **Challenge:** Install [obistools](https://github.com/iobis/obistools) and [Hmisc](https://cran.r-project.org/web/packages/Hmisc/Hmisc.pdf) R packages. Then, perform the following minimal quality assurance and control checks: i) run a diagnostics report for the data quality, ii) ensure the data is in the correct structure, iii) plot the occurrences in a map, and iv) determine whether reported depths are accurate. 
 > 
-> * Note from Tim: Do we want participants to do this with their own dataset? Or do we want to create an easy dataset to work with or link to dataset? [Enrique]: I suggest participants use a provided dataset with a few errors, e.g. occurrences on land or outside geographic range (wrong coordinates).
 > 
 > > ## Solution
 > > ```
-> > i. obistools::report(), and hmisc::describe()
-> > ii. check_eventids() # checks if both eventID and parentEventID fields as present in the table, and whether all parentEventIDs have a corresponding eventID
-> >     check_extension_eventids() # checks if eventIDs in an extension have matching eventIDs in the core table.
-> >     flatten_event() and flatten_occurrence() # recursively adds event information from parent events to child events. 
-> > iii. obistools::plot_map() # to plot occurrence records
-> > iv. obistools::check_onland(), or check_depth()
+> > i. Run a diagnostics report for the data quality
+> > 
+> > ``` r
+> > report <- obistools::report(trawl_fish)
+> > report
 > > ```
+> > ``` output
+> > [include screenshot here]
+> > # A plot of the measurement coordinates can also be obtained using obistools::plot_map(trawl_fish)
+> > ```
+> >
+> > ii. Check to make sure eventIDs are unique
+> >
+> > ``` r
+> > eventid <- obistools::check_eventids(trawl_fish)
+> > head(eventid)
+> > ```
+> > ```output
+> > # A tibble: 6 x 4
+  field         level   row message                                                    
+  <chr>         <chr> <int> <chr>                                                      
+1 eventID       error     7 eventID IYS:GoA2019:Stn6:trawl is duplicated               
+2 eventID       error     8 eventID IYS:GoA2019:Stn6:trawl is duplicated               
+3 parentEventID error     1 parentEventID IYS:GoA2019:Stn1 has no corresponding eventID
+4 parentEventID error     2 parentEventID IYS:GoA2019:Stn2 has no corresponding eventID
+5 parentEventID error     3 parentEventID IYS:GoA2019:Stn3 has no corresponding eventID
+6 parentEventID error     4 parentEventID IYS:GoA2019:Stn4 has no corresponding eventID
+> > ```
+> >
+> > iii. Check for proper eventDates to ensure they follow ISO 8601 standards:
+> >
+> > ```r
+> > eventDate <- obistools::check_eventdate(trawl_fish)
+> > print(eventDate)  
+> > ```
+> > ```output
+> > # A tibble: 3 x 4
+  level   row field     message                                                       
+  <chr> <int> <chr>     <chr>                                                         
+1 error    10 eventDate eventDate 2019-02-24T07u40 does not seem to be a valid date   
+2 error    13 eventDate eventDate 2019-02-25 11h25min does not seem to be a valid date
+3 error    15 eventDate eventDate 2019-26-2 does not seem to be a valid date    
+> > ```
+> >
+> > iv. From the report generated under exercise i, you can already see that there's measurements made on land. This information can also be gathered by plotting the map separately or using the check_onland() or check_depth() functions in the obistools package.    
+> >
+> > ```r
+> > depth <- obistools::check_depth(trawl_fish)
+> > onland <- obistools::check_onland(trawl_fish) # Gives the same output.           
+> > print(depth)  
+> > ```
+> > ```output
+> > # A tibble: 1 x 16
+  eventID parentEventID eventDate  year month   day decimalLatitude decimalLongitude footprintWKT coordinateUncer~ minimumDepthInM~
+  <chr>   <chr>         <chr>     <dbl> <dbl> <dbl>           <dbl>            <dbl> <chr>                   <dbl>            <dbl>
+1 IYS:Go~ IYS:GoA2019:~ 2019-02-~  2019     2    22            67.4            -140. LINESTRING ~            2313.                0
+# ... with 5 more variables: maximumDepthInMeters <dbl>, samplingProtocol <chr>, locality <chr>, locationID <chr>, type <chr>    
+> > ```    
 > >  {: .output}
 > {: .solution}
 {: .challenge}
