@@ -9,7 +9,7 @@ objectives:
 - "Data enhancement and quality control"
 - "Validation of records."
 keypoints:
-- "Some metadata fields in the Ecological Markup Language (EML) are required for publishing to OBIS."
+- "Some metadata fields in the Ecological Metadata Language (EML) are required for publishing to OBIS."
 - "Several packages (e.g. obistools, robis, Hmisc) can be used to QA/QC data." 
 - "Use the [GBIF data validator](https://www.gbif.org/tools/data-validator) to check your DwC archives & `.csv` files."
 ---
@@ -26,7 +26,7 @@ The [GBIF Integrated Publishing Toolkit (IPT)](https://www.gbif.org/ipt) is curr
 
 # Ecological Markup [Metadata?] Language (EML) 
 
-Both OBIS and GBIF use [Ecological Markup [Metadata?] Language (EML)](https://eml.ecoinformatics.org/) as the metadata standard associated with the data. For the purposes of this workshop we will not dive into the world of EML. However, we should note that when publishing your data through the IPT, the IPT helps you create an EML file as part of the Darwin Core Archive (DwC-A). As such, if you publish your own data through the IPT, there is no need for innate knowledge on the EML format. But there are a minimum required number of fields that would need to be filled out in the IPT: `title`, `abstract`, `citation`, and several `contacts`.
+Both OBIS and GBIF use [Ecological Metadata Language (EML)](https://eml.ecoinformatics.org/) as the metadata standard associated with the data. For the purposes of this workshop we will not dive into the world of EML. However, we should note that when publishing your data through the IPT, the IPT helps you create an EML file as part of the Darwin Core Archive (DwC-A). As such, if you publish your own data through the IPT, there is no need for innate knowledge on the EML format. But there are a minimum required number of fields that would need to be filled out in the IPT: `title`, `abstract`, `citation`, and several `contacts`.
 
 > ## Tip 
 > Try to collect as much of this information as possible before and during the Darwin Core alignment process. It will 
@@ -55,9 +55,6 @@ Both OBIS and GBIF use [Ecological Markup [Metadata?] Language (EML)](https://em
 | `Study Extent`           | This field represents both a specific sampling area and the sampling frequency (temporal boundaries, frequency of occurrence) of the project. |  |
 | `Sampling Description`   | This field allows for a text-based/human readable description of the sampling procedures used in the research project. | The content of this element would be similar to a description of sampling procedures found in the methods section of a journal article.  |
 | `Step Description`       | This field allows for repeated sets of elements that document a series of methods and procedures used in the study, and the processing steps leading to the production of the data files. These include e.g. text descriptions of the procedures, relevant literature, software, instrumentation and any quality control measurements taken. | Each method should be described in enough detail to allow other researchers to interpret and repeat the study, if required. |
-
-* A note from Abby- I'm struggling with this section because most of it seems redundant to what's in the data. I'm not sure what other EML fields should really be considered. Maybe others have an opinion on this?
-* Note from Tim - included Study Extent, Sampling Description and Step Description if data providers are keen to include more details on their research project. 
 
 If you are interested in creating an EML metadata file, it is possible to upload those into the IPT. There are R packages that can help in developing an EML.xml file. These packages are e.g. [EML](https://github.com/ropensci/EML), [emld](https://github.com/ropensci/emld) or [EMLassemblyline](https://ediorg.github.io/EMLassemblyline/articles/overview.html). 
 
