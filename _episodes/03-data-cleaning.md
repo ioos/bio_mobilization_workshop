@@ -26,7 +26,8 @@ conversions a dataset will undergo to align to the Darwin Core standard. This in
 
 Below is a short summary of each of those conversions as well as some example conversion scripts. The exercises are 
 intended to give you a sense of the variability we've seen in datasets and how we went about converting them. While the
-examples use the [pandas package for Python](https://pandas.pydata.org/) and the [tidyverse collection of packages for R](https://www.tidyverse.org/), 
+examples use the [pandas package for Python](https://pandas.pydata.org/) and the [tidyverse collection of packages for R](https://www.tidyverse.org/),
+(in particular the [lubridate](https://cloud.r-project.org/web/packages/lubridate/lubridate.pdf) package),
 those are not the only options for dealing with these conversions but simply the ones we use more frequently in our 
 experiences. 
 
