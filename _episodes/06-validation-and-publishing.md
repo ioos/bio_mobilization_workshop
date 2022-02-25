@@ -156,7 +156,7 @@ The validation tool provides an indication of whether the dataset can be indexed
 > The GBIF data validator can be used to check a DwC archive `.zip`. 
 > The validator will highlight issues with the archive like bad rows, missing columns, and much more.
 > 
-> You can try using the validator with [this example DwC `.zip` file (hosted on gdrive)](https://drive.google.com/file/d/1iQ5TJg-GvZIhv-gdNrmx1ieTBZdEJE8a/view?usp=sharing) and see the issues with it.
+> You can try using the validator with [this example DwC `.zip` file]({{ page.root }}/data/dwca-sfmbon_zooplankton-v1.4-borked.zip) and see the issues with it.
 >
 >  > ## Solution
 > > The following are issues with the provided DwC archive reported by the GBIF validator (as of 2022-01):
