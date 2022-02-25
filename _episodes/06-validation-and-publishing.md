@@ -76,7 +76,7 @@ ensure that the dataset structure fits the required format for both the Event an
 
 > ## Exercise 
 >
-> **Challenge:** Install [obistools](https://github.com/iobis/obistools) and [Hmisc](https://cran.r-project.org/web/packages/Hmisc/Hmisc.pdf) R packages. Then, perform the following minimal quality assurance and control checks: i) run a diagnostics report for the data quality, ii) ensure the data is in the correct structure, iii) plot the occurrences in a map, and iv) determine whether reported depths are accurate. 
+> **Challenge:** Install [obistools](https://github.com/iobis/obistools) and [Hmisc](https://cran.r-project.org/web/packages/Hmisc/Hmisc.pdf) R packages. Then, perform the following minimal quality assurance and control checks: i) run a diagnostics report for the data quality, ii) ensure that the eventIDs are unique, iii) make sure that the eventDates follow ISO-8601 standards, and iv) determine whether reported depths are accurate. 
 > 
 > 
 > > ## Solution
