@@ -142,8 +142,37 @@ ensure that the dataset structure fits the required format for both the Event an
 > >  {: .output}
 > {: .solution}
 > > ## Solution in Python
+> > First start with reading the data into a pandas dataFrame:
+> > ```python
+> > import pandas as pd
+> > url = 'https://ioos.github.io/bio_mobilization_workshop/data/trawl_fish.xlsx'
+> > df = pd.read_excel(url)
+> > ```
 > > 
-> >  1. Run a diagnostics report for the data quality
+> >  1. Run a diagnostics report for the data quality (you will need [cartopy](https://scitools.org.uk/cartopy/docs/latest/) installed - install with `conda install cartopy`)
+> >     ```python
+> >     import cartopy.io.shapereader as shpreader
+> >     import geopandas as gpd
+> >     import shapely.geometry as sgeom
+> >     from shapely.ops import unary_union
+> >     from shapely.prepared import prep
+> >     
+> >     gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df.decimalLongitude, df.decimalLatitude))
+> >     
+> >     land_shp_fname = shpreader.natural_earth(resolution='50m',
+> >                                            category='physical', name='land')
+> >     
+> >     land_geom = unary_union(list(shpreader.Reader(land_shp_fname).geometries()))
+> >     land = prep(land_geom)
+> >     
+> >     for index, row in gdf.iterrows():
+> >         gdf.loc[index, 'on_land'] = land.contains(row.geometry)
+> >     
+> >     ax = gpd.read_file(land_shp_fname).plot()
+> >     
+> >     gdf.loc[gdf['on_land']==False].plot(ax=ax, color='green', markersize=1)
+> >     gdf.loc[gdf['on_land']==True].plot(ax=ax, color='red', markersize=1)
+> >     ```
 > > 
 > {: .solution}
 {: .challenge}
