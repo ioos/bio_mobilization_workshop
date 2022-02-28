@@ -147,7 +147,7 @@ ensure that the dataset structure fits the required format for both the Event an
 > > import pandas as pd
 > > url = 'https://ioos.github.io/bio_mobilization_workshop/data/trawl_fish.xlsx'
 > > df = pd.read_excel(url)
-> > df['row'] = df.index.to_numpy()
+> > df['row'] = df.index.to_numpy()+1 # python starts at zero
 > > ```
 > > 
 > > 1. Run a diagnostics report for the data quality (you will need [cartopy](https://scitools.org.uk/cartopy/docs/latest/) installed - install with `conda install cartopy`)
@@ -204,7 +204,12 @@ ensure that the dataset structure fits the required format for both the Event an
 > >    dup_events = df.loc[df['eventID'].duplicated()]
 > >    print('Duplicated events:\n',dup_events[['eventID','row']])
 > >    ```
-> >
+> >    ```output
+> >    Duplicated events:
+> >                      eventID  row
+> >    6  IYS:GoA2019:Stn6:trawl    6
+> >    7  IYS:GoA2019:Stn6:trawl    7
+> >    ```
 > {: .solution}
 {: .challenge}
 
