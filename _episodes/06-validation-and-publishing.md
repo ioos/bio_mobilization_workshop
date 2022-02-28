@@ -246,9 +246,9 @@ ensure that the dataset structure fits the required format for both the Event an
 > >        url = 'https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.csvp?elevation%5B({})%5D%5B({})%5D'.format(row['decimalLatitude'],row['decimalLongitude'])
 > >        bathy = pd.read_csv(url)
 > >        df.at[index,'bathy'] = bathy['elevation (m)'] # insert bathymetry value
-> >        time.sleep(0.05)
+> >        time.sleep(0.5) # to not ping erddap too much
 > >    
-> >    print('maximumDepthInMeters > GEBCO bathymetry:')
+> >    print('maximumDepthInMeters deeper than GEBCO bathymetry:')
 > >    if len(df.loc[df['maximumDepthInMeters']<df['bathy']]) > 0:
 > >       print(df.loc[df['maximumDepthInMeters']<df['bathy']])
 > >    else:
