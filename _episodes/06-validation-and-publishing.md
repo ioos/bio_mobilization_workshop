@@ -95,7 +95,7 @@ ensure that the dataset structure fits the required format for both the Event an
 > > ```
 > > <img src="{{ page.root }}/fig/screenshot_obistools_report.png" alt="drawing" width="500"/>{: .image-with-shadow }
 > >
-> > 1. Check to make sure `eventID`s are unique
+> > 1. Check to make sure `eventID` are unique
 > >    ```r
 > >    eventid <- obistools::check_eventids(trawl_fish)
 > >    head(eventid)
@@ -112,7 +112,7 @@ ensure that the dataset structure fits the required format for both the Event an
 > >     6 parentEventID error     4 parentEventID IYS:GoA2019:Stn4 has no corresponding eventID
 > >    ```
 > >    
-> > 1. Check for proper `eventDates` to ensure they follow ISO 8601 standards:
+> > 1. Check for proper `eventDate` to ensure they follow ISO 8601 standards:
 > >     ```r
 > >     eventDate <- obistools::check_eventdate(trawl_fish)
 > >     print(eventDate)  
@@ -199,16 +199,64 @@ ensure that the dataset structure fits the required format for both the Event an
 > >     axs[1].axis('off')
 > >     ```
 > >     <img src="{{ page.root }}/fig/screenshot_python_report.png" alt="drawing" width="500"/>{: .image-with-shadow }
-> > 1. Check to make sure `eventID`s are unique
+> > 1. Check to make sure `eventID` are unique
 > >    ```python
 > >    dup_events = df.loc[df['eventID'].duplicated()]
-> >    print('Duplicated events:\n',dup_events[['eventID','row']])
+> >    print('Duplicated eventID:\n',dup_events[['eventID','row']])
+> >    
+> >    parent_not_event = df.loc[~df['eventID'].isin(df['parentEventID'].unique())]
+> >    print('\nparentEventID missing corresponding eventID:\n', parent_not_event[['parentEventID','row']])
 > >    ```
 > >    ```output
-> >    Duplicated events:
-> >                      eventID  row
-> >    6  IYS:GoA2019:Stn6:trawl    6
-> >    7  IYS:GoA2019:Stn6:trawl    7
+> >    Duplicated eventID:
+> >                       eventID  row
+> >    6  IYS:GoA2019:Stn6:trawl    7
+> >    7  IYS:GoA2019:Stn6:trawl    8
+> >    
+> >    parentEventID missing corresponding eventID:
+> >             parentEventID  row
+> >    0    IYS:GoA2019:Stn1    1
+> >    1    IYS:GoA2019:Stn2    2
+> >    2    IYS:GoA2019:Stn3    3
+> >    3    IYS:GoA2019:Stn4    4
+> >    4    IYS:GoA2019:Stn5    5
+> >    ..                ...  ...
+> >    59  IYS:GoA2019:Stn60   60
+> >    60  IYS:GoA2019:Stn61   61
+> >    61  IYS:GoA2019:Stn62   62
+> >    62  IYS:GoA2019:Stn63   63
+> >    63  IYS:GoA2019:Stn64   64
+> >    [64 rows x 2 columns]
+> >    ```
+> >    
+> > 1. Check for proper `eventDate` to ensure they follow ISO 8601 standards:
+> >    ```python
+> >    for date in df['eventDate']:
+> >        try:
+> >            pd.to_datetime(date)
+> >        except:
+> >            print("Date",date,"might not follow ISO 8601")
+> >    ```
+> >    
+> > 1. From the report generated under exercise 1, you can already see that there’s measurements made on land. Now let's check the depths are within reason for the points. Let's use the [GEBCO bathymetry dataset served in the coastwatch ERDDAP](https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.html).
+> >    ```python
+> >    import time
+> >    
+> >    for index, row in df.iterrows():
+> >        url = 'https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.csvp?elevation%5B({})%5D%5B({})%5D'.format(row['decimalLatitude'],row['decimalLongitude'])
+> >        bathy = pd.read_csv(url)
+> >        df.at[index,'bathy'] = bathy['elevation (m)'] # insert bathymetry value
+> >        time.sleep(0.05)
+> >    
+> >    print('maximumDepthInMeters > GEBCO bathymetry:')
+> >    if len(df.loc[df['maximumDepthInMeters']<df['bathy']]) > 0:
+> >       print(df.loc[df['maximumDepthInMeters']<df['bathy']])
+> >    else:
+> >       print('None')
+> >    ```
+> >    ```output
+> >    max Depths > GEBCO bathymetry:
+> >    None
 > >    ```
 > {: .solution}
 {: .challenge}
