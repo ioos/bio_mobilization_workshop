@@ -76,68 +76,75 @@ ensure that the dataset structure fits the required format for both the Event an
 
 > ## Exercise 
 >
-> **Challenge:** Install [obistools](https://github.com/iobis/obistools) and [Hmisc](https://cran.r-project.org/web/packages/Hmisc/Hmisc.pdf) R packages. Then, perform the following minimal quality assurance and control checks: i) run a diagnostics report for the data quality, ii) ensure that the eventIDs are unique, iii) make sure that the eventDates follow ISO-8601 standards, and iv) determine whether reported depths are accurate. 
+> **Challenge:** Perform the following minimal quality assurance and control checks: 
+> 
+> 1. run a diagnostics report for the data quality, 
+> 1. ensure that the eventIDs are unique, 
+> 1. make sure that the eventDates follow ISO-8601 standards, and 
+> 1. determine whether reported depths are accurate. 
 > 
 > The event core data used in the checks below can be found in [this Excel file]({{ page.root }}/data/trawl_fish.xlsx).
 > 
-> > ## Solution
+> > ## Solution in R
+> > Install [obistools](https://github.com/iobis/obistools) and [Hmisc](https://cran.r-project.org/web/packages/Hmisc/Hmisc.pdf) R packages.
 > > 
-> >  i. Run a diagnostics report for the data quality
-> > 
+> > 1. Run a diagnostics report for the data quality
 > > ```r
 > > report <- obistools::report(trawl_fish)
 > > report
 > > ```
-> > ![screenshot]({{ page.root }}/fig/screenshot_obistools_report.png){: .image-with-shadow }
+> > <img src="{{ page.root }}/fig/screenshot_obistools_report.png" alt="drawing" width="500"/>{: .image-with-shadow }
 > >
-> > ii. Check to make sure eventIDs are unique
+> > 1. Check to make sure `eventID`s are unique
+> >    ```r
+> >    eventid <- obistools::check_eventids(trawl_fish)
+> >    head(eventid)
+> >    ```
+> >    ```output
+> >    # A tibble: 6 x 4
+> >     field         level   row message                                                    
+> >     <chr>         <chr> <int> <chr>                                                      
+> >     1 eventID       error     7 eventID IYS:GoA2019:Stn6:trawl is duplicated               
+> >     2 eventID       error     8 eventID IYS:GoA2019:Stn6:trawl is duplicated               
+> >     3 parentEventID error     1 parentEventID IYS:GoA2019:Stn1 has no corresponding eventID
+> >     4 parentEventID error     2 parentEventID IYS:GoA2019:Stn2 has no corresponding eventID
+> >     5 parentEventID error     3 parentEventID IYS:GoA2019:Stn3 has no corresponding eventID
+> >     6 parentEventID error     4 parentEventID IYS:GoA2019:Stn4 has no corresponding eventID
+> >    ```
+> >    
+> > 1. Check for proper `eventDates` to ensure they follow ISO 8601 standards:
+> >     ```r
+> >     eventDate <- obistools::check_eventdate(trawl_fish)
+> >     print(eventDate)  
+> >     ```
+> >     ```output
+> >     # A tibble: 3 x 4
+> >      level   row field     message                                                       
+> >      <chr> <int> <chr>     <chr>                                                         
+> >     1 error    10 eventDate eventDate 2019-02-24T07u40 does not seem to be a valid date   
+> >     2 error    13 eventDate eventDate 2019-02-25 11h25min does not seem to be a valid date
+> >     3 error    15 eventDate eventDate 2019-26-2 does not seem to be a valid date    
+> >     ```
 > >
-> > ```r
-> > eventid <- obistools::check_eventids(trawl_fish)
-> > head(eventid)
-> > ```
-> > ```output
-> > # A tibble: 6 x 4
-> >  field         level   row message                                                    
-> >  <chr>         <chr> <int> <chr>                                                      
-> > 1 eventID       error     7 eventID IYS:GoA2019:Stn6:trawl is duplicated               
-> > 2 eventID       error     8 eventID IYS:GoA2019:Stn6:trawl is duplicated               
-> > 3 parentEventID error     1 parentEventID IYS:GoA2019:Stn1 has no corresponding eventID
-> > 4 parentEventID error     2 parentEventID IYS:GoA2019:Stn2 has no corresponding eventID
-> > 5 parentEventID error     3 parentEventID IYS:GoA2019:Stn3 has no corresponding eventID
-> > 6 parentEventID error     4 parentEventID IYS:GoA2019:Stn4 has no corresponding eventID
-> > ```
-> >
-> > iii. Check for proper eventDates to ensure they follow ISO 8601 standards:
-> >
-> > ```r
-> > eventDate <- obistools::check_eventdate(trawl_fish)
-> > print(eventDate)  
-> > ```
-> > ```output
-> > # A tibble: 3 x 4
-> >  level   row field     message                                                       
-> >  <chr> <int> <chr>     <chr>                                                         
-> > 1 error    10 eventDate eventDate 2019-02-24T07u40 does not seem to be a valid date   
-> > 2 error    13 eventDate eventDate 2019-02-25 11h25min does not seem to be a valid date
-> > 3 error    15 eventDate eventDate 2019-26-2 does not seem to be a valid date    
-> > ```
-> >
-> > iv. From the report generated under exercise i, you can already see that there's measurements made on land. This information can also be gathered by plotting the map separately or using the check_onland() or check_depth() functions in the obistools package.    
-> >
-> > ```r
-> > depth <- obistools::check_depth(trawl_fish)
-> > onland <- obistools::check_onland(trawl_fish) # Gives the same output.           
-> > print(depth)  
-> > ```
-> > ```output
-> > # A tibble: 1 x 16
-> >  eventID parentEventID eventDate  year month   day decimalLatitude decimalLongitude footprintWKT coordinateUncer~ minimumDepthInM~
-> >  <chr>   <chr>         <chr>     <dbl> <dbl> <dbl>           <dbl>            <dbl> <chr>                   <dbl>            <dbl>
-> > 1 IYS:Go~ IYS:GoA2019:~ 2019-02-~  2019     2    22            67.4            -140. LINESTRING ~            2313.                0
-> > # ... with 5 more variables: maximumDepthInMeters <dbl>, samplingProtocol <chr>, locality <chr>, locationID <chr>, type <chr>    
-> > ```    
+> > 1. From the report generated under exercise 1, you can already see that there's measurements made on land. This information can also be gathered by plotting the map separately or using the `check_onland()` or `check_depth()` functions in the [obistools](https://iobis.github.io/obistools/) package.    
+> >     ```r
+> >     depth <- obistools::check_depth(trawl_fish)
+> >     onland <- obistools::check_onland(trawl_fish) # Gives the same output.           
+> >     print(depth)  
+> >     ```
+> >     ```output
+> >     # A tibble: 1 x 16
+> >      eventID parentEventID eventDate  year month   day decimalLatitude decimalLongitude footprintWKT coordinateUncer~ minimumDepthInM~
+> >      <chr>   <chr>         <chr>     <dbl> <dbl> <dbl>           <dbl>            <dbl> <chr>                   <dbl>            <dbl>
+> >     1 IYS:Go~ IYS:GoA2019:~ 2019-02-~  2019     2    22            67.4            -140. LINESTRING ~            2313.                0
+> >     # ... with 5 more variables: maximumDepthInMeters <dbl>, samplingProtocol <chr>, locality <chr>, locationID <chr>, type <chr>    
+> >     ```    
 > >  {: .output}
+> {: .solution}
+> > ## Solution in Python
+> > 
+> >  1. Run a diagnostics report for the data quality
+> > 
 > {: .solution}
 {: .challenge}
 
