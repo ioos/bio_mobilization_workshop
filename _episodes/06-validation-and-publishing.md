@@ -147,15 +147,17 @@ ensure that the dataset structure fits the required format for both the Event an
 > > import pandas as pd
 > > url = 'https://ioos.github.io/bio_mobilization_workshop/data/trawl_fish.xlsx'
 > > df = pd.read_excel(url)
+> > df['row'] = df.index.to_numpy()
 > > ```
 > > 
-> >  1. Run a diagnostics report for the data quality (you will need [cartopy](https://scitools.org.uk/cartopy/docs/latest/) installed - install with `conda install cartopy`)
+> > 1. Run a diagnostics report for the data quality (you will need [cartopy](https://scitools.org.uk/cartopy/docs/latest/) installed - install with `conda install cartopy`)
 > >     ```python
 > >     import cartopy.io.shapereader as shpreader
 > >     import geopandas as gpd
 > >     import shapely.geometry as sgeom
 > >     from shapely.ops import unary_union
 > >     from shapely.prepared import prep
+> >     import matplotlib.pyplot as plt
 > >     
 > >     gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df.decimalLongitude, df.decimalLatitude))
 > >     
@@ -167,13 +169,42 @@ ensure that the dataset structure fits the required format for both the Event an
 > >     
 > >     for index, row in gdf.iterrows():
 > >         gdf.loc[index, 'on_land'] = land.contains(row.geometry)
-> >     
-> >     ax = gpd.read_file(land_shp_fname).plot()
-> >     
-> >     gdf.loc[gdf['on_land']==False].plot(ax=ax, color='green', markersize=1)
-> >     gdf.loc[gdf['on_land']==True].plot(ax=ax, color='red', markersize=1)
-> >     ```
+> >    
+> >     fig, axs = plt.subplots(ncols=1,nrows=2)
+> >     # Make a map:
+> >     xlim = ([gdf.total_bounds[0]-2,  gdf.total_bounds[2]+2])
+> >     ylim = ([gdf.total_bounds[1]-2,  gdf.total_bounds[3]+2])
+> >
+> >     axs[0].set_xlim(xlim)
+> >     axs[0].set_ylim(ylim)
 > > 
+> >     gpd.read_file(land_shp_fname).plot(ax=axs[0])
+> >     
+> >     gdf.loc[gdf['on_land']==False].plot(ax=axs[0], color='green', markersize=1)
+> >     gdf.loc[gdf['on_land']==True].plot(ax=axs[0], color='red', markersize=1)
+> >     
+> >     # Collect some informational material about potential issues w/ data:
+> >     invalid_coord = []
+> >     if len(gdf.loc[gdf['on_land']==True]) > 0:
+> >        invalid_coord.append('Row {} coordinates on land.'.format(gdf[gdf['on_land'] == True,'row']))
+> >     
+> >     req_cols = ['eventDate', 'decimalLongitude', 'decimalLatitude', 'scientificName', 'scientificNameID', 'occurrenceStatus', 'basisOfRecord']
+> >     missing_cols = []
+> >     for col in req_cols:
+> >      if col not in gdf.columns:
+> >        missing_cols.append('Column {} is missing.'.format(col))
+> >     
+> >     # Add the information to the figure
+> >     axs[1].text(0.25,0.25,'\n'.join(['\n'.join(missing_cols),'\n'.join(invalid_coord)]))
+> >     axs[1].axis('off')
+> >     ```
+> >     <img src="{{ page.root }}/fig/screenshot_python_report.png" alt="drawing" width="500"/>{: .image-with-shadow }
+> > 1. Check to make sure `eventID`s are unique
+> >    ```python
+> >    dup_events = df.loc[df['eventID'].duplicated()]
+> >    print('Duplicated events:\n',dup_events[['eventID','row']])
+> >    ```
+> >
 > {: .solution}
 {: .challenge}
 
