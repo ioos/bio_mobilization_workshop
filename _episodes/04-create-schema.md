@@ -37,6 +37,7 @@ An innovation that OBIS made in this space was introducing the Extended Measurem
 When doing your mapping some required information may be missing. These are the Darwin Core terms that are required to share your data to OBIS plus a few that are needed for GBIF.
 
 #### Event Core
+
 | Darwin Core Term | Definition | Comment | Example |
 |------------------|------------------------------------|---------------------------------------|-----------------|
 | [`eventID`](https://dwc.tdwg.org/terms/#dwc:eventID) | An identifier for the set of information associated with an Event (something that occurs at a place and time). May be a global unique identifier or an identifier specific to the data set.| To construct a globally unique identifier for each event (tow, quadrat, station, transect, etc) you can usually concatenate station + date but you'll need to check this is unique for each row in your data. | `INBO:VIS:Ev:00009375`<br/>`Station_95_Date_09JAN1997:14:35:00.000` <br/> `FFS-216:2007-09-21:A:replicateID1024`|
@@ -46,7 +47,9 @@ When doing your mapping some required information may be missing. These are the 
 | [`countryCode`](https://dwc.tdwg.org/terms/#dwc:countryCode) | The standard code for the country in which the location occurs. | Use an [ISO 3166-1-alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code. Not required for OBIS but GBIF needs this for their system. | `US` |
 | [`geodeticDatum`](https://dwc.tdwg.org/terms/#dwciri:geodeticDatum) | The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in decimalLatitude and decimalLongitude as based. | Must be [WGS84](https://epsg.io/4326) for data shared to OBIS and GBIF but it's best to state explicitly that it is. | `WGS84` |
 
+
 #### Occurrence extension
+
 | Darwin Core Term | Definition | Comment | Example |
 |------------------|------------------------------------|---------------------------------------|-----------------|
 | [`eventID`](https://dwc.tdwg.org/terms/#dwc:eventID) | An identifier for the set of information associated with an Event (something that occurs at a place and time). May be a global unique identifier or an identifier specific to the data set.| This will be constructed in the event core but you need to reference it here in the occurrence extension so the files can link to each other correctly. | `INBO:VIS:Ev:00009375`<br/>`Station_95_Date_09JAN1997:14:35:00.000` <br/> `FFS-216:2007-09-21:A:replicateID1024`|
@@ -57,8 +60,10 @@ When doing your mapping some required information may be missing. These are the 
 | [`kingdom`](https://dwc.tdwg.org/terms/#dwc:kingdom) | The full scientific name of the kingdom in which the taxon is classified.| Not required for OBIS but GBIF needs this to disambiguate scientific names that are the same but in different kingdoms. | `Animalia` |
 | [`occurrenceStatus`](https://dwc.tdwg.org/terms/#dwc:occurrenceStatus) | A statement about the presence or absence of a Taxon at a Location. | For OBIS, only valid values are `present` and `absent`. | `present` |
 
+
 #### Extended Measurement or Fact Extension
 Trick question. Nothing is required from the OBIS perspective but if you are using the extension `eventID` is required to be able to link the extension back to the core. But [here](http://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) are the fields in the extension and what goes in them.
+
 | Darwin Core Term | Definition | Comment | Example |
 |------------------|------------------------------------|---------------------------------------|-----------------|
 | `measurementID` | An identifier for the MeasurementOrFact (information pertaining to measurements, facts, characteristics, or assertions). May be a global unique identifier or an identifier specific to the data set. |  | `9c752d22-b09a-11e8-96f8-529269fb1459` |
