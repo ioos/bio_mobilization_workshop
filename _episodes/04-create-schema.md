@@ -18,10 +18,10 @@ Now that we have a firm basis for understanding the different terms in Darwin Co
 
 ### Different options for sharing the data
 #### Occurrence only
-The bare minimum for sharing data to OBIS is to use the [Occurrence Core](https://tools.gbif.org/dwca-validator/extension.do?id=dwc:Occurrence) with no extensions. The occurrence core allows for providing all the required Darwin Core terms detailed in the [intro section]({{ page.root }}/01-introduction/index.html). You can produce a fully compliant Darwin Core version of the data using only the occurrence core (see this example by Tylar Murray)[https://github.com/ioos/bio_data_guide/blob/main/datasets/example_obis_minimum_flair/occurrences.csv]. On the one hand, if the data were collected using some kind of sampling methodology you will lose much of that information if you use this most simple form of the data. One the other, it is faster and easier to produce.
+The bare minimum for sharing data to OBIS is to use the [Occurrence Core](https://tools.gbif.org/dwca-validator/extension.do?id=dwc:Occurrence) with no extensions. The occurrence core allows for providing all the required Darwin Core terms detailed in the [intro section]({{ page.root }}/01-introduction/index.html). You can produce a fully compliant Darwin Core version of the data using only the occurrence core ([see this example by Tylar Murray](https://github.com/ioos/bio_data_guide/blob/main/datasets/example_obis_minimum_flair/occurrences.csv)). On the one hand, if the data were collected using some kind of sampling methodology you will lose much of that information if you use this most simple form of the data. One the other, it is faster and easier to produce.
 
 > ## Thought Experiment 
-> Look at the example (minimum required fields example)[https://github.com/ioos/bio_data_guide/blob/main/datasets/example_obis_minimum_flair/occurrences.csv]. What is possible
+> Look at the example [minimum required fields example](https://github.com/ioos/bio_data_guide/blob/main/datasets/example_obis_minimum_flair/occurrences.csv). What is possible
 > to do in future reuse? What would not be possible? For instance, note that there is no information about depth or the uncertainty of the coordinates.
 {: .callout}
 
