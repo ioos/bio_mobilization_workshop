@@ -41,7 +41,7 @@ An innovation that OBIS made in this space was introducing the Extended Measurem
 ### What are the **required** Darwin Core terms for publishing Event Core with Extended Measurement or Fact extension?
 When doing your mapping some required information may be missing. These are the Darwin Core terms that are required to share your data to OBIS plus a few that are needed for GBIF.
 
-> #### Event Core
+> ## Event Core
 > 
 > | Darwin Core Term | Definition | Comment | Example |
 > |------------------|------------------------------------|---------------------------------------|-----------------|
