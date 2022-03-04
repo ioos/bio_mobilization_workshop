@@ -88,9 +88,9 @@ When doing your mapping some required information may be missing. These are the 
 > | `measurementMethod` | A description of or reference to (publication, URI) the method or protocol used to determine the measurement, fact, characteristic, or assertion. |  |  |
 > | `measurementRemarks` | Comments or notes accompanying the MeasurementOrFact. |  |  |
 > 
-> The key thing about the extended measurement or fact extension is that it provides a way to include Unique Resource Identifiers (URIs). URIs mean that if you call the measurementType "abundance" but I call it "Abundance per squaure metre" and we both use the measurementTypeID "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/" then we know this is the same measurement type even if we didn't use the same free text words to describe it.
-> 
 {: .solution}
+
+The key thing about the extended measurement or fact extension is that it provides a way to include Unique Resource Identifiers (URIs). URIs mean that if you call the measurementType "abundance" but I call it "Abundance per square meter" and we both use the measurementTypeID "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/" then we know this is the same measurement type even if we didn't use the same free text words to describe it.
 
 > ## Tip 
 > You can search for `measurementType` that other OBIS data providers have used by using the [OBIS mof report](https://mof.obis.org/). BE CAREFUL though to make sure the
