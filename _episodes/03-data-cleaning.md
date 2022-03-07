@@ -311,10 +311,10 @@ The other way to get the taxonomic information you need is to use [worrms](https
 >    ```
 > 2. Upload that file to the [WoRMS Taxon match service](https://www.marinespecies.org/aphia.php?p=match)
 >    * **make sure the option LSID is checked**  
->  ![screenshot]({{ page.root }}/fig/WoRMS_TaxonMatch_Preview.png){: .image-with-shadow }
+>  ![screenshot]({{ page.root }}/fig/WoRMS_TaxonMatch_Preview.PNG){: .image-with-shadow }
 > 
 > 3. Identify which columns to match to which WoRMS term.
->  ![screenshot]({{ page.root }}/fig/WoRMS_TaxonMatch_MatchOutput.png){: .image-with-shadow }
+>  ![screenshot]({{ page.root }}/fig/WoRMS_TaxonMatch_MatchOutput.PNG){: .image-with-shadow }
 > 
 > 4. Click `Match` 
 >
