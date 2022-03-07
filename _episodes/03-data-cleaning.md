@@ -311,10 +311,10 @@ The other way to get the taxonomic information you need is to use [worrms](https
 >    ```
 > 2. Upload that file to the [WoRMS Taxon match service](https://www.marinespecies.org/aphia.php?p=match)
 >    * **make sure the option LSID is checked**  
->  ![screenshot]({{ page.root }}/fig/WoRMS_TaxonMatch_Preview.PNG){: .image-with-shadow }
+>  ![screenshot]({{ page.root }}/fig/WoRMS_upload.png){: .image-with-shadow }
 > 
 > 3. Identify which columns to match to which WoRMS term.
->  ![screenshot]({{ page.root }}/fig/WoRMS_TaxonMatch_MatchOutput.PNG){: .image-with-shadow }
+>  ![screenshot]({{ page.root }}/fig/WoRMS_TaxonMatch_Preview.PNG){: .image-with-shadow }
 > 
 > 4. Click `Match` 
 >
@@ -322,7 +322,7 @@ The other way to get the taxonomic information you need is to use [worrms](https
 >
 >    1. In some cases you will have mismatches. Resolve the mismatched rows by using the pull down menu to select the appropriate match.
 >    2. Non-matched taxa will appear in red. You will have to go back to your source file and determine what the appropriate text should be.      
-> ![screenshot]({{ page.root }}/fig/WoRMS_response.png){: .image-with-shadow }
+> ![screenshot]({{ page.root }}/fig/WoRMS_TaxonMatch_MatchOutput.PNG){: .image-with-shadow }
 >    
 > 6. Download the response as and XLS, XLSX, or text file and use the information when building the Darwin Core file(s).
 >   ```bash
