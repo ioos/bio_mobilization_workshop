@@ -44,7 +44,11 @@ Darwin Core Archives are what OBIS and GBIF harvest into their systems. Fortunat
 {: .challenge}
 
 ### Darwin Core Mapping
-Now that we understand a bit more about why Darwin Core was created and how it's used today we can begin the work of mapping data to the standard. The key resource when mapping data to Darwin Core is the [Darwin Core Quick Reference Guide](https://dwc.tdwg.org/terms/). This document provides an easy-to-read reference of the currently recommended terms for the Darwin Core standard. There are a lot of terms there and you won't use them all for every dataset (or even use them all on any dataset). As your experience grows with mapping to these terms you might gain experience with each term 😊 While it is not a requirement to have your column headers match the Darwin Core terms, as there are mechanisms to do the mapping, we highly recommend changing the column names to match the Darwin Core term verbatim. **Matt comment: My attempt at explaining that the column headers should be the Darwin Core terms verbatim. While hinting at how the meta.xml file can be used to do the mapping.**
+Now that we understand a bit more about why Darwin Core was created and how it is used today we can begin the work of mapping data to the standard. The key resource when mapping data to Darwin Core is the [Darwin Core Quick Reference Guide](https://dwc.tdwg.org/terms/). This document provides an easy-to-read reference of the currently recommended terms for the Darwin Core standard. There are a lot of terms there and you won't use them all for every dataset (or even use them all on any dataset). As your experience grows with mapping to these terms you might gain experience with each term. 😊 Though there are mechanisms to do the mapping from your headers to the DwC terms (using `meta.xml`), we highly recommend changing the column names to match the Darwin Core term verbatim. 
+
+> ## Tip 
+> If your raw column headers are Darwin Core terms verbatim then you can skip this step! Next time you plan data collection use the standard DwC term headers!
+
 
 > ## Exercise
 > 
