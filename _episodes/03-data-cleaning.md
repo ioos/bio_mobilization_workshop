@@ -320,7 +320,7 @@ The other way to get the taxonomic information you need is to use [worrms](https
 >
 > 5. Hopefully, a WoRMS exact match will return
 >
->    1. In some cases you will have mismatches. Resolve the mismatched rows by using the pull down menu to select the appropriate match.
+>    1. In some cases you will have ambiguous matches. Resolve the these rows by using the pull down menu to select the appropriate match.
 >    2. Non-matched taxa will appear in red. You will have to go back to your source file and determine what the appropriate text should be.      
 > ![screenshot]({{ page.root }}/fig/WoRMS_TaxonMatch_MatchOutput.PNG){: .image-with-shadow }
 >    
