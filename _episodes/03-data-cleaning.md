@@ -539,13 +539,4 @@ order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLon
 >   ```
 {: .solution}
 
-> ## Exercise
-> 
-> Optional: Share your cleaned data and code used with the community.
-> 
-> Clean your "raw" data and submit the data & your code to the following [this google form](https://docs.google.com/forms/d/e/1FAIpQLSd7cNc3n9u2REBQFRYO3NCGgojhjyqJ38COl37PwQC-OgLx9g/viewform?usp=sf_link).
-> 
-{: .challenge}
-
-
 {% include links.md %}
