@@ -118,9 +118,8 @@ start_time: 0
 # order extras
 extras_order:
   - about
-  - discuss
+  - helpful-tutorials
   - figures
-  - guide
 
 # Specify that things in the episodes collection should be output.
 collections:
