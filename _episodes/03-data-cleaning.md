@@ -323,6 +323,8 @@ The other way to get the taxonomic information you need is to use [worrms](https
 >    ![screenshot]({{ page.root }}/fig/WoRMS_TaxonMatch_MatchOutput.PNG){: .image-with-shadow }
 >    
 > 6. Download the response as and XLS, XLSX, or text file and use the information when building the Darwin Core file(s).
+>    The response from the example linked above can be found [here]({{ page.root }}/data/species_matched.xlsx). A screenshot of the file
+>    can be seen below:
 >    ![screenshot]({{ page.root }}/fig/matched_species_screenshot.png){: .image-with-shadow }
 {: .solution}
 
