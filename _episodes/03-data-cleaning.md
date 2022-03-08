@@ -304,13 +304,11 @@ The other way to get the taxonomic information you need is to use [worrms](https
 
 > ## Using the WoRMS Taxon Match Tool
 > 1. Create a CSV (comma separated value) file with the scientific name of the species of interest. Here we are showing 
->    the contents of the file `animal.csv`.
->    ```bash
->    > head animal.csv
->    Carcharodon carcharias,
->    ```
+>    some of the contents of the file [`species.csv`]({{ page.root }}/data/species.csv).
+>    ![screenshot]({{ page.root }}/fig/species_file_screenshot.png){: .image-with-shadow }
+>
 > 2. Upload that file to the [WoRMS Taxon match service](https://www.marinespecies.org/aphia.php?p=match)
->    * **make sure the option LSID is checked**  
+>    * **make sure the option LSID is checked**   
 >  ![screenshot]({{ page.root }}/fig/WoRMS_upload.png){: .image-with-shadow }
 > 
 > 3. Identify which columns to match to which WoRMS term.
@@ -322,14 +320,10 @@ The other way to get the taxonomic information you need is to use [worrms](https
 >
 >    1. In some cases you will have ambiguous matches. Resolve the these rows by using the pull down menu to select the appropriate match.
 >    2. Non-matched taxa will appear in red. You will have to go back to your source file and determine what the appropriate text should be.      
-> ![screenshot]({{ page.root }}/fig/WoRMS_TaxonMatch_MatchOutput.PNG){: .image-with-shadow }
+>    ![screenshot]({{ page.root }}/fig/WoRMS_TaxonMatch_MatchOutput.PNG){: .image-with-shadow }
 >    
 > 6. Download the response as and XLS, XLSX, or text file and use the information when building the Darwin Core file(s).
->   ```bash
->   > head animal_matched.txt
->   ScientificName,,AphiaID,Match type,LSID,ScientificName,Taxon status,AphiaID_accepted,ScientificName_accepted
->   Carcharodon carcharias,,105838,exact,urn:lsid:marinespecies.org:taxname:105838,Carcharodon carcharias,accepted,105838,Carcharodon carcharias
->   ```
+>    ![screenshot]({{ page.root }}/fig/matched_species_screenshot.png){: .image-with-shadow }
 {: .solution}
 
 > ## Using the worrms R package
