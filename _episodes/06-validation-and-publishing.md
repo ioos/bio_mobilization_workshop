@@ -3,20 +3,17 @@ title: "Metadata, validating, and publishing"
 teaching: 0
 exercises: 90
 questions:
-- "How can I validate and publish my data?"
+- "How can I QC and publish my data?"
 objectives:
 - "Compiling metadata for EML."
 - "Data enhancement and quality control"
-- "Validation of records."
 keypoints:
 - "Some metadata fields in the Ecological Metadata Language (EML) are required for publishing to OBIS."
 - "Several packages (e.g. obistools, robis, Hmisc) can be used to QA/QC data." 
-- "Use the [GBIF data validator](https://www.gbif.org/tools/data-validator) to check your DwC archives & `.csv` files."
 ---
 
 1. Creating EML metadata text file
 2. Data enhancement and quality control
-3. Validation of DwC archive files
 
 # Integrated Publishing Toolkit
 The [GBIF Integrated Publishing Toolkit (IPT)](https://www.gbif.org/ipt) is currently the only way to publish data to OBIS. [OBIS nodes](https://obis.org/contact/) host an IPT instance for their region or theme. The [OBIS-USA IPT](https://www1.usgs.gov/obis-usa/ipt/) (hosted at the USGS) is available for anyone in the US to publish their data to OBIS and GBIF. To publish using this IPT work with the OBIS-USA node manager, Abby Benson. You can choose to download and install your own instance of the IPT but it might be difficult to register it with OBIS. Instead it's recommended to work with one of the OBIS nodes to publish your data through their IPT. The requirements for publishing via an OBIS node IPT are that the data follows Darwin Core, includes the required Darwin Core and EML metadata elements, and you have contacted the node to ensure the data are a good fit for that node. 
