@@ -67,19 +67,184 @@ OBIS performs a number of quality checks on the data it receives. Red quality fl
 > * _(optional)_ Check that the `scientificNameID` is/are valid. 
 {: .callout}
 
+One method for reviewing your data is to use the r package [Hmisc](https://cran.r-project.org/web/packages/Hmisc/index.html) and the function [describe](https://rdrr.io/cran/Hmisc/man/describe.html). Expand the example below using output from [this notebook](https://github.com/ioos/bio_data_guide/blob/main/datasets/TPWD_HARC_BagSeine/TPWD_HARC_BagSeine_OBISENV.md) to see how it works.
+
+> #### Hmisc::describe
+> ```r
+> Hmisc::describe(occurrence)
+> ```
+> ```output
+> occurrence 
+> 18  Variables      202860  Observations
+> -------------------------------------------------------------------------------------------------------
+> vernacularName 
+>        n  missing distinct 
+>   202860        0       84 
+>   
+> lowest : Alligator gar        Arrow shrimp         Atlantic brief squid Atlantic croaker     Atlantic needlefish 
+> highest: Thinstripe hermit    Threadfin shad       Tidewater silverside White mullet         White shrimp        
+> -------------------------------------------------------------------------------------------------------
+> eventID 
+>        n  missing distinct 
+>   202860        0     2415 
+>
+> lowest : Station_100_Date_03MAY1990:10:09:00.000 Station_100_Date_04NOV2008:07:15:00.000 Station_100_Date_04OCT2006:09:18:00.000 Station_100_Date_07APR1981:07:30:00.000
+> Station_100_Date_07AUG1979:07:50:00.000
+> highest: Station_99_Date_17SEP2002:09:25:00.000  Station_99_Date_20APR1999:10:08:00.000  Station_99_Date_22SEP1988:09:52:00.000  Station_99_Date_23MAY1996:07:10:00.000 
+> Station_99_Date_29MAY1985:09:20:00.000 
+> -------------------------------------------------------------------------------------------------------
+> occurrenceStatus 
+>        n  missing distinct
+>   202860        0        2 
+>                        
+>   Value       Absent Present
+>   Frequency   184636   18224
+>   Proportion    0.91    0.09
+> -------------------------------------------------------------------------------------------------------
+> basisOfRecord 
+>            n          missing         distinct            value 
+>       202860                0                1 HumanObservation 
+>                           
+> Value      HumanObservation
+> Frequency            202860
+> Proportion                1
+> -------------------------------------------------------------------------------------------------------
+> scientificName 
+>      n  missing distinct 
+> 202860        0       84 
+> 
+> lowest : Achirus lineatus            Alpheus estuariensis        Anchoa mitchilli            Archosargus probatocephalus Argopecten irradians       
+> highest: Syngnathus scovelli         Synodus foetens             Tozeuma carolinense         Trachinotus carolinus       Trinectes maculatus        
+> -------------------------------------------------------------------------------------------------------
+> scientificNameID 
+>      n  missing distinct 
+> 202860        0       84 
+> 
+> lowest : urn:lsid:marinespecies.org:taxname:107032 urn:lsid:marinespecies.org:taxname:107335 urn:lsid:marinespecies.org:taxname:107379
+> urn:lsid:marinespecies.org:taxname:126430 urn:lsid:marinespecies.org:taxname:126803
+> highest: urn:lsid:marinespecies.org:taxname:421735 urn:lsid:marinespecies.org:taxname:421784 urn:lsid:marinespecies.org:taxname:422069
+> urn:lsid:marinespecies.org:taxname:443955 urn:lsid:marinespecies.org:taxname:581423
+> -------------------------------------------------------------------------------------------------------
+> kingdom 
+>      n  missing distinct    value 
+> 202860        0        1 Animalia 
+>                    
+> Value      Animalia
+> Frequency    202860
+> Proportion        1
+> -------------------------------------------------------------------------------------------------------
+> phylum 
+>      n  missing distinct 
+> 198030     4830        4 
+>                                                      
+> Value      Arthropoda   Chordata   Cnidaria   Mollusca
+> Frequency       33810     149730       2415      12075
+> Proportion      0.171      0.756      0.012      0.061
+> -------------------------------------------------------------------------------------------------------
+> class 
+>      n  missing distinct 
+> 198030     4830        7 
+> 
+> lowest : Actinopteri    Bivalvia       Cephalopoda    Elasmobranchii Gastropoda    
+> highest: Cephalopoda    Elasmobranchii Gastropoda     Malacostraca   Scyphozoa     
+>                                                                                                     
+> Value         Actinopteri       Bivalvia    Cephalopoda Elasmobranchii     Gastropoda   Malacostraca
+> Frequency          144900           4830           2415           4830           4830          33810
+> Proportion          0.732          0.024          0.012          0.024          0.024          0.171
+>                          
+> Value           Scyphozoa
+> Frequency            2415
+> Proportion          0.012
+> -------------------------------------------------------------------------------------------------------
+> order 
+>      n  missing distinct 
+> 198030     4830       28 
+> 
+> lowest : [unassigned] Caenogastropoda Acanthuriformes              Aplysiida                    Atheriniformes               Aulopiformes                
+> highest: Rhizostomeae                 Siluriformes                 Syngnathiformes              Tetraodontiformes            Venerida                    
+> -------------------------------------------------------------------------------------------------------
+> family 
+>      n  missing distinct 
+> 198030     4830       48 
+> 
+> lowest : Achiridae      Alpheidae      Aplysiidae     Ariidae        Atherinopsidae
+> highest: Stromateidae   Syngnathidae   Synodontidae   Tetraodontidae Triglidae     
+> -------------------------------------------------------------------------------------------------------
+> genus 
+>      n  missing distinct 
+> 198030     4830       66 
+> 
+> lowest : Achirus     Alpheus     Anchoa      Archosargus Argopecten 
+> highest: Syngnathus  Synodus     Tozeuma     Trachinotus Trinectes  
+> -------------------------------------------------------------------------------------------------------
+> scientificNameAuthorship 
+>      n  missing distinct 
+> 198030     4830       66 
+> 
+> lowest : (Baird & Girard, 1853)        (Baird & Girard, 1855)        (Blainville, 1823)            (Bleeker, 1863)               (Bloch & Schneider, 1801)    
+> highest: Rathbun, 1896                 Say, 1817 [in Say, 1817-1818] Shipp & Yerger, 1969          Valenciennes, 1836            Valenciennes, 1847           
+> -------------------------------------------------------------------------------------------------------
+> taxonRank
+>       n  missing distinct 
+>  202860        0        4 
+>                                                        
+> Value           Genus      Order    Species Subspecies
+> Frequency        2415       2415     195615       2415
+> Proportion      0.012      0.012      0.964      0.012
+> -------------------------------------------------------------------------------------------------------
+> organismQuantity 
+>      n  missing distinct     Info     Mean      Gmd      .05      .10      .25      .50      .75 
+> 202860        0     3265    0.246   0.0119  0.02296     0.00     0.00     0.00     0.00     0.00 
+>    .90      .95 
+>   0.00     0.05 
+>   
+> lowest : 0.000000000 0.001897533 0.001964637 0.002000000 0.002433090
+> highest: 0.935779817 0.942307692 0.942857143 0.952380952 0.973684211
+> -------------------------------------------------------------------------------------------------------
+> organismQuantityType 
+>            n            missing           distinct              value 
+>       202860                  0                  1 Relative Abundance 
+>                              
+> Value      Relative Abundance
+> Frequency              202860
+> Proportion                  1
+> -------------------------------------------------------------------------------------------------------
+> occurrenceID 
+>      n  missing distinct 
+> 202860        0   202860 
+> 
+> lowest : Station_100_Date_03MAY1990:10:09:00.000_Achirus_lineatus            Station_100_Date_03MAY1990:10:09:00.000_Alpheus_estuariensis       
+> Station_100_Date_03MAY1990:10:09:00.000_Anchoa_mitchilli            Station_100_Date_03MAY1990:10:09:00.000_Archosargus_probatocephalus
+> Station_100_Date_03MAY1990:10:09:00.000_Argopecten_irradians       
+> highest: Station_99_Date_29MAY1985:09:20:00.000_Syngnathus_scovelli          Station_99_Date_29MAY1985:09:20:00.000_Synodus_foetens             
+> Station_99_Date_29MAY1985:09:20:00.000_Tozeuma_carolinense          Station_99_Date_29MAY1985:09:20:00.000_Trachinotus_carolinus      
+> Station_99_Date_29MAY1985:09:20:00.000_Trinectes_maculatus         
+> -------------------------------------------------------------------------------------------------------
+> collectionCode 
+>                     n                     missing                    distinct 
+>                202860                           0                           1 
+>                 value 
+> Upper Laguna Madre Gill Net 
+> 
+> Value      Upper Laguna Madre Gill Net
+> Frequency                       202860
+> Proportion                           1
+> ```
+> {: .solution}
+
 > ## Exercise 
 >
 > **Challenge:** Perform the following minimal quality assurance and control checks: 
 > 
-> 1. run a diagnostics report for the data quality, 
-> 1. ensure that the eventIDs are unique, 
-> 1. make sure that the eventDates follow ISO-8601 standards, and 
-> 1. determine whether reported depths are accurate. 
+> 1. Run a diagnostics report for the data quality. 
+> 1. Ensure that the eventIDs are unique. 
+> 1. Make sure that the eventDates follow ISO-8601 standards. 
+> 1. Determine whether reported depths are accurate. 
 > 
 > The event core data used in the checks below can be found in [this Excel file]({{ page.root }}/data/trawl_fish.xlsx).
 > 
 > > ## Solution in R
-> > Install [obistools](https://github.com/iobis/obistools) and [Hmisc](https://cran.r-project.org/web/packages/Hmisc/Hmisc.pdf) R packages.
+> > Install [obistools](https://github.com/iobis/obistools) R packages.
 > > 
 > > 1. Run a diagnostics report for the data quality
 > > ```r
@@ -253,7 +418,5 @@ OBIS performs a number of quality checks on the data it receives. Red quality fl
 > >    ```
 > {: .solution}
 {: .challenge}
-
-
 
 {% include links.md %}
