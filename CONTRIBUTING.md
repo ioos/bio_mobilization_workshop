@@ -1,19 +1,5 @@
 # Contributing
 
-## How this repo is organized
-
-
-### Branch structure
-- `gh-pages` - website materials for the current workshop
-  - **_episodes/** - directory where markdown files are for the website.
-- `main` - datasets/code for the current workshop
-  - **datasets/** - directory containing example data and scripts for darwin core alignment
-
-Archived material will be stored in a branch indicating the year and material. For example, the 
-2022 website material will be archived in the branch `2022_site` (or `2022_gh-pages`?). The 2022 workshop datasets/code 
-will be archived in the branch `2022_main`. This ensures all material is accessible in the future and facilitates 
-replicating the materials for another workshop.
-
 ## How to Contribute
 The easiest way to get started is to file an issue to tell us about a spelling mistake, some awkward wording,
 or a factual error. This is a good way to introduce yourself and to meet some of our community members.
