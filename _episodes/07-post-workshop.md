@@ -25,19 +25,19 @@ Many from this workshop meet monthly at the SMBD and interact asynchronously to 
 There are two primary ways to interact with the SMBD:
 
 ### Monthly SMBD Meetings
-Information about monthly SMBD meetings can be found on the SMBD github page [here](https://github.com/ioos/bio_data_guide#monthly-meetings).
+Information about monthly SMBD meetings can be found on the SMBD github page [here](https://github.com/ioos/bio_data_guide#monthly-meetings){:target="_blank"}.
 Anyone is welcome to attend - we are a small community of individuals who are passionate about getting data into OBIS, DwC, other standard forms.
 
 ### SMBD GitHub Issue Tracker
-As an alternative to attending the monthly SBMD meetings anyone is welcome to open an "issue" in the [SMBD GitHub Issue tracker](https://github.com/ioos/bio_data_guide/issues).
+As an alternative to attending the monthly SBMD meetings anyone is welcome to open an "issue" in the [SMBD GitHub Issue tracker](https://github.com/ioos/bio_data_guide/issues){:target="_blank"}.
 This issue tracker is not just for "issue reporting" - please use it to ask questions or start discussions about your data.
 You can upload your dataset into the `/datasets/` directory so that the SMBD community can help as well.
 
 > ## Tip 
-> More information about the SMBD group can be found at [github/ioos/bio_data_guide](https://github.com/ioos/bio_data_guide).
+> More information about the SMBD group can be found at [https://github.com/ioos/bio_data_guide](https://github.com/ioos/bio_data_guide){:target="_blank"}.
 {: .callout}
 
 ## Post-Workshop Survey
-If you wish to provide feedback please use [this post-workshop survey](https://docs.google.com/forms/d/e/1FAIpQLSdiNqJA8sLcZLKsTvuglO1M6_ew2HtR8pVE2Jxlui94kAHcQA/viewform?usp=sf_link).
+If you wish to provide feedback please use [this post-workshop survey](https://docs.google.com/forms/d/e/1FAIpQLSdiNqJA8sLcZLKsTvuglO1M6_ew2HtR8pVE2Jxlui94kAHcQA/viewform?usp=sf_link){:target="_blank"}.
 
 {% include links.md %}
