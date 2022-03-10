@@ -9,7 +9,7 @@ objectives:
 - "Data enhancement and quality control"
 keypoints:
 - "Some metadata fields in the Ecological Metadata Language (EML) are required for publishing to OBIS."
-- "Several packages (e.g. obistools, robis, Hmisc) can be used to QA/QC data." 
+- "Several packages (e.g. obistools, Hmisc) can be used to QA/QC data." 
 ---
 
 1. Creating EML metadata text file
@@ -55,13 +55,10 @@ More information on EML can be found in the [bio data guide](https://ioos.github
 | `Sampling Description`   | This field allows for a text-based/human readable description of the sampling procedures used in the research project. | The content of this element would be similar to a description of sampling procedures found in the methods section of a journal article.  |
 | `Step Description`       | This field allows for repeated sets of elements that document a series of methods and procedures used in the study, and the processing steps leading to the production of the data files. These include e.g. text descriptions of the procedures, relevant literature, software, instrumentation and any quality control measurements taken. | Each method should be described in enough detail to allow other researchers to interpret and repeat the study, if required. |
 
-If you are interested in creating an EML metadata file, it is possible to upload those into the IPT. There are R packages that can help in developing an EML.xml file. These packages are e.g. [EML](https://github.com/ropensci/EML), [emld](https://github.com/ropensci/emld) or [EMLassemblyline](https://ediorg.github.io/EMLassemblyline/articles/overview.html). 
-
 ---
 # Data enhancement and quality control
 
-OBIS performs a number of quality checks on the data it receives. Red quality flags are attached to occurrence records if errors are encountered, and records may also be rejected if they do not meet minimum requirements. The checks that OBIS performs are documented [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4309024/pdf/bau125.pdf) and a python implementation is available [here](https://github.com/iobis/obis-qc). Therefore, prior to publishing your data to OBIS and/or GBIF, it is important to perform quality control on your standardized data. This can help identify any outliers or "faulty" data. It will also help with ensuring that your data is compatible and interoperable with other datasets published to OBIS. There are numerous functions within the [robis](https://www.rdocumentation.org/packages/robis/versions/2.3.9) or [obistools](https://github.com/iobis/obistools) R packages that can serve to identify outliers, inspect quality or 
-ensure that the dataset structure fits the required format for both the Event and Occurrence tables. 
+OBIS performs a number of quality checks on the data it receives. Red quality flags are attached to occurrence records if errors are encountered, and records may also be rejected if they do not meet minimum requirements. The checks that OBIS performs are documented [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4309024/pdf/bau125.pdf) and a python implementation is available [here](https://github.com/iobis/obis-qc). Therefore, prior to publishing your data to OBIS and/or GBIF, it is important to perform quality control on your standardized data. This can help identify any outliers or "faulty" data. It will also help with ensuring that your data is compatible and interoperable with other datasets published to OBIS. There are numerous functions within the [obistools](https://github.com/iobis/obistools) R packages that can serve to identify outliers, inspect quality or ensure that the dataset structure fits the required format for both the Event and Occurrence tables. 
 
 > ## Recommended initial checks on your data
 > * Make a map from your data to ensure the coordinates are valid and within your expected range.
