@@ -345,18 +345,55 @@ The other way to get the taxonomic information you need is to use [worrms](https
 {: .solution}
 
 > ## Using the pyworms python package
-> 1. [_Carcharodon carcharias_](https://www.marinespecies.org/aphia.php?p=taxdetails&id=105838) (White shark)
+> 1. Bringing in [`species.csv`]({{ page.root }}/data/species.csv) and collecting appropriate information from WoRMS using the pyworms package.
+>
+>    __Note__ some of the responses have multiple matches, so the user needs to evaluate which match is appropriate.
 >    ```python
+>    import pandas as pd
 >    import pyworms
->    worms = pyworms.aphiaRecordsByMatchNames('Carcharodon carcharias', marine_only=True)[0][0]
->    print(worms['lsid'])
->    print(worms['rank'])
->    print(worms['kingdom'])
+>    import pprint
+>    
+>    fname = 'https://ioos.github.io/bio_mobilization_workshop/data/species.csv'
+>    
+>    # Read in the csv data to data frame
+>    df = pd.read_csv(fname)
+>    
+>    # Iterate row by row through the data frame and query worms for each ScientificName term.
+>    for index, row in df.iterrows():
+>       resp = pyworms.aphiaRecordsByMatchNames(row['ORIGINAL_NAME'], marine_only=True)
+>       
+>       # When no matches are found, print the non-matching name and move on
+>       if len(resp[0]) == 0:
+>          print('\nNo match for name "{}"'.format(row['ORIGINAL_NAME']))
+>          continue
+>    
+>       # When more than 1 match is found, the user needs to take a look. But tell the user which one has multiple matches
+>       elif len(resp[0]) > 1:
+>          print('\nMultiple matches for name "{}":'.format(row['ORIGINAL_NAME']))
+>          pprint.pprint(resp[0], indent=4)
+>          continue
+>    
+>       # When only 1 match is found, put the appropriate information into the appropriate row and column
+>       else:
+>          worms = resp[0][0]
+>          df.loc[index, 'scientificNameID'] = worms['lsid']
+>          df.loc[index, 'taxonRank'] = worms['rank']
+>          df.loc[index, 'kingdom'] = worms['kingdom']
+>    
+>    # print the first 10 rows
+>    df.head()
 >    ```
 >    ```output
->    urn:lsid:marinespecies.org:taxname:105838
->    Species
->    Animalia
+>    No match for scientific name "Zygophylax  doris (Faxon, 1893)"
+>   
+>    Multiple matches for scientific name "Acanthephyra brevirostris Smith, 1885"
+>    
+>                                     ORIGINAL_NAME                           scientificNameID taxonRank   kingdom
+>    0              Zygophylax  doris (Faxon, 1893)                                        NaN       NaN       NaN
+>    1       Bentheogennema intermedia (Bate, 1888)  urn:lsid:marinespecies.org:taxname:107086   Species  Animalia
+>    2  Bentheogennema stephenseni Burkenroad, 1940  urn:lsid:marinespecies.org:taxname:377419   Species  Animalia
+>    3       Bentheogennema pasithea (de Man, 1907)  urn:lsid:marinespecies.org:taxname:377418   Species  Animalia
+>    4        Acanthephyra brevirostris Smith, 1885                                        NaN       NaN       NaN
 >    ```
 {: .solution}
 
