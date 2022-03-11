@@ -230,6 +230,7 @@ One method for reviewing your data is to use the r package [Hmisc](https://cran.
 > Frequency                       202860
 > Proportion                           1
 > ```
+> 
 {: .solution}
 
 > ## Exercise 
