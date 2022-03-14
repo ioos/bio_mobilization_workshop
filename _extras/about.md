@@ -10,6 +10,8 @@ This workshop is a small hands-on, interactive virtual workshop focused on mobil
 
 The workshop will be organized based on the sections described on the [schedule](https://ioos.github.io/bio_mobilization_workshop/#schedule). We will spend 5 - 10 minutes presenting each section and then the rest of the time will be spent in breakout rooms working on your data. 
 
+## Breakout Rooms
+
 The breakout rooms are organized into topics based on the Darwin Core mobilization activity you plan to work on. Below are the breakout rooms and their descriptions:
 
 | Breakout Room | Description |
