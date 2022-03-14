@@ -1,5 +1,5 @@
 ---
-title: "Creating schema"
+title: "Darwin Core and Extension Schemas"
 start: true
 teaching: 0
 exercises: 120
