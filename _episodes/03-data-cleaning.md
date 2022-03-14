@@ -399,11 +399,15 @@ The other way to get the taxonomic information you need is to use [worrms](https
 
 # Getting lat/lon to decimal degrees
 
-Note, that the requirement for `decimalLatitude` and `decmailLongitude` is they must be in decimal degrees in WGS84. 
-Since this is the requirement for Darwin Core, OBIS and GBIF will assume data shared using those Darwin Core terms are 
-in the geodetic datum `WGS84`. We highly recommend checking the coordinate reference system of your observations to 
-confirm they are using the same datum. If your coordinates are not using `WGS84`, they will need to be converted in 
-order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLongitude` are required terms.
+Latitude (`decimalLatitude`) and Longitude (`decimalLongitude`) are the geographic latitude and longitude (in decimal degrees north and east, respectively), using the spatial reference system given in `geodeticDatum` of the geographic center of a Location.
+* `decimalLatitude`, positive values are north of the Equator, negative values are south of it. All values lie between -90 and 90, inclusive. 
+* `decimalLongitude`, positive values are east of the Greenwich Meridian, negative values are west of it. All values lie between -180 and 180, inclusive.
+
+Note, that the requirement for `decimalLatitude` and `decmailLongitude` is they must be in decimal degrees in [WGS84](https://en.wikipedia.org/wiki/World_Geodetic_System). Since this is the requirement for Darwin Core, **OBIS and GBIF will assume data shared using those Darwin Core terms are in the geodetic datum `WGS84`**. We highly recommend checking the coordinate reference system (CRS) of your observations to confirm they are using the same datum and documenting it in the `geodeticDatum` Darwin Core term. If your coordinates are not using `WGS84`, they will need to be converted in order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLongitude` are required terms. 
+
+Helpful packages for managing CRS and geodetic datum:
+* python: [GeoPandas](https://geopandas.org/en/stable/getting_started.html) has a [utility](https://geopandas.org/en/stable/docs/user_guide/projections.html#re-projecting).
+* R: [rgdal](https://cran.r-project.org/web/packages/rgdal/index.html) and [sp](https://cran.r-project.org/web/packages/sp/index.html).
 
 > ## Tip 
 > If at all possible, it's best to extract out the components of the information you have in order to compile the 
@@ -412,10 +416,11 @@ order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLon
 > track which values are latitude and which are longitude.
 {: .callout}
 
-| Darwin Core Term | Description | Example     |
-|------------------|-------------|-------------|
-| [decimalLatitude](https://dwc.tdwg.org/list/#dwc_decimalLatitude) | The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. | `-41.0983423` |
+| Darwin Core Term | Description | Example        |
+|------------------|-------------|----------------|
+| [decimalLatitude](https://dwc.tdwg.org/list/#dwc_decimalLatitude) | The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. | `-41.0983423`  |
 | [decimalLongitude](https://dwc.tdwg.org/list/#dwc_decimalLongitude) | The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive. | `-121.1761111` |
+| [geodeticDatum](https://dwc.tdwg.org/list/#dwc_geodeticDatum) | The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in decimalLatitude and decimalLongitude as based. | `WGS84` |
 
 ![coordinate_precision](https://imgs.xkcd.com/comics/coordinate_precision.png){: .image-with-shadow }
 
