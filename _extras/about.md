@@ -7,3 +7,17 @@ Marine Data Mobilization Workshop for Biology and Ecosystem Essential Ocean Vari
 
 
 This workshop is a small hands-on, interactive virtual workshop focused on mobilizing marine biological observation datasets to the Ocean Biodiversity Information System (OBIS) by helping data providers standardize their data using Darwin Core. This includes species observations from any type of sampling methodologies (e.g. visual surveys, net tows, microscopy, fish trawls, imaging, `omics, acoustics, telemetry).
+
+The workshop will be organized based on the sections described on the [schedule](https://ioos.github.io/bio_mobilization_workshop/#schedule). We will spend 5 - 10 minutes presenting each section and then the rest of the time will be spent in breakout rooms working on your data. 
+
+The breakout rooms are organized into topics based on the Darwin Core mobilization activity you plan to work on. Below are the breakout rooms and their descriptions:
+
+| Breakout Room | Description |
+| ------------- |-------------|
+| Dawrin Core Terms | Identifying appropriate Darwin Core terms for your data [workshop link](https://ioos.github.io/bio_mobilization_workshop/01-introduction/index.html) |
+| Date Formatting | Formatting your dates to ISO-8601. [workshop link](https://ioos.github.io/bio_mobilization_workshop/03-data-cleaning/index.html#getting-your-dates-in-order) |
+| Lat/Lon Conversions | Converting your latitude and longitude to decimal degrees north and east. [workshop link](https://ioos.github.io/bio_mobilization_workshop/03-data-cleaning/index.html#getting-latlon-to-decimal-degrees) |
+| WoRMS lookup | Matching your scientific names to WoRMS. [workshop link](https://ioos.github.io/bio_mobilization_workshop/03-data-cleaning/index.html#matching-your-scientific-names-to-worms) |
+| QA/QC | Checking your data for any high level issues. [workshop link](https://ioos.github.io/bio_mobilization_workshop/06-validation-and-publishing/index.html#data-enhancement-and-quality-control) |
+| Metadata+Publishing (EML+IPT) | Collecting appropriate metadata to document your data. [workshop link](https://ioos.github.io/bio_mobilization_workshop/06-validation-and-publishing/index.html#integrated-publishing-toolkit) |
+| Creating the Schema | Organizing your data between cores and extensions. [workshop link](https://ioos.github.io/bio_mobilization_workshop/04-create-schema/index.html) |
