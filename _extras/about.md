@@ -16,10 +16,10 @@ The breakout rooms are organized into topics based on the Darwin Core mobilizati
 
 | Breakout Room | Description | Workshop material link |
 | ------------- |-------------| ---------------------- |
-| Dawrin Core Terms | Identifying appropriate Darwin Core terms for your data. | [workshop material link](https://ioos.github.io/bio_mobilization_workshop/01-introduction/index.html) |
+| Darwin Core Terms | Identifying appropriate Darwin Core terms for your data. | [workshop material link](https://ioos.github.io/bio_mobilization_workshop/01-introduction/index.html) |
 | Date Formatting | Formatting your dates to ISO-8601. | [workshop material link](https://ioos.github.io/bio_mobilization_workshop/03-data-cleaning/index.html#getting-your-dates-in-order) |
 | Lat/Lon Conversions | Converting your latitude and longitude to decimal degrees north and east. | [workshop material link](https://ioos.github.io/bio_mobilization_workshop/03-data-cleaning/index.html#getting-latlon-to-decimal-degrees) |
-| WoRMS lookup | Matching your scientific names to WoRMS. | [workshop material link](https://ioos.github.io/bio_mobilization_workshop/03-data-cleaning/index.html#matching-your-scientific-names-to-worms) |
+| WoRMS lookup | Matching your scientific names to the World Register of Marine Species. | [workshop material link](https://ioos.github.io/bio_mobilization_workshop/03-data-cleaning/index.html#matching-your-scientific-names-to-worms) |
 | QA/QC | Checking your data for any high level issues. | [workshop material link](https://ioos.github.io/bio_mobilization_workshop/06-validation-and-publishing/index.html#data-enhancement-and-quality-control) |
 | Metadata+Publishing (EML+IPT) | Collecting appropriate metadata to document your data. | [workshop material link](https://ioos.github.io/bio_mobilization_workshop/06-validation-and-publishing/index.html#integrated-publishing-toolkit) |
 | Creating the Schema | Organizing your data between cores and extensions. | [workshop material link](https://ioos.github.io/bio_mobilization_workshop/04-create-schema/index.html) |
