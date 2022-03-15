@@ -1,7 +1,7 @@
 ---
 title: "Metadata, QA/QC, and publishing"
 teaching: 0
-exercises: 90
+exercises: 120
 questions:
 - "How can I QC and publish my data?"
 objectives:
