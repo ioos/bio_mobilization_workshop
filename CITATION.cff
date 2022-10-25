@@ -1,5 +1,17 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
+title: "Marine data mobilization workshop"
+version: 1.0
+identifiers:
+  - description: "This is the collection of archived snapshots of all versions of the workshop materials"
+    type: doi
+    value: 
+  - description: "This is the archived snapshot of version 1.0 of the workshop materials hosted on March 14-15, 2022"
+    type: doi
+    value: 
+date-released: 2022-03-15
+url: "https://ioos.github.io/bio_mobilization_workshop/"
+repository-code: "https://github.com/ioos/bio_mobilization_workshop"
 authors:
 - family-names: "Biddle"
   given-names: "Mathew"
@@ -10,8 +22,24 @@ authors:
 - family-names: "van der Stap"
   given-names: "Tim"
   orcid: "https://orcid.org/0000-0002-0053-0795"
-title: "Marine data mobilization workshop"
-version: 1.0
-doi: 
-date-released: 2022-03-15
-url: "https://github.com/ioos/bio_mobilization_workshop"
+- family-names: "Pye"
+  given-names: "Jonathan"
+  orcid: "https://orcid.org/0000-0003-2807-5867"
+- family-names: "Murray"
+  given-names: "Tylar"
+  orcid: "https://orcid.org/0000-0001-8241-1919"
+references:
+  - authors: 
+    - family-names: "Biddle"
+      given-names: "Mathew"
+    - family-names: "Benson"
+      given-names: "Abby"
+    - family-names: "Murray"
+      given-names: "Tylar"
+    - family-names: "Pye"
+      given-names: "Jonathan"
+    - family-names: "van der Stap"
+      given-names: "Tim"
+    title: "Open Source Workshop to Mobilize Marine Biodiversity Data"
+    type: article
+    doi: 10.3897/biss.6.93839
