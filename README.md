@@ -1,5 +1,7 @@
 # Marine Biological Data Mobilization Workshop 2022
 
+[![DOI](https://zenodo.org/badge/419464308.svg)](https://zenodo.org/badge/latestdoi/419464308)
+
 This repository is for participants to get general information and ask questions related to the Biological Data Mobilization Workshop (via the [issues](https://github.com/ioos/bio_mobilization_workshop/issues) section).
 
 Marine Data Mobilization Workshop for Biology and Ecosystem Essential Ocean Variables (Bio-Eco EOV) is a Contribution to the UN Decade on Ocean Science for Sustainable Development and the Marine Life 2030 Decade Action. The workshop is jointly hosted by CIOOS, IOOS, Hakai, MBON, OBIS-USA, and OTN.

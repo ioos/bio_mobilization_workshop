@@ -8,7 +8,7 @@ identifiers:
     value: 
   - description: "This is the archived snapshot of version 1.0 of the workshop materials hosted on March 14-15, 2022"
     type: doi
-    value: 
+    value: 10.5281/zenodo.7401980
 date-released: 2022-03-15
 url: "https://ioos.github.io/bio_mobilization_workshop/"
 repository-code: "https://github.com/ioos/bio_mobilization_workshop"
