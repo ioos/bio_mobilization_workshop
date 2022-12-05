@@ -5,7 +5,7 @@ version: 1.0
 identifiers:
   - description: "This is the collection of archived snapshots of all versions of the workshop materials"
     type: doi
-    value: 
+    value: 10.5281/zenodo.7401979
   - description: "This is the archived snapshot of version 1.0 of the workshop materials hosted on March 14-15, 2022"
     type: doi
     value: 10.5281/zenodo.7401980
