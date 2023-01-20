@@ -1,4 +1,4 @@
-# Marine Biological Data Mobilization Workshop 2022
+# Marine Biological Data Mobilization Workshop 2023
 
 [![DOI](https://zenodo.org/badge/419464308.svg)](https://zenodo.org/badge/latestdoi/419464308)
 

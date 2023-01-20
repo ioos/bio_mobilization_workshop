@@ -9,12 +9,12 @@ country: ""           # lowercase two-letter ISO country code such as "fr" (see 
 language: "en"        # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the workshop
 latitude: 0          # decimal latitude of workshop venue (use https://www.latlong.net/)
 longitude: 0         # decimal longitude of the workshop venue (use https://www.latlong.net)
-humandate: "March 14-15, 2022"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
+humandate: "April 18-19, 2023"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
 humantime: "13:00 - 17:00 EDT"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
-startdate: 2022-03-14      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
-enddate: 2022-03-15        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
-instructor: ["Abby Benson", "Mathew Biddle", "Sarah Bingo", "Enrique Montes", "Tylar Murray", "Jonathan Pye", "Tim van der Stap"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
-helper: ["Ben Best", "Brett Johnson", "Dan Otis", "Carolina Peralta"]
+startdate: 2023-04-18      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
+enddate: 2023-04-19        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
+instructor: [] # boxed, comma-separated list of instructors' names as strings, like ["Abby Benson", "Mathew Biddle", "Sarah Bingo", "Enrique Montes", "Tylar Murray", "Jonathan Pye", "Tim van der Stap"]
+helper: [] # boxed, comma-separated list of helper's names as strings, like ["Ben Best", "Brett Johnson", "Dan Otis", "Carolina Peralta"]
 email: ["albenson@usgs.gov"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
 collaborative_notes:  # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2015-01-01-euphoria)
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
