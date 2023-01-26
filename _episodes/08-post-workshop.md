@@ -25,7 +25,7 @@ Many from this workshop meet monthly at the SMBD and interact asynchronously to 
 There are two primary ways to interact with the SMBD:
 
 ### Monthly SMBD Meetings
-Information about monthly SMBD meetings can be found on the SMBD github page [here](https://github.com/ioos/bio_data_guide#monthly-meetings){:target="_blank"}.
+Information about monthly SMBD meetings can be found on the SMBD github page [here](https://github.com/ioos/bio_data_guide#-how-to-participate){:target="_blank"}.
 Anyone is welcome to attend - we are a small community of individuals who are passionate about getting data into OBIS, DwC, other standard forms.
 
 ### SMBD GitHub Issue Tracker
