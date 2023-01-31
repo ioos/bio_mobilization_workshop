@@ -31,7 +31,4 @@ The breakout rooms are organized into topics based on the Darwin Core mobilizati
 | WoRMS lookup | Matching your scientific names to the World Register of Marine Species. | [workshop material link](https://ioos.github.io/bio_mobilization_workshop/03-data-cleaning/index.html#matching-your-scientific-names-to-worms) |
 | QA/QC | Checking your data for any high level issues. | [workshop material link](https://ioos.github.io/bio_mobilization_workshop/06-validation-and-publishing/index.html#data-enhancement-and-quality-control) |
 | Metadata+Publishing (EML+IPT) | Collecting appropriate metadata to document your data. | [workshop material link](https://ioos.github.io/bio_mobilization_workshop/06-validation-and-publishing/index.html#integrated-publishing-toolkit) |
-| Creating the Schema | Organizing your data between cores and extensions. | [workshop material link](https://ioos.github.io/bio_mobilization_workshop/04-create-schema/index.html) |
-
-
-
+| Darwin Core and Extension Schemas | Organizing your data between cores and extensions. | [workshop material link](https://ioos.github.io/bio_mobilization_workshop/04-create-schema/index.html) |

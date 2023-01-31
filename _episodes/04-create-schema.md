@@ -2,7 +2,7 @@
 title: "Darwin Core and Extension Schemas"
 start: true
 teaching: 0
-exercises: 120
+exercises: 90
 questions:
 - "What is a core and what is an extension in Darwin Core?"
 - "What is OBIS-ENV-DATA aka (Event Core with Extended Measurement or Fact)?"

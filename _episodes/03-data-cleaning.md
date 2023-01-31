@@ -282,7 +282,7 @@ OBIS uses the [World Register of Marine Species (WoRMS)](https://www.marinespeci
 its system. GBIF uses the [Catalog of Life](https://www.catalogueoflife.org/). Since WoRMS contributes to the Catalog of 
 Life and WoRMS is a requirement for OBIS we will teach you how to do your taxonomic lookups using WoRMS. The key Darwin 
 Core terms that we need from WoRMS are `scientificNameID` also known as the WoRMS LSID which looks something like this 
-`"urn:lsid:marinespecies.org:taxname:105838"` and `kindgom` but you can grab the other parts of the taxonomic hierarchy if 
+`"urn:lsid:marinespecies.org:taxname:105838"` and `kingdom` but you can grab the other parts of the taxonomic hierarchy if 
 you want as well as `taxonRank`. 
 
 There are two ways to grab the taxonomic information necessary. First, you can use the [WoRMS Taxon Match Tool](https://www.marinespecies.org/aphia.php?p=match). 
