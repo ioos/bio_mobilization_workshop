@@ -10,6 +10,15 @@ This workshop is a small hands-on, interactive virtual workshop focused on mobil
 
 The workshop will be organized based on the sections described on the [schedule](https://ioos.github.io/bio_mobilization_workshop/#schedule). We will spend 5 - 10 minutes presenting each section and then the rest of the time will be spent in breakout rooms working on your data. 
 
+<h2 id="overview">Overview</h2>
+Click on the ![]({{ page.root }}/fig/question_icon.png) to be taken the relevant section of this workshop from this overview figure highlighting various resources used for core processes:
+
+<!-- Edit SVG: [overview-bio_mobilization_workshop](https://docs.google.com/drawings/d/1bPDCt2EQhGTUCDC-AJsBuKtcfUscZe_u_G9GLWyGO6M/edit) -->
+<object type="image/svg+xml" data="{{ page.root }}/fig/overview_bio-mobilization-workshop.svg">
+    <!-- for inclusion in google image searches -->
+    <img src="{{ page.root }}/fig/overview_bio-mobilization-workshop.svg" />
+</object>
+
 # Breakout Rooms
 
 The breakout rooms are organized into topics based on the Darwin Core mobilization activity you plan to work on. Below are the breakout rooms and their descriptions:
@@ -23,3 +32,6 @@ The breakout rooms are organized into topics based on the Darwin Core mobilizati
 | QA/QC | Checking your data for any high level issues. | [workshop material link](https://ioos.github.io/bio_mobilization_workshop/06-validation-and-publishing/index.html#data-enhancement-and-quality-control) |
 | Metadata+Publishing (EML+IPT) | Collecting appropriate metadata to document your data. | [workshop material link](https://ioos.github.io/bio_mobilization_workshop/06-validation-and-publishing/index.html#integrated-publishing-toolkit) |
 | Creating the Schema | Organizing your data between cores and extensions. | [workshop material link](https://ioos.github.io/bio_mobilization_workshop/04-create-schema/index.html) |
+
+
+

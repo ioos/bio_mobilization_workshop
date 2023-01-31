@@ -380,15 +380,7 @@ The lesson taught in this workshop is being piloted and a precise schedule is ye
 
 <hr/>
 
-<h2 id="overview">Overview</h2>
 
-Click on the ![](./fig/question_icon.png) to be taken the relevant section of this workshop from this overview figure highlighting various resources used for core processes:
-
-<!-- Edit SVG: [overview-bio_mobilization_workshop](https://docs.google.com/drawings/d/1bPDCt2EQhGTUCDC-AJsBuKtcfUscZe_u_G9GLWyGO6M/edit) -->
-<object type="image/svg+xml" data="./fig/overview_bio-mobilization-workshop.svg">
-    <!-- for inclusion in google image searches -->
-    <img src="./fig/overview_bio-mobilization-workshop.svg" />
-</object>
 
 
 {% comment %}
