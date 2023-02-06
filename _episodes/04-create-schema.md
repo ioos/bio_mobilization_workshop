@@ -37,6 +37,7 @@ Using the occurrence core plus [relevant extensions](https://rs.gbif.org/extensi
 An innovation that OBIS made in this space was introducing the Extended Measurement or Fact extension (also sometimes referred to as OBIS-ENV-DATA). This uses the event core with an occurrence extension + the [extended measurement or fact extension](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml). This extension makes it possible to include measurements for both the events (salinity, temperature, dissolved oxygen, gear type, etc.) as well as measurements about the occurrences (weight, length, etc.). Prior to this you were only able to include measurements of the occurrence.
 
 <img width="800" alt="EventCoreSchema" src="https://ipt.gbif.org/manual/en/ipt/latest/_images/figures/dwc-a_event.png" style="background-color:white;" />
+*Image credit: [GBIF](https://www.gbif.org/)*
 
 ### What are the **required** Darwin Core terms for publishing Event Core with Extended Measurement or Fact extension?
 When doing your mapping some required information may be missing. These are the Darwin Core terms that are required to share your data to OBIS plus a few that are needed for GBIF.
