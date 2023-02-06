@@ -120,6 +120,7 @@ extras_order:
   - about
   - helpful-tutorials
   - figures
+  - edna-extension
 
 # Specify that things in the episodes collection should be output.
 collections:
