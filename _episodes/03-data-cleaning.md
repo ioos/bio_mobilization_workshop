@@ -423,6 +423,7 @@ Helpful packages for managing CRS and geodetic datum:
 | [geodeticDatum](https://dwc.tdwg.org/list/#dwc_geodeticDatum) | The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in decimalLatitude and decimalLongitude as based. | `WGS84` |
 
 ![coordinate_precision](https://imgs.xkcd.com/comics/coordinate_precision.png){: .image-with-shadow }
+*Image credit: [xkcd](https://xkcd.com/)*
 
 > ## Examples in Python
 > 
