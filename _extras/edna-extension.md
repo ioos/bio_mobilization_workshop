@@ -32,7 +32,12 @@ The efficacy of classification depends on the completeness (coverage) and the re
 ### Workflow
 The following workflow diagram is taken from the GBIF DNA-derived data manuscript. We are mainly focusing on the lower half of this diagram, particularly in standardizing genomic data to DwC and providing proper referencing to protocols and other metadata required for understanding the context in which the data was collected. 
 
-![DNA-derived data workflow](https://docs.gbif.org/publishing-dna-derived-data/1.0/img/web/outline-of-a-platform.en.svg)
+<figure>
+  <img
+       src = "https://docs.gbif.org/publishing-dna-derived-data/1.0/img/web/outline-of-a-platform.en.svg"
+       alt = "DNA-derived data workflow">
+  <figcaption>DNA-derived data workflow. Credit goes here?</figcaption>
+</figure>
 
 Figure 3 from: https://docs.gbif.org/publishing-dna-derived-data/1.0/img/web/outline-of-a-platform.en.svg. In this workshop we will focus primarily on the Internal institutional data management and IPT / Darwin Core Archive boxes.
 
