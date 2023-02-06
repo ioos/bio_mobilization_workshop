@@ -422,7 +422,7 @@ Helpful packages for managing CRS and geodetic datum:
 | [decimalLongitude](https://dwc.tdwg.org/list/#dwc_decimalLongitude) | The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive. | `-121.1761111` |
 | [geodeticDatum](https://dwc.tdwg.org/list/#dwc_geodeticDatum) | The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in decimalLatitude and decimalLongitude as based. | `WGS84` |
 
-![Credit: [xkcd.com](xkcd.com)](https://imgs.xkcd.com/comics/coordinate_precision.png){: .image-with-shadow }
+![coordinate_precision](https://imgs.xkcd.com/comics/coordinate_precision.png){: .image-with-shadow }
 
 > ## Examples in Python
 > 
