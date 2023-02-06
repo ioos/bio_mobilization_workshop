@@ -72,6 +72,7 @@ Table x. Recommended fields for Occurrence core or extension. An extended versio
 
 
 Table x. Recommended fields from the DNA derived data extension when handling metabarcoding data.. An extended version of this table is found in GBIF manual.
+
 | Darwin Core Term | Description | Required | 
 |------------------|------------------------------------|--------------------------------------- |
 | [`DNA_sequence`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#DNA_sequence) | The DNA sequence (ASV). | Highly recommended | 
@@ -85,6 +86,7 @@ Table x. Recommended fields from the DNA derived data extension when handling me
 | [`pcr_primer_reference`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_reference) | Reference for the primers | Highly recommended |
 
 Table x. Recommended fields from the DNA derived data extension when handling qPCR data (Cat 3). An extended version of this table is found in GBIF manual.
+
 | Darwin Core Term | Description | Required | 
 |------------------|------------------------------------|--------------------------------------- |
 | [`sop`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#sop) | Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences. A reference to a well documented protocol, e.g. using protocols.io | Highly recommended | 
