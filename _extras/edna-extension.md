@@ -22,7 +22,7 @@ keypoints:
 ## Introduction
 <figure>
   <img align="left"
-       src = "/bio_mobilization_workshop/assets/img/DwC-A_closeup.png"
+       src = "https://github.com/ioos/bio_mobilization_workshop/blob/gh-pages/assets/img/DwC-A_closeup.png"
        alt = "DNA-derived extension in Darwin Core">
   </figure>
 
