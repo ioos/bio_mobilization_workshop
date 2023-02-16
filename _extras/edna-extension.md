@@ -1,6 +1,6 @@
 ---
 layout: page
-title: eDNA Extension
+title: DNA-derived Data Extension
 permalink: /edna-extension/
 questions:
 - "How should people use the DNA-derived data extension?"
@@ -16,15 +16,15 @@ keypoints:
 * Table of contents
 {:toc}
 
+# DNA-derived Data Extension 
+
 <figure>
+  <text-align = "center">
   <img align = "center"
        src = "/bio_mobilization_workshop/assets/img/DwC-A_closeup.png"
        alt = "DNA-derived extension in Darwin Core">
-  <figcaption>Credit source: [GBIF DNA-derived Data Extension Manual](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/).</figcaption>
+  <figcaption>Credit source: ![GBIF DNA-derived Data Extension Manual](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/).</figcaption>
  </figure>
-
-# DNA-derived Data Extension 
-**Target audience:** Data managers and Data providers with basic understanding of genomic sequencing data looking to publish their DNA-derived data to OBIS or GBIF.
 
 ## Introduction
 
