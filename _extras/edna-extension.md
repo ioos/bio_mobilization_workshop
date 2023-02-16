@@ -16,17 +16,17 @@ keypoints:
 * Table of contents
 {:toc}
 
-# eDNA Extension 
-**Target audience:** data managers and data providers with basic understanding of genomic sequencing data looking to publish their DNA-derived data to OBIS or GBIF.
-
-## Introduction
 <figure>
-  <img align="left"
+  <img align = "center"
        src = "/bio_mobilization_workshop/assets/img/DwC-A_closeup.png"
        alt = "DNA-derived extension in Darwin Core">
-  </figure>
+  <figcaption>Credit source: [GBIF DNA-derived Data Extension Manual](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/).</figcaption>
+ </figure>
 
-<https://docs.gbif.org/publishing-dna-derived-data/1.0/en/>
+# DNA-derived Data Extension 
+**Target audience:** Data managers and Data providers with basic understanding of genomic sequencing data looking to publish their DNA-derived data to OBIS or GBIF.
+
+## Introduction
 
 DNA-derived data enables us to record inconspicuous or otherwise unobservable taxa, and this type of data should be as standardized and reproducible as possible, regardless of whether or not the detected species have formal scientific names. DNA-derived data may come from well-documented sampling or individual organisms, may be backed by preserved physical material or not, and may result from genetic sequencing or other DNA detection methods, such as qPCR. DNA-derived biological occurrence data includes information derived from DNA from individual organisms, but also from environmental DNA (eDNA) and from bulk samples comprising many individuals. The number of DNA-derived datasets in OBIS is limited (currently only 26). Raw, pre-processed sequences files should be stored in external archives or repositories (e.g. [GenBank](https://www.ncbi.nlm.nih.gov/genbank/), [ENA](https://www.ebi.ac.uk/ena/browser/)), and can be assigned a taxon by comparing them against reference databases (libraries). When libraries are incomplete, sequence classification can be done without taxonomic identification, either by clustering sequences into operational taxonomic units (OTUs) or by denoising the data, producing amplicon sequence variants (ASVs). Standardizing DNA-derived occurrence data will help provide a mechanism to store occurrence records of undescribed species. It is recommended practice that processed data should be provided as an extension to the occurrence core/extension in the DwC-A schema. 	
 
@@ -50,11 +50,11 @@ The following workflow diagram is taken from the GBIF DNA-derived data manuscrip
   <img
        src = "https://docs.gbif.org/publishing-dna-derived-data/1.0/img/web/outline-of-a-platform.en.svg"
        alt = "DNA-derived data workflow">
-  <figcaption>DNA-derived data workflow. In this workshop we will focus primarily on the Internal institutional data management and IPT / Darwin Core Archive boxes. Image is Figure 3 from: https://docs.gbif.org/publishing-dna-derived-data/1.0/img/web/outline-of-a-platform.en.svg.</figcaption>
+  <figcaption>Credit source: GBIF DNA-derived Data Extension Manual.</figcaption>
 </figure>
 
 #### DNA-derived extension
-The DNA-derived extension is an extension in the DwC-A schema, and has to be used as an extension to an Occurrence Core (or extension) or Event Core. It can be used in combination with other extensions, such as the Measurement & Facts extension. Information included in the DNA-derived extension should make it easier for data users to understand, analyze or reuse your genomic occurrence data. The value in adding your DNA-sequence or genomic data to GBIF comes from associating spatio-temporal occurrence data and dna-based names from the DNA data. It helps provide a mechanism for storing occurrence records of undescribed species. When these species become linked to a Linnean name, all these linked occurrence records will be immediately available. Including this data in GBIF increases citability, can hasten its discovery and integration in biological conservation and policy-making. Specific granularity is required for accurate reproducibility, especially in a field where protocols used can vastly impact the taxa observed. 
+The DNA-derived data extension is an extension in the DwC-A schema, and has to be used as an extension to an Occurrence Core (or extension) or Event Core. It can be used in combination with other extensions, such as the Measurement & Facts extension. Information included in the DNA-derived extension should make it easier for data users to understand, analyze or reuse your genomic occurrence data. The value in adding your DNA-sequence or genomic data to GBIF comes from associating spatio-temporal occurrence data and dna-based names from the DNA data. It helps provide a mechanism for storing occurrence records of undescribed species. When these species become linked to a Linnean name, all these linked occurrence records will be immediately available. Including this data in GBIF increases citability, can hasten its discovery and integration in biological conservation and policy-making. Specific granularity is required for accurate reproducibility, especially in a field where protocols used can vastly impact the taxa observed. 
 
 ### 5 Categories of DNA-derived data
 Typically, molecular approaches to biodiversity characterization through qPCR and metabarcoding can be separated into 5 categories. Information collected in each of these categories can be included in the DNA-derived extension. 
