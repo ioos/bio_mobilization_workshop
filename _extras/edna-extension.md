@@ -76,7 +76,7 @@ Table 1. Recommended fields for Occurrence core or extension. An extended versio
 | **Darwin Core Term** | **Description** | **Description**  |  **Required** |
 | [`organismQuantity`](https://dwc.tdwg.org/terms/#dwc:organismQuantity) | Number of reads of this sequence variant in the sample | Number of positive droplets/chambers in the sample | Highly recommended | 
 | [`organismQuantityType`](https://dwc.tdwg.org/terms/#dwc:organismQuantityType) | Should always be **DNA sequence reads** | The partition type | Highly recommended |
-| [`sampleSizeValue`](https://dwc.tdwg.org/terms/#dwc:sampleSizeValue) | Total number of reads in the sample. This important since it allows calculating the relative abundance of the sequence variant within the sample | The number of accepted partitions (n), e.g. meaning accepted droplets in ddPCR or chambers in dPCR. | Highly recommended |
+[`sampleSizeValue`](https://dwc.tdwg.org/terms/#dwc:sampleSizeValue) | Total number of reads in the sample. This important since it allows calculating the relative abundance of the sequence variant within the sample | The number of accepted partitions (n), e.g. meaning accepted droplets in ddPCR or chambers in dPCR. | Highly recommended |
 | [`sampleSizeUnit`](https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit) | Should always be **DNA sequence reads** | The partition type, should be equal to the value in organismQuantityType | Highly recommended |
 | [`materialSampleID`](https://dwc.tdwg.org/terms/#dwc:materialSampleID) | An identifier for the MaterialSample (as opposed to a particular digital record of the material sample). Use the biosample ID if one was obtained from a nucleotide archive. In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the materialSampleID globally unique. | An identifier for the MaterialSample (as opposed to a particular digital record of the material sample). Use the biosample ID if one was obtained from a nucleotide archive. In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the materialSampleID globally unique. | Highly recommended |
 | [`samplingProtocol`](https://dwc.tdwg.org/terms/#dwc:samplingProtocol) | The name of, or reference to, or description of the method or protocol used during the sampling event.  | The name of, or reference to, or description of the method or protocol used during the sampling event. | Recommended |
@@ -86,17 +86,19 @@ Table 1. Recommended fields for Occurrence core or extension. An extended versio
 
 Table 2. Recommended fields from the DNA-derived data extension when handling metabarcoding data. An extended version of this table is found in the GBIF manual.
 
-| Darwin Core Term | Description | Required | 
-|------------------|------------------------------------|--------------------------------------- |
-| [`DNA_sequence`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#DNA_sequence) | The DNA sequence (ASV). | Highly recommended | 
-| [`sop`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#sop) | Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences (e.g. through protocols.io) | Recommended | 
-| [`target_gene`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#target_gene) | Targeted gene or marker name for marker-based studies | Highly recommended | 
-| [`target_subfragment`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#target_gene) | Name of subfragment of a gene or markerImportant to e.g. identify special regions on marker genes like the hypervariable V6 region of the 16S rRNA gene | Highly recommended | 
-| [`pcr_primer_forward`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_forward) | Forward PCR primer that was used to amplify the sequence of the targeted gene, locus or subfragment. | Highly recommended | 
-| [`pcr_primer_reverse`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_reverse) | Reverse PCR primer that was used to amplify the sequence of the targeted gene, locus or subfragment.  | Highly recommended | 
-| [`pcr_primer_name_forward`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_name_forward) | Name of the forward PCR primer | Highly recommended |
-| [`pcr_primer_name_reverse`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_name_reverse) | Name of the reverse PCR primer | Highly recommended |
-| [`pcr_primer_reference`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_reference) | Reference for the primers | Highly recommended |
+> | Darwin Core Term | Description | Required | 
+> |------------------|------------------------------------|--------------------------------------- |
+> | [`DNA_sequence`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#DNA_sequence) | The DNA sequence (ASV). | Highly recommended | 
+> | [`sop`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#sop) | Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences (e.g. through protocols.io) | Recommended | 
+> | [`target_gene`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#target_gene) | Targeted gene or marker name for marker-based studies | Highly recommended | 
+> | [`target_subfragment`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#target_gene) | Name of subfragment of a gene or markerImportant to e.g. identify special regions on marker genes like the hypervariable V6 region of the 16S rRNA gene | Highly recommended | 
+> | [`pcr_primer_forward`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_forward) | Forward PCR primer that was used to amplify the sequence of the targeted gene, locus or subfragment. | Highly recommended | 
+> | [`pcr_primer_reverse`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_reverse) | Reverse PCR primer that was used to amplify the sequence of the targeted gene, locus or subfragment.  | Highly recommended | 
+> | [`pcr_primer_name_forward`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_name_forward) | Name of the forward PCR primer | Highly recommended |
+> | [`pcr_primer_name_reverse`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_name_reverse) | Name of the reverse PCR primer | Highly recommended |
+> | [`pcr_primer_reference`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_reference) | Reference for the primers | Highly recommended |
+>
+{: .solution}
 
 Table 3. Recommended fields from the DNA-derived data extension when handling qPCR data (Cat 3). An extended version of this table is found in the GBIF manual.
 
