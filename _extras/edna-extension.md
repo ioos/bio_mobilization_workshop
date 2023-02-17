@@ -86,6 +86,8 @@ Table 1. Recommended fields for Occurrence core or extension. An extended versio
 
 Table 2. Recommended fields from the DNA-derived data extension when handling metabarcoding data. An extended version of this table is found in the GBIF manual.
 
+> ## DNA-derived Data Extension Terms for Metabarcoding Data
+>
 > | Darwin Core Term | Description | Required | 
 > |------------------|------------------------------------|--------------------------------------- |
 > | [`DNA_sequence`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#DNA_sequence) | The DNA sequence (ASV). | Highly recommended | 
