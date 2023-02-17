@@ -19,11 +19,10 @@ keypoints:
 # DNA-derived Data Extension 
 
 <figure>
-  <text-align = "center">
   <img align = "center"
        src = "/bio_mobilization_workshop/assets/img/DwC-A_closeup.png"
        alt = "DNA-derived extension in Darwin Core">
-  <figcaption>Credit source: ![GBIF DNA-derived Data Extension Manual](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/).</figcaption>
+  <figcaption class="figure-caption text-center">Credit source: [GBIF DNA-derived Data Extension Manual](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/).</figcaption>
  </figure>
 
 ## Introduction
@@ -63,29 +62,29 @@ Typically, molecular approaches to biodiversity characterization through qPCR an
 - Category 2 (metabarcoding): Enriched occurrences = if some genetic materials are, or can be, associated with an observation or a specimen (not the only evidence of occurrences).
 - Category 3 (qPCR): Targeted species detection (qPCR/ddPCR) = data where a specific (qPCR/ddPCR) assay is used to detect presence/absence of DNA sequence specific to target organism.
 - Category 4 (metabarcoding): Name references (e.g. iBOL) = DNA-derived names, derived from clustering (OTU) or denoising (ASV)
-- Category 5 (metabarcoding).: Metadata-only datasets
+- Category 5 (metabarcoding): Metadata-only datasets
 
 See for a decision tree [Table 1](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/). For examples of datasets in GBIF for each of these categories see sections 2.1.1. - 2.1.5.  
 
 ### Tables 
-When dealing with Metabarcoding or qPCR data, it is (highly) recommended that aside from the general required fields in DwC (covered in section 1 of our data mobilization workshop) the following fields are included: These fields are free-text. The DNA-derived data extension will have different requirements based on the analytical method applied in your project (i.e. metabarcoding vs. qPCR). 
+The DNA-derived data extension will have different requirements based on the analytical method applied in your project (i.e. metabarcoding vs. qPCR). When dealing with metabarcoding or qPCR data, it is (highly) recommended that aside from the general required fields in DwC (covered in section 1 of our data mobilization workshop) the following (free-text) fields are included:
 
 Table 1. Recommended fields for Occurrence core or extension. An extended version of this table is found in [GBIF manual](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/#mapping-metabarcoding-edna-and-barcoding-data).
 
-| | Metabarcoding                ||             qPCR                    ||
-| :----------------|:------------|:----------|:-------------|:----------|
-| **Darwin Core Term** | **Description** | **Required**  | **Description**  |  **Required** |
-| [`organismQuantity`](https://dwc.tdwg.org/terms/#dwc:organismQuantity) | Number of reads of this sequence variant in the sample | Highly recommended | Number of positive droplets/chambers in the sample | Highly recommended | 
-| [`organismQuantityType`](https://dwc.tdwg.org/terms/#dwc:organismQuantityType) | Should always be **DNA sequence reads** | Highly recommended | The partition type | Highly recommended |
-| [`sampleSizeValue`](https://dwc.tdwg.org/terms/#dwc:sampleSizeValue) | Total number of reads in the sample. This important since it allows calculating the relative abundance of the sequence variant within the sample | Highly recommended | The number of accepted partitions (n), e.g. meaning accepted droplets in ddPCR or chambers in dPCR. | Highly recommended |
-| [`sampleSizeUnit`](https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit) | Should always be **DNA sequence reads** | Highly recommended | The partition type, should be equal to the value in organismQuantityType | Highly recommended |
-| [`materialSampleID`](https://dwc.tdwg.org/terms/#dwc:materialSampleID) | An identifier for the MaterialSample (as opposed to a particular digital record of the material sample). Use the biosample ID if one was obtained from a nucleotide archive. In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the materialSampleID globally unique. | Highly recommended | An identifier for the MaterialSample (as opposed to a particular digital record of the material sample). Use the biosample ID if one was obtained from a nucleotide archive. In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the materialSampleID globally unique. | Highly recommended |
-| [`samplingProtocol`](https://dwc.tdwg.org/terms/#dwc:samplingProtocol) | The name of, or reference to, or description of the method or protocol used during the sampling event.  | Recommended | The name of, or reference to, or description of the method or protocol used during the sampling event. | Recommended |
-| [`taxonID`](https://dwc.tdwg.org/terms/#dwc:taxonID) | For eDNA data, it is recommended to use an MD5 hash of the sequence and prepend it with **ASV**.  | Highly recommended if DNA_sequence is not provided |  |  |
-| [`scientificName`](https://dwc.tdwg.org/terms/#dwc:scientificName) |  |  | Latin name of the closest known taxon (species or higher) or an OTU identifier from BOLD or UNITE | **Required** |
+| | Metabarcoding                ||             qPCR                    |
+| :----------------|:------------|:----------|:----------|
+| **Darwin Core Term** | **Description** | **Description**  |  **Required** |
+| [`organismQuantity`](https://dwc.tdwg.org/terms/#dwc:organismQuantity) | Number of reads of this sequence variant in the sample | Number of positive droplets/chambers in the sample | Highly recommended | 
+| [`organismQuantityType`](https://dwc.tdwg.org/terms/#dwc:organismQuantityType) | Should always be **DNA sequence reads** | The partition type | Highly recommended |
+| [`sampleSizeValue`](https://dwc.tdwg.org/terms/#dwc:sampleSizeValue) | Total number of reads in the sample. This important since it allows calculating the relative abundance of the sequence variant within the sample | The number of accepted partitions (n), e.g. meaning accepted droplets in ddPCR or chambers in dPCR. | Highly recommended |
+| [`sampleSizeUnit`](https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit) | Should always be **DNA sequence reads** | The partition type, should be equal to the value in organismQuantityType | Highly recommended |
+| [`materialSampleID`](https://dwc.tdwg.org/terms/#dwc:materialSampleID) | An identifier for the MaterialSample (as opposed to a particular digital record of the material sample). Use the biosample ID if one was obtained from a nucleotide archive. In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the materialSampleID globally unique. | An identifier for the MaterialSample (as opposed to a particular digital record of the material sample). Use the biosample ID if one was obtained from a nucleotide archive. In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the materialSampleID globally unique. | Highly recommended |
+| [`samplingProtocol`](https://dwc.tdwg.org/terms/#dwc:samplingProtocol) | The name of, or reference to, or description of the method or protocol used during the sampling event.  | The name of, or reference to, or description of the method or protocol used during the sampling event. | Recommended |
+| [`taxonID`](https://dwc.tdwg.org/terms/#dwc:taxonID) | For eDNA data, it is recommended to use an MD5 hash of the sequence and prepend it with **ASV**.  | | metabarcoding: Highly recommended if DNA_sequence is not provided. for qPCR data, this field is not required.  |
+| [`scientificName`](https://dwc.tdwg.org/terms/#dwc:scientificName) |  | Latin name of the closest known taxon (species or higher) or an OTU identifier from BOLD or UNITE | metabarcoding: not required. qPCR: **Required** |
 
 
-Table 2. Recommended fields from the DNA derived data extension when handling metabarcoding data.. An extended version of this table is found in GBIF manual.
+Table 2. Recommended fields from the DNA-derived data extension when handling metabarcoding data. An extended version of this table is found in the GBIF manual.
 
 | Darwin Core Term | Description | Required | 
 |------------------|------------------------------------|--------------------------------------- |
@@ -99,7 +98,7 @@ Table 2. Recommended fields from the DNA derived data extension when handling me
 | [`pcr_primer_name_reverse`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_name_reverse) | Name of the reverse PCR primer | Highly recommended |
 | [`pcr_primer_reference`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_reference) | Reference for the primers | Highly recommended |
 
-Table 3. Recommended fields from the DNA derived data extension when handling qPCR data (Cat 3). An extended version of this table is found in GBIF manual.
+Table 3. Recommended fields from the DNA-derived data extension when handling qPCR data (Cat 3). An extended version of this table is found in the GBIF manual.
 
 | Darwin Core Term | Description | Required | 
 |------------------|------------------------------------|--------------------------------------- |
