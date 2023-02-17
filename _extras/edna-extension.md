@@ -83,8 +83,7 @@ Table 1. Recommended fields for Occurrence core or extension. An extended versio
 | [`taxonID`](https://dwc.tdwg.org/terms/#dwc:taxonID) | For eDNA data, it is recommended to use an MD5 hash of the sequence and prepend it with **ASV**.  | | metabarcoding: Highly recommended if DNA_sequence is not provided. for qPCR data, this field is not required.  |
 | [`scientificName`](https://dwc.tdwg.org/terms/#dwc:scientificName) |  | Latin name of the closest known taxon (species or higher) or an OTU identifier from BOLD or UNITE | metabarcoding: not required. qPCR: **Required** |
 
-
-Table 2. Recommended fields from the DNA-derived data extension when handling metabarcoding data. An extended version of this table is found in the GBIF manual.
+After populating the Occurrence Core or extension with the (additional) required or highly recommended fields, additional information related to either your metabarcoding or qPCR data is to be included in the DNA-derived data extension. The (highly) recommended fields to include in this extension depend on whether your output is the result of metabarcode or qPCR analysis. The tables below only indicate the highly recommended or required fields - additional field should be included if applicable (see [GBIF DNA-derived Data Extension Manual](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/)).
 
 > ## DNA-derived Data Extension Terms for Metabarcoding Data
 >
@@ -102,19 +101,21 @@ Table 2. Recommended fields from the DNA-derived data extension when handling me
 >
 {: .solution}
 
-Table 3. Recommended fields from the DNA-derived data extension when handling qPCR data (Cat 3). An extended version of this table is found in the GBIF manual.
-
-| Darwin Core Term | Description | Required | 
-|------------------|------------------------------------|--------------------------------------- |
-| [`sop`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#sop) | Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences. A reference to a well documented protocol, e.g. using protocols.io | Highly recommended | 
-| [`annealingTemp`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#annealingTemp) | The reaction temperature during the annealing phase of PCR. | Required if annealingTemp was supplied | 
-| [`annealinTempUnit`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#annealingTempUnit) |  | Highly recommended | 
-| [`pcr_cond`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_cond) | Description of reaction conditions and components of PCR in the form of "initial denaturation:94degC_1.5min; annealing=…" | Highly recommended | 
-| [`probeReporter`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#probeReporter) | Type of fluorophore (reporter) used. Probe anneals within amplified target DNA. Polymerase activity degrades the probe that has annealed to the template, and the probe releases the fluorophore from it and breaks the proximity to the quencher, thus allowing fluorescence of the fluorophore. | Highly recommended | 
-| [`probeQuencher`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#probeQuencher) | Type of quencher used. The quencher molecule quenches the fluorescence emitted by the fluorophore when excited by the cycler’s light source as long as fluorophore and the quencher are in proximity, quenching inhibits any fluorescence signals.  | Highly recommended | 
-| [`ampliconSize`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#ampliconSize) | The length of the amplicon in basepairs | Highly recommended |
-| [`thresholdQuantificationCycle`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#thresholdQuantificationCycle) | Threshold for change in fluorescence signal between cycles | qPCR: Highly recommended |
-| [`baselineValue`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#baselineValue) | The number of cycles when fluorescence signal from the target amplification is below background fluorescence not originated from the real target amplification. | qPCR: Highly recommended |
+> ## DNA-derived Data Extension Terms for qPCR Data
+>
+> | Darwin Core Term | Description | Required | 
+> |------------------|------------------------------------|--------------------------------------- |
+> | [`sop`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#sop) | Standard operating procedures used in assembly and/or annotation of genomes, metagenomes or environmental sequences. A reference to a well documented protocol, e.g. using protocols.io | Highly recommended | 
+> | [`annealingTemp`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#annealingTemp) | The reaction temperature during the annealing phase of PCR. | Required if annealingTemp was supplied | 
+> | [`annealinTempUnit`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#annealingTempUnit) |  | Highly recommended | 
+> | [`pcr_cond`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_cond) | Description of reaction conditions and components of PCR in the form of "initial denaturation:94degC_1.5min; annealing=…" | Highly recommended | 
+> | [`probeReporter`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#probeReporter) | Type of fluorophore (reporter) used. Probe anneals within amplified target DNA. Polymerase activity degrades the probe that has annealed to the template, and the probe releases the fluorophore from it and breaks the proximity to the quencher, thus allowing fluorescence of the fluorophore. | Highly recommended | 
+> | [`probeQuencher`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#probeQuencher) | Type of quencher used. The quencher molecule quenches the fluorescence emitted by the fluorophore when excited by the cycler’s light source as long as fluorophore and the quencher are in proximity, quenching inhibits any fluorescence signals.  | Highly recommended | 
+> | [`ampliconSize`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#ampliconSize) | The length of the amplicon in basepairs | Highly recommended |
+> | [`thresholdQuantificationCycle`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#thresholdQuantificationCycle) | Threshold for change in fluorescence signal between cycles | qPCR: Highly recommended |
+> | [`baselineValue`](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#baselineValue) | The number of cycles when fluorescence signal from the target amplification is below background fluorescence not originated from the real target amplification. | qPCR: Highly recommended |
+>
+{: .solution}
 
 It is recommended that if ASVs are provided, MD5s should be generated by the biodiversity discovery platforms. If ASVs are not provided, the MD5s need to be mandatory. This will help data platform index actual sequences, or at the very minimum a MD5 checksum of these to facilitate searches for ASVs across datasets. 
 
