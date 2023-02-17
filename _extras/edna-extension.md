@@ -16,14 +16,14 @@ keypoints:
 * Table of contents
 {:toc}
 
-# DNA-derived Data Extension 
-
 <figure>
   <img align = "center"
        src = "/bio_mobilization_workshop/assets/img/DwC-A_closeup.png"
        alt = "DNA-derived extension in Darwin Core">
-  <figcaption class="figure-caption text-center">Credit source: [GBIF DNA-derived Data Extension Manual](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/).</figcaption>
+  <figcaption class="figure-caption text-center">Source: GBIF DNA-derived Data Extension Manual</figcaption>
  </figure>
+
+# DNA-derived Data Extension 
 
 ## Introduction
 
@@ -49,11 +49,11 @@ The following workflow diagram is taken from the GBIF DNA-derived data manuscrip
   <img
        src = "https://docs.gbif.org/publishing-dna-derived-data/1.0/img/web/outline-of-a-platform.en.svg"
        alt = "DNA-derived data workflow">
-  <figcaption>Credit source: GBIF DNA-derived Data Extension Manual.</figcaption>
+  <figcaption>Source: GBIF DNA-derived Data Extension Manual.</figcaption>
 </figure>
 
 #### DNA-derived extension
-The DNA-derived data extension is an extension in the DwC-A schema, and has to be used as an extension to an Occurrence Core (or extension) or Event Core. It can be used in combination with other extensions, such as the Measurement & Facts extension. Information included in the DNA-derived extension should make it easier for data users to understand, analyze or reuse your genomic occurrence data. The value in adding your DNA-sequence or genomic data to GBIF comes from associating spatio-temporal occurrence data and dna-based names from the DNA data. It helps provide a mechanism for storing occurrence records of undescribed species. When these species become linked to a Linnean name, all these linked occurrence records will be immediately available. Including this data in GBIF increases citability, can hasten its discovery and integration in biological conservation and policy-making. Specific granularity is required for accurate reproducibility, especially in a field where protocols used can vastly impact the taxa observed. 
+The DNA-derived data extension is an extension in the DwC-A schema, and has to be used as an extension to an Occurrence Core (or extension) or Event Core. It can be used in combination with other extensions, such as the Measurement & Facts extension. Information included in the DNA-derived extension should make it easier for data users to understand, analyze or reuse your genomic occurrence data. The value in adding your DNA-sequence or genomic data to GBIF comes from associating spatio-temporal occurrence data and DNA-based names from the data. It helps provide a mechanism for storing occurrence records of undescribed species. When these species become linked to a Linnean name, all these linked occurrence records will be immediately available. Including this data in GBIF increases citability, can hasten its discovery and integration in biological conservation and policy-making. Specific granularity is required for accurate reproducibility, especially in a field where protocols used can vastly impact the taxa observed. 
 
 ### 5 Categories of DNA-derived data
 Typically, molecular approaches to biodiversity characterization through qPCR and metabarcoding can be separated into 5 categories. Information collected in each of these categories can be included in the DNA-derived extension. 
@@ -71,7 +71,7 @@ The DNA-derived data extension will have different requirements based on the ana
 
 Table 1. Recommended fields for Occurrence core or extension. An extended version of this table is found in [GBIF manual](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/#mapping-metabarcoding-edna-and-barcoding-data).
 
-| | Metabarcoding                ||             qPCR                    |
+| | Metabarcoding                | qPCR                 ||
 | :----------------|:------------|:----------|:----------|
 | **Darwin Core Term** | **Description** | **Description**  |  **Required** |
 | [`organismQuantity`](https://dwc.tdwg.org/terms/#dwc:organismQuantity) | Number of reads of this sequence variant in the sample | Number of positive droplets/chambers in the sample | Highly recommended | 
