@@ -13,17 +13,15 @@ keypoints:
 - "Ensure you know the objective of your study."
 - "Define whether you have used metabarcoding or qPCR to determine (highly) recommended fields in the DNA-derived data extension."
 ---
-* Table of contents
-{:toc}
-
 <figure>
   <img align = "center"
        src = "/bio_mobilization_workshop/assets/img/DwC-A_closeup.png"
        alt = "DNA-derived extension in Darwin Core">
   <figcaption class="figure-caption text-center">Source: GBIF DNA-derived Data Extension Manual</figcaption>
  </figure>
-
-# DNA-derived Data Extension 
+ 
+* Table of contents
+{:toc}
 
 ## Introduction
 
