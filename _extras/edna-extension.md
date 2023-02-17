@@ -13,6 +13,7 @@ keypoints:
 - "Ensure you know the objective of your study."
 - "Define whether you have used metabarcoding or qPCR to determine (highly) recommended fields in the DNA-derived data extension."
 ---
+
 <figure>
   <img align = "center"
        src = "/bio_mobilization_workshop/assets/img/DwC-A_closeup.png"
@@ -30,7 +31,8 @@ DNA-derived data enables us to record inconspicuous or otherwise unobservable ta
 With regards particularly to studying eDNA, there are two main analytical methods: 
 
 1. Those which aim to detect a specific organism (qPCR/ddPCR)
-1. those which describe an assemblage or community of organisms (metabarcoding). 
+2. Those which describe an assemblage or community of organisms (metabarcoding). 
+
 
 #### qPCR/ddPCR
 For the detection of specific species in eDNA-samples, most analyses include species-specific primers and qPCR (Quantitative Polymerase Chain Reaction) or ddPCR (Droplet-Digital Polymerase Chain Reaction). These methods do not generate DNA-sequences, and the occurrence data are completely dependent on the specificity of primers or assays used, so this information is highly recommended to be provided. 
