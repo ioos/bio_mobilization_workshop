@@ -26,23 +26,30 @@ keypoints:
 
 ## Introduction
 
-DNA-derived data enables us to record inconspicuous or otherwise unobservable taxa, and this type of data should be as standardized and reproducible as possible, regardless of whether or not the detected species have formal scientific names. DNA-derived data may come from well-documented sampling or individual organisms, may be backed by preserved physical material or not, and may result from genetic sequencing or other DNA detection methods, such as qPCR. DNA-derived biological occurrence data includes information derived from DNA from individual organisms, but also from environmental DNA (eDNA) and from bulk samples comprising many individuals. The number of DNA-derived datasets in OBIS is limited (currently only 26). Raw, pre-processed sequences files should be stored in external archives or repositories (e.g. [GenBank](https://www.ncbi.nlm.nih.gov/genbank/), [ENA](https://www.ebi.ac.uk/ena/browser/)), and can be assigned a taxon by comparing them against reference databases (libraries). When libraries are incomplete, sequence classification can be done without taxonomic identification, either by clustering sequences into operational taxonomic units (OTUs) or by denoising the data, producing amplicon sequence variants (ASVs). Standardizing DNA-derived occurrence data will help provide a mechanism to store occurrence records of undescribed species. It is recommended practice that processed data should be provided as an extension to the occurrence core/extension in the DwC-A schema. 	
+DNA-derived biological occurrence data allow us to observe inconspicuous and cryptic taxa. DNA-derived data may come from sampling the environment (e.g. water, sediment), bulk organisms, or individual organisms. The derived data may be backed by preserved physical material or not, and may result from genetic sequencing or other DNA detection methods, such as qPCR. 
 
-With regards particularly to studying eDNA, there are two main analytical methods: 
+Like all biological observation data, DNA-derived data should be as standardized and reproducible as possible, regardless of whether or not the detected species have formal scientific names. It is recommended practice that processed data should be provided as an extension to the occurrence core/extension in the DwC-A schema.  The number of DNA-derived datasets in OBIS is limited (currently only 26) and our goal is to mobilize more datasets through this workshop. In this workshop we will focus on the two analytical methods that are typically used in studying environmental DNA (eDNA): 
 
 1. Those which aim to detect a specific organism (qPCR/ddPCR)
 2. Those which describe an assemblage or community of organisms (metabarcoding). 
 
-
 #### qPCR/ddPCR
-For the detection of specific species in eDNA-samples, most analyses include species-specific primers and qPCR (Quantitative Polymerase Chain Reaction) or ddPCR (Droplet-Digital Polymerase Chain Reaction). These methods do not generate DNA-sequences, and the occurrence data are completely dependent on the specificity of primers or assays used, so this information is highly recommended to be provided. 
+For the detection of specific species in eDNA-samples, most analyses include species-specific primers and qPCR (Quantitative Polymerase Chain Reaction) or ddPCR (Droplet-Digital Polymerase Chain Reaction). These methods do not generate DNA-sequences, and the occurrence data are completely dependent on the specificity of primers or assays used, so it is highly recommended that this information be preserved and shared with the data. 
 
 #### Metabarcoding
-Metabarcoding utilizes general primers to generate a lot of DNA-sequences, which can be compared to a reference database (library), like [GenBank](https://www.ncbi.nlm.nih.gov/genbank/), [BOLD](http://boldsystems.org/), [SILVA](https://www.arb-silva.de/) or [UNITE](https://unite.ut.ee/). This comparison allows each DNA-sequence to be assigned to a species or higher rank taxon identity.
+Metabarcoding utilizes general primers to recover hundreds to millions of DNA-sequences from a DNA extract. Sequences are typically identified and grouped, either by clustering sequences into operational taxonomic units (OTUs) or by denoising the data, which produces amplicon sequence variants (ASVs). The sequences that have been identified can be assigned a taxon by comparing them against reference databases, sometimes called reference libraries. To avoid confusion with the "libraries" that are the results of the sequencing process, we will try to refer to them as reference databases. 
 
-The efficacy of classification depends on the completeness (coverage) and the reliability of reference libraries, as well as the tools used to carry out the classification. These are all moving targets, making it essential to apply taxonomic expertise and caution in the interpretation of results. For increased reusability and reproducibility of genetic sequencing data, it is important to provide data users with information pertaining to e.g. the habitat where the sample was collected from, DNA sequence, primer used, targeted gene, and referencing the sampling protocol. Where applicable, providing the verified amplicon sequence variants ([Сallahan et al. 2017](https://doi.org/10.1038/ismej.2017.119)) allow for precise reinterpretation of data, intra-specific population genetic analyses ([Sigsgaard et al. 2019](https://doi.org/10.1038/s41559-016-0004)) and is likely to increase identification accuracy.
 
-### Workflow
+##### Archiving Raw Sequences
+The raw, pre-processed sequences should be preserved in external archives or repositories (e.g. [GenBank](https://www.ncbi.nlm.nih.gov/genbank/), [ENA](https://www.ebi.ac.uk/ena/browser/)).
+
+
+##### Taxonomic Assignment
+A representative sequence for each OTU/ASV can be assigned a taxon by comparing them against reference databases. The efficacy of assignment depends on the completeness (coverage) ande reliability of reference libraries, as well as the tools used to carry out the classification.  For example, many assignment algorithms are based on some kind of minimum confidence threshold and may result in OTUs/ASVs that are unassigned or badly assigned.  These are all moving targets, making it essential to apply taxonomic expertise and caution in the interpretation of results.
+
+It may be that you are only able to confidently assign your sequences a high-level classification, like Kingdom. However, it is still worth sharing standardized data and metadata so they can be re-analyzed and built upon as methods and reference databases improve.  For genetic sequencing data to be reusable and reproducible, it is important to provide data users with information about the provanance and processing of the DNA.  For example, habitat where the sample was collected from, DNA sequence, primers used, targeted gene, and referencing the sampling protocol . When applicable, providing the verified amplicon sequence variants ([Сallahan et al. 2017](https://doi.org/10.1038/ismej.2017.119)) allow for precise reinterpretation of data, intra-specific population genetic analyses ([Sigsgaard et al. 2019](https://doi.org/10.1038/s41559-016-0004)) and is likely to increase identification accuracy.
+
+## Workflow
 The following workflow diagram is taken from the GBIF DNA-derived data manuscript. We are mainly focusing on the lower half of this diagram, particularly in standardizing genomic data to DwC and providing proper referencing to protocols and other metadata required for understanding the context in which the data was collected. 
 
 <figure>
@@ -52,7 +59,7 @@ The following workflow diagram is taken from the GBIF DNA-derived data manuscrip
   <figcaption>Source: GBIF DNA-derived Data Extension Manual.</figcaption>
 </figure>
 
-#### DNA-derived extension
+### DNA-derived extension
 The DNA-derived data extension is an extension in the DwC-A schema, and has to be used as an extension to an Occurrence Core (or extension) or Event Core. It can be used in combination with other extensions, such as the Measurement & Facts extension. Information included in the DNA-derived extension should make it easier for data users to understand, analyze or reuse your genomic occurrence data. The value in adding your DNA-sequence or genomic data to GBIF comes from associating spatio-temporal occurrence data and DNA-based names from the data. It helps provide a mechanism for storing occurrence records of undescribed species. When these species become linked to a Linnean name, all these linked occurrence records will be immediately available. Including this data in GBIF increases citability, can hasten its discovery and integration in biological conservation and policy-making. Specific granularity is required for accurate reproducibility, especially in a field where protocols used can vastly impact the taxa observed. 
 
 ### 5 Categories of DNA-derived data
@@ -67,9 +74,9 @@ Typically, molecular approaches to biodiversity characterization through qPCR an
 See for a decision tree [Table 1](https://docs.gbif.org/publishing-dna-derived-data/1.0/en/). For examples of datasets in GBIF for each of these categories see sections 2.1.1. - 2.1.5.  
 
 ### Tables 
-The DNA-derived data extension will have different requirements based on the analytical method applied in your project (i.e. metabarcoding vs. qPCR). When dealing with metabarcoding or qPCR data, it is (highly) recommended that aside from the general required fields in DwC (covered in section 1 of our data mobilization workshop) the following (free-text) fields are included:
+The DNA-derived data extension will have different requirements based on the analytical method applied in your project (i.e. metabarcoding vs. qPCR). Although few fields of the DNA-derived extension are "required" for metabarcoding and qPCR data, the decision to exclude "highly recommended" fields could severely impact how reusable your data will be to others.  Therefore, when dealing with metabarcoding or qPCR data, it is (highly) recommended that aside from the general required fields in DwC the following (free-text) fields are also included:
 
-Table 1. Recommended fields for Occurrence core or extension. An extended version of this table is found in [GBIF manual](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/#mapping-metabarcoding-edna-and-barcoding-data).
+**Table 1.** Recommended fields for Occurrence core or extension. An extended version of this table is found in [GBIF manual](https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/#mapping-metabarcoding-edna-and-barcoding-data).
 
 | | Metabarcoding                | qPCR                 ||
 | :----------------|:------------|:----------|:----------|
