@@ -28,164 +28,170 @@ One method for reviewing your data is to use the r package [Hmisc](https://cran.
 
 > ## Hmisc::describe
 > ```r
+> url <- "https://www.sciencebase.gov/catalog/file/get/53a887f4e4b075096c60cfdd?f=__disk__32%2F24%2F80%2F322480c9bcbad19030e29c9ec5e2caeb54cb4a08&allowOpen=true"
+>
+> occurrence <- read.csv(url)
+>
+> head(occurrence,n=1)       
+>   vernacularName                                eventID occurrenceStatus
+> 1  Alligator gar Station_95_Date_09JAN1997:14:35:00.000           Absent
+>      basisOfRecord       scientificName
+> 1 HumanObservation Atractosteus spatula
+>                            scientificNameID  kingdom   phylum       class
+> 1 urn:lsid:marinespecies.org:taxname:279822 Animalia Chordata Actinopteri
+>              order        family        genus scientificNameAuthorship
+> 1 Lepisosteiformes Lepisosteidae Atractosteus        (LacepA"de, 1803)
+>   taxonRank organismQuantity organismQuantityType
+> 1   Species                0   Relative Abundance
+>                                                  occurrenceID
+> 1 Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula
+>          collectionCode
+> 1 Aransas Bay Bag Seine
+>
 > Hmisc::describe(occurrence)
 > ```
 > ```output
+> Hmisc::describe(occurrence)
 > occurrence 
-> 18  Variables      202860  Observations
-> -------------------------------------------------------------------------------------------------------
-> vernacularName 
->        n  missing distinct 
->   202860        0       84 
->   
-> lowest : Alligator gar        Arrow shrimp         Atlantic brief squid Atlantic croaker     Atlantic needlefish 
-> highest: Thinstripe hermit    Threadfin shad       Tidewater silverside White mullet         White shrimp        
-> -------------------------------------------------------------------------------------------------------
-> eventID 
->        n  missing distinct 
->   202860        0     2415 
->
-> lowest : Station_100_Date_03MAY1990:10:09:00.000 Station_100_Date_04NOV2008:07:15:00.000 Station_100_Date_04OCT2006:09:18:00.000 Station_100_Date_07APR1981:07:30:00.000
-> Station_100_Date_07AUG1979:07:50:00.000
-> highest: Station_99_Date_17SEP2002:09:25:00.000  Station_99_Date_20APR1999:10:08:00.000  Station_99_Date_22SEP1988:09:52:00.000  Station_99_Date_23MAY1996:07:10:00.000 
-> Station_99_Date_29MAY1985:09:20:00.000 
-> -------------------------------------------------------------------------------------------------------
-> occurrenceStatus 
+> 
+>  18  Variables      334341  Observations
+> --------------------------------------------------------------------------------
+> vernacularName
 >        n  missing distinct
->   202860        0        2 
->                        
->   Value       Absent Present
->   Frequency   184636   18224
->   Proportion    0.91    0.09
-> -------------------------------------------------------------------------------------------------------
-> basisOfRecord 
->            n          missing         distinct            value 
->       202860                0                1 HumanObservation 
->                           
+>   334341        0       61
+> 
+> lowest : Alligator gar        Arrow shrimp         Atlantic brief squid Atlantic bumper      Atlantic croaker
+> highest: Striped mullet       Thinstripe hermit    Threadfin shad       White mullet         White shrimp
+> --------------------------------------------------------------------------------
+> eventID
+>        n  missing distinct
+>   334341        0     5481
+> 
+> lowest : Station_10_Date_04DEC1991:13:59:00.000 Station_10_Date_04SEP2002:13:17:00.000 Station_10_Date_05JUN1991:15:20:00.000 Station_10_Date_07APR1995:12:54:00.000 Station_10_Date_07APR2000:11:16:00.000
+> highest: Station_99_Date_21APR1998:18:24:00.000 Station_99_Date_22OCT2001:13:12:00.000 Station_99_Date_25JUN1990:13:48:00.000 Station_99_Date_25NOV2003:11:11:00.000 Station_99_Date_27JUN1988:12:45:00.000
+> --------------------------------------------------------------------------------
+> occurrenceStatus
+>        n  missing distinct
+>   334341        0        2
+> 
+> Value       Absent Present
+> Frequency   294469   39872
+> Proportion   0.881   0.119
+> --------------------------------------------------------------------------------
+> basisOfRecord
+>                n          missing         distinct            value
+>           334341                0                1 HumanObservation 
+> 
 > Value      HumanObservation
-> Frequency            202860
+> Frequency            334341
 > Proportion                1
-> -------------------------------------------------------------------------------------------------------
-> scientificName 
->      n  missing distinct 
-> 202860        0       84 
+> --------------------------------------------------------------------------------
+> scientificName
+>        n  missing distinct
+>   334341        0       61
 > 
-> lowest : Achirus lineatus            Alpheus estuariensis        Anchoa mitchilli            Archosargus probatocephalus Argopecten irradians       
-> highest: Syngnathus scovelli         Synodus foetens             Tozeuma carolinense         Trachinotus carolinus       Trinectes maculatus        
-> -------------------------------------------------------------------------------------------------------
+> lowest : Adinia xenica               Anchoa mitchilli            Archosargus probatocephalus Ariopsis felis              Atractosteus spatula
+> highest: Stomatopoda                 Stomolophus meleagris       Syngnathus scovelli         Tozeuma carolinense         Trichiurus lepturus
+> --------------------------------------------------------------------------------
 > scientificNameID 
->      n  missing distinct 
-> 202860        0       84 
+>        n  missing distinct
+>   334341        0       61
 > 
-> lowest : urn:lsid:marinespecies.org:taxname:107032 urn:lsid:marinespecies.org:taxname:107335 urn:lsid:marinespecies.org:taxname:107379
-> urn:lsid:marinespecies.org:taxname:126430 urn:lsid:marinespecies.org:taxname:126803
-> highest: urn:lsid:marinespecies.org:taxname:421735 urn:lsid:marinespecies.org:taxname:421784 urn:lsid:marinespecies.org:taxname:422069
-> urn:lsid:marinespecies.org:taxname:443955 urn:lsid:marinespecies.org:taxname:581423
-> -------------------------------------------------------------------------------------------------------
-> kingdom 
->      n  missing distinct    value 
-> 202860        0        1 Animalia 
->                    
+> lowest : urn:lsid:marinespecies.org:taxname:105792 urn:lsid:marinespecies.org:taxname:107034 urn:lsid:marinespecies.org:taxname:107379 urn:lsid:marinespecies.org:taxname:126983 urn:lsid:marinespecies.org:taxname:127089
+> highest: urn:lsid:marinespecies.org:taxname:367528 urn:lsid:marinespecies.org:taxname:396707 urn:lsid:marinespecies.org:taxname:421784 urn:lsid:marinespecies.org:taxname:422069 urn:lsid:marinespecies.org:taxname:443955
+> 
+> --------------------------------------------------------------------------------
+> kingdom
+>        n  missing distinct    value
+>   334341        0        1 Animalia
+> 
 > Value      Animalia
-> Frequency    202860
+> Frequency    334341
 > Proportion        1
-> -------------------------------------------------------------------------------------------------------
-> phylum 
->      n  missing distinct 
-> 198030     4830        4 
->                                                      
+> --------------------------------------------------------------------------------
+> phylum
+>        n  missing distinct
+>   328860     5481        4
+> 
 > Value      Arthropoda   Chordata   Cnidaria   Mollusca
-> Frequency       33810     149730       2415      12075
-> Proportion      0.171      0.756      0.012      0.061
-> -------------------------------------------------------------------------------------------------------
-> class 
->      n  missing distinct 
-> 198030     4830        7 
+> Frequency       71253     246645       5481       5481
+> Proportion      0.217      0.750      0.017      0.017
+> --------------------------------------------------------------------------------
+> class
+>        n  missing distinct
+>   328860     5481        5
 > 
-> lowest : Actinopteri    Bivalvia       Cephalopoda    Elasmobranchii Gastropoda    
-> highest: Cephalopoda    Elasmobranchii Gastropoda     Malacostraca   Scyphozoa     
->                                                                                                     
-> Value         Actinopteri       Bivalvia    Cephalopoda Elasmobranchii     Gastropoda   Malacostraca
-> Frequency          144900           4830           2415           4830           4830          33810
-> Proportion          0.732          0.024          0.012          0.024          0.024          0.171
->                          
+> lowest : Actinopteri    Cephalopoda    Elasmobranchii Malacostraca   Scyphozoa     
+> highest: Actinopteri    Cephalopoda    Elasmobranchii Malacostraca   Scyphozoa
+> 
+> Value         Actinopteri    Cephalopoda Elasmobranchii   Malacostraca
+> Frequency          235683           5481          10962          71253
+> Proportion          0.717          0.017          0.033          0.217
+> 
 > Value           Scyphozoa
-> Frequency            2415
-> Proportion          0.012
-> -------------------------------------------------------------------------------------------------------
-> order 
->      n  missing distinct 
-> 198030     4830       28 
+> Frequency            5481
+> Proportion          0.017
+> --------------------------------------------------------------------------------
+> order
+>        n  missing distinct
+>   328860     5481       22
 > 
-> lowest : [unassigned] Caenogastropoda Acanthuriformes              Aplysiida                    Atheriniformes               Aulopiformes                
-> highest: Rhizostomeae                 Siluriformes                 Syngnathiformes              Tetraodontiformes            Venerida                    
-> -------------------------------------------------------------------------------------------------------
-> family 
->      n  missing distinct 
-> 198030     4830       48 
+> lowest : Atheriniformes            Batrachoidiformes         Carangaria incertae sedis Carangiformes             Carcharhiniformes        
+> highest: Rhizostomeae              Scombriformes             Siluriformes              Syngnathiformes           Tetraodontiformes
+> --------------------------------------------------------------------------------
+> family
+>        n  missing distinct
+>   328860     5481       36
 > 
-> lowest : Achiridae      Alpheidae      Aplysiidae     Ariidae        Atherinopsidae
-> highest: Stromateidae   Syngnathidae   Synodontidae   Tetraodontidae Triglidae     
-> -------------------------------------------------------------------------------------------------------
-> genus 
->      n  missing distinct 
-> 198030     4830       66 
+> lowest : Ariidae        Atherinopsidae Batrachoididae Carangidae     Carcharhinidae
+> highest: Stromateidae   Syngnathidae   Tetraodontidae Trichiuridae   Triglidae
+> --------------------------------------------------------------------------------
+> genus
+>        n  missing distinct
+>   328860     5481       52
 > 
-> lowest : Achirus     Alpheus     Anchoa      Archosargus Argopecten 
-> highest: Syngnathus  Synodus     Tozeuma     Trachinotus Trinectes  
-> -------------------------------------------------------------------------------------------------------
-> scientificNameAuthorship 
->      n  missing distinct 
-> 198030     4830       66 
+> lowest : Adinia       Anchoa       Archosargus  Ariopsis     Atractosteus
+> highest: Sphoeroides  Stomolophus  Syngnathus   Tozeuma      Trichiurus  
+> --------------------------------------------------------------------------------
+> scientificNameAuthorship
+>        n  missing distinct
+>   328860     5481       52
 > 
-> lowest : (Baird & Girard, 1853)        (Baird & Girard, 1855)        (Blainville, 1823)            (Bleeker, 1863)               (Bloch & Schneider, 1801)    
-> highest: Rathbun, 1896                 Say, 1817 [in Say, 1817-1818] Shipp & Yerger, 1969          Valenciennes, 1836            Valenciennes, 1847           
-> -------------------------------------------------------------------------------------------------------
+> lowest : (Baird & Girard, 1853)        (Baird & Girard, 1855)        (Blainville, 1823)            (Bosc, 1801)                  (Burkenroad, 1939)
+> highest: Rathbun, 1896                 Say, 1817 [in Say, 1817-1818] Shipp & Yerger, 1969          Valenciennes, 1836            Winchell, 1864
+> --------------------------------------------------------------------------------
 > taxonRank
->       n  missing distinct 
->  202860        0        4 
->                                                        
-> Value           Genus      Order    Species Subspecies
-> Frequency        2415       2415     195615       2415
-> Proportion      0.012      0.012      0.964      0.012
-> -------------------------------------------------------------------------------------------------------
-> organismQuantity 
->      n  missing distinct     Info     Mean      Gmd      .05      .10      .25      .50      .75 
-> 202860        0     3265    0.246   0.0119  0.02296     0.00     0.00     0.00     0.00     0.00 
->    .90      .95 
->   0.00     0.05 
->   
-> lowest : 0.000000000 0.001897533 0.001964637 0.002000000 0.002433090
-> highest: 0.935779817 0.942307692 0.942857143 0.952380952 0.973684211
-> -------------------------------------------------------------------------------------------------------
+>        n  missing distinct
+>   334341        0        3
+> 
+> Value        Genus   Order Species
+> Frequency     5481    5481  323379
+> Proportion   0.016   0.016   0.967
+> --------------------------------------------------------------------------------
+> organismQuantity
+>        n  missing distinct     Info     Mean      Gmd      .05      .10
+>   334341        0     8696    0.317  0.01639  0.03141  0.00000  0.00000
+>      .25      .50      .75      .90      .95
+>  0.00000  0.00000  0.00000  0.01005  0.07407
+> 
+> lowest : 0.0000000000 0.0000917684 0.0001835370 0.0002136300 0.0002241650
+> highest: 0.9969931270 0.9974226800 0.9981570220 0.9982300880 1.0000000000
+> --------------------------------------------------------------------------------
 > organismQuantityType 
->            n            missing           distinct              value 
->       202860                  0                  1 Relative Abundance 
->                              
+>                  n            missing           distinct              value
+>             334341                  0                  1 Relative Abundance
+> 
 > Value      Relative Abundance
-> Frequency              202860
-> Proportion                  1
-> -------------------------------------------------------------------------------------------------------
-> occurrenceID 
->      n  missing distinct 
-> 202860        0   202860 
+> Frequency              334341
+>                     n               missing              distinct
+>               334341                     0                     1
+>                 value
+> Aransas Bay Bag Seine
 > 
-> lowest : Station_100_Date_03MAY1990:10:09:00.000_Achirus_lineatus            Station_100_Date_03MAY1990:10:09:00.000_Alpheus_estuariensis       
-> Station_100_Date_03MAY1990:10:09:00.000_Anchoa_mitchilli            Station_100_Date_03MAY1990:10:09:00.000_Archosargus_probatocephalus
-> Station_100_Date_03MAY1990:10:09:00.000_Argopecten_irradians       
-> highest: Station_99_Date_29MAY1985:09:20:00.000_Syngnathus_scovelli          Station_99_Date_29MAY1985:09:20:00.000_Synodus_foetens             
-> Station_99_Date_29MAY1985:09:20:00.000_Tozeuma_carolinense          Station_99_Date_29MAY1985:09:20:00.000_Trachinotus_carolinus      
-> Station_99_Date_29MAY1985:09:20:00.000_Trinectes_maculatus         
-> -------------------------------------------------------------------------------------------------------
-> collectionCode 
->                     n                     missing                    distinct 
->                202860                           0                           1 
->                 value 
-> Upper Laguna Madre Gill Net 
-> 
-> Value      Upper Laguna Madre Gill Net
-> Frequency                       202860
-> Proportion                           1
+> Value      Aransas Bay Bag Seine
+> Frequency                 334341
+> Proportion                     1
+> --------------------------------------------------------------------------------
 > ```
 > 
 {: .solution}
