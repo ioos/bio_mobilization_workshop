@@ -51,7 +51,6 @@ One method for reviewing your data is to use the r package [Hmisc](https://cran.
 > Hmisc::describe(occurrence)
 > ```
 > ```output
-> Hmisc::describe(occurrence)
 > occurrence 
 > 
 >  18  Variables      334341  Observations
