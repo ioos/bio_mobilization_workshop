@@ -33,18 +33,20 @@ Like all biological observation data, DNA-derived data should be as standardized
 1. Those which aim to detect a specific organism (qPCR/ddPCR)
 2. Those which describe an assemblage or community of organisms (metabarcoding). 
 
-#### qPCR/ddPCR
+
+### qPCR/ddPCR
 For the detection of specific species in eDNA-samples, most analyses include species-specific primers and qPCR (Quantitative Polymerase Chain Reaction) or ddPCR (Droplet-Digital Polymerase Chain Reaction). These methods do not generate DNA-sequences, and the occurrence data are completely dependent on the specificity of primers or assays used, so it is highly recommended that this information be preserved and shared with the data. 
 
-#### Metabarcoding
+
+### Metabarcoding
 Metabarcoding utilizes general primers to recover hundreds to millions of DNA-sequences from a DNA extract. Sequences are typically identified and grouped, either by clustering sequences into operational taxonomic units (OTUs) or by denoising the data, which produces amplicon sequence variants (ASVs). The sequences that have been identified can be assigned a taxon by comparing them against reference databases, sometimes called reference libraries. To avoid confusion with the "libraries" that are the results of the sequencing process, we will try to refer to them as reference databases. 
 
 
-##### Archiving Raw Sequences
+#### Archiving Raw Sequences
 The raw, pre-processed sequences should be preserved in external archives or repositories (e.g. [GenBank](https://www.ncbi.nlm.nih.gov/genbank/), [ENA](https://www.ebi.ac.uk/ena/browser/)).
 
 
-##### Taxonomic Assignment
+#### Taxonomic Assignment
 A representative sequence for each OTU/ASV can be assigned a taxon by comparing them against reference databases. The efficacy of assignment depends on the completeness (coverage) ande reliability of reference libraries, as well as the tools used to carry out the classification.  For example, many assignment algorithms are based on some kind of minimum confidence threshold and may result in OTUs/ASVs that are unassigned or badly assigned.  These are all moving targets, making it essential to apply taxonomic expertise and caution in the interpretation of results.
 
 It may be that you are only able to confidently assign your sequences a high-level classification, like Kingdom. However, it is still worth sharing standardized data and metadata so they can be re-analyzed and built upon as methods and reference databases improve.  For genetic sequencing data to be reusable and reproducible, it is important to provide data users with information about the provanance and processing of the DNA.  For example, habitat where the sample was collected from, DNA sequence, primers used, targeted gene, and referencing the sampling protocol . When applicable, providing the verified amplicon sequence variants ([Сallahan et al. 2017](https://doi.org/10.1038/ismej.2017.119)) allow for precise reinterpretation of data, intra-specific population genetic analyses ([Sigsgaard et al. 2019](https://doi.org/10.1038/s41559-016-0004)) and is likely to increase identification accuracy.
