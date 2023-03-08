@@ -28,6 +28,7 @@ One method for reviewing your data is to use the r package [Hmisc](https://cran.
 
 > ## Hmisc::describe
 > ```r
+> # pull in the occurrence file from https://www.sciencebase.gov/catalog/item/53a887f4e4b075096c60cfdd
 > url <- "https://www.sciencebase.gov/catalog/file/get/53a887f4e4b075096c60cfdd?f=__disk__32%2F24%2F80%2F322480c9bcbad19030e29c9ec5e2caeb54cb4a08&allowOpen=true"
 >
 > occurrence <- read.csv(url)
@@ -207,10 +208,15 @@ One method for reviewing your data is to use the r package [Hmisc](https://cran.
 > The event core data used in the checks below can be found in [this Excel file]({{ page.root }}/data/trawl_fish.xlsx).
 > 
 > > ## Solution in R
-> > Install [obistools](https://github.com/iobis/obistools) R packages.
+> > Install [obistools](https://github.com/iobis/obistools) R packages. Use [readxl](https://readxl.tidyverse.org/) package to read the Excel file.
 > > 
 > > 1. Run a diagnostics report for the data quality
+> > 
 > > ```r
+> > library(readxl)
+> > library(obistools)
+> > 
+> > trawl_fish <- readxl::read_excel('data/trawl_fish.xlsx')
 > > report <- obistools::report(trawl_fish)
 > > report
 > > ```
@@ -263,62 +269,63 @@ One method for reviewing your data is to use the r package [Hmisc](https://cran.
 > >  {: .output}
 > {: .solution}
 > > ## Solution in Python
-> > First start with reading the data into a pandas dataFrame:
+> > Install the [pandas](https://pandas.pydata.org/), [cartopy](https://scitools.org.uk/cartopy/docs/latest/installing.html), and [geopandas](https://geopandas.org/en/stable/) Python packages. Use pandas to read the Excel file.
 > > ```python
 > > import pandas as pd
 > > url = 'https://ioos.github.io/bio_mobilization_workshop/data/trawl_fish.xlsx'
-> > df = pd.read_excel(url)
+> > df = pd.read_excel(url) # might need to install openpyxl
 > > df['row'] = df.index.to_numpy()+1 # python starts at zero
 > > ```
 > > 
-> > 1. Run a diagnostics report for the data quality (you will need [cartopy](https://scitools.org.uk/cartopy/docs/latest/) installed - install with `conda install cartopy`)
+> > 1. Run a diagnostics report for the data quality.
 > >     ```python
-> >     import cartopy.io.shapereader as shpreader
-> >     import geopandas as gpd
-> >     import shapely.geometry as sgeom
-> >     from shapely.ops import unary_union
-> >     from shapely.prepared import prep
-> >     import matplotlib.pyplot as plt
-> >     
-> >     gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df.decimalLongitude, df.decimalLatitude))
-> >     
-> >     land_shp_fname = shpreader.natural_earth(resolution='50m',
-> >                                            category='physical', name='land')
-> >     
-> >     land_geom = unary_union(list(shpreader.Reader(land_shp_fname).geometries()))
-> >     land = prep(land_geom)
-> >     
-> >     for index, row in gdf.iterrows():
-> >         gdf.loc[index, 'on_land'] = land.contains(row.geometry)
+> >    import cartopy.io.shapereader as shpreader
+> >    import geopandas as gpd
+> >    import shapely.geometry as sgeom
+> >    from shapely.ops import unary_union
+> >    from shapely.prepared import prep
+> >    import matplotlib.pyplot as plt
 > >    
-> >     fig, axs = plt.subplots(ncols=1,nrows=2)
-> >     # Make a map:
-> >     xlim = ([gdf.total_bounds[0]-2,  gdf.total_bounds[2]+2])
-> >     ylim = ([gdf.total_bounds[1]-2,  gdf.total_bounds[3]+2])
+> >    gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df.decimalLongitude, df.decimalLatitude))
+> >    
+> >    land_shp_fname = shpreader.natural_earth(resolution='50m',
+> >                                           category='physical', name='land')
+> >    
+> >    land_geom = unary_union(list(shpreader.Reader(land_shp_fname).geometries()))
+> >    land = prep(land_geom)
+> >    
+> >    for index, row in gdf.iterrows():
+> >        gdf.loc[index, 'on_land'] = land.contains(row.geometry)
+> >    
+> >    fig, axs = plt.subplots(ncols=1,nrows=2)
+> >    # Make a map:
+> >    xlim = ([gdf.total_bounds[0]-2,  gdf.total_bounds[2]+2])
+> >    ylim = ([gdf.total_bounds[1]-2,  gdf.total_bounds[3]+2])
 > >
-> >     axs[0].set_xlim(xlim)
-> >     axs[0].set_ylim(ylim)
+> >    axs[0].set_xlim(xlim)
+> >    axs[0].set_ylim(ylim)
 > > 
-> >     gpd.read_file(land_shp_fname).plot(ax=axs[0])
+> >    gpd.read_file(land_shp_fname).plot(ax=axs[0])
+> >    
+> >    gdf.loc[gdf['on_land']==False].plot(ax=axs[0], color='green', markersize=1)
+> >    gdf.loc[gdf['on_land']==True].plot(ax=axs[0], color='red', markersize=1)
+> >    
+> >    # Collect some informational material about potential issues w/ data:
+> >    invalid_coord = []
+> >    if len(gdf.loc[gdf['on_land']==True]) > 0:
+> >       invalid_coord.append('Row {} coordinates on land.'.format(gdf.loc[gdf['on_land'] == True,'row'].tolist()[0]))
 > >     
-> >     gdf.loc[gdf['on_land']==False].plot(ax=axs[0], color='green', markersize=1)
-> >     gdf.loc[gdf['on_land']==True].plot(ax=axs[0], color='red', markersize=1)
-> >     
-> >     # Collect some informational material about potential issues w/ data:
-> >     invalid_coord = []
-> >     if len(gdf.loc[gdf['on_land']==True]) > 0:
-> >        invalid_coord.append('Row {} coordinates on land.'.format(gdf[gdf['on_land'] == True,'row']))
-> >     
-> >     req_cols = ['eventDate', 'decimalLongitude', 'decimalLatitude', 'scientificName', 'scientificNameID', 'occurrenceStatus', 'basisOfRecord']
-> >     missing_cols = []
-> >     for col in req_cols:
-> >      if col not in gdf.columns:
-> >        missing_cols.append('Column {} is missing.'.format(col))
-> >     
-> >     # Add the information to the figure
-> >     axs[1].text(0.25,0.25,'\n'.join(['\n'.join(missing_cols),'\n'.join(invalid_coord)]))
-> >     axs[1].axis('off')
-> >     ```
+> >    req_cols = ['eventDate', 'decimalLongitude', 'decimalLatitude', 'scientificName', 'scientificNameID', 'occurrenceStatus', 'basisOfRecord']
+> >    missing_cols = []
+> >    for col in req_cols:
+> >     if col not in gdf.columns:
+> >       missing_cols.append('Column {} is missing.'.format(col))
+> >    
+> >    # Add the information to the figure
+> >    axs[1].text(0.25,0.25,'\n'.join(['\n'.join(missing_cols),'\n'.join(invalid_coord)]))
+> >    axs[1].axis('off')
+> >    plt.show()
+> >    ```
 > >     <img src="{{ page.root }}/fig/screenshot_python_report.png" alt="drawing" width="500"/>{: .image-with-shadow }
 > > 1. Check to make sure `eventID` are unique
 > >    ```python
@@ -362,16 +369,21 @@ One method for reviewing your data is to use the r package [Hmisc](https://cran.
 > > 1. From the report generated under exercise 1, you can already see that there’s measurements made on land. Now let's check the depths are within reason for the points. Let's use the [GEBCO bathymetry dataset served in the coastwatch ERDDAP](https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.html).
 > >    ```python
 > >    import time
+> >    import numpy as np
+> >    
+> >    df['bathy'] = np.nan # initialize column
 > >    
 > >    for index, row in df.iterrows():
-> >        url = 'https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.csvp?elevation%5B({})%5D%5B({})%5D'.format(row['decimalLatitude'],row['decimalLongitude'])
+> >        base_url = 'https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.csvp?'
+> >        query_url = 'elevation%5B({})%5D%5B({})%5D'.format(row['decimalLatitude'],row['decimalLongitude'])
+> >        url = base_url+query_url
 > >        bathy = pd.read_csv(url)
 > >        df.at[index,'bathy'] = bathy['elevation (m)'] # insert bathymetry value
 > >        time.sleep(0.5) # to not ping erddap too much
 > >    
 > >    print('maximumDepthInMeters deeper than GEBCO bathymetry:')
-> >    if len(df.loc[df['maximumDepthInMeters']<df['bathy']]) > 0:
-> >       print(df.loc[df['maximumDepthInMeters']<df['bathy']])
+> >    if len( df.loc[df['maximumDepthInMeters'] > abs(df['bathy'])] ) > 0: # abs() because EOTOPO is negative doing down
+> >       print(df.loc[df['maximumDepthInMeters'] > abs(df['bathy'])])
 > >    else:
 > >       print('None')
 > >    ```
