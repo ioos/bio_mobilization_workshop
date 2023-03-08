@@ -382,7 +382,7 @@ One method for reviewing your data is to use the r package [Hmisc](https://cran.
 > >        time.sleep(0.5) # to not ping erddap too much
 > >    
 > >    print('maximumDepthInMeters deeper than GEBCO bathymetry:')
-> >    if len( df.loc[df['maximumDepthInMeters'] > abs(df['bathy'])] ) > 0: # abs() because EOTOPO is negative doing down
+> >    if len( df.loc[df['maximumDepthInMeters'] > abs(df['bathy'])] ) > 0: # abs() because EOTOPO is negative going down the water column
 > >       print(df.loc[df['maximumDepthInMeters'] > abs(df['bathy'])])
 > >    else:
 > >       print('None')
