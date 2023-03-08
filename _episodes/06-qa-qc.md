@@ -381,15 +381,37 @@ One method for reviewing your data is to use the r package [Hmisc](https://cran.
 > >        df.at[index,'bathy'] = bathy['elevation (m)'] # insert bathymetry value
 > >        time.sleep(0.5) # to not ping erddap too much
 > >    
+> >    # make new column for depth in meters as negative because GEBCO is Elevation relative to sea level
+> >    df['neg_maximumDepthInMeters'] = -1*df['maximumDepthInMeters']
+> >    
 > >    print('maximumDepthInMeters deeper than GEBCO bathymetry:')
-> >    if len( df.loc[df['maximumDepthInMeters'] > abs(df['bathy'])] ) > 0: # abs() because EOTOPO is negative going down the water column
-> >       print(df.loc[df['maximumDepthInMeters'] > abs(df['bathy'])])
+> >    if len( df.loc[df['neg_maximumDepthInMeters'] < df['bathy']] ) > 0:
+> >       print(df.loc[df['neg_maximumDepthInMeters'] < df['bathy']].T)
 > >    else:
 > >       print('None')
 > >    ```
 > >    ```output
-> >    max Depths > GEBCO bathymetry:
-> >    None
+> >    maximumDepthInMeters deeper than GEBCO bathymetry:
+> >                                                                                  4
+> >    eventID                                                  IYS:GoA2019:Stn5:trawl
+> >    parentEventID                                                  IYS:GoA2019:Stn5
+> >    eventDate                             2019-02-22T09:49:00Z/2019-02-22T10:49:00Z
+> >    year                                                                       2019
+> >    month                                                                         2
+> >    day                                                                          22
+> >    decimalLatitude                                                       67.399004
+> >    decimalLongitude                                                    -139.552501
+> >    footprintWKT                   LINESTRING ( -139.583 67.397 , -139.522 67.401 )
+> >    coordinateUncertaintyInMeters                                       2313.094678
+> >    minimumDepthInMeters                                                          0
+> >    maximumDepthInMeters                                                       33.2
+> >    samplingProtocol                                                 midwater trawl
+> >    locality                                                                    NaN
+> >    locationID                                                                  NaN
+> >    type                                                             midwater trawl
+> >    row                                                                           5
+> >    bathy                                                                     306.0
+> >    neg_maximumDepthInMeters                                                  -33.2
 > >    ```
 > {: .solution}
 {: .challenge}
