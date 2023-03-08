@@ -3,11 +3,11 @@ title: "QA/QC"
 teaching: 0
 exercises: 120
 questions:
-- "How can I QC and publish my data?"
+- "How can I QC my data?"
 objectives:
 - "Data enhancement and quality control"
 keypoints:
-- "Several packages (e.g. obistools, Hmisc) can be used to QA/QC data." 
+- "Several packages (e.g. obistools, Hmisc, pandas) can be used to QA/QC data." 
 ---
 
 # Data enhancement and quality control
