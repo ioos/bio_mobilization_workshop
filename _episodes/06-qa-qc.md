@@ -3,11 +3,11 @@ title: "QA/QC"
 teaching: 0
 exercises: 120
 questions:
-- "How can I QC and publish my data?"
+- "How can I QC my data?"
 objectives:
 - "Data enhancement and quality control"
 keypoints:
-- "Several packages (e.g. obistools, Hmisc) can be used to QA/QC data." 
+- "Several packages (e.g. obistools, Hmisc, pandas) can be used to QA/QC data." 
 ---
 
 # Data enhancement and quality control
@@ -28,164 +28,170 @@ One method for reviewing your data is to use the r package [Hmisc](https://cran.
 
 > ## Hmisc::describe
 > ```r
+> # pull in the occurrence file from https://www.sciencebase.gov/catalog/item/53a887f4e4b075096c60cfdd
+> url <- "https://www.sciencebase.gov/catalog/file/get/53a887f4e4b075096c60cfdd?f=__disk__32%2F24%2F80%2F322480c9bcbad19030e29c9ec5e2caeb54cb4a08&allowOpen=true"
+>
+> occurrence <- read.csv(url)
+>
+> head(occurrence,n=1)       
+>   vernacularName                                eventID occurrenceStatus
+> 1  Alligator gar Station_95_Date_09JAN1997:14:35:00.000           Absent
+>      basisOfRecord       scientificName
+> 1 HumanObservation Atractosteus spatula
+>                            scientificNameID  kingdom   phylum       class
+> 1 urn:lsid:marinespecies.org:taxname:279822 Animalia Chordata Actinopteri
+>              order        family        genus scientificNameAuthorship
+> 1 Lepisosteiformes Lepisosteidae Atractosteus        (LacepA"de, 1803)
+>   taxonRank organismQuantity organismQuantityType
+> 1   Species                0   Relative Abundance
+>                                                  occurrenceID
+> 1 Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula
+>          collectionCode
+> 1 Aransas Bay Bag Seine
+>
 > Hmisc::describe(occurrence)
 > ```
 > ```output
 > occurrence 
-> 18  Variables      202860  Observations
-> -------------------------------------------------------------------------------------------------------
-> vernacularName 
->        n  missing distinct 
->   202860        0       84 
->   
-> lowest : Alligator gar        Arrow shrimp         Atlantic brief squid Atlantic croaker     Atlantic needlefish 
-> highest: Thinstripe hermit    Threadfin shad       Tidewater silverside White mullet         White shrimp        
-> -------------------------------------------------------------------------------------------------------
-> eventID 
->        n  missing distinct 
->   202860        0     2415 
->
-> lowest : Station_100_Date_03MAY1990:10:09:00.000 Station_100_Date_04NOV2008:07:15:00.000 Station_100_Date_04OCT2006:09:18:00.000 Station_100_Date_07APR1981:07:30:00.000
-> Station_100_Date_07AUG1979:07:50:00.000
-> highest: Station_99_Date_17SEP2002:09:25:00.000  Station_99_Date_20APR1999:10:08:00.000  Station_99_Date_22SEP1988:09:52:00.000  Station_99_Date_23MAY1996:07:10:00.000 
-> Station_99_Date_29MAY1985:09:20:00.000 
-> -------------------------------------------------------------------------------------------------------
-> occurrenceStatus 
+> 
+>  18  Variables      334341  Observations
+> --------------------------------------------------------------------------------
+> vernacularName
 >        n  missing distinct
->   202860        0        2 
->                        
->   Value       Absent Present
->   Frequency   184636   18224
->   Proportion    0.91    0.09
-> -------------------------------------------------------------------------------------------------------
-> basisOfRecord 
->            n          missing         distinct            value 
->       202860                0                1 HumanObservation 
->                           
+>   334341        0       61
+> 
+> lowest : Alligator gar        Arrow shrimp         Atlantic brief squid Atlantic bumper      Atlantic croaker
+> highest: Striped mullet       Thinstripe hermit    Threadfin shad       White mullet         White shrimp
+> --------------------------------------------------------------------------------
+> eventID
+>        n  missing distinct
+>   334341        0     5481
+> 
+> lowest : Station_10_Date_04DEC1991:13:59:00.000 Station_10_Date_04SEP2002:13:17:00.000 Station_10_Date_05JUN1991:15:20:00.000 Station_10_Date_07APR1995:12:54:00.000 Station_10_Date_07APR2000:11:16:00.000
+> highest: Station_99_Date_21APR1998:18:24:00.000 Station_99_Date_22OCT2001:13:12:00.000 Station_99_Date_25JUN1990:13:48:00.000 Station_99_Date_25NOV2003:11:11:00.000 Station_99_Date_27JUN1988:12:45:00.000
+> --------------------------------------------------------------------------------
+> occurrenceStatus
+>        n  missing distinct
+>   334341        0        2
+> 
+> Value       Absent Present
+> Frequency   294469   39872
+> Proportion   0.881   0.119
+> --------------------------------------------------------------------------------
+> basisOfRecord
+>                n          missing         distinct            value
+>           334341                0                1 HumanObservation 
+> 
 > Value      HumanObservation
-> Frequency            202860
+> Frequency            334341
 > Proportion                1
-> -------------------------------------------------------------------------------------------------------
-> scientificName 
->      n  missing distinct 
-> 202860        0       84 
+> --------------------------------------------------------------------------------
+> scientificName
+>        n  missing distinct
+>   334341        0       61
 > 
-> lowest : Achirus lineatus            Alpheus estuariensis        Anchoa mitchilli            Archosargus probatocephalus Argopecten irradians       
-> highest: Syngnathus scovelli         Synodus foetens             Tozeuma carolinense         Trachinotus carolinus       Trinectes maculatus        
-> -------------------------------------------------------------------------------------------------------
+> lowest : Adinia xenica               Anchoa mitchilli            Archosargus probatocephalus Ariopsis felis              Atractosteus spatula
+> highest: Stomatopoda                 Stomolophus meleagris       Syngnathus scovelli         Tozeuma carolinense         Trichiurus lepturus
+> --------------------------------------------------------------------------------
 > scientificNameID 
->      n  missing distinct 
-> 202860        0       84 
+>        n  missing distinct
+>   334341        0       61
 > 
-> lowest : urn:lsid:marinespecies.org:taxname:107032 urn:lsid:marinespecies.org:taxname:107335 urn:lsid:marinespecies.org:taxname:107379
-> urn:lsid:marinespecies.org:taxname:126430 urn:lsid:marinespecies.org:taxname:126803
-> highest: urn:lsid:marinespecies.org:taxname:421735 urn:lsid:marinespecies.org:taxname:421784 urn:lsid:marinespecies.org:taxname:422069
-> urn:lsid:marinespecies.org:taxname:443955 urn:lsid:marinespecies.org:taxname:581423
-> -------------------------------------------------------------------------------------------------------
-> kingdom 
->      n  missing distinct    value 
-> 202860        0        1 Animalia 
->                    
+> lowest : urn:lsid:marinespecies.org:taxname:105792 urn:lsid:marinespecies.org:taxname:107034 urn:lsid:marinespecies.org:taxname:107379 urn:lsid:marinespecies.org:taxname:126983 urn:lsid:marinespecies.org:taxname:127089
+> highest: urn:lsid:marinespecies.org:taxname:367528 urn:lsid:marinespecies.org:taxname:396707 urn:lsid:marinespecies.org:taxname:421784 urn:lsid:marinespecies.org:taxname:422069 urn:lsid:marinespecies.org:taxname:443955
+> 
+> --------------------------------------------------------------------------------
+> kingdom
+>        n  missing distinct    value
+>   334341        0        1 Animalia
+> 
 > Value      Animalia
-> Frequency    202860
+> Frequency    334341
 > Proportion        1
-> -------------------------------------------------------------------------------------------------------
-> phylum 
->      n  missing distinct 
-> 198030     4830        4 
->                                                      
+> --------------------------------------------------------------------------------
+> phylum
+>        n  missing distinct
+>   328860     5481        4
+> 
 > Value      Arthropoda   Chordata   Cnidaria   Mollusca
-> Frequency       33810     149730       2415      12075
-> Proportion      0.171      0.756      0.012      0.061
-> -------------------------------------------------------------------------------------------------------
-> class 
->      n  missing distinct 
-> 198030     4830        7 
+> Frequency       71253     246645       5481       5481
+> Proportion      0.217      0.750      0.017      0.017
+> --------------------------------------------------------------------------------
+> class
+>        n  missing distinct
+>   328860     5481        5
 > 
-> lowest : Actinopteri    Bivalvia       Cephalopoda    Elasmobranchii Gastropoda    
-> highest: Cephalopoda    Elasmobranchii Gastropoda     Malacostraca   Scyphozoa     
->                                                                                                     
-> Value         Actinopteri       Bivalvia    Cephalopoda Elasmobranchii     Gastropoda   Malacostraca
-> Frequency          144900           4830           2415           4830           4830          33810
-> Proportion          0.732          0.024          0.012          0.024          0.024          0.171
->                          
+> lowest : Actinopteri    Cephalopoda    Elasmobranchii Malacostraca   Scyphozoa     
+> highest: Actinopteri    Cephalopoda    Elasmobranchii Malacostraca   Scyphozoa
+> 
+> Value         Actinopteri    Cephalopoda Elasmobranchii   Malacostraca
+> Frequency          235683           5481          10962          71253
+> Proportion          0.717          0.017          0.033          0.217
+> 
 > Value           Scyphozoa
-> Frequency            2415
-> Proportion          0.012
-> -------------------------------------------------------------------------------------------------------
-> order 
->      n  missing distinct 
-> 198030     4830       28 
+> Frequency            5481
+> Proportion          0.017
+> --------------------------------------------------------------------------------
+> order
+>        n  missing distinct
+>   328860     5481       22
 > 
-> lowest : [unassigned] Caenogastropoda Acanthuriformes              Aplysiida                    Atheriniformes               Aulopiformes                
-> highest: Rhizostomeae                 Siluriformes                 Syngnathiformes              Tetraodontiformes            Venerida                    
-> -------------------------------------------------------------------------------------------------------
-> family 
->      n  missing distinct 
-> 198030     4830       48 
+> lowest : Atheriniformes            Batrachoidiformes         Carangaria incertae sedis Carangiformes             Carcharhiniformes        
+> highest: Rhizostomeae              Scombriformes             Siluriformes              Syngnathiformes           Tetraodontiformes
+> --------------------------------------------------------------------------------
+> family
+>        n  missing distinct
+>   328860     5481       36
 > 
-> lowest : Achiridae      Alpheidae      Aplysiidae     Ariidae        Atherinopsidae
-> highest: Stromateidae   Syngnathidae   Synodontidae   Tetraodontidae Triglidae     
-> -------------------------------------------------------------------------------------------------------
-> genus 
->      n  missing distinct 
-> 198030     4830       66 
+> lowest : Ariidae        Atherinopsidae Batrachoididae Carangidae     Carcharhinidae
+> highest: Stromateidae   Syngnathidae   Tetraodontidae Trichiuridae   Triglidae
+> --------------------------------------------------------------------------------
+> genus
+>        n  missing distinct
+>   328860     5481       52
 > 
-> lowest : Achirus     Alpheus     Anchoa      Archosargus Argopecten 
-> highest: Syngnathus  Synodus     Tozeuma     Trachinotus Trinectes  
-> -------------------------------------------------------------------------------------------------------
-> scientificNameAuthorship 
->      n  missing distinct 
-> 198030     4830       66 
+> lowest : Adinia       Anchoa       Archosargus  Ariopsis     Atractosteus
+> highest: Sphoeroides  Stomolophus  Syngnathus   Tozeuma      Trichiurus  
+> --------------------------------------------------------------------------------
+> scientificNameAuthorship
+>        n  missing distinct
+>   328860     5481       52
 > 
-> lowest : (Baird & Girard, 1853)        (Baird & Girard, 1855)        (Blainville, 1823)            (Bleeker, 1863)               (Bloch & Schneider, 1801)    
-> highest: Rathbun, 1896                 Say, 1817 [in Say, 1817-1818] Shipp & Yerger, 1969          Valenciennes, 1836            Valenciennes, 1847           
-> -------------------------------------------------------------------------------------------------------
+> lowest : (Baird & Girard, 1853)        (Baird & Girard, 1855)        (Blainville, 1823)            (Bosc, 1801)                  (Burkenroad, 1939)
+> highest: Rathbun, 1896                 Say, 1817 [in Say, 1817-1818] Shipp & Yerger, 1969          Valenciennes, 1836            Winchell, 1864
+> --------------------------------------------------------------------------------
 > taxonRank
->       n  missing distinct 
->  202860        0        4 
->                                                        
-> Value           Genus      Order    Species Subspecies
-> Frequency        2415       2415     195615       2415
-> Proportion      0.012      0.012      0.964      0.012
-> -------------------------------------------------------------------------------------------------------
-> organismQuantity 
->      n  missing distinct     Info     Mean      Gmd      .05      .10      .25      .50      .75 
-> 202860        0     3265    0.246   0.0119  0.02296     0.00     0.00     0.00     0.00     0.00 
->    .90      .95 
->   0.00     0.05 
->   
-> lowest : 0.000000000 0.001897533 0.001964637 0.002000000 0.002433090
-> highest: 0.935779817 0.942307692 0.942857143 0.952380952 0.973684211
-> -------------------------------------------------------------------------------------------------------
+>        n  missing distinct
+>   334341        0        3
+> 
+> Value        Genus   Order Species
+> Frequency     5481    5481  323379
+> Proportion   0.016   0.016   0.967
+> --------------------------------------------------------------------------------
+> organismQuantity
+>        n  missing distinct     Info     Mean      Gmd      .05      .10
+>   334341        0     8696    0.317  0.01639  0.03141  0.00000  0.00000
+>      .25      .50      .75      .90      .95
+>  0.00000  0.00000  0.00000  0.01005  0.07407
+> 
+> lowest : 0.0000000000 0.0000917684 0.0001835370 0.0002136300 0.0002241650
+> highest: 0.9969931270 0.9974226800 0.9981570220 0.9982300880 1.0000000000
+> --------------------------------------------------------------------------------
 > organismQuantityType 
->            n            missing           distinct              value 
->       202860                  0                  1 Relative Abundance 
->                              
+>                  n            missing           distinct              value
+>             334341                  0                  1 Relative Abundance
+> 
 > Value      Relative Abundance
-> Frequency              202860
-> Proportion                  1
-> -------------------------------------------------------------------------------------------------------
-> occurrenceID 
->      n  missing distinct 
-> 202860        0   202860 
+> Frequency              334341
+>                     n               missing              distinct
+>               334341                     0                     1
+>                 value
+> Aransas Bay Bag Seine
 > 
-> lowest : Station_100_Date_03MAY1990:10:09:00.000_Achirus_lineatus            Station_100_Date_03MAY1990:10:09:00.000_Alpheus_estuariensis       
-> Station_100_Date_03MAY1990:10:09:00.000_Anchoa_mitchilli            Station_100_Date_03MAY1990:10:09:00.000_Archosargus_probatocephalus
-> Station_100_Date_03MAY1990:10:09:00.000_Argopecten_irradians       
-> highest: Station_99_Date_29MAY1985:09:20:00.000_Syngnathus_scovelli          Station_99_Date_29MAY1985:09:20:00.000_Synodus_foetens             
-> Station_99_Date_29MAY1985:09:20:00.000_Tozeuma_carolinense          Station_99_Date_29MAY1985:09:20:00.000_Trachinotus_carolinus      
-> Station_99_Date_29MAY1985:09:20:00.000_Trinectes_maculatus         
-> -------------------------------------------------------------------------------------------------------
-> collectionCode 
->                     n                     missing                    distinct 
->                202860                           0                           1 
->                 value 
-> Upper Laguna Madre Gill Net 
-> 
-> Value      Upper Laguna Madre Gill Net
-> Frequency                       202860
-> Proportion                           1
+> Value      Aransas Bay Bag Seine
+> Frequency                 334341
+> Proportion                     1
+> --------------------------------------------------------------------------------
 > ```
 > 
 {: .solution}
@@ -202,10 +208,15 @@ One method for reviewing your data is to use the r package [Hmisc](https://cran.
 > The event core data used in the checks below can be found in [this Excel file]({{ page.root }}/data/trawl_fish.xlsx).
 > 
 > > ## Solution in R
-> > Install [obistools](https://github.com/iobis/obistools) R packages.
+> > Install [obistools](https://github.com/iobis/obistools) R packages. Use [readxl](https://readxl.tidyverse.org/) package to read the Excel file.
 > > 
 > > 1. Run a diagnostics report for the data quality
+> > 
 > > ```r
+> > library(readxl)
+> > library(obistools)
+> > 
+> > trawl_fish <- readxl::read_excel('data/trawl_fish.xlsx')
 > > report <- obistools::report(trawl_fish)
 > > report
 > > ```
@@ -258,62 +269,63 @@ One method for reviewing your data is to use the r package [Hmisc](https://cran.
 > >  {: .output}
 > {: .solution}
 > > ## Solution in Python
-> > First start with reading the data into a pandas dataFrame:
+> > Install the [pandas](https://pandas.pydata.org/), [cartopy](https://scitools.org.uk/cartopy/docs/latest/installing.html), and [geopandas](https://geopandas.org/en/stable/) Python packages. Use pandas to read the Excel file.
 > > ```python
 > > import pandas as pd
 > > url = 'https://ioos.github.io/bio_mobilization_workshop/data/trawl_fish.xlsx'
-> > df = pd.read_excel(url)
+> > df = pd.read_excel(url) # might need to install openpyxl
 > > df['row'] = df.index.to_numpy()+1 # python starts at zero
 > > ```
 > > 
-> > 1. Run a diagnostics report for the data quality (you will need [cartopy](https://scitools.org.uk/cartopy/docs/latest/) installed - install with `conda install cartopy`)
+> > 1. Run a diagnostics report for the data quality.
 > >     ```python
-> >     import cartopy.io.shapereader as shpreader
-> >     import geopandas as gpd
-> >     import shapely.geometry as sgeom
-> >     from shapely.ops import unary_union
-> >     from shapely.prepared import prep
-> >     import matplotlib.pyplot as plt
-> >     
-> >     gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df.decimalLongitude, df.decimalLatitude))
-> >     
-> >     land_shp_fname = shpreader.natural_earth(resolution='50m',
-> >                                            category='physical', name='land')
-> >     
-> >     land_geom = unary_union(list(shpreader.Reader(land_shp_fname).geometries()))
-> >     land = prep(land_geom)
-> >     
-> >     for index, row in gdf.iterrows():
-> >         gdf.loc[index, 'on_land'] = land.contains(row.geometry)
+> >    import cartopy.io.shapereader as shpreader
+> >    import geopandas as gpd
+> >    import shapely.geometry as sgeom
+> >    from shapely.ops import unary_union
+> >    from shapely.prepared import prep
+> >    import matplotlib.pyplot as plt
 > >    
-> >     fig, axs = plt.subplots(ncols=1,nrows=2)
-> >     # Make a map:
-> >     xlim = ([gdf.total_bounds[0]-2,  gdf.total_bounds[2]+2])
-> >     ylim = ([gdf.total_bounds[1]-2,  gdf.total_bounds[3]+2])
+> >    gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df.decimalLongitude, df.decimalLatitude))
+> >    
+> >    land_shp_fname = shpreader.natural_earth(resolution='50m',
+> >                                           category='physical', name='land')
+> >    
+> >    land_geom = unary_union(list(shpreader.Reader(land_shp_fname).geometries()))
+> >    land = prep(land_geom)
+> >    
+> >    for index, row in gdf.iterrows():
+> >        gdf.loc[index, 'on_land'] = land.contains(row.geometry)
+> >    
+> >    fig, axs = plt.subplots(ncols=1,nrows=2)
+> >    # Make a map:
+> >    xlim = ([gdf.total_bounds[0]-2,  gdf.total_bounds[2]+2])
+> >    ylim = ([gdf.total_bounds[1]-2,  gdf.total_bounds[3]+2])
 > >
-> >     axs[0].set_xlim(xlim)
-> >     axs[0].set_ylim(ylim)
+> >    axs[0].set_xlim(xlim)
+> >    axs[0].set_ylim(ylim)
 > > 
-> >     gpd.read_file(land_shp_fname).plot(ax=axs[0])
+> >    gpd.read_file(land_shp_fname).plot(ax=axs[0])
+> >    
+> >    gdf.loc[gdf['on_land']==False].plot(ax=axs[0], color='green', markersize=1)
+> >    gdf.loc[gdf['on_land']==True].plot(ax=axs[0], color='red', markersize=1)
+> >    
+> >    # Collect some informational material about potential issues w/ data:
+> >    invalid_coord = []
+> >    if len(gdf.loc[gdf['on_land']==True]) > 0:
+> >       invalid_coord.append('Row {} coordinates on land.'.format(gdf.loc[gdf['on_land'] == True,'row'].tolist()[0]))
 > >     
-> >     gdf.loc[gdf['on_land']==False].plot(ax=axs[0], color='green', markersize=1)
-> >     gdf.loc[gdf['on_land']==True].plot(ax=axs[0], color='red', markersize=1)
-> >     
-> >     # Collect some informational material about potential issues w/ data:
-> >     invalid_coord = []
-> >     if len(gdf.loc[gdf['on_land']==True]) > 0:
-> >        invalid_coord.append('Row {} coordinates on land.'.format(gdf[gdf['on_land'] == True,'row']))
-> >     
-> >     req_cols = ['eventDate', 'decimalLongitude', 'decimalLatitude', 'scientificName', 'scientificNameID', 'occurrenceStatus', 'basisOfRecord']
-> >     missing_cols = []
-> >     for col in req_cols:
-> >      if col not in gdf.columns:
-> >        missing_cols.append('Column {} is missing.'.format(col))
-> >     
-> >     # Add the information to the figure
-> >     axs[1].text(0.25,0.25,'\n'.join(['\n'.join(missing_cols),'\n'.join(invalid_coord)]))
-> >     axs[1].axis('off')
-> >     ```
+> >    req_cols = ['eventDate', 'decimalLongitude', 'decimalLatitude', 'scientificName', 'scientificNameID', 'occurrenceStatus', 'basisOfRecord']
+> >    missing_cols = []
+> >    for col in req_cols:
+> >     if col not in gdf.columns:
+> >       missing_cols.append('Column {} is missing.'.format(col))
+> >    
+> >    # Add the information to the figure
+> >    axs[1].text(0.25,0.25,'\n'.join(['\n'.join(missing_cols),'\n'.join(invalid_coord)]))
+> >    axs[1].axis('off')
+> >    plt.show()
+> >    ```
 > >     <img src="{{ page.root }}/fig/screenshot_python_report.png" alt="drawing" width="500"/>{: .image-with-shadow }
 > > 1. Check to make sure `eventID` are unique
 > >    ```python
@@ -357,22 +369,49 @@ One method for reviewing your data is to use the r package [Hmisc](https://cran.
 > > 1. From the report generated under exercise 1, you can already see that there’s measurements made on land. Now let's check the depths are within reason for the points. Let's use the [GEBCO bathymetry dataset served in the coastwatch ERDDAP](https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.html).
 > >    ```python
 > >    import time
+> >    import numpy as np
+> >    
+> >    df['bathy'] = np.nan # initialize column
 > >    
 > >    for index, row in df.iterrows():
-> >        url = 'https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.csvp?elevation%5B({})%5D%5B({})%5D'.format(row['decimalLatitude'],row['decimalLongitude'])
+> >        base_url = 'https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.csvp?'
+> >        query_url = 'elevation%5B({})%5D%5B({})%5D'.format(row['decimalLatitude'],row['decimalLongitude'])
+> >        url = base_url+query_url
 > >        bathy = pd.read_csv(url)
 > >        df.at[index,'bathy'] = bathy['elevation (m)'] # insert bathymetry value
 > >        time.sleep(0.5) # to not ping erddap too much
 > >    
+> >    # make new column for depth in meters as negative because GEBCO is Elevation relative to sea level
+> >    df['neg_maximumDepthInMeters'] = -1*df['maximumDepthInMeters']
+> >    
 > >    print('maximumDepthInMeters deeper than GEBCO bathymetry:')
-> >    if len(df.loc[df['maximumDepthInMeters']<df['bathy']]) > 0:
-> >       print(df.loc[df['maximumDepthInMeters']<df['bathy']])
+> >    if len( df.loc[df['neg_maximumDepthInMeters'] < df['bathy']] ) > 0:
+> >       print(df.loc[df['neg_maximumDepthInMeters'] < df['bathy']].T)
 > >    else:
 > >       print('None')
 > >    ```
 > >    ```output
-> >    max Depths > GEBCO bathymetry:
-> >    None
+> >    maximumDepthInMeters deeper than GEBCO bathymetry:
+> >                                                                                  4
+> >    eventID                                                  IYS:GoA2019:Stn5:trawl
+> >    parentEventID                                                  IYS:GoA2019:Stn5
+> >    eventDate                             2019-02-22T09:49:00Z/2019-02-22T10:49:00Z
+> >    year                                                                       2019
+> >    month                                                                         2
+> >    day                                                                          22
+> >    decimalLatitude                                                       67.399004
+> >    decimalLongitude                                                    -139.552501
+> >    footprintWKT                   LINESTRING ( -139.583 67.397 , -139.522 67.401 )
+> >    coordinateUncertaintyInMeters                                       2313.094678
+> >    minimumDepthInMeters                                                          0
+> >    maximumDepthInMeters                                                       33.2
+> >    samplingProtocol                                                 midwater trawl
+> >    locality                                                                    NaN
+> >    locationID                                                                  NaN
+> >    type                                                             midwater trawl
+> >    row                                                                           5
+> >    bathy                                                                     306.0
+> >    neg_maximumDepthInMeters                                                  -33.2
 > >    ```
 > {: .solution}
 {: .challenge}
