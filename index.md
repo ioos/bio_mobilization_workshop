@@ -14,10 +14,8 @@ humantime: "13:00 - 17:00 EDT"    # human-readable times for the workshop e.g., 
 startdate: 2023-04-18      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
 enddate: 2023-04-19        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
 # instructor list : a boxed, comma-separated list of instructors' names as strings, like ["Abby Benson", "Mathew Biddle"]
-instructor: [
-"Abby Benson", 
-"Steve Formel",
-"Mathew Biddle"
+instructor: [ "Abby Benson", "Steve Formel",
+"Mathew Biddle",
 "Jonathan Pye", 
 "Tim van der Stap",
 Elizabeth Lawrence
