@@ -107,6 +107,26 @@ the pitch.
 {% endcomment %}
 This workshop is intended to be a small hands-on, interactive virtual workshop focused on mobilizing marine biological observation datasets to the <a href="https://obis.org/">Ocean Biodiversity Information System (OBIS)</a> by helping data providers standardize their data using Darwin Core including species observations from any type of sampling methodologies (e.g. visual surveys, net tows, microscopy, fish trawls, imaging, ‘omics, acoustics, telemetry).
 
+What this workshop will cover:
+
+* Darwin Core and the required terms for OBIS and GBIF.
+* Typical data cleaning tasks needed to standardize the data.
+* Getting your data into a final Darwin Core format.
+* Common QA/QC steps, data enhancement, and validation tools.
+* Required metadata information.
+* How to get your data into the Integrated Publishing Toolkit.
+* Tools that will help in all of the above processes.
+
+The goal is that by the end of the workshop you will have a dataset in a final standardized state and shared to OBIS. We are hoping to address some of the blockers that you identified, including: lack of time, training, and specific formatting questions.
+
+We have a short time together therefore our focus will be hands-on work in breakout rooms using the dataset you bring to the workshop. We will not have many presentations and they will be relatively short. Instead we will have large portions of time for you to work on your data and ask questions when you hit a stumbling block. Therefore, if you do not have a dataset to work on you may not find this workshop a good use of your time.
+
+What this workshop will not cover:
+* What is OBIS?
+* Rationale for sharing data with OBIS.
+* Using data that’s already in OBIS.
+
+If you would like to learn more about OBIS and a short rationale for sharing data to it, please watch this [two minute video](https://youtu.be/E6NblAC-1uE) and this [two minute video](https://youtu.be/mmD-EYNOrFA) and share them with those you want to work with to share data.
 {% if site.carpentry == "swc" %}
 {% include swc/intro.html %}
 {% elsif site.carpentry == "dc" %}
