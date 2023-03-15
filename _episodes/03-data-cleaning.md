@@ -579,3 +579,5 @@ Helpful packages for managing CRS and geodetic datum:
 {: .solution}
 
 {% include links.md %}
+
+[![Embedding a Video](https://img.youtube.com/watch?v=hMVXrf6Qxw0&t=2s/0.jpg)](https://www.youtube.com/watch?v=hMVXrf6Qxw0&t=2s "Embedding a Video")
