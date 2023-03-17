@@ -19,7 +19,7 @@ keypoints:
 - "Implementing Darwin Core makes data FAIR-er and means becoming part of a community of people working together to understand species no matter where they work or are based."
 ---
 # Darwin Core - A global community of data sharing and integration
-Darwin Core is a data standard to mobilize and share biodiversity data through well-established data repositories. Over the years, the Darwin Core standard has expanded to enable exchange and sharing of diverse types of biological observations from citizen scientists, ecological monitoring, eDNA, animal telemetry, taxonomic treatments, and many others. Darwin Core is applicable to any measurement of an organism (scientific name, OTU, or other methods of defining a species) at a particular place and time. In Darwin Core this is an `occurrence`. To learn more about the foundations of Darwin Core read [Wieczorek et al. 2012](https://doi.org/10.1371/journal.pone.0029715).
+Darwin Core is a data standard to mobilize and share biodiversity data. Over the years, the Darwin Core standard has expanded to enable exchange and sharing of diverse types of biological observations from citizen scientists, ecological monitoring, eDNA, animal telemetry, taxonomic treatments, and many others. Darwin Core is applicable to any observation of an organism (scientific name, OTU, or other methods of defining a species) at a particular place and time. In Darwin Core this is an `occurrence`. To learn more about the foundations of Darwin Core read [Wieczorek et al. 2012](https://doi.org/10.1371/journal.pone.0029715).
 
 ### Demonstrated Use of Darwin Core
 The power of Darwin Core is most evident in the data aggregators that harvest data using that standard. The one we will refer to most frequently in this workshop is the [Ocean Biodiversity Information System](https://obis.org/) (learn more about [OBIS](https://youtu.be/E6NblAC-1uE)). Another prominent one is the [Global Biodiversity Information Facility](https://www.gbif.org/) (learn more about [GBIF](https://vimeo.com/434831655)). It's also used by the Atlas of Living Australia, iDigBio, among others. 
@@ -44,11 +44,11 @@ Darwin Core Archives are what OBIS and GBIF harvest into their systems. Fortunat
 {: .challenge}
 
 ### Darwin Core Mapping
-Now that we understand a bit more about why Darwin Core was created and how it is used today we can begin the work of mapping data to the standard. The key resource when mapping data to Darwin Core is the [Darwin Core Quick Reference Guide](https://dwc.tdwg.org/terms/). This document provides an easy-to-read reference of the currently recommended terms for the Darwin Core standard. There are a lot of terms there and you won't use them all for every dataset (or even use them all on any dataset). As your experience grows with mapping to these terms you might gain experience with each term. 😊 Though there are mechanisms to do the mapping from your headers to the DwC terms (using `meta.xml`), we highly recommend changing the column names to match the Darwin Core term verbatim. 
+Now that we understand a bit more about why Darwin Core was created and how it is used today we can begin the work of mapping data to the standard. The key resource when mapping data to Darwin Core is the [Darwin Core Quick Reference Guide](https://dwc.tdwg.org/terms/). This document provides an easy-to-read reference of the currently recommended terms for the Darwin Core standard. There are a lot of terms there and you won't use them all for every dataset (or even use them all on any dataset) but as you apply the standard to more datasets you'll become more familiar with the terms.
 
 > ## Tip 
 > If your raw column headers are Darwin Core terms verbatim then you can skip this step! Next time you plan data collection use the standard DwC term headers!
-
+{: .callout}
 
 > ## Exercise
 > 
@@ -56,7 +56,7 @@ Now that we understand a bit more about why Darwin Core was created and how it i
 > 
 > 1. SAMPLE_DATE (example data: 09-MAR-21 05.45.00.000000000 PM)
 > 2. lat (example data: 32.6560)
-> 3. depth_m (example data: 6)
+> 3. depth_m (example data: 6 meters)
 > 4. COMMON_NAME (example data: staghorn coral)
 > 5. percent_cover (example data: 15)
 > 6. COUNT (example data: 2 Females)
@@ -85,7 +85,7 @@ Now that we understand a bit more about why Darwin Core was created and how it i
 
 
 ### What are the **required** Darwin Core terms for publishing to OBIS?
-When doing your mapping some required information may be missing. These are the Darwin Core terms that are required to share your data to OBIS plus a few that are needed for GBIF.
+When doing your mapping some required information may be missing. Below are the Darwin Core terms that are required to share your data to OBIS plus a few that are needed for GBIF.
 
 | Darwin Core Term | Definition | Comment | Example |
 |------------------|------------------------------------|---------------------------------------|-----------------|
