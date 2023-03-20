@@ -3,7 +3,7 @@ layout: workshop      # DON'T CHANGE THIS.
 # More detailed instructions (including how to fill these variables for an
 # online workshop) are available at
 # https://carpentries.github.io/workshop-template/customization/index.html
-venue: "OBIS-USA, IOOS, Hakai, CIOOS, MBON, OTN"        # brief name of the institution that hosts the workshop without address (e.g., "Euphoric State University")
+venue: "OBIS-USA, IOOS, Hakai, CIOOS, MBON, OTN, OBIS"        # brief name of the institution that hosts the workshop without address (e.g., "Euphoric State University")
 address: "online"     # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online'
 country: ""           # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes) for the institution that hosts the workshop
 language: "en"        # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the workshop
