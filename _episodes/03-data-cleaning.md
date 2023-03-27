@@ -19,14 +19,14 @@ keypoints:
 
 Now that you know what the mapping is between your raw data and the Darwin Core standard, it's time to start cleaning up 
 the data to align with the conventions described in the standard. The following activities are the three most common 
-conversions a dataset will undergo to align to the Darwin Core standard. This includes:
-1. [Ensuring dates follow the ISO-8601 standard](#getting-your-dates-in-order)
+conversions a dataset will undergo to align to the Darwin Core standard:
+1. [Ensuring dates follow the ISO 8601 standard](#getting-your-dates-in-order)
 2. [Matching scientific names to an authoritative resource](#matching-your-scientific-names-to-worms)
 3. [Ensuring latitude and longitude values are in decimal degrees](#getting-latlon-to-decimal-degrees)
 
 Below is a short summary of each of those conversions as well as some example conversion scripts. The exercises are 
 intended to give you a sense of the variability we've seen in datasets and how we went about converting them. While the
-examples use the [pandas package for Python](https://pandas.pydata.org/) and the [tidyverse collection of packages for R](https://www.tidyverse.org/),
+examples use the [pandas package for Python](https://pandas.pydata.org/) and the [tidyverse collection of packages for R](https://www.tidyverse.org/)
 (in particular the [lubridate](https://cloud.r-project.org/web/packages/lubridate/lubridate.pdf) package),
 those are not the only options for dealing with these conversions but simply the ones we use more frequently in our 
 experiences. 
@@ -43,11 +43,11 @@ slash (e.g. `2022-01-02/2022-01-12`). Examine the dates in your data to determin
 amendments need to be made to ensure they are following ISO 8601. Below are some examples and solutions in Python and R 
 for them.
 
-ISO 8601 dates can represent moments in time at different resolutions, as well as time intervals, which use "/" as a separator. Date and time are separated by "T". Timestamps can have a time zone indicator at the end. If not, then they are assumed to be local time. When a time is UTC, the letter "Z" is added at the end (e.g. 2009-02-20T08:40Z). 
+ISO 8601 dates can represent moments in time at different resolutions, as well as time intervals, which use "/" as a separator. Date and time are separated by "T". Timestamps can have a time zone indicator at the end. If not, then they are assumed to be local time. When a time is UTC, the letter "Z" is added at the end (e.g. 2009-02-20T08:40Z, which is the equivalent of 2009-02-20T08:40+00:00). 
 
 > ## Tip 
 > Focus on getting your package of choice to read the dates appropriately. While you can use [regular expressions](https://en.wikipedia.org/wiki/Regular_expression)
-> to replace and substitute strings to align with the ISO convention, it will typically saves you time if you work in 
+> to replace and substitute strings to align with the ISO convention, it will typically save you time if you work in 
 > your package of choice to translate the dates.
 {: .callout}
  
@@ -59,7 +59,7 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 > 
 > When dealing with dates using pandas in Python it is best to create a Series as your time column with the appropriate 
 > datatype. Then, when writing your file(s) using [.to_csv()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html)
-> you can specify the format which your date will be written using the `date_format` parameter. 
+> you can specify the format which your date will be written in using the `date_format` parameter. 
 >
 > The examples below show how to use the [pandas.to_datetime()](https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html)
 > function to read various date formats. The process can be applied to entire columns (or Series) within a DataFrame.
@@ -138,7 +138,7 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 >    ```
 > 6. Observations with a start date of `2021-01-30` and an end date of `2021-01-31`.
 > 
->    Here we store the date as a duration following the ISO convention. In some cases, it is easier to use a regular 
+>    Here we store the date as a duration following the ISO 8601 convention. In some cases, it is easier to use a regular 
 >    expression or simply paste strings together:
 >    ```python
 >    import pandas as pd
@@ -156,7 +156,7 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 
 > ## Examples in R
 >
-> When dealing with dates using R, there are a few base functions that are useful to wrangle your dates in the correct format. Additionally R packages that are useful include [lubridate](https://cran.r-project.org/web/packages/lubridate/lubridate.pdf), which is part of the `tidyverse`. It is recommended to bookmark this [lubridate cheatsheet](https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_lubridate.pdf).
+> When dealing with dates using R, there are a few base functions that are useful to wrangle your dates in the correct format. An R package that is useful is [lubridate](https://cran.r-project.org/web/packages/lubridate/lubridate.pdf), which is part of the `tidyverse`. It is recommended to bookmark this [lubridate cheatsheet](https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_lubridate.pdf).
 >
 > The examples below show how to use the `lubridate` package and format your data to the ISO-8601 standard.
 > <br/>
@@ -238,9 +238,9 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 >    [1] "2021-01-31"
 >    [1] "2021-01-31T17:00:00Z"
 >    ```
-> 6. Observations with a start date of `2021-01-30` and an end date of `2021-01-31`.
+> 6. Observations with a start date of `2021-01-30` and an end date of `2021-01-31`. For added complexity, consider adding in a 4-digit deployment and retrieval time.
 > 
->    Here we store the date as a duration following the ISO convention. In some cases, it is easier to use a regular 
+>    Here we store the date as a duration following the ISO 8601 convention. In some cases, it is easier to use a regular 
 >    expression or simply paste strings together:
 >    
 >    ```r
@@ -255,13 +255,15 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 >    deployment_time <- substr(as.POSIXct(sprintf("%04.0f", deployment_time), format = "%H%M"), 12, 16)
 >    retrieval_time <- substr(as.POSIXct(sprintf("%04.0f", retrieval_time, format = "%H%M"), 12, 16)
 >
->    eventDate <- paste(event_start, event_finish, sep = "/") # If you're interested in just pasting the event _dates_ together.
->    
+>    # If you're interested in just pasting the event dates together:
+>    eventDate <- paste(event_start, event_finish, sep = "/") 
+>
+>    # If you're interested in including the deployment and retrieval times in the eventDate:
 >    eventDateTime_start <- lubridate::format_ISO8601(as.POSIXct(paste(event_start, deployment_time), tz = "UTC"))
 >    eventDateTime_start <- paste0(eventDateTime_start, "Z")
 >    eventDateTime_finish <- lubridate::format_ISO8601(as.POSIXct(paste(event_finish, retrieval_time), tz = "UTC"))
->    eventDateTim_finish <- paste0(eventdateTime_finish, "Z")
->    eventDateTime <- paste(eventDateTime_start, eventDateTime_finish, sep = "/") # If you're interested in pasting event _dates_ and _times_ together.
+>    eventDateTime_finish <- paste0(eventdateTime_finish, "Z")
+>    eventDateTime <- paste(eventDateTime_start, eventDateTime_finish, sep = "/") 
 >    
 >    print(eventDate)
 >    print(eventDateTime)
@@ -283,13 +285,13 @@ its system. GBIF uses the [Catalog of Life](https://www.catalogueoflife.org/). S
 Life and WoRMS is a requirement for OBIS we will teach you how to do your taxonomic lookups using WoRMS. The key Darwin 
 Core terms that we need from WoRMS are `scientificNameID` also known as the WoRMS LSID which looks something like this 
 `"urn:lsid:marinespecies.org:taxname:105838"` and `kingdom` but you can grab the other parts of the taxonomic hierarchy if 
-you want as well as `taxonRank`. 
+you want as well as such as `taxonRank`. 
 
 There are two ways to grab the taxonomic information necessary. First, you can use the [WoRMS Taxon Match Tool](https://www.marinespecies.org/aphia.php?p=match). 
 The tool accepts lists of scientific names (each unique name as a separate row in a .txt, .csv, or .xlsx file) up to 
 1500 names and provides an interface for selecting the match you want for ambiguous matches. A brief walk-through using 
 the service is included [below](#using-the-worms-taxon-match-tool). A more detailed step-by-step guide on 
-using WoRMS Taxa Match Tool for the [MBON Pole to Pole](https://marinebon.org/p2p/) can be found [here](https://marinebon.org/p2p/protocols/WoRMS_quality_check.pdf). 
+using the WoRMS Taxon Match Tool for the [MBON Pole to Pole](https://marinebon.org/p2p/) can be found [here](https://marinebon.org/p2p/protocols/WoRMS_quality_check.pdf). 
 
 
 
@@ -318,11 +320,11 @@ The other way to get the taxonomic information you need is to use [worrms](https
 >
 > 5. Hopefully, a WoRMS exact match will return
 >
->    1. In some cases you will have ambiguous matches. Resolve the these rows by using the pull down menu to select the appropriate match.
+>    1. In some cases you will have ambiguous matches. Resolve these rows by using the pull down menu to select the appropriate match.
 >    2. Non-matched taxa will appear in red. You will have to go back to your source file and determine what the appropriate text should be.      
 >    ![screenshot]({{ page.root }}/fig/WoRMS_TaxonMatch_MatchOutput.PNG){: .image-with-shadow }
 >    
-> 6. Download the response as and XLS, XLSX, or text file and use the information when building the Darwin Core file(s).
+> 6. Download the response as an XLS, XLSX, or text file and use the information when building the Darwin Core file(s).
 >    The response from the example linked above can be found [here]({{ page.root }}/data/species_matched.xlsx). A screenshot of the file
 >    can be seen below:
 >    ![screenshot]({{ page.root }}/fig/matched_species_screenshot.png){: .image-with-shadow }
@@ -399,11 +401,11 @@ The other way to get the taxonomic information you need is to use [worrms](https
 
 # Getting lat/lon to decimal degrees
 
-Latitude (`decimalLatitude`) and Longitude (`decimalLongitude`) are the geographic latitude and longitude (in decimal degrees north and east, respectively), using the spatial reference system given in `geodeticDatum` of the geographic center of a Location.
+Latitude (`decimalLatitude`) and longitude (`decimalLongitude`) are the geographic coordinates (in decimal degrees north and east, respectively), using the spatial reference system given in `geodeticDatum` of the geographic center of a location.
 * `decimalLatitude`, positive values are north of the Equator, negative values are south of it. All values lie between -90 and 90, inclusive. 
 * `decimalLongitude`, positive values are east of the Greenwich Meridian, negative values are west of it. All values lie between -180 and 180, inclusive.
 
-Note, that the requirement for `decimalLatitude` and `decmailLongitude` is they must be in decimal degrees in [WGS84](https://en.wikipedia.org/wiki/World_Geodetic_System). Since this is the requirement for Darwin Core, **OBIS and GBIF will assume data shared using those Darwin Core terms are in the geodetic datum `WGS84`**. We highly recommend checking the coordinate reference system (CRS) of your observations to confirm they are using the same datum and documenting it in the `geodeticDatum` Darwin Core term. If your coordinates are not using `WGS84`, they will need to be converted in order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLongitude` are required terms. 
+Note, that the requirement for `decimalLatitude` and `decimallLongitude` is they must be in decimal degrees in [WGS84](https://en.wikipedia.org/wiki/World_Geodetic_System). Since this is the requirement for Darwin Core, **OBIS and GBIF will assume data shared using those Darwin Core terms are in the geodetic datum `WGS84`**. We highly recommend checking the coordinate reference system (CRS) of your observations to confirm they are using the same datum and documenting it in the `geodeticDatum` Darwin Core term. If your coordinates are not using `WGS84`, they will need to be converted in order to share the data to OBIS and GBIF since `decimalLatitude` and `decimalLongitude` are required terms. 
 
 Helpful packages for managing CRS and geodetic datum:
 * python: [GeoPandas](https://geopandas.org/en/stable/getting_started.html) has a [utility](https://geopandas.org/en/stable/docs/user_guide/projections.html#re-projecting).
