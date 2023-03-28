@@ -42,8 +42,20 @@ As we have indicated earlier, the Event core is for datasets that include known 
 
 An innovation that OBIS made in this space was introducing the Extended Measurement or Fact extension (also sometimes referred to as OBIS-ENV-DATA, or eMoF). This uses the Event core with an Occurrence extension + the [extended Measurement or Fact extension](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml). The eMoF extension makes it possible to include measurements for **both** the events (salinity, temperature, dissolved oxygen, gear type, etc.) as well as measurements about the occurrences (weight, length, etc.). Prior to this you were only able to include measurements of the occurrence (in the Measurement or Facts extension).
 
-<img width="800" alt="EventCoreSchema" src="https://ipt.gbif.org/manual/en/ipt/latest/_images/figures/dwc-a_event.png" style="background-color:white;" />
-*The Darwin Core file structure, demonstrating how an Event core table can be connected to extensions. Image credit: [GBIF](https://www.gbif.org/)*
+When these types of measurement data were collected, they may have each had their own column in your dataset. However, the Extended Measurement of Fact extension does not format data in this way. Rather than documenting each of your measurements in separate columns, measurements will be condensed into one column: `measurementValue` (e.g. 15). Then, to tell us what that value is, there is the column `measurementType` which describes what the measurement actually is (e.g. length). Finally the column `measurementUnit` is used to indicate the unit of the measurement (e.g. cm).
+
+Now, you may wonder - what do you write in the "measurementType" field? For some measurements, it may be simple. For others, maybe not as simple. The good news is this field is unconstrained - you can populate it with free text as you like. But what if you were interested in getting all records that have "length" measurements from OBIS? Due to the inevitable heterogeneity in how different people would document "length", you would have to try to account for all these different ways!
+
+The key thing about the extended Measurement or Fact extension that gets around this challenge, is that it provides a way to include Unique Resource Identifiers (URIs). These URIs are used to populate the `measurementTypeID` field (as well as `measurementUnitID` and `measurementValueID`). URIs mean that if you call the measurementType "abundance" but I call it "Abundance per square meter" and we both use the measurementTypeID "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/" then we know this is the same measurement type even if we didn't use the same free text words to describe it. Choosing the right URI can be difficult but you can read about finding codes [here](https://github.com/nvs-vocabs/P01). All you need to know for now is that you should try to find a `measurementTypeID` URI that belongs to the [P01 collection](http://vocab.nerc.ac.uk/search_nvs/P01/?searchstr=&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=). OBIS is developing guidelines to help you with the process of choosing URIs, so stay tuned to their [manual](https://manual.obis.org/) for updates.
+
+> ## Tip 
+> You can search for `measurementType` that other OBIS data providers have used by using the [OBIS mof report](https://mof.obis.org/). BE CAREFUL though to make sure the
+> definition in the URI matches exactly your measurement type before you reuse it for your data.
+{: .callout}
+
+
+<img width="800" alt="EventCoreSchema" src="/fig/OBISsampling-schema-example.png" style="background-color:white;" />
+*The Darwin Core file structure, demonstrating how an Event core table can be connected to extensions. Image credit: [OBIS](https://manual.obis.org/)*
 
 ### What are the **required** Darwin Core terms for publishing Event Core with Extended Measurement or Fact extension?
 When doing your mapping some required information may be missing. These are the Darwin Core terms that are required to share your data to OBIS plus a few that are needed for GBIF.
@@ -97,12 +109,6 @@ When doing your mapping some required information may be missing. These are the 
 > 
 {: .solution}
 
-The key thing about the extended measurement or fact extension is that it provides a way to include Unique Resource Identifiers (URIs). URIs mean that if you call the measurementType "abundance" but I call it "Abundance per square meter" and we both use the measurementTypeID "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/" then we know this is the same measurement type even if we didn't use the same free text words to describe it. Choosing the right URI can be difficult but you can read about finding codes [here](https://github.com/nvs-vocabs/P01).
-
-> ## Tip 
-> You can search for `measurementType` that other OBIS data providers have used by using the [OBIS mof report](https://mof.obis.org/). BE CAREFUL though to make sure the
-> definition in the URI matches exactly your measurement type before you reuse it for your data.
-{: .callout}
 
 Over at the [IOOS Bio Data Guide repository](https://github.com/ioos/bio_data_guide) you can see [a script](https://github.com/ioos/bio_data_guide/blob/main/datasets/TPWD_HARC_BagSeine/TPWD_HARC_BagSeine_OBISENV.md) that was used to take data in its original form and align it to Darwin Core Event Core with Extended Measurement or Fact. More information on how to organize data fields into Event and Measurement or Fact can be found in the [OBIS Manual](https://manual.obis.org/)
 <img width="555" alt="ProcessingScriptScreenshot" src="{{ page.root }}/fig/processing_script_screenshot.png">{: .image-with-shadow }
