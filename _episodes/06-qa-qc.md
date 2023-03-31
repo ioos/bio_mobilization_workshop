@@ -15,13 +15,13 @@ keypoints:
 OBIS performs a number of quality checks on the data it receives. Red quality flags are attached to occurrence records if errors are encountered, and records may also be rejected if they do not meet minimum requirements. The checks that OBIS performs are documented [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4309024/pdf/bau125.pdf) and a python implementation is available [here](https://github.com/iobis/obis-qc). Therefore, prior to publishing your data to OBIS and/or GBIF, it is important to perform quality control on your standardized data. This can help identify any outliers or "faulty" data. It will also help with ensuring that your data is compatible and interoperable with other datasets published to OBIS. There are numerous functions within the [obistools](https://github.com/iobis/obistools) R packages that can serve to identify outliers, inspect quality or ensure that the dataset structure fits the required format for both the Event and Occurrence tables. 
 
 > ## Recommended initial checks on your data
+> * Check that all the required Darwin Core terms are present and contain the correct information.
 > * Make a map from your data to ensure the coordinates are valid and within your expected range.
 > * Run basic statistics on each column of numeric data (min, max, mean, std. dev., etc.) to identify potential issues.
 > * Look at unique values of columns containing string entries to identify potential issues (eg. spelling). 
 > * Check for uniqueness of `occurrenceID` field.
 > * Check for uniqueness of `eventID` for each event, if applicable. 
 > * Check that dates are following [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601).
-> * If recording `depth`, check the values are within your expected range.
 > * Check that the `scientificNameID` is/are valid. 
 {: .callout}
 
