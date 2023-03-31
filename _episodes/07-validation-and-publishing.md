@@ -11,14 +11,14 @@ objectives:
 - "Introduction to EML"
 
 keypoints:
-- "There is a well-documented and flexible system for publishing data to OBIS"
-- "Some metadata fields in the Ecological Metadata Language (EML) are required for publishing to OBIS."
+- "The IPT is a well-documented and flexible system for publishing data to OBIS"
+- "Some Darwin Core and Ecological Metadata Language fields are required for publishing to OBIS."
 - "Strive to write more than the minimal metadata"
 ---
 
 # Data Publishing Pipeline
 
-[OBIS nodes](https://obis.org/contact/) publish data according to their region or theme. OBIS nodes can accept any data files from its data sources or data providers, and they publish these data on their OBIS node's Integrated Publishing Toolkit (IPT), which are harvested by central OBIS. Each dataset also has the option of being pushed to GBIF through the OBIS IPT.  
+ After going through QAQC and being standardized to Darwin Core, the dataset are uploaded to an IPT.  Metadata is added in the form of EML and the dataset published as a Darwin Core Archive (DwC-A).  The data are then pushed to  central OBIS.  Each dataset also has the option of being pushed to GBIF through the OBIS IPT.  
 
 ![screenshot]({{ page.root }}/fig/DwC_workflow.jpg){: .image-with-shadow }
 
@@ -31,7 +31,9 @@ The [Integrated Publishing Toolkit (IPT)](https://www.gbif.org/ipt) is an open-s
 - general metadata about data sources
 - taxon checklists
 
-GBIF maintains a very detailed [IPT manual](https://ipt.gbif.org/manual/en/ipt/latest/) and the [OBIS Manual](https://manual.obis.org/data_publication.html) offers OBIS-specific details on publishing through the IPT. You can choose to download and install your own instance of the IPT but it might be complicated to register it with OBIS. Instead it's recommended to work with one of the OBIS nodes to publish your data through their IPT. The requirements for publishing via an OBIS node IPT are that:
+GBIF maintains a very detailed [IPT manual](https://ipt.gbif.org/manual/en/ipt/latest/) and the [OBIS Manual](https://manual.obis.org/data_publication.html) offers OBIS-specific details on publishing through the IPT. You can choose to download and install your own instance of the IPT but it might be complicated to register it with OBIS. Instead it's recommended to work with one of the OBIS nodes to publish your data through their IPT. [OBIS nodes](https://obis.org/contact/) publish data that are logical for their region or theme. After publishing the data through their IPT the data are harvested by central OBIS.
+
+The requirements for publishing via an OBIS node IPT are that:
 
 1. you have contacted the node to ensure the data are a good fit for that node
 2. the data follows Darwin Core (DwC) and Ecological Metadata Language (EML)
@@ -60,7 +62,7 @@ _Best practices for these fields are explained in detail in the [OBIS manual](ht
 
 | EML Fields | Definition | Comment |
 | ---------- | ---------- | ------- |
-| `Title` | A good descriptive title is indispensable and can provide the user with valuable information, making the discovery of data easier. | The IPT also requires you to provide a Shortname. Shortnames serve as an identifier for the resource within the IPT installation and should be unique, descriptive and short (max. 100 characters). Shortnames should not contain a space, comma, accents or special characters. Spell out acronyms in Title but they are ok to use in the shortname. |
+| `Title` | A good descriptive title is indispensable and can provide the user with valuable information, making the discovery of data easier. | The IPT also requires you to provide a Shortname. Shortnames serve as an identifier for the resource within the IPT installation and should be unique, descriptive and short (max. 100 characters). Spell out acronyms in Title but they are ok to use in the shortname. |
 
 | `Abstract`             | The abstract or description of a dataset provides basic information on the content of the dataset. The information in the abstract should improve understanding and interpretation of the data.                                |                                                                                                                                                                                      |
 | `Data License`         | The licence that you apply to the resource. The license provides a standardized way to define appropriate uses of your work.                                                                                                   | Must use CC-0, CC-BY, or CC-BY-NC. Description of the licenses can be found [here](https://manual.obis.org/policy.html#data-sharing-agreement).                                                                                                                                                   |
