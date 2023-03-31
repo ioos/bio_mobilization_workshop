@@ -4,7 +4,7 @@ teaching: 0
 exercises: 120
 questions:
 - "How are my data published?"
-- "What metadat are required?"
+- "What metadata are required for publishing?"
 objectives:
 - "Showing data publishing pipeline"
 - "Introducing the IPT"
@@ -18,7 +18,7 @@ keypoints:
 
 # Data Publishing Pipeline
 
-[OBIS nodes](https://obis.org/contact/) publish data according to that region or theme. For example, the [OBIS-USA node](https://obis.org/node/b7c47783-a020-4173-b390-7b57c4fa1426) (managed by the USGS) is available for anyone in the US to publish their data to OBIS. OBIS nodes can accept any data files from its data sources or data providers, and they publish these data on their OBIS node's Integrated Publishing Toolkit (IPT), which are harvested by central OBIS. Each dataset also has the option of being pushed to GBIF through the OBIS IPT.  
+[OBIS nodes](https://obis.org/contact/) publish data according to their region or theme. OBIS nodes can accept any data files from its data sources or data providers, and they publish these data on their OBIS node's Integrated Publishing Toolkit (IPT), which are harvested by central OBIS. Each dataset also has the option of being pushed to GBIF through the OBIS IPT.  
 
 ![screenshot]({{ page.root }}/fig/DwC_workflow.jpg){: .image-with-shadow }
 
@@ -27,18 +27,21 @@ keypoints:
 The [Integrated Publishing Toolkit (IPT)](https://www.gbif.org/ipt) is an open-source web application developed and maintained by the Global Biodiversity Information Facility (GBIF) for publishing biodiversity data. The IPT makes it easy to share four types of biodiversity-related information:
 
 - primary taxon occurrence data
-- taxon checklists
 - sampling event data
-- general metadata about data sources.
+- general metadata about data sources
+- taxon checklists
 
 GBIF maintains a very detailed [IPT manual](https://ipt.gbif.org/manual/en/ipt/latest/) and the [OBIS Manual](https://manual.obis.org/data_publication.html) offers OBIS-specific details on publishing through the IPT. You can choose to download and install your own instance of the IPT but it might be complicated to register it with OBIS. Instead it's recommended to work with one of the OBIS nodes to publish your data through their IPT. The requirements for publishing via an OBIS node IPT are that:
 
-1. the data follows Darwin Core (DwC)
-1. includes the required Darwin Core and EML metadata elements
-1. you have contacted the node to ensure the data are a good fit for that node.
+1. you have contacted the node to ensure the data are a good fit for that node
+2. the data follows Darwin Core (DwC) and Ecological Metadata Language (EML)
+3. includes the required Darwin Core and EML metadata elements
 
 **Example**
 The [OBIS-USA IPT](https://ipt-obis.gbif.us/) (managed by the USGS) is available for anyone in the US to publish their data to OBIS. However, to publish using this IPT work with the OBIS-USA node managers, [Abby Benson](https://www.usgs.gov/staff-profiles/abby-benson) and [Steve Formel](https://www.usgs.gov/staff-profiles/stephen-k-formel). They can be contacted at obis-usa@usgs.gov.
+
+Here is a dataset in the IPT: https://ipt-obis.gbif.us/resource?r=noaa_dsc_rtp
+This is what that dataset looks like in central OBIS: https://obis.org/dataset/f5a4799e-dc24-4807-89d9-01da47d52e3b
 
 # Ecological Metadata Language (EML) 
 
@@ -70,7 +73,7 @@ _Best practices for these fields are explained in detail in the [OBIS manual](ht
 
 | EML Fields               | Definition | Comment |
 |--------------------------|------------|---------|
-| `Bounding Box`           | Fatherest North, South, East, and West coordinate. |  |
+| `Bounding Box`           | Farthest North, South, East, and West coordinate. |  |
 | `Geographic Description` | A textual description of the geographic coverage.  |  |
 | `Temporal Coverage`      | This can either be a Single Date, Date Range, Formation Period, or Living Time Period. |  |
 | `Study Extent`           | This field represents both a specific sampling area and the sampling frequency (temporal boundaries, frequency of occurrence) of the project. |  |
