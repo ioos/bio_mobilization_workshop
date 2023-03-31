@@ -40,8 +40,8 @@ GBIF maintains a very detailed [IPT manual](https://ipt.gbif.org/manual/en/ipt/l
 **Example**
 The [OBIS-USA IPT](https://ipt-obis.gbif.us/) (managed by the USGS) is available for anyone in the US to publish their data to OBIS. However, to publish using this IPT work with the OBIS-USA node managers, [Abby Benson](https://www.usgs.gov/staff-profiles/abby-benson) and [Steve Formel](https://www.usgs.gov/staff-profiles/stephen-k-formel). They can be contacted at obis-usa@usgs.gov.
 
-Here is a dataset in the IPT: https://ipt-obis.gbif.us/resource?r=noaa_dsc_rtp
-This is what that dataset looks like in central OBIS: https://obis.org/dataset/f5a4799e-dc24-4807-89d9-01da47d52e3b
+- Here is a dataset in the IPT: https://ipt-obis.gbif.us/resource?r=noaa_dsc_rtp
+- This is what that dataset looks like in central OBIS: https://obis.org/dataset/f5a4799e-dc24-4807-89d9-01da47d52e3b
 
 # Ecological Metadata Language (EML) 
 
