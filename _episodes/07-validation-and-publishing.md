@@ -4,11 +4,11 @@ teaching: 0
 exercises: 120
 questions:
 - "How are my data published?"
-- "What's required to include in the metadata?"
+- "What metadat are required?"
 objectives:
 - "Showing data publishing pipeline"
 - "Introducing the IPT"
-- "Compiling metadata for EML."
+- "Introduction to EML"
 
 keypoints:
 - "There is a well-documented and flexible system for publishing data to OBIS"
@@ -18,7 +18,7 @@ keypoints:
 
 # Data Publishing Pipeline
 
-[OBIS nodes](https://obis.org/contact/) host an IPT instance for their region or theme and publish data according to that region or theme. For example, the [OBIS-USA node](https://obis.org/node/b7c47783-a020-4173-b390-7b57c4fa1426) (managed by the USGS) is available for anyone in the US to publish their data to OBIS. OBIS nodes can accept any data files from its data sources or data providers, and they publish these data on their OBIS node's IPT, which are harvested by central OBIS. Each dataset also has the option of being pushed to GBIF through the OBIS IPT.  
+[OBIS nodes](https://obis.org/contact/) publish data according to that region or theme. For example, the [OBIS-USA node](https://obis.org/node/b7c47783-a020-4173-b390-7b57c4fa1426) (managed by the USGS) is available for anyone in the US to publish their data to OBIS. OBIS nodes can accept any data files from its data sources or data providers, and they publish these data on their OBIS node's Integrated Publishing Toolkit (IPT), which are harvested by central OBIS. Each dataset also has the option of being pushed to GBIF through the OBIS IPT.  
 
 ![screenshot]({{ page.root }}/fig/DwC_workflow.jpg){: .image-with-shadow }
 
