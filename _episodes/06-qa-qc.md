@@ -416,4 +416,9 @@ One method for reviewing your data is to use the r package [Hmisc](https://cran.
 > {: .solution}
 {: .challenge}
 
+> ## Check data in the extensions too
+> * In some cases you'll want to ensure the values are representative of the entity you are reporting.
+> * For example, [`individualCount`](https://dwc.tdwg.org/terms/#dwc:individualCount) should be an integer. So, checking that column for integer values would be good.
+{: .callout}
+  
 {% include links.md %}
