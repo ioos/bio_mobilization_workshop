@@ -17,11 +17,12 @@ OBIS performs a number of quality checks on the data it receives. Red quality fl
 > ## Recommended initial checks on your data
 > * Make a map from your data to ensure the coordinates are valid and within your expected range.
 > * Run basic statistics on each column of numeric data (min, max, mean, std. dev., etc.) to identify potential issues.
-> * Look at unique values of columns containing string entries to identify potential issues (mainly spelling). 
+> * Look at unique values of columns containing string entries to identify potential issues (eg. spelling). 
 > * Check for uniqueness of `occurrenceID` field.
 > * Check for uniqueness of `eventID` for each event, if applicable. 
+> * Check that dates are following [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601).
 > * If recording `depth`, check the values are within your expected range.
-> * _(optional)_ Check that the `scientificNameID` is/are valid. 
+> * Check that the `scientificNameID` is/are valid. 
 {: .callout}
 
 One method for reviewing your data is to use the r package [Hmisc](https://cran.r-project.org/web/packages/Hmisc/index.html) and the function [describe](https://rdrr.io/cran/Hmisc/man/describe.html). Expand the example below using output from [this notebook](https://github.com/ioos/bio_data_guide/blob/main/datasets/TPWD_HARC_BagSeine/TPWD_HARC_BagSeine_OBISENV.md) to see how it works.
@@ -416,7 +417,7 @@ One method for reviewing your data is to use the r package [Hmisc](https://cran.
 > {: .solution}
 {: .challenge}
 
-> ## Check data in the extensions too
+> ## Tip
 > * In some cases you'll want to ensure the values are representative of the entity you are reporting.
 > * For example, [`individualCount`](https://dwc.tdwg.org/terms/#dwc:individualCount) should be an integer. So, checking that column for integer values would be good.
 {: .callout}
