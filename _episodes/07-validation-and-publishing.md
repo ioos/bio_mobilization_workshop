@@ -39,12 +39,6 @@ The requirements for publishing via an OBIS node IPT are that:
 2. the data follows Darwin Core (DwC) and Ecological Metadata Language (EML)
 3. includes the required Darwin Core and EML metadata elements
 
-**Example**
-The [OBIS-USA IPT](https://ipt-obis.gbif.us/) (managed by the USGS) is available for anyone in the US to publish their data to OBIS. However, to publish using this IPT work with the OBIS-USA node managers, [Abby Benson](https://www.usgs.gov/staff-profiles/abby-benson) and [Steve Formel](https://www.usgs.gov/staff-profiles/stephen-k-formel). They can be contacted at obis-usa@usgs.gov.
-
-- Here is a dataset in the IPT: [https://ipt-obis.gbif.us/resource?r=noaa_dsc_rtp](https://ipt-obis.gbif.us/resource?r=noaa_dsc_rtp)
-- This is what that dataset looks like in central OBIS: [https://obis.org/dataset/f5a4799e-dc24-4807-89d9-01da47d52e3b](https://obis.org/dataset/f5a4799e-dc24-4807-89d9-01da47d52e3b)
-
 # Ecological Metadata Language (EML) 
 
 Both OBIS and GBIF use [Ecological Metadata Language (EML)](https://eml.ecoinformatics.org/) as the metadata standard associated with the data. For the purposes of this workshop we will not dive into the world of EML. However, we should note that when publishing your data through the IPT, the IPT helps you create an EML file as part of the Darwin Core Archive (DwC-A). As such, if you publish your own data through the IPT, there is no need for innate knowledge on the EML format. But there are a minimum required number of fields that would need to be filled out in the IPT: `title`, `abstract`, `citation`, and several `contacts`. 
