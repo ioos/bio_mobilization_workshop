@@ -54,7 +54,7 @@ The key thing about the extended Measurement or Fact extension that gets around 
 {: .callout}
 
 
-![]({{ page.root }}/fig/OBISsampling-schema-example.png){width=60%}
+![]({{ page.root }}/fig/OBISsampling-schema-example.png)
 *The Darwin Core file structure, demonstrating how an Event core table can be connected to extensions. Image credit: [OBIS](https://manual.obis.org/)*
 
 ### What are the **required** Darwin Core terms for publishing Event Core with Extended Measurement or Fact extension?
