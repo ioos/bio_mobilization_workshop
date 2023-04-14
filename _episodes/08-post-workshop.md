@@ -38,7 +38,7 @@ You can upload your dataset into the `/datasets/` directory so that the SMBD com
 {: .callout}
 
 ## Post-Workshop Survey
-If you wish to provide feedback please use [this post-workshop survey](https://docs.google.com/forms/d/12xdVchdZpUmvhYYOrRP8lOeYetATMBjQ08s83lvYytY/edit){:target="_blank"}.
+If you wish to provide feedback please use [this post-workshop survey](https://docs.google.com/forms/d/e/1FAIpQLSdsxxoFSDEFD_CrvbltOQGz_Rk-1NROP7izHZEKA2MN59iywA/viewform){:target="_blank"}.
 
 {% include links.md %}
 
