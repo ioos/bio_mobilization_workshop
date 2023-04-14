@@ -581,6 +581,4 @@ Helpful packages for managing CRS and geodetic datum:
 {: .solution}
 
 {% include links.md %}
-
-{% include youtube.html id="Xyeiy2OEMb0" %}
   
