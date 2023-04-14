@@ -402,6 +402,9 @@ of code below the Schedule `<h2>` header below with
 
 <h2 id="schedule">Schedule</h2>
 __Times are in EDT.__
+
+Overview recordings of each lesson can be found in [this playlist](https://www.youtube.com/playlist?list=PLkVfWkLalH8bpIj91gltvgu7bS5hDBqyZ).
+
 {% include custom-schedule.html %}
 
 {% comment %}
