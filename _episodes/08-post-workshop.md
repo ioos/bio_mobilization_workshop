@@ -41,3 +41,6 @@ You can upload your dataset into the `/datasets/` directory so that the SMBD com
 If you wish to provide feedback please use [this post-workshop survey](https://docs.google.com/forms/d/12xdVchdZpUmvhYYOrRP8lOeYetATMBjQ08s83lvYytY/edit){:target="_blank"}.
 
 {% include links.md %}
+
+## OceanTeacher Global Academy (OTGA) courses
+If you are interested in continuing to learn about data fornatting and mobilization, there are courses you can enroll for on [OTGA](https://classroom.oceanteacher.org/). A self-paced OBIS course that covers similar content as this workshop is currently in development and should become accessible in the coming months! Note that you do need to create an account to access the OTGA platform.
