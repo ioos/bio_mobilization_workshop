@@ -20,7 +20,7 @@ keypoints:
 
  After going through QAQC and being standardized to Darwin Core, the dataset are uploaded to an IPT.  Metadata is added in the form of EML and the dataset published as a Darwin Core Archive (DwC-A).  The data are then pushed to  central OBIS.  Each dataset also has the option of being pushed to GBIF through the OBIS IPT.  
 
-![screenshot]({{ page.root }}/fig/DwC_workflow.jpg){: .image-with-shadow }
+![Image by Enrique Montes]({{ page.root }}/fig/DwC_workflow.jpg){: .image-with-shadow }
 
 # Integrated Publishing Toolkit
 
