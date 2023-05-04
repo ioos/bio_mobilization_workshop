@@ -2,6 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 title: "Marine data mobilization workshop"
 version: 2023
+doi: 10.5281/zenodo.7401979
 identifiers:
   - description: "This is the collection of archived snapshots of all versions of the workshop materials"
     type: doi
