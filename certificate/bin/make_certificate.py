@@ -1,6 +1,13 @@
 import os
 from jinja2 import Environment, FileSystemLoader
+from svglib.svglib import svg2rlg
+from reportlab.graphics import renderPDF
 
+
+def svg2pdf(fname):
+    drawing = svg2rlg(fname)
+    outname = fname.replace(".svg", '.pdf')
+    renderPDF.drawToFile(drawing, outname)
 
 def write_svg_cert(template, config):
     root = os.path.dirname(os.path.abspath(__file__))
@@ -17,6 +24,7 @@ def write_svg_cert(template, config):
     with open(filename, "w") as fh:
         fh.write(template.render(configs=config))
 
+    svg2pdf(filename)
 
 def load_template():
     root = os.path.dirname(os.path.abspath(__file__))
