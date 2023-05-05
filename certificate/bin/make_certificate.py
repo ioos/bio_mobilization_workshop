@@ -22,7 +22,7 @@ def load_template():
     root = os.path.dirname(os.path.abspath(__file__))
     templates_dir = os.path.join(root, "templates")
     env = Environment(loader=FileSystemLoader(templates_dir))
-    template = env.get_template("cert_template.svg")
+    template = env.get_template("certificate.svg")
     return template
 
 
@@ -38,7 +38,7 @@ def main(config):
 
 if __name__ == "__main__":
     config = {
-        "name": {"first_name": "matt", "last_name": "biddle"},
+        "name": {"first_name": "Mathew", "last_name": "Biddle"},
         "date": "2023-05-19",
     }
 
