@@ -32,6 +32,12 @@ authors:
 - family-names: "Murray"
   given-names: "Tylar"
   orcid: "https://orcid.org/0000-0001-8241-1919"
+- family-names: "Lawrence"
+  given-names: "Elizabeth"
+  orcid: "https://orcid.org/0000-0002-5304-941X"
+- family-names: "Formel"
+  given-names: "Stephen"
+  orcid: "https://orcid.org/0000-0001-7418-1244"
 references:
   - authors: 
     - family-names: "Biddle"
