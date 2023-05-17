@@ -43,13 +43,60 @@ def write_templates(config):
 
 
 def main(config):
-    write_templates(config)
+    for person in config:
+        write_templates(person)
 
 
 if __name__ == "__main__":
-    config = {
-        "name": {"first_name": "Mathew", "last_name": "Biddle"},
-        "date": "2023-05-19",
-    }
+    config = [
+        {
+            "name": {"first_name": "Abby", "last_name": "Benson"},
+            "date": "2023-05-19",
+        },
+        {
+            "name": {"first_name": "Matt", "last_name": "Biddle"},
+            "date": "2023-05-19",
+        },
+        {
+            "name": {"first_name": "Julieta", "last_name": "Maldonado"},
+            "date": "2023-05-19",
+        },
+        {
+            "name": {"first_name": "Errol", "last_name": "Ronje"},
+            "date": "2023-05-19",
+        },
+        {
+            "name": {"first_name": "Kylie", "last_name": "Langlois"},
+            "date": "2023-05-19",
+        },
+        {
+            "name": {"first_name": "Laura", "last_name": "Teed"},
+            "date": "2023-05-19",
+        },
+        {
+            "name": {"first_name": "Kourtney", "last_name": "Burger"},
+            "date": "2023-05-19",
+        },
+        {
+            "name": {"first_name": "Javier", "last_name": ""},
+            "date": "2023-05-19",
+        },
+        {
+            "name": {"first_name": "Fernando García", "last_name": "González"},
+            "date": "2023-05-19",
+        },
+        {
+            "name": {"first_name": "Marine", "last_name": "Lebrec"},
+            "date": "2023-05-19",
+        },
+        {
+            "name": {"first_name": "Marc", "last_name": "Ghergariu"},
+            "date": "2023-05-19",
+        },
+        {
+            "name": {"first_name": "Rodrigo J.", "last_name": "Gonçalves"},
+            "date": "2023-05-19",
+        },
+    ]
 
     main(config)
