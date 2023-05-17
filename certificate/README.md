@@ -1,4 +1,4 @@
-# Certificates for The Carpentries
+# Certificates
 
 To create certificates, run:
 ```bash
