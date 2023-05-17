@@ -2,6 +2,7 @@
 
 To create certificates, run:
 ```bash
+cd certificate/bin
 python make_certificate.py
 ```
 
