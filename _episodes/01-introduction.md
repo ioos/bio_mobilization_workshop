@@ -7,7 +7,7 @@ questions:
 - "What is Darwin Core?"
 - "What is a Darwin Core Archive?"
 - "Why do people use Darwin Core for their data?"
-- "What are the required Darwin Core terms for sharing to OBIS?"
+- "What are the required Darwin Core terms for sharing to GBIF?"
 objectives:
 - "Understand the purpose of Darwin Core."
 - "Understand how to map data to Darwin Core."
