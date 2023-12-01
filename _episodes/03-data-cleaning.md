@@ -55,7 +55,7 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 |------------------|-------------|-----------|
 | [eventDate](https://dwc.tdwg.org/list/#dwc_eventDate) | The date-time or interval during which an Event occurred. For occurrences, this is the date-time when the event was recorded. Not suitable for a time in a geological context. | `1963-03-08T14:07-0600` (8 Mar 1963 at 2:07pm in the time zone six hours earlier than UTC).<br/>`2009-02-20T08:40Z` (20 February 2009 8:40am UTC).<br/>`2018-08-29T15:19` (3:19pm local time on 29 August 2018).<br/>`1809-02-12` (some time during 12 February 1809).<br/>`1906-06` (some time in June 1906).<br/>`1971` (some time in the year 1971).<br/>`2007-03-01T13:00:00Z/2008-05-11T15:30:00Z` (some time during the interval between 1 March 2007 1pm UTC and 11 May 2008 3:30pm UTC).<br/>`1900/1909` (some time during the interval between the beginning of the year 1900 and the end of the year 1909).<br/>`2007-11-13/15` (some time in the interval between 13 November 2007 and 15 November 2007). |
 
-> ## Examples in Python
+> ## Examples in Openrefine
 > 
 > When dealing with dates using pandas in Python it is best to create a Series as your time column with the appropriate 
 > datatype. Then, when writing your file(s) using [.to_csv()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html)
@@ -64,94 +64,7 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 > The examples below show how to use the [pandas.to_datetime()](https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html)
 > function to read various date formats. The process can be applied to entire columns (or Series) within a DataFrame.
 > <br/>
-> 1. `01/31/2021 17:00 GMT`
-> 
->    This date follows a typical date construct of `month`**/**`day`**/**`year` `24-hour`**:**`minute` `time-zone`. The 
->    pandas `.to_datetime()` function will correctly interpret these dates without the `format` parameter.
-> 
->    ```python
->    import pandas as pd
->    df = pd.DataFrame({'date':['01/31/2021 17:00 GMT']})
->    df['eventDate'] = pd.to_datetime(df['date'], format="%m/%d/%Y %H:%M %Z")
->    df
->    ```
->    ```output
->                       date                 eventDate
->       01/31/2021 17:00 GMT 2021-01-31 17:00:00+00:00
->    ``` 
->    
-> 2. `31/01/2021 12:00 EST`
-> 
->    This date is similar to the first date but switches the `month` and `day` and identifies a different `time-zone`.
->    The construct looks like `day`**/**`month`**/**`year` `24-hour`**:**`minute` `time-zone`
->    ```python
->    import pandas as pd
->    df = pd.DataFrame({'date':['31/01/2021 12:00 EST']})
->    df['eventDate'] = pd.to_datetime(df['date'], format="%d/%m/%Y %H:%M %Z")
->    df
->    ```
->    ```output
->                       date                 eventDate
->       31/01/2021 12:00 EST 2021-01-31 12:00:00-05:00
->    ``` 
->    
-> 3. `January, 01 2021 5:00 PM GMT`
->    
->    ```python
->    import pandas as pd
->    df = pd.DataFrame({'date':['January, 01 2021 5:00 PM GMT']})
->    df['eventDate'] = pd.to_datetime(df['date'],format='%B, %d %Y %I:%M %p %Z')
->    df
->    ```
->    ```output
->                               date                 eventDate
->       January, 01 2021 5:00 PM GMT 2021-01-01 17:00:00+00:00
->    ```
->    
-> 4. `1612112400` in seconds since 1970
->    
->    This uses the units of `seconds since 1970` which is common when working with data in [netCDF](https://www.unidata.ucar.edu/software/netcdf/).
->    ```python
->    import pandas as pd
->    df = pd.DataFrame({'date':['1612112400']})
->    df['eventDate'] = pd.to_datetime(df['date'], unit='s', origin='unix')
->    df
->    ```
->    ```output
->             date           eventDate
->       1612112400 2021-01-31 17:00:00
->    ```
-> 5. `44227.708333333333`
->    
->    This is the numerical value for dates in Excel because Excel stores dates as sequential serial numbers so that they 
->    can be used in calculations. In some cases, when you export an Excel spreadsheet to CSV, the 
->    dates are preserved as a floating point number.
->    ```python
->    import pandas as pd
->    df = pd.DataFrame({'date':['44227.708333333333']})
->    df['eventDate'] = pd.to_datetime(df['date'].astype(float), unit='D', origin='1899-12-30')
->    df
->    ```
->    ```output
->                     date                     eventDate
->       44227.708333333333 2021-01-31 17:00:00.000000256
->    ```
-> 6. Observations with a start date of `2021-01-30` and an end date of `2021-01-31`.
-> 
->    Here we store the date as a duration following the ISO 8601 convention. In some cases, it is easier to use a regular 
->    expression or simply paste strings together:
->    ```python
->    import pandas as pd
->    df = pd.DataFrame({'start_date':['2021-01-30'],
->                       'end_date':['2021-01-31']})
->    df['eventDate'] = df['start_time']+'/'+df['end_time']
->    df
->    ```
->    ```output
->       start_time    end_time              eventDate
->       2021-01-30  2021-01-31  2021-01-30/2021-01-31
->    ```
->
+> type here solution
 {: .solution}
 
 > ## Examples in R
