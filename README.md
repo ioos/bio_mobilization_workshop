@@ -1,7 +1,5 @@
 # Biological Data Mobilization Workshop 2024
 
-[![DOI](https://zenodo.org/badge/419464308.svg)](https://zenodo.org/badge/latestdoi/419464308)
-
 This repository is for participants to get general information and ask questions related to the Biological Data Mobilization Workshop (via the [issues](https://github.com/ioos/bio_mobilization_workshop/issues) section).
 
 This workshop is hands-on, interactive virtual workshop focused on mobilizing biological observation datasets to the Global Biodiversity Information Facility by helping data providers standardize their data using Darwin Core. This includes species observations from any type of sampling methodologies (e.g. visual surveys, microscopy, imaging, telemetry).
