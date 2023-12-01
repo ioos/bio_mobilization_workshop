@@ -95,7 +95,9 @@ INTRODUCTION
 Edit the general explanatory paragraph below if you want to change
 the pitch.
 {% endcomment %}
-This workshop is intended to be a hands-on workshop focused on mobilizing biological observation datasets to the <a href="https://gbif.org/">Global Biodiversity Information Facility (GBIF)</a> by helping data providers standardize their data using Darwin Core including species observations from any type of sampling methodologies (e.g. visual surveys, microscopy, imaging, telemetry).
+
+In February, a full week of GBIF immersion will be organized in Croatia. Next to a GBIF community workshop, where we will learn on how GBIF works, we will also organize a 2 day hands on workshop on data cleaning and presentation.
+This 2 day workshop is intended to be a hands-on workshop focused on mobilizing biological observation datasets to the <a href="https://gbif.org/">Global Biodiversity Information Facility (GBIF)</a> by helping data providers standardize their data using Darwin Core including species observations from any type of sampling methodologies (e.g. visual surveys, microscopy, imaging, telemetry).
 
 What this workshop will cover:
 
@@ -104,19 +106,19 @@ What this workshop will cover:
 * Getting your data into a final Darwin Core format.
 * Common QA/QC steps, data enhancement, and validation tools.
 * Required metadata information.
-* How to get your data into the Integrated Publishing Toolkit.
+* How to get your data into the Integrated Publishing Toolkit..
 * Tools that will help in all of the above processes.
 
 The goal is that by the end of the workshop you will have a dataset in a final standardized state and shared to GBIF. We are hoping to address some of the identified blockers, including: lack of time, training, and specific formatting questions.
 
 We have a short time together therefore our focus will be hands-on work in breakout rooms using the dataset you bring to the workshop. We will not have many presentations and they will be relatively short. Instead we will have large portions of time for you to work on your data and ask questions when you hit a stumbling block. Therefore, if you do not have a dataset to work on you may not find this workshop a good use of your time.
 
-What this workshop will not cover:
-* What is OBIS?
-* Rationale for sharing data with OBIS.
-* Using data that’s already in OBIS.
+Topics not covered during the 2 day workshop :
+* What is GBIF?
+* Rationale for sharing data with GBIF.
+* Using data that’s already in GBIF.
 
-If you would like to learn more about OBIS and a short rationale for sharing data to it, please watch this [two minute video](https://youtu.be/E6NblAC-1uE) and this [two minute video](https://youtu.be/mmD-EYNOrFA) and share them with those you want to work with to share data.
+If you would like to learn more about GBIF and a short rationale for sharing data to it, please watch this [three minute video](https://www.youtube.com/watch?v=HvS6sRVZbHo) and share them with those you want to work with to share data.
 {% if site.carpentry == "swc" %}
 {% include swc/intro.html %}
 {% elsif site.carpentry == "dc" %}
@@ -129,12 +131,10 @@ If you would like to learn more about OBIS and a short rationale for sharing dat
 This is a pilot workshop, testing out a lesson that is still under development. The lesson authors would appreciate any feedback you can give them about the lesson content and suggestions for how it could be further improved.
 {% endif %}
 
-{% comment %}
 AUDIENCE
 
-Explain who your audience is.  (In particular, tell readers if the
-workshop is only open to people from a particular institution.
-{% endcomment %}
+This workshop is targetting researchers and data managers from Balkan countries who have an interest in the publication of data on [GBIF](www.gbif.org) The workshop is organized in the CESP project CROMET, a GBIF funden project on capacity building.
+
 {% if site.carpentry == "swc" %}
 {% include swc/who.html %}
 {% elsif site.carpentry == "dc" %}
