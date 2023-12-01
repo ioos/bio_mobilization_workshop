@@ -3,35 +3,25 @@ layout: workshop      # DON'T CHANGE THIS.
 # More detailed instructions (including how to fill these variables for an
 # online workshop) are available at
 # https://carpentries.github.io/workshop-template/customization/index.html
-venue: "OBIS-USA, IOOS, Hakai, CIOOS, MBON, OTN, OBIS"        # brief name of the institution that hosts the workshop without address (e.g., "Euphoric State University")
-address: "online"     # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online'
-country: ""           # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes) for the institution that hosts the workshop
+venue: "GBIF Croatia"        # brief name of the institution that hosts the workshop without address (e.g., "Euphoric State University")
+address: "under construction"     # full street address of workshop (e.g., "Room A, 123 Forth Street, Blimingen, Euphoria"), videoconferencing URL, or 'online'
+country: "HR"           # lowercase two-letter ISO country code such as "fr" (see https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes) for the institution that hosts the workshop
 language: "en"        # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the workshop
 latitude: 0          # decimal latitude of workshop venue (use https://www.latlong.net/)
 longitude: 0         # decimal longitude of the workshop venue (use https://www.latlong.net)
-humandate: "April 18-19, 2023"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
-humantime: "13:00 - 17:00 EDT"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
-startdate: 2023-04-18      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
-enddate: 2023-04-19        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
+humandate: "February 19-23, 2024"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
+humantime: "9:00 - 17:00 UTC +1"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
+startdate: 2024-02-19      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
+enddate: 2024-02-23        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
 # instructor list : a boxed, comma-separated list of instructors' names as strings, like ["Abby Benson", "Mathew Biddle"]
-instructor: [ "Abby Benson", "Steve Formel",
-"Mathew Biddle",
-"Jonathan Pye", 
-"Tim van der Stap",
-Elizabeth Lawrence
-]  
+instructor: [ "Dimitri Brosens", "André Heughebaert"]  
 # helper list: a boxed, comma-separated list of helper's names as strings, like ["Ben Best", "Carolina Peralta"]
-helper: [
-"Brett Johnson",
-"Zach Monteith",
-"Naomi Tress",
-"YingHuan Niu",
-"Angela Dini",
-"Carolina Peralta",
-"Dan Otis",
-"Tylar Murray"
+helper: ["Luka Katušić",
+"Silvija Ajredini", 
+"Petra Rodić",
+"Gabrijela Šestani"
 ] 
-email: ["albenson@usgs.gov"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
+email: ["d.brosens@biodiversity.be"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
 collaborative_notes:  # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2015-01-01-euphoria)
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
 ---
@@ -105,11 +95,11 @@ INTRODUCTION
 Edit the general explanatory paragraph below if you want to change
 the pitch.
 {% endcomment %}
-This workshop is intended to be a small hands-on, interactive virtual workshop focused on mobilizing marine biological observation datasets to the <a href="https://obis.org/">Ocean Biodiversity Information System (OBIS)</a> by helping data providers standardize their data using Darwin Core including species observations from any type of sampling methodologies (e.g. visual surveys, net tows, microscopy, fish trawls, imaging, ‘omics, acoustics, telemetry).
+This workshop is intended to be a hands-on workshop focused on mobilizing biological observation datasets to the <a href="https://gbif.org/">Global Biodiversity Information Facility (GBIF)</a> by helping data providers standardize their data using Darwin Core including species observations from any type of sampling methodologies (e.g. visual surveys, microscopy, imaging, telemetry).
 
 What this workshop will cover:
 
-* Darwin Core and the required terms for OBIS and GBIF.
+* Darwin Core and the required terms for GBIF.
 * Typical data cleaning tasks needed to standardize the data.
 * Getting your data into a final Darwin Core format.
 * Common QA/QC steps, data enhancement, and validation tools.
@@ -117,7 +107,7 @@ What this workshop will cover:
 * How to get your data into the Integrated Publishing Toolkit.
 * Tools that will help in all of the above processes.
 
-The goal is that by the end of the workshop you will have a dataset in a final standardized state and shared to OBIS. We are hoping to address some of the blockers that you identified, including: lack of time, training, and specific formatting questions.
+The goal is that by the end of the workshop you will have a dataset in a final standardized state and shared to GBIF. We are hoping to address some of the identified blockers, including: lack of time, training, and specific formatting questions.
 
 We have a short time together therefore our focus will be hands-on work in breakout rooms using the dataset you bring to the workshop. We will not have many presentations and they will be relatively short. Instead we will have large portions of time for you to work on your data and ask questions when you hit a stumbling block. Therefore, if you do not have a dataset to work on you may not find this workshop a good use of your time.
 
