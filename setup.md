@@ -2,17 +2,22 @@
 title: Setup
 ---
 
-# R users
+# for R examples and exercises
 This workshop assumes you have current versions of the following installed on your computer:
 
 1. The [R software](https://cran.r-project.org/mirrors.html) itself, and
 1. [RStudio Desktop](https://www.rstudio.com/products/rstudio/download/#download).
 
-# Python users
+# for Openrefine examples and exercises
 
 This workshop assumes you have current versions of the following installed on your computer:
 
-1. The [python](https://www.python.org/) software.
+1. The [Openrefine](https://www.openrefine.org/) software.
+
+# Working on www.gbif.org
+
+Create a GBIF account on [GBIF](www.gbif.org)
+
 
 # Git
 
