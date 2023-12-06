@@ -148,7 +148,7 @@ What the technical workshop will cover
 
 
 
-AUDIENCE
+### AUDIENCE
 
 The hands-on workshop is open for researchers, data curaters, data managers who have an interest in the publication of data on [GBIF](www.gbif.org) 
 The GBIF community workshop is on invitation only. However the material available on this website could be of interest for anyone who is developping a GBIF Node and community.
