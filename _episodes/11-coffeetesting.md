@@ -1,7 +1,12 @@
 ---
 layout: break
-title: "Social Break"
+title: "Registration and Welcome"
 break: 30
 ---
 
-# This is the place to test if there will be enough coffee
+# Registration
+
+You can find the registration desk at the ....
+
+
+# Welcome
