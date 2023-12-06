@@ -14,4 +14,3 @@ objectives:
 keypoints:
 - "How GBIF works"
 ---
-
