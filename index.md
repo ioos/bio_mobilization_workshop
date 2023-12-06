@@ -99,7 +99,7 @@ the pitch.
 In February, a full week of GBIF immersion will be organized in Croatia. Next to a GBIF community workshop, where we will learn on how GBIF works, we will also organize 2 full days on data cleaning and publication.
 These 2 days (February 21 and 22th) are intended to be a hands-on workshop focused on mobilizing biological observation datasets to the <a href="https://gbif.org/">Global Biodiversity Information Facility (GBIF)</a> by helping data providers standardize their data using Darwin Core including species observations from any type of sampling methodologies (e.g. visual surveys, microscopy, imaging, telemetry). The other 3 days are dedicated to setting op the GBIF node in Croatia in the framework of the GBIF CESP CROMENT (Mentoring Croatia) project. 
 
-### #Hands on Data Workshop
+#### Hands on Data Workshop
 What the data workshop will cover:
 
 * Darwin Core and the required terms for GBIF.
