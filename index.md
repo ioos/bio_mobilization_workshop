@@ -99,7 +99,7 @@ the pitch.
 In February, a full week of GBIF immersion will be organized in Croatia. Next to a GBIF community workshop, where we will learn on how GBIF works, we will also organize 2 full days on data cleaning and publication.
 These 2 days (February 21 and 22th) are intended to be a hands-on workshop focused on mobilizing biological observation datasets to the <a href="https://gbif.org/">Global Biodiversity Information Facility (GBIF)</a> by helping data providers standardize their data using Darwin Core including species observations from any type of sampling methodologies (e.g. visual surveys, microscopy, imaging, telemetry). The other 3 days are dedicated to setting op the GBIF node in Croatia in the framework of the GBIF CESP CROMENT (Mentoring Croatia) project. 
 
-### Hands on Data Workshop
+### #Hands on Data Workshop
 What the data workshop will cover:
 
 * Darwin Core and the required terms for GBIF.
@@ -127,7 +127,7 @@ If you would like to learn more about GBIF and a short rationale for sharing dat
 This is a pilot workshop, testing out a lesson that is still under development. The lesson authors would appreciate any feedback you can give them about the lesson content and suggestions for how it could be further improved.
 {% endif %}
 
-### GBIF community workshop
+#### GBIF community workshop
 What the GBIF community workshop will cover
 
 * The GBIF governance
@@ -140,7 +140,7 @@ What the GBIF community workshop will cover
 
 In this workshop we will talk about how GBIF is organized globally as an infrastructure and how we can translate this in local practices. How a GBIF node is organized and how to setup a community around GBIF. How to communicate to stakeholders
 
-### Hands on technical workshop
+#### Hands on technical workshop
 What the technical workshop will cover
 
 * How to admin an IPT
@@ -148,7 +148,7 @@ What the technical workshop will cover
 
 
 
-### AUDIENCE
+## Audience
 
 The hands-on workshop is open for researchers, data curaters, data managers who have an interest in the publication of data on [GBIF](www.gbif.org) 
 The GBIF community workshop is on invitation only. However the material available on this website could be of interest for anyone who is developping a GBIF Node and community.
@@ -162,6 +162,8 @@ The workshop is organized in the CESP project CROMET, a GBIF funded project on c
 {% elsif site.carpentry == "lc" %}
 {% include lc/who.html %}
 {% endif %}
+
+### Practical
 
 {% comment %}
 LOCATION
