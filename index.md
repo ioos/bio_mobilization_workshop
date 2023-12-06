@@ -163,7 +163,7 @@ The workshop is organized in the CESP project CROMET, a GBIF funded project on c
 {% include lc/who.html %}
 {% endif %}
 
-### Practical
+## Practical
 
 {% comment %}
 LOCATION
