@@ -15,4 +15,3 @@ keypoints:
 - "How GBIF works"
 ---
 
-# How GBIF works
