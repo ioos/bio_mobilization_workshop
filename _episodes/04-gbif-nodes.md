@@ -1,5 +1,5 @@
 ---
-title: "Introduction to GBIF: part2"
+title: "Introduction to GBIF"
 start: true
 teaching: 60
 exercises: 0
