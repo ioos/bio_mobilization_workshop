@@ -1,5 +1,5 @@
 ---
-title: "Introduction to GBIF: part2"
+title: "The GBIF network"
 start: true
 teaching: 60
 exercises: 30
