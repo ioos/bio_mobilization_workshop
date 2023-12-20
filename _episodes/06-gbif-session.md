@@ -1,5 +1,5 @@
 ---
-title: "GBIF programmes"
+title: "GBIF session"
 start: true
 teaching: 60
 exercises: 0
