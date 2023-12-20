@@ -1,5 +1,5 @@
 ---
-title: "The GBIF network"
+title: "The GBIF nodes and network"
 start: true
 teaching: 60
 exercises: 30
