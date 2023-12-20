@@ -1,5 +1,5 @@
 ---
-title: "Node opportunities"
+title: "Belgian Node & Node opportunities"
 start: true
 teaching: 30
 exercises: 30
