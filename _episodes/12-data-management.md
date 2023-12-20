@@ -1,5 +1,5 @@
 ---
-title: "GBIF Ambassador programme"
+title: "Data management & best practices"
 start: true
 teaching: 30
 exercises: 30
