@@ -30,8 +30,8 @@ In this module, you will learn more about GBIF.
 [NOTE.presentation]
 In this video (03:19) you will learn about GBIF. It is a co-production of SiB Colombia and GBIF Spain, both GBIF national nodes, with co-funding from GBIF Spain and Instituto de Investigación de Recursos Biológicos Alexander von Humboldt (IAvH). If you are unable to watch the embedded Vimeo video, you can link:../videos/GBIF__The_library_of_life.mp4[download^,opts=download] it locally. (MP4 - 11.3 MB)
 
-[.responsive-video]
-video::661945151[vimeo]
+<iframe src="https://player.vimeo.com/video/236573907?h=267a0692ea" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/236573907">GBIF: La biblioteca de la vida</a> from <a href="https://vimeo.com/gbif">GBIF</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 TIP: If you see the CC symbol on a video, you can click it to enable closed captioning/subtitles in English or other available languages.
 
