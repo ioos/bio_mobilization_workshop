@@ -31,6 +31,8 @@ video::460207962[vimeo]
     <img src="{{ '/assets/img/gbif_introduction_video.PNG' | relative_url }}">
   </a>
 
+[![Alternate Text]({{ '/assets/img/gbif_introduction_video.PNG' | relative_url }})]({[video-url](https://vimeo.com/236573907)} "introduction")
+
 ### Presentation
 
 <a href="https://docs.google.com/presentation/d/1YsztuD-W4nIcDx0bOOdGFyVjskGxsXQ7hfBZseuIdyo/edit?usp=sharing">
@@ -39,5 +41,5 @@ video::460207962[vimeo]
 
 
 
-
+https://vimeo.com/236573907
 
