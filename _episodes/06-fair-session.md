@@ -18,7 +18,6 @@ keypoints:
 ## Presentation
 
 
-![openScience]({{ '/assets/img/openscience.PNG' | https://docs.google.com/presentation/d/11IsFbjCAJ113f5YZqD4yZF9qqGR1y-fylpQkk4CvZew/edit?usp=sharing }})
 
 
 
