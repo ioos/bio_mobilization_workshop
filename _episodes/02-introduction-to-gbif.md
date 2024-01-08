@@ -37,6 +37,7 @@ In this video (07:55), Tim Hirsch, Deputy Director of the GBIF Secretariat, prov
 <img src="{{ '/assets/img/gbif_introduction_video2.PNG' | relative_url }}" alt="Alternate Text" />
 </a>
 
+
 <iframe title="vimeo-player" src="https://player.vimeo.com/video/434831655?h=928be4f48f" width="640" height="360" frameborder="0"    allowfullscreen></iframe>
 
 ### Presentation
