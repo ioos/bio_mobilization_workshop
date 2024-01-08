@@ -23,10 +23,19 @@ The Global Biodiversity Information Facility (GBIF) is an international network 
 
 ### GBIF introduction movie
 
+In this video (03:23) you will learn about GBIF through animation. It is a co-production of SiB Colombia and GBIF Spain, both GBIF national nodes, with co-funding from GBIF Spain and Instituto de Investigación de Recursos Biológicos Alexander von Humboldt (IAvH). The video is in Spanish, but subtitles are available.
+
 <a href="https://vimeo.com/236573907" title="Introduction movie">
 <img src="{{ '/assets/img/gbif_introduction_video.PNG' | relative_url }}" alt="Alternate Text" />
 </a>
 
+### What is GBIF video
+
+In this video (07:55), Tim Hirsch, Deputy Director of the GBIF Secretariat, provides you with an overview of GBIF. 
+
+<a href="https://vimeo.com/434831655" title="What is GBIFmovie">
+<img src="{{ '/assets/img/gbif_introduction_video2.PNG' | relative_url }}" alt="Alternate Text" />
+</a>
 
 ### Presentation
 
@@ -36,5 +45,5 @@ The Global Biodiversity Information Facility (GBIF) is an international network 
 
 
 
-https://vimeo.com/236573907
+
 
