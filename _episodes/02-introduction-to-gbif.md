@@ -31,7 +31,7 @@ The Global Biodiversity Information Facility (GBIF) is an international network 
 [![Alternate Text]({{ '/assets/img/gbif_introduction_video.PNG' | relative_url }})]({[video-url](https://vimeo.com/236573907)} "introduction")
 
 <a href="{https://vimeo.com/236573907}" title="Link Title">
-<img src="{{ '/assets/img/gbif_introduction.PNG' | relative_url }}" alt="Alternate Text" />
+<img src="{{ '/assets/img/gbif_introduction_video.PNG' | relative_url }}" alt="Alternate Text" />
 </a>
 
 
