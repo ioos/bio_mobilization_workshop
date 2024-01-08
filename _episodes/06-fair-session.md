@@ -17,6 +17,8 @@ keypoints:
 
 ## Presentation
 
-![ebr1]({{ '/assets/img/openscience.PNG' | relative_url }})
+![openScience]({{ '/assets/img/openscience.PNG' | relative_url }})
 
-https://docs.google.com/presentation/d/11IsFbjCAJ113f5YZqD4yZF9qqGR1y-fylpQkk4CvZew/edit?usp=sharing
+![openScience]({{ '/assets/img/openscience.PNG' | [relative_url](https://docs.google.com/presentation/d/11IsFbjCAJ113f5YZqD4yZF9qqGR1y-fylpQkk4CvZew/edit?usp=sharing)https://docs.google.com/presentation/d/11IsFbjCAJ113f5YZqD4yZF9qqGR1y-fylpQkk4CvZew/edit?usp=sharing }})
+
+
