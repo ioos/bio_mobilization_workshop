@@ -18,6 +18,6 @@ keypoints:
 ## Presentation
 
 
-
+![openscience]({{ '/assets/img/openscience.PNG' | relative_url }})
 
 
