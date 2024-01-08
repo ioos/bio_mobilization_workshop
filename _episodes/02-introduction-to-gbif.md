@@ -21,6 +21,12 @@ keypoints:
 
 The Global Biodiversity Information Facility (GBIF) is an international network of country and organizational Participants that exists to enable free and open access to biodiversity data from all sources and to support biodiversity science, environmental research, and evidence based decision-making. GBIF operates as a federated system of distributed data publishing efforts, coordinated through a global informatics infrastructure and collaborative network. In this module, you will learn more about GBIF.
 
+### GBIF introduction movie
+
+[![Watch the video]('/assets/img/gbif_introduction.PNG')](https://vimeo.com/236573907)
+
+
+
 ### Presentation
 
 <a href="https://docs.google.com/presentation/d/1YsztuD-W4nIcDx0bOOdGFyVjskGxsXQ7hfBZseuIdyo/edit?usp=sharing">
