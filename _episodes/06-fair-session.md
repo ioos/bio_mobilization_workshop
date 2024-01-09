@@ -17,7 +17,7 @@ keypoints:
 
 ## Presentation
 
-<a href="http://docs.google.com/presentation/d/19OR2CqIPx7s_lcX5CQ7DTYgR8wzbNm-yir3v01pb1oo/edit?usp=sharing/">
+<a href="https://docs.google.com/presentation/d/1HR6RyRdKEuOZoGXaUw193Ka6oxsSYWv6e3Mjqvwa7X8/edit?usp=sharing">
     <img src="{{ '/assets/img/openscience.PNG' | relative_url }}">
   </a>
 
