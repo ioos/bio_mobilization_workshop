@@ -5,12 +5,18 @@ teaching: 30
 exercises: 30
 questions:
 - "What is GBIF?"
-- "How is GBIF organized"
-- "The GBIF portal"
+
 objectives:
-- "Understand how GBIF works."
-- "Understand how GBIF is organized."
-- "Basic understanding of the GBIF portal"
+- "History of the Belgian Node"
+- "How the Belgian node is organized."
+
 keypoints:
 - "The GBIF portal is the place to find biodiversity data"
 ---
+
+### Presentation
+
+<a href="https://docs.google.com/presentation/d/1M9VWVUgmBFdlk7ZQkA-sO3qxkoTTx6fKzV-jZNzEF9Y/edit?usp=sharing">
+    <img src="{{ '/assets/img/gbif_belgium.PNG' | relative_url }}">
+  </a>
+
