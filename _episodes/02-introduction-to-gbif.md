@@ -33,7 +33,7 @@ In this video (03:23) you will learn about GBIF through animation. It is a co-pr
 
 In this video (07:55), Tim Hirsch, Deputy Director of the GBIF Secretariat, provides you with an overview of GBIF. 
 
-<a href="https://vimeo.com/434831655" title="What is GBIFmovie">
+<a href="https://docs.gbif.org/course-introduction-to-gbif/videos/Introduction-to-GBIF.mp4" title="What is GBIFmovie">
 <img src="{{ '/assets/img/gbif_introduction_video2.PNG' | relative_url }}" alt="Alternate Text" />
 </a>
 
