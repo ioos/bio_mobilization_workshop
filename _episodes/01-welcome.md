@@ -1,7 +1,7 @@
 ---
 layout: break
 title: "Registration and Welcome"
-time: 30
+break: 30 
 ---
 
 # Registration
