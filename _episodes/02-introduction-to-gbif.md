@@ -45,7 +45,19 @@ In this video (07:55), Tim Hirsch, Deputy Director of the GBIF Secretariat, prov
     <img src="{{ '/assets/img/gbif_introduction.PNG' | relative_url }}">
   </a>
 
+### Excercises
 
+> Investigate how your country/economy is represented in GBIF
+
+- The GBIF website has pages dedicated to countries/economies, including for countries/economies that do not yet participate in GBIF. You can use the search box on the homepage to look up a country/economy name.
+- The tabs on these pages provide a general description of the data available about the biodiversity of the country, any data published by national institutions, as well as other relevant information on the use of data by researchers in the country.
+
+
+- Look up your country on the GBIF website.
+- Does your country participate in GBIF?
+- How many institutions are publishing data?
+- Is a list of introduced and invasive alien species available for your country?
+- How well does the information available on GBIF reflect what you know about the biodiversity of your country?
 
 
 
