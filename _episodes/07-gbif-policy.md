@@ -14,3 +14,9 @@ objectives:
 keypoints:
 - "How GBIF works"
 ---
+
+### Presentation
+
+<a href="https://docs.google.com/presentation/d/1Peq6kIChDaUrnAyfV4rvD4pKZMWmisbaFZilZfPCbk4/edit?usp=sharing">
+    <img src="{{ '/assets/img/gbif_ipbes.PNG' | relative_url }}">
+  </a>
