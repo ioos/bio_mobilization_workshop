@@ -1,7 +1,6 @@
 ---
 title: "GBIF Discussion"
 start: true
-teaching: 60
 discussion: 30
 questions:
 - "GBIF nodes and ECA network"
