@@ -1,8 +1,8 @@
 ---
 title: "Introduction to GBIF"
 start: true
-teaching: 30
-exercises: 30
+teaching: 45
+exercises: 45
 questions:
 - "What is GBIF?"
 - "How is GBIF organized"
