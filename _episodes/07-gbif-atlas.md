@@ -13,8 +13,15 @@ keypoints:
 - "Main concepts of a living Atlas project"
 ---
 
-### Presentation
+### Presentation Living Atlas Croatia
 
 <a href="https://docs.google.com/presentation/d/1Peq6kIChDaUrnAyfV4rvD4pKZMWmisbaFZilZfPCbk4/edit?usp=sharing">
     <img src="{{ '/assets/img/gbif_ipbes.PNG' | relative_url }}">
   </a>
+
+### Presentation Living Atlas Flanders (Belgium)
+
+<a href="https://docs.google.com/presentation/d/15My8B-UP24Ol-MrgsEhnUWN69zVmZQkPfiYeh303IvE/edit?usp=sharing">
+    <img src="{{ '/assets/img/atlas_flanders.PNG' | relative_url }}">
+  </a>
+
