@@ -14,11 +14,13 @@ keypoints:
 ---
 
 
-### Presentation
+### Presentation GBIF Science
 
 <a href="https://docs.google.com/presentation/d/1JpGe0ZPnt8i2Mdw7un1MgdO8_JhSl6WOQwAClvK5KYE/edit?usp=sharing">
     <img src="{{ '/assets/img/gbif_science.PNG' | relative_url }}">
   </a>
+
+### Presentation GBIF Policy
 
 <a href="https://docs.google.com/presentation/d/1JpGe0ZPnt8i2Mdw7un1MgdO8_JhSl6WOQwAClvK5KYE/edit?usp=sharing">
     <img src="{{ '/assets/img/gbif_ipbes.PNG' | relative_url }}">
