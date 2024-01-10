@@ -1,7 +1,7 @@
 ---
 title: "FAIR and Open data"
 start: true
-teaching: 60
+teaching: 30
 exercises: 0
 questions:
 - "What is open science"
