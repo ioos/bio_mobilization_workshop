@@ -1,8 +1,7 @@
 ---
 title: "Introduction Day 2 and Belgian Node & Node opportunities"
 start: true
-teaching: 30
-exercises: 30
+teaching: 45
 questions:
 - "What is GBIF?"
 

@@ -1,23 +1,29 @@
 ---
-title: "GBIF & science"
+title: "GBIF Policy & science"
 start: true
 teaching: 60
 exercises: 0
 questions:
-- "GBIF nodes and ECA network"
-- "strategic Framework"
-- "GBIF implementation plans"
-- "work programmes"
+- "GBIF Policy & science"
+
 objectives:
-- "Understand how GBIF works."
-- "Understand how GBIF is organized."
+- "Understand how GBIF science policy works."
+
 keypoints:
 - "How GBIF works"
 ---
 
 
-### Presentation
+### Presentation GBIF Science
 
 <a href="https://docs.google.com/presentation/d/1JpGe0ZPnt8i2Mdw7un1MgdO8_JhSl6WOQwAClvK5KYE/edit?usp=sharing">
     <img src="{{ '/assets/img/gbif_science.PNG' | relative_url }}">
   </a>
+
+### Presentation GBIF Policy
+
+<a href="https://docs.google.com/presentation/d/1JpGe0ZPnt8i2Mdw7un1MgdO8_JhSl6WOQwAClvK5KYE/edit?usp=sharing">
+    <img src="{{ '/assets/img/gbif_ipbes.PNG' | relative_url }}">
+  </a>
+
+  

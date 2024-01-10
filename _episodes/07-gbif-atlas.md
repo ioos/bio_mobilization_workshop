@@ -1,18 +1,16 @@
 ---
-title: "GBIF & policy"
+title: "Living Atlasses"
 start: true
 teaching: 60
 exercises: 0
 questions:
-- "GBIF nodes and ECA network"
-- "strategic Framework"
-- "GBIF implementation plans"
-- "work programmes"
+- "Introduction to Living Atlas Croatia"
+
 objectives:
-- "Understand how GBIF works."
-- "Understand how GBIF is organized."
+- "Introduction to Living Atlas Croatia"
+- "Introduction to Living Atlas Flanders (Belgium)"
 keypoints:
-- "How GBIF works"
+- "Main concepts of a living Atlas project"
 ---
 
 ### Presentation

@@ -1,16 +1,7 @@
 ---
-title: "Break"
-start: true
-teaching: 30
-exercises: 30
-questions:
-- "What is GBIF?"
-- "How is GBIF organized"
-- "The GBIF portal"
-objectives:
-- "Understand how GBIF works."
-- "Understand how GBIF is organized."
-- "Basic understanding of the GBIF portal"
-keypoints:
-- "The GBIF portal is the place to find biodiversity data"
+layout: break
+title: "Coffee Break"
+break: 30
 ---
+
+![Break](https://www.sarahtownsendeditorial.co.uk/wp-content/uploads/Untitled-1080-%C3%97-960-px.png)
