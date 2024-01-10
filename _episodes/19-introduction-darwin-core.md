@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Darwin Core"
 start: true
-teaching: 0
+teaching: 20
 exercises: 90
 questions:
 - "What is Darwin Core?"
@@ -18,6 +18,16 @@ keypoints:
 - "Applying certain general principles to the data will make it easier to map to Darwin Core."
 - "Implementing Darwin Core makes data FAIR-er and means becoming part of a community of people working together to understand species no matter where they work or are based."
 ---
+### Presentation
+
+Introduction to Biodiversity data standards
+
+<a href="https://docs.google.com/presentation/d/12BeC_M63xG6PCl4bVmOW0YE8etWt2lTfGXBjjG5JeJQ/edit?usp=sharing">
+    <img src="{{ '/assets/img/standards.PNG' | relative_url }}">
+  </a>
+
+
+
 # Darwin Core - A global community of data sharing and integration
 Darwin Core is a data standard to mobilize and share biodiversity data. Over the years, the Darwin Core standard has expanded to enable exchange and sharing of diverse types of biological observations from citizen scientists, ecological monitoring, eDNA, animal telemetry, taxonomic treatments, and many others. Darwin Core is applicable to any observation of an organism (scientific name, OTU, or other methods of defining a species) at a particular place and time. In Darwin Core this is an `occurrence`. To learn more about the foundations of Darwin Core read [Wieczorek et al. 2012](https://doi.org/10.1371/journal.pone.0029715).
 
