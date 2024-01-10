@@ -20,7 +20,6 @@ keypoints:
 ---
 ### Presentation
 
-Introduction to Biodiversity data standards
 
 <a href="https://docs.google.com/presentation/d/12BeC_M63xG6PCl4bVmOW0YE8etWt2lTfGXBjjG5JeJQ/edit?usp=sharing">
     <img src="{{ '/assets/img/standards.PNG' | relative_url }}">
