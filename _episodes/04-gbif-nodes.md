@@ -1,7 +1,7 @@
 ---
 title: "The GBIF nodes, the Croatian Node and network"
 start: true
-teaching: 45
+teaching: 75
 exercises: 0
 questions:
 - "GBIF nodes and ECA network"
