@@ -37,7 +37,9 @@ In this video (07:55), Tim Hirsch, Deputy Director of the GBIF Secretariat, prov
 <img src="{{ '/assets/img/gbif_introduction_video2.PNG' | relative_url }}" alt="Alternate Text" />
 </a>
 
+### GBIF Overview
 
+GBIF updates a set of [overview slides](https://www.gbif.org/document/81771/gbif-overview-powerpoint-slides) with key information on a quarterly basis. The deck provides an overview of the network status, data use, access and publication, and the latest news and announcements.
 
 ### Presentation
 
@@ -47,10 +49,14 @@ In this video (07:55), Tim Hirsch, Deputy Director of the GBIF Secretariat, prov
 
 ### Excercises
 
-> Investigate how your country/economy is represented in GBIF
+> Investigate how your country/organization is represented in GBIF
 
-- The GBIF website has pages dedicated to countries/economies, including for countries/economies that do not yet participate in GBIF. You can use the search box on the homepage to look up a country/economy name.
-- The tabs on these pages provide a general description of the data available about the biodiversity of the country, any data published by national institutions, as well as other relevant information on the use of data by researchers in the country.
+- The [GBIF website](https://www.gbif.org/) has pages dedicated to countries/economies, including for countries/economies that do not yet participate in GBIF. You can use the search box on the homepage to look up a country/organization.
+- The tabs on these pages provide a general description of: 
+	- data available about the biodiversity of the country
+	- data published by your country/organization, 
+	- the participation of the country/organization
+	- other relevant information on the use of data by researchers in the country/organization.
 
 
 - Look up your country on the GBIF website.
@@ -58,6 +64,6 @@ In this video (07:55), Tim Hirsch, Deputy Director of the GBIF Secretariat, prov
 - How many institutions are publishing data?
 - Is a list of introduced and invasive alien species available for your country?
 - How well does the information available on GBIF reflect what you know about the biodiversity of your country?
-
+- Do you see publications from/about your country?
 
 
