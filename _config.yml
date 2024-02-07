@@ -52,7 +52,7 @@ pilot: false
 # Most workshops don't use extra pages. More information about extra
 # pages are included in the README:
 # https://github.com/carpentries/workshop-template#creating-extra-pages
-title: "Marine Biological Data Mobilization Workshop 2023"
+title: "Marine Biological Data Mobilization Workshop 2024"
 
 #------------------------------------------------------------
 # Incubator workshop settings (only relevant for workshops teaching a lesson
@@ -84,7 +84,7 @@ repository: <USERNAME>/<PROJECT>
 # Email address, no mailto:
 # (Don't change this -- the contact address for your workshop will be set
 # in the index.md file)
-email: "albenson@usgs.gov"
+email: "tbd@tbd.tbd"
 
 # Sites.
 amy_site: "https://amy.carpentries.org/"
