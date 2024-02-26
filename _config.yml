@@ -84,7 +84,7 @@ repository: <USERNAME>/<PROJECT>
 # Email address, no mailto:
 # (Don't change this -- the contact address for your workshop will be set
 # in the index.md file)
-email: "tbd@tbd.tbd"
+email: "https://obis.org/contact/"
 
 # Sites.
 amy_site: "https://amy.carpentries.org/"
