@@ -409,7 +409,7 @@ Note, that the requirement for `decimalLatitude` and `decimallLongitude` is they
 
 Helpful packages for managing CRS and geodetic datum:
 * python: [GeoPandas](https://geopandas.org/en/stable/getting_started.html) has a [utility](https://geopandas.org/en/stable/docs/user_guide/projections.html#re-projecting).
-* R: [rgdal](https://cran.r-project.org/web/packages/rgdal/index.html) and [sp](https://cran.r-project.org/web/packages/sp/index.html).
+* R: [terra](https://cran.r-project.org/web/packages/terra/index.html) and [sf](https://cran.r-project.org/web/packages/sf/index.html).
 
 > ## Tip 
 > If at all possible, it's best to extract out the components of the information you have in order to compile the 
