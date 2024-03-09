@@ -29,9 +29,11 @@ Information about monthly SMBD meetings can be found on the SMBD github page [he
 Anyone is welcome to attend - we are a small community of individuals who are passionate about getting data into OBIS, DwC, other standard forms.
 
 ### SMBD GitHub Issue Tracker
-As an alternative to attending the monthly SBMD meetings anyone is welcome to open an "issue" in the [SMBD GitHub Issue tracker](https://github.com/ioos/bio_data_guide/issues){:target="_blank"}.
-This issue tracker is not just for "issue reporting" - please use it to ask questions or start discussions about your data.
-You can upload your dataset into the `/datasets/` directory so that the SMBD community can help as well.
+You are also welcome to open an "issue" in the [SMBD GitHub Issue tracker](https://github.com/ioos/bio_data_guide/issues){:target="_blank"}.
+This issue tracker is not just for "issue reporting" - please use it to ask questions or start discussions about your data. 
+
+### Add Your Dataset as an Example
+You can upload your dataset into the `/datasets/` directory so that the SMBD community can learn from your work and help finish up any remaining work. 
 
 > ## Tip 
 > More information about the SMBD group can be found at [https://github.com/ioos/bio_data_guide](https://github.com/ioos/bio_data_guide){:target="_blank"}.
