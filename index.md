@@ -9,10 +9,10 @@ country: ""           # lowercase two-letter ISO country code such as "fr" (see 
 language: "en"        # lowercase two-letter ISO language code such as "fr" (see https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) for the workshop
 latitude: 0          # decimal latitude of workshop venue (use https://www.latlong.net/)
 longitude: 0         # decimal longitude of the workshop venue (use https://www.latlong.net)
-humandate: "April 22-23, 2024"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
+humandate: "April 22-24, 2024"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
 humantime: "13:00 - 17:00 EDT"    # human-readable times for the workshop e.g., "9:00 am - 4:30 pm CEST (7:00 am - 2:30 pm UTC)"
 startdate: 2023-04-22      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
-enddate: 2023-04-23        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
+enddate: 2023-04-24        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
 # instructor list : a boxed, comma-separated list of instructors' names as strings, like ["Abby Benson", "Mathew Biddle"]
 instructor: []  
 # helper list: a boxed, comma-separated list of helper's names as strings, like ["Ben Best", "Carolina Peralta"]
@@ -91,7 +91,7 @@ INTRODUCTION
 Edit the general explanatory paragraph below if you want to change
 the pitch.
 {% endcomment %}
-This workshop is intended to be a small hands-on, interactive virtual workshop focused on mobilizing marine biological observation datasets to the <a href="https://obis.org/">Ocean Biodiversity Information System (OBIS)</a> by helping data providers standardize their data using Darwin Core including species observations from any type of sampling methodologies (e.g. visual surveys, net tows, microscopy, fish trawls, imaging, ‘omics, acoustics, telemetry).
+This workshop is intended to be a small hands-on, interactive virtual workshop focused on mobilizing marine biodiversity observation datasets to the <a href="https://obis.org/">Ocean Biodiversity Information System (OBIS)</a> by helping data providers standardize their data using Darwin Core including species observations from any type of sampling methodologies (e.g. visual surveys, net tows, microscopy, fish trawls, imaging, ‘omics, acoustics, telemetry).
 
 What this workshop will cover:
 
@@ -105,12 +105,14 @@ What this workshop will cover:
 
 The goal is that by the end of the workshop you will have a dataset in a final standardized state and shared to OBIS. We are hoping to address some of the blockers that you identified, including: lack of time, training, and specific formatting questions.
 
-We have a short time together therefore our focus will be hands-on work in breakout rooms using the dataset you bring to the workshop. We will not have many presentations and they will be relatively short. Instead we will have large portions of time for you to work on your data and ask questions when you hit a stumbling block. Therefore, if you do not have a dataset to work on you may not find this workshop a good use of your time.
+We have a short time together therefore our focus will be hands-on work in breakout rooms using the dataset you bring to the workshop. We will not have many presentations and they will be relatively short. Instead we will have large portions of time for you to work on your data and ask questions when you hit a stumbling block. **Therefore, if you do not have a dataset to work on you may not find this workshop a good use of your time**.
 
-What this workshop will not cover:
+What this workshop will **not** cover:
 * What is OBIS?
 * Rationale for sharing data with OBIS.
 * Using data that’s already in OBIS.
+* Data analysis.
+* Use of programs or software.
 
 If you would like to learn more about OBIS and a short rationale for sharing data to it, please watch this [two minute video](https://youtu.be/E6NblAC-1uE) and this [two minute video](https://youtu.be/mmD-EYNOrFA) and share them with those you want to work with to share data.
 {% if site.carpentry == "swc" %}
@@ -249,7 +251,7 @@ Display the contact email address set in the configuration file.
 {% endcomment %}
 <p id="contact">
   <strong>Contact:</strong>
-  Please email
+  Please visit
   {% if page.email %}
   {% for email in page.email %}
   {% if forloop.last and page.email.size > 1 %}
@@ -389,7 +391,7 @@ of code below the Schedule `<h2>` header below with
 <h2 id="schedule">Schedule</h2>
 __Times are in EDT.__
 
-Overview recordings of each lesson can be found in [this playlist](https://youtube.com/playlist?list=PLlgUwSvpCFS7zytaWbZ6f4Szm3PnpFj_J).
+The videos created for the Marine Biodiversity Data Mobilization Workshop can be found in [this playlist](https://youtube.com/playlist?list=PLlgUwSvpCFS7zytaWbZ6f4Szm3PnpFj_J).
 
 {% include custom-schedule.html %}
 
