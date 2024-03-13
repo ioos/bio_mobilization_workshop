@@ -96,7 +96,7 @@ With that in mind what is the best way to create an `eventID`, `occurrenceID`, o
 {: .solution}
 
 > ## Extended Measurement or Fact Extension
-> Trick question. Nothing is *required* from the OBIS perspective but if you are using this extension then `eventID` is required to be able to link the extension back to the Event core. You can also use `occurrenceID` to link to occurrence records in the Occurrence core or extension. See [here](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) for all potential fields in the extension and what goes in them. See below of the most relevant terms to be included in the eMoF table.
+> Nothing is *required* from the OBIS perspective but if you are using this extension then `eventID` is required to be able to link the extension back to the Event core. You can also use `occurrenceID` to link to occurrence records in the Occurrence core or extension. See [here](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) for all potential fields in the extension and what goes in them. See below of the most relevant terms to be included in the eMoF table.
 > 
 > | Darwin Core Term | Definition | Comment | Example |
 > |------------------|------------------------------------|---------------------------------------|-----------------|
