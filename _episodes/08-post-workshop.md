@@ -44,5 +44,5 @@ If you wish to provide feedback please use [this post-workshop survey](https://f
 
 {% include links.md %}
 
-## OceanTeacher Global Academy (OTGA) courses
-If you are interested in continuing to learn about data fornatting and mobilization, there are courses you can enroll for on [OTGA](https://classroom.oceanteacher.org/). A self-paced OBIS course that covers similar content as this workshop is currently in development and should become accessible in the coming months! Note that you do need to create an account to access the OTGA platform.
+## OBIS Manual
+If you are interested in continuing to learn about data formatting and mobilization, the [OBIS Manual](https://manual.obis.org/) contains a lot of relevant content and guidelines for data standardization.
