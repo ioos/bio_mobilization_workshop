@@ -121,6 +121,7 @@ extras_order:
   - helpful-tutorials
   - figures
   - edna-extension
+  - special-data-type-acoustic-telemetry
 
 # Specify that things in the episodes collection should be output.
 collections:
@@ -147,7 +148,7 @@ defaults:
       type: extras
     values:
       root: ..
-      layout: page
+      layout: episode
 
 # Files and directories that are not to be copied.
 exclude:
