@@ -144,7 +144,7 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 >    import pandas as pd
 >    df = pd.DataFrame({'start_date':['2021-01-30'],
 >                       'end_date':['2021-01-31']})
->    df['eventDate'] = df['start_time']+'/'+df['end_time']
+>    df['eventDate'] = df['start_date']+'/'+df['end_date']
 >    df
 >    ```
 >    ```output
