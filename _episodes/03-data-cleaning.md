@@ -165,9 +165,10 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 >    ```r
 >    library(lubridate)
 >    date_str <- '01/31/2021 17:00 GMT'
->    lubridate::mdy_hm(date_str,tz="UTC")
+>    date <- lubridate::mdy_hm(date_str,tz="UTC")
 >    date <- lubridate::format_ISO8601(date) # Separates date and time with a T.
 >    date <- paste0(date, "Z") # Add a Z because time is in UTC.
+>    date
 >    ```
 >    ```output
 >    [1] "2021-01-31T17:00:00Z"
@@ -178,9 +179,10 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 >    library(lubridate)
 >    date_str <- '31/01/2021 12:00 EST'
 >    date <- lubridate::dmy_hm(date_str,tz="EST")
->    lubridate::with_tz(date,tz="UTC")
+>    date <- lubridate::with_tz(date,tz="UTC")
 >    date <- lubridate::format_ISO8601(date)
 >    date <- paste0(date, "Z")
+>    date
 >    ```
 >    ```output
 >    [1] "2021-01-31T17:00:00Z"
@@ -191,10 +193,11 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 >    ```r
 >    library(lubridate)
 >    date_str <- 'January, 01 2021 5:00 PM GMT'
->    date <- lubridate::mdy_hm(date_str, format = '%B, %d %Y %H:%M', tz="GMT")
+>    date <- lubridate::mdy_hm(date_str, tz="GMT")
 >    lubridate::with_tz(date,tz="UTC")
 >    lubridate::format_ISO8601(date)
 >    date <- paste0(date, "Z")
+>    date
 >    ```
 >    ```output
 >    [1] "2021-01-01T17:00:00Z"
@@ -211,7 +214,7 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 >    date <- lubridate::as_datetime(date_str, origin = lubridate::origin, tz = "UTC")
 >    date <- lubridate::format_ISO8601(date)
 >    date <- paste0(date, "Z")
->    print(date)
+>    date
 >    ```
 >    ```output
 >    [1] "2021-01-31T17:00:00Z"
@@ -244,29 +247,29 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 >    expression or simply paste strings together:
 >    
 >    ```r
->    library(lubridate)
->    event_start <- '2021-01-30'
->    event_finish <- '2021-01-31'
->    
->    deployment_time <- 1002
->    retrieval_time <- 1102
+> library(lubridate)
+> event_start <- '2021-01-30'
+> event_finish <- '2021-01-31'
 > 
->    Time is recorded numerically (1037 instead of 10:37), so need to change these columns:
->    deployment_time <- substr(as.POSIXct(sprintf("%04.0f", deployment_time), format = "%H%M"), 12, 16)
->    retrieval_time <- substr(as.POSIXct(sprintf("%04.0f", retrieval_time, format = "%H%M"), 12, 16)
+> deployment_time <- 1002
+> retrieval_time <- 1102
 >
->    # If you're interested in just pasting the event dates together:
->    eventDate <- paste(event_start, event_finish, sep = "/") 
+> # Time is recorded numerically (1037 instead of 10:37), so need to change these columns:
+> deployment_time <- substr(as.POSIXct(sprintf("%04.0f", deployment_time), format = "%H%M"), 12, 16)
+> retrieval_time <- substr(as.POSIXct(sprintf("%04.0f", retrieval_time, format = "%H%M"), 12, 16)
+>                          
+> # If you're interested in just pasting the event dates together:
+> eventDate <- paste(event_start, event_finish, sep = "/") 
+> 
+> # If you're interested in including the deployment and retrieval times in the eventDate:
+> eventDateTime_start <- lubridate::format_ISO8601(as.POSIXct(paste(event_start, deployment_time), tz = "UTC"))
+> eventDateTime_start <- paste0(eventDateTime_start, "Z")
+> eventDateTime_finish <- lubridate::format_ISO8601(as.POSIXct(paste(event_finish, retrieval_time), tz = "UTC"))
+> eventDateTime_finish <- paste0(eventDateTime_finish, "Z")
+> eventDateTime <- paste(eventDateTime_start, eventDateTime_finish, sep = "/") 
 >
->    # If you're interested in including the deployment and retrieval times in the eventDate:
->    eventDateTime_start <- lubridate::format_ISO8601(as.POSIXct(paste(event_start, deployment_time), tz = "UTC"))
->    eventDateTime_start <- paste0(eventDateTime_start, "Z")
->    eventDateTime_finish <- lubridate::format_ISO8601(as.POSIXct(paste(event_finish, retrieval_time), tz = "UTC"))
->    eventDateTime_finish <- paste0(eventdateTime_finish, "Z")
->    eventDateTime <- paste(eventDateTime_start, eventDateTime_finish, sep = "/") 
->    
->    print(eventDate)
->    print(eventDateTime)
+> print(eventDate)
+> print(eventDateTime)
 >    ```
 >    ```output
 >    [1] "2021-01-30/2021-01-31"
