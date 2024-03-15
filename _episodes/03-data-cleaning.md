@@ -247,29 +247,24 @@ ISO 8601 dates can represent moments in time at different resolutions, as well a
 >    expression or simply paste strings together:
 >    
 >    ```r
-> library(lubridate)
-> event_start <- '2021-01-30'
-> event_finish <- '2021-01-31'
-> 
-> deployment_time <- 1002
-> retrieval_time <- 1102
->
-> # Time is recorded numerically (1037 instead of 10:37), so need to change these columns:
-> deployment_time <- substr(as.POSIXct(sprintf("%04.0f", deployment_time), format = "%H%M"), 12, 16)
-> retrieval_time <- substr(as.POSIXct(sprintf("%04.0f", retrieval_time, format = "%H%M"), 12, 16)
->                          
-> # If you're interested in just pasting the event dates together:
-> eventDate <- paste(event_start, event_finish, sep = "/") 
-> 
-> # If you're interested in including the deployment and retrieval times in the eventDate:
-> eventDateTime_start <- lubridate::format_ISO8601(as.POSIXct(paste(event_start, deployment_time), tz = "UTC"))
-> eventDateTime_start <- paste0(eventDateTime_start, "Z")
-> eventDateTime_finish <- lubridate::format_ISO8601(as.POSIXct(paste(event_finish, retrieval_time), tz = "UTC"))
-> eventDateTime_finish <- paste0(eventDateTime_finish, "Z")
-> eventDateTime <- paste(eventDateTime_start, eventDateTime_finish, sep = "/") 
->
-> print(eventDate)
-> print(eventDateTime)
+>    library(lubridate)
+>    event_start <- '2021-01-30'
+>    event_finish <- '2021-01-31'
+>    deployment_time <- 1002
+>    retrieval_time <- 1102
+>    # Time is recorded numerically (1037 instead of 10:37), so need to change these columns:
+>    deployment_time <- substr(as.POSIXct(sprintf("%04.0f", deployment_time), format = "%H%M"), 12, 16)
+>    retrieval_time <- substr(as.POSIXct(sprintf("%04.0f", retrieval_time, format = "%H%M"), 12, 16)
+>    # If you're interested in just pasting the event dates together:
+>    eventDate <- paste(event_start, event_finish, sep = "/") 
+>    # If you're interested in including the deployment and retrieval times in the eventDate:
+>    eventDateTime_start <- lubridate::format_ISO8601(as.POSIXct(paste(event_start, deployment_time), tz = "UTC"))
+>    eventDateTime_start <- paste0(eventDateTime_start, "Z")
+>    eventDateTime_finish <- lubridate::format_ISO8601(as.POSIXct(paste(event_finish, retrieval_time), tz = "UTC"))
+>    eventDateTime_finish <- paste0(eventDateTime_finish, "Z")
+>    eventDateTime <- paste(eventDateTime_start, eventDateTime_finish, sep = "/") 
+>    print(eventDate)
+>    print(eventDateTime)
 >    ```
 >    ```output
 >    [1] "2021-01-30/2021-01-31"
