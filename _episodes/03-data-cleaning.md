@@ -313,7 +313,8 @@ The other way to get the taxonomic information you need is to use [worrms](https
 >    ![screenshot]({{ page.root }}/fig/species_file_screenshot.png){: .image-with-shadow }
 >
 > 2. Upload that file to the [WoRMS Taxon match service](https://www.marinespecies.org/aphia.php?p=match)
->    * **make sure the option LSID is checked**   
+>    * **make sure the option LSID is checked**
+>    * **for the example file, make sure you select LineFeed as the row delimiter and Tab as the column delimiter**
 >  ![screenshot]({{ page.root }}/fig/WoRMS_upload.png){: .image-with-shadow }
 > 
 > 3. Identify which columns to match to which WoRMS term.
