@@ -187,6 +187,7 @@ This block displays the date and links to Google Calendar.
 <p id="when">
   <strong>When:</strong>
   {{page.humandate}}.
+  April 24th will be an optional day to attend for Workshop Participants if they require additional help.
   {% include workshop_calendar.html %}
 </p>
 {% endif %}
