@@ -105,12 +105,14 @@ What this workshop will cover:
 
 The goal is that by the end of the workshop you will have a dataset in a final standardized state and shared to OBIS. We are hoping to address some of the blockers that you identified, including: lack of time, training, and specific formatting questions.
 
-We have a short time together therefore our focus will be hands-on work in breakout rooms using the dataset you bring to the workshop. We will not have many presentations and they will be relatively short. Instead we will have large portions of time for you to work on your data and ask questions when you hit a stumbling block. Therefore, if you do not have a dataset to work on you may not find this workshop a good use of your time.
+We have a short time together therefore our focus will be hands-on work in breakout rooms using the dataset you bring to the workshop. We will not have many presentations and they will be relatively short. Instead we will have large portions of time for you to work on your data and ask questions when you hit a stumbling block. **Therefore, if you do not have a dataset to work on you may not find this workshop a good use of your time**.
 
-What this workshop will not cover:
+What this workshop will **not** cover:
 * What is OBIS?
 * Rationale for sharing data with OBIS.
 * Using data that’s already in OBIS.
+* Data analysis.
+* Use of programs or software.
 
 If you would like to learn more about OBIS and a short rationale for sharing data to it, please watch this [two minute video](https://youtu.be/E6NblAC-1uE) and this [two minute video](https://youtu.be/mmD-EYNOrFA) and share them with those you want to work with to share data.
 {% if site.carpentry == "swc" %}
@@ -250,7 +252,7 @@ Display the contact email address set in the configuration file.
 {% endcomment %}
 <p id="contact">
   <strong>Contact:</strong>
-  Please email
+  Please visit
   {% if page.email %}
   {% for email in page.email %}
   {% if forloop.last and page.email.size > 1 %}
@@ -390,7 +392,7 @@ of code below the Schedule `<h2>` header below with
 <h2 id="schedule">Schedule</h2>
 __Times are in EDT.__
 
-Overview recordings of each lesson can be found in [this playlist](https://youtube.com/playlist?list=PLlgUwSvpCFS7zytaWbZ6f4Szm3PnpFj_J).
+The videos created for the Marine Biological Data Mobilization Workshop can be found in [this playlist](https://youtube.com/playlist?list=PLlgUwSvpCFS7zytaWbZ6f4Szm3PnpFj_J).
 
 {% include custom-schedule.html %}
 
