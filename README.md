@@ -1,6 +1,11 @@
 # Marine Biological Data Mobilization Workshop 2023
 
-[![DOI](https://zenodo.org/badge/419464308.svg)](https://zenodo.org/badge/latestdoi/419464308)
+Workshop Digital Object Identifiers (DOI):
+| DOI | Year |
+|-----|------|
+| [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7401979.svg)](https://doi.org/10.5281/zenodo.7401979) | ALL |
+| [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7896606.svg)](https://doi.org/10.5281/zenodo.7896606) | 2023 |
+| [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7401980.svg)](https://doi.org/10.5281/zenodo.7401980) | 2022 |
 
 This repository is for participants to get general information and ask questions related to the Biological Data Mobilization Workshop (via the [issues](https://github.com/ioos/bio_mobilization_workshop/issues) section).
 
@@ -50,7 +55,7 @@ Navigate to the folder that contains the lesson, and use `bundle exec jekyll ser
 
 If changing headers and menus `bundle exec jekyll clean` before serving.
 
-## Post-mortem 2022 workshop summary
+<!--## Post-mortem 2022 workshop summary
 This workshop has concluded with great success! We hope to remix and offer another similar workshop soon! Below is a summary of the workshop activities prepared post-mortem, followed by the original content of this README which was written pre-workshop.
 
 The 2022 Marine Biological Data Mobilization Workshop was a collaborative effort between OBIS, MBON, Hakai, IOOS, and OTN hosted to promote open data and software in the area of marine biodiversity assessment. The workshop focused on the application of the Darwin Core data standard to extant data and the subsequent publication of the data to the open access data infrastructures provided by OBIS and GBIF. The curriculum for this workshop was modeled using The Carpentries evidence-based best-practices of teaching. The materials are openly available via GitHub and the generated carpentries website. The workshop is licensed as free for re-use or adaptation under an MIT license. Unconventional features of the workshop included: 
@@ -61,9 +66,8 @@ The 2022 Marine Biological Data Mobilization Workshop was a collaborative effort
 4. A dual-programming-language (python and R) offering in all instructional steps
 
 The workshop was attended internationally by 63 participants, with 48 attendees joining the associated slack group. These new members have been invited to attend a monthly workgroup organized to promote standardization of marine biological data. A pre-vs-post survey analysis shows substantial improvement to self-reported skill-levels, a multitude of positive feedback was volunteered, and the workshop scored a perfect 100% standard Net Promoter Score with 16 “promoters”, 0 “detractors”, and a total of 25 respondents.
+-->
 
 ## How this repo is organized
 
-Archived material will be stored in a branch indicating the year and material. For example, the 
-2022 website material will be archived in the branch `2022_website`. This ensures all materials are 
-accessible in the future and facilitates replicating the materials for another workshop.
+At the completion of each event, this repository will be tagged and a release will be created with the year of the event. A DOI will be minted through Zenodo (see DOI table above). Since the workshop is intended to provide the most up to date information on aligning data to Darwin Core, the maintainers decided that we will continually build and update these materials instead of providing access to the previous years materials in subsequent yearly websites. If you would like to rebuild a specific year's website, checkout a specific [release](https://github.com/ioos/bio_mobilization_workshop/releases) (eg. `$ git checkout 2023`) and [build the website](#deploying-site-locally) from that content.
