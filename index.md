@@ -14,7 +14,7 @@ humantime: "13:00 - 17:00 EDT"    # human-readable times for the workshop e.g., 
 startdate: 2023-04-22      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
 enddate: 2023-04-23        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
 # instructor list : a boxed, comma-separated list of instructors' names as strings, like ["Abby Benson", "Mathew Biddle"]
-instructor: ["Matthew Biddle", "Laura Brenskelle", "Steve Formel", "Elizabeth Lawrence", "Tylar Murray", "Carolina Peralta", "Jonathan Pye", "Tim van der Stap"]  
+instructor: ["Mathew Biddle", "Laura Brenskelle", "Steve Formel", "Elizabeth Lawrence", "Tylar Murray", "Carolina Peralta", "Jonathan Pye", "Tim van der Stap"]  
 # helper list: a boxed, comma-separated list of helper's names as strings, like ["Ben Best", "Carolina Peralta"]
 helper: ["Pedro Pablo Aros", "Caitlin Bate", "Bruce Delo", "Angela Dini", Braulio Fernandez", "Pamela Fierro", "Brian Jones", "Shannon Landovskis", "YingHuan Niu", "Kyla Richards", "Joxmer Scott-Frias"]
 email: ["https://obis.org/contact/"]    # boxed, comma-separated list of contact email addresses for the host, lead instructor, or whoever else is handling questions, like ["marlyn.wescoff@example.org", "fran.bilas@example.org", "ruth.lichterman@example.org"]
