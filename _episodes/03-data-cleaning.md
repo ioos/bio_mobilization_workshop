@@ -289,7 +289,7 @@ There are two ways to grab the taxonomic information necessary. First, you can u
 The tool accepts lists of scientific names (each unique name as a separate row in a .txt, .csv, or .xlsx file) up to 
 1500 names and provides an interface for selecting the match you want for ambiguous matches. A brief walk-through using 
 the service is included [below](#using-the-worms-taxon-match-tool). A more detailed step-by-step guide on 
-using the WoRMS Taxon Match Tool for the [MBON Pole to Pole](https://marinebon.org/p2p/) can be found [here](https://marinebon.org/p2p/protocols/WoRMS_quality_check.pdf). 
+using the WoRMS Taxon Match Tool for the [MBON Pole to Pole](https://marinebon.org/p2p/) can be found [here](https://marinebon.github.io/p2p/protocols/WoRMS_quality_check.pdf). Additionally, OBIS has a three-part [video series](https://www.youtube.com/watch?v=jJ8nlMlg-cY) on YouTube about using the tool.
 
 
 
