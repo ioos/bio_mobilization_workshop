@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 title: "Marine data mobilization workshop"
-version: 2023
+version: 2024
 doi: 10.5281/zenodo.7401979
 identifiers:
   - description: "This is the collection of archived snapshots of all versions of the workshop materials"
@@ -13,7 +13,7 @@ identifiers:
   - description: "This is the archived snapshot of version 2023 of the workshop materials hosted on April 18-19, 2023"
     type: doi
     value: 10.5281/zenodo.7896606
-date-released: 2023-05-04
+date-released: 2024-04-29
 url: "https://ioos.github.io/bio_mobilization_workshop/"
 repository-code: "https://github.com/ioos/bio_mobilization_workshop"
 authors:
