@@ -13,6 +13,9 @@ identifiers:
   - description: "This is the archived snapshot of version 2023 of the workshop materials hosted on April 18-19, 2023"
     type: doi
     value: 10.5281/zenodo.7896606
+  - description: "This is the archived snapshot of version 2024 of the workshop materials hosted on April 22-23, 2024"
+    type: doi
+    value: 10.5281/zenodo.11085142
 date-released: 2024-04-29
 url: "https://ioos.github.io/bio_mobilization_workshop/"
 repository-code: "https://github.com/ioos/bio_mobilization_workshop"
