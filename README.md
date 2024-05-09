@@ -71,4 +71,7 @@ The workshop was attended internationally by 63 participants, with 48 attendees 
 
 ## How this repo is organized
 
-At the completion of each event, this repository will be tagged and a release will be created with the year of the event. A DOI will be minted through Zenodo (see DOI table above). Since the workshop is intended to provide the most up to date information on aligning data to Darwin Core, the maintainers decided that we will continually build and update these materials instead of providing access to the previous years materials in subsequent yearly websites. If you would like to rebuild a specific year's website, checkout a specific [release](https://github.com/ioos/bio_mobilization_workshop/releases) (eg. `$ git checkout 2023`) and [build the website](#deploying-site-locally) from that content.
+At the completion of each event, this repository will be tagged and a release will be created with the year of the event (following [Calendar Versioning](https://calver.org/) scheme `YYYY`]). 
+A DOI will be minted through Zenodo (see DOI table above). 
+Since the workshop is intended to provide the most up to date information on aligning data to Darwin Core, the maintainers decided that we will continually build and update these materials instead of providing access to the previous years materials in subsequent yearly websites. 
+If you would like to rebuild a specific year's website, checkout a specific [release](https://github.com/ioos/bio_mobilization_workshop/releases) (eg. `$ git checkout 2023`) and [build the website](#deploying-site-locally) from that content.
