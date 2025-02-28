@@ -1,4 +1,4 @@
-# Marine Biological Data Mobilization Workshop 2023
+# Marine Biological Data Mobilization Workshop
 
 Workshop Digital Object Identifiers (DOI):
 | DOI | Year |
