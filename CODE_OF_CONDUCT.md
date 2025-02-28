@@ -75,5 +75,3 @@ may be reported to any of the workshop convenors, who will assess the
 incident and may determine whether to initiate a review of the
 incident with a committee of workshop convenors in a manner similar to 
 official Carpentries incident response workflows.
-
-{% include links.md %}
