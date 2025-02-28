@@ -1,8 +1,0 @@
-{% comment %}
-For 2-day all-day events, the end date needs to be a day later.
-from here: https://stackoverflow.com/a/37659516/1113276
-{% endcomment %}
-
-{% assign final_day = page.enddate | date: '%s' | plus:86400 | date: '%F' | replace: "-", "" %}
-
-<a href="//calendar.google.com/calendar/render?action=TEMPLATE&text=%20Biological%20Data%20Mobilization%20Workshop&dates=20240422T1255/20240423T1655&ctz=America%2FNew_York&recur=RRULE:FREQ%3DDAILY;COUNT=1&trp=false&sprop&sprop=name:&sf=true&output=xml&location=https://ioos.github.io/bio_mobilization_workshop/&details=%20Workshop%20at%20OBIS-USA,%20IOOS,%20Hakai,%20CIOOS,%20MBON,%20OTN" target="_blank">Add to your Google Calendar.</a>
