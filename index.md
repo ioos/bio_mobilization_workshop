@@ -1,5 +1,5 @@
 ---
-title: Marine Biological Data Mobilization Workshop 2024
+title: Marine Biological Data Mobilization Workshop 2025
 site: sandpaper::sandpaper_site
 ---
 
@@ -7,7 +7,7 @@ OBIS-USA, IOOS, Hakai, CIOOS, MBON, OTN, OBIS, Caribbean-OBIS, OBIS-Chile
 
 Online
 
-April 22-23, 2024
+November 4-6, 2025
 
 13:00 - 17:00 EDT
 
@@ -77,8 +77,7 @@ this [two minute video](https://youtu.be/E6NblAC-1uE) and this [two minute video
 share them with those you want to work with to share data.
 
 **When:**
-April 22-23, 2024.
-April 24th will be an optional day to attend for Workshop Participants if they require additional help.
+November 4-6, 2025
 
 **Requirements:**
 
@@ -100,7 +99,7 @@ __Times are in EDT.__
 
 The videos created for the Marine Biological Data Mobilization Workshop can be found in [this playlist](https://youtube.com/playlist?list=PLlgUwSvpCFS7zytaWbZ6f4Szm3PnpFj_J).
 
-### April 22
+### November 4
 
 | 13:00 | Introduction to Darwin Core                                                                                                                                                                                                                                                          |
 |-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -111,7 +110,7 @@ The videos created for the Marine Biological Data Mobilization Workshop can be f
 | 16:30 | Return to Main Room                                                                                                                                                                                                                                                                  |
 | 17:00 | Finish                                                                                                                                                                                                                                                                               |
 
-### April 23
+### November 5
 
 | 13:00 | Darwin Core and Extension Schemas                                                                                                                                                                                                                                                           |
 |-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
