@@ -18,10 +18,10 @@ carpentry: 'incubator'
 carpentry_description: 'Marine data mobilization workshop for Biology and Ecosystem Essential Ocean Variables (Bio-Eco EOV) as a Contribution to the UN Decade on Ocean Science for Sustainable Development'
 
 # Overall title for pages.
-title: 'Marine Biological Data Mobilization Workshop 2024'
+title: 'Marine Biological Data Mobilization Workshop 2025'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: 2024-04-19 # FIXME
+created: 2025-09-15 # FIXME
 
 # Comma-separated list of keywords for the lesson
 keywords: 'software, data, lesson, The Carpentries' # FIXME
