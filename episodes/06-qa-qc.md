@@ -227,7 +227,7 @@ The event core data used in the checks below can be found in [this Excel file](d
 
 ::::::::::::::::: tab
 
-#### R
+### R
 
 Install [obistools](https://github.com/iobis/obistools) R packages. 
 Use [readxl](https://readxl.tidyverse.org/) package to read the Excel file.
@@ -289,7 +289,7 @@ Use [readxl](https://readxl.tidyverse.org/) package to read the Excel file.
     # ... with 5 more variables: maximumDepthInMeters <dbl>, samplingProtocol <chr>, locality <chr>, locationID <chr>, type <chr>    
     ```    
 
-#### Python
+### Python
 
 Install the [pandas](https://pandas.pydata.org/), 
 [cartopy](https://scitools.org.uk/cartopy/docs/latest/installing.html), and 

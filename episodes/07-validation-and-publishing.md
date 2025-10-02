@@ -21,8 +21,8 @@ exercises: 120
 
 ## Data Publishing Pipeline
 
- After going through QAQC and being standardized to Darwin Core, the dataset are uploaded to an IPT.  
- Metadata is added in the form of EML and the dataset published as a Darwin Core Archive (DwC-A).  The data are then 
+ After going through QA/QC and being standardized to Darwin Core, the dataset is uploaded to an IPT (detailed below).  
+ Metadata is added in the form of EML (below) and the dataset is published as a Darwin Core Archive (DwC-A).  The data are then 
  pushed to central OBIS.  Each dataset also has the option of being pushed to GBIF by registering the resource with 
  GBIF in the IPT.  
 
@@ -58,10 +58,10 @@ The requirements for publishing via an OBIS node IPT are that:
 
 Both OBIS and GBIF use [Ecological Metadata Language (EML)](https://eml.ecoinformatics.org/) as the metadata standard 
 associated with the data. For the purposes of this workshop we will not dive into the world of EML. However, we should 
-note that when publishing your data through the IPT, the IPT helps you create an EML file as part of the DwC-A. As such, 
+note that when publishing your data through the IPT, the IPT helps you create an EML file as part of the DwC-A through a form-like interface. As such, 
 if you publish your own data through the IPT, there is no need for innate knowledge on the EML format. But there are a 
 minimum required number of fields that would need to be filled out in the IPT: `title`, `abstract`, `citation`, and 
-several `contacts`. 
+several `contacts`. We  highly recommend also including relevant keywords (e.g. about Essential Ocean Variables) and identifiers associated with your project.
 
 More information on EML can be found at the [EML standard page](https://eml.ecoinformatics.org/), and in the 
 [bio data guide](https://ioos.github.io/bio_data_guide/extras.html#ecological-metadata-language-eml). There are also a 
