@@ -1,0 +1,37 @@
+ScientificName	AphiaID	Match type	LSID	ScientificName	AphiaID_accepted	ScientificName_accepted	Kingdom	Phylum	Class	Order	Family	Genus	Subgenus	Species	Subspecies
+Corallina sp	144007	exact	urn:lsid:marinespecies.org:taxname:144007	Corallina	144007	Corallina	Plantae	Rhodophyta	Florideophyceae	Corallinales	Corallinaceae	Corallina			
+Corallina officinalis	145108	exact	urn:lsid:marinespecies.org:taxname:145108	Corallina officinalis	145108	Corallina officinalis	Plantae	Rhodophyta	Florideophyceae	Corallinales	Corallinaceae	Corallina		officinalis	
+Chondria secundata	619816	exact	urn:lsid:marinespecies.org:taxname:619816	Chondria secundata	619816	Chondria secundata	Plantae	Rhodophyta	Florideophyceae	Ceramiales	Rhodomelaceae	Chondria		secundata	
+Schottera nicaeensis	145666	exact	urn:lsid:marinespecies.org:taxname:145666	Schottera nicaeensis	145666	Schottera nicaeensis	Plantae	Rhodophyta	Florideophyceae	Gigartinales	Phyllophoraceae	Schottera		nicaeensis	
+Ahnfeltiopsis furcellata	213966	exact	urn:lsid:marinespecies.org:taxname:213966	Ahnfeltiopsis furcellata	213966	Ahnfeltiopsis furcellata	Plantae	Rhodophyta	Florideophyceae	Gigartinales	Phyllophoraceae	Ahnfeltiopsis		furcellata	
+Chondracanthus chamissois	213951	near_1	urn:lsid:marinespecies.org:taxname:213951	Chondracanthus chamissoi	213951	Chondracanthus chamissoi	Plantae	Rhodophyta	Florideophyceae	Gigartinales	Gigartinaceae	Chondracanthus		chamissoi	
+Balanus laevis	173651	exact	urn:lsid:marinespecies.org:taxname:173651	Balanus laevis	173651	Balanus laevis	Animalia	Arthropoda	Hexanauplia	Sessilia	Balanidae	Balanus		laevis	
+Ulva sp	144296	exact	urn:lsid:marinespecies.org:taxname:144296	Ulva	144296	Ulva	Plantae	Chlorophyta	Ulvophyceae	Ulvales	Ulvaceae	Ulva			
+Brachidontes granulata	505990	near_2	urn:lsid:marinespecies.org:taxname:505990	Brachidontes granulatus	505990	Brachidontes granulatus	Animalia	Mollusca	Bivalvia	Mytilida	Mytilidae	Brachidontes		granulatus	
+Lessonia spicata	837696	exact	urn:lsid:marinespecies.org:taxname:837696	Lessonia spicata	837696	Lessonia spicata	Chromista	Ochrophyta	Phaeophyceae	Laminariales	Lessoniaceae	Lessonia		spicata	
+Mazzaella laminarioides	371711	exact	urn:lsid:marinespecies.org:taxname:371711	Mazzaella laminarioides	371711	Mazzaella laminarioides	Plantae	Rhodophyta	Florideophyceae	Gigartinales	Gigartinaceae	Mazzaella		laminarioides	
+Pyropia orbicularis	841065	exact	urn:lsid:marinespecies.org:taxname:841065	Pyropia orbicularis	841065	Pyropia orbicularis	Plantae	Rhodophyta	Bangiophyceae	Bangiales	Bangiaceae	Pyropia		orbicularis	
+Centroceras rodamanii	623676	near_1	urn:lsid:marinespecies.org:taxname:623676	Centroceras rodmanii	623676	Centroceras rodmanii	Plantae	Rhodophyta	Florideophyceae	Ceramiales	Ceramiaceae	Centroceras		rodmanii	
+Perumytilus purpuratus	600490	exact	urn:lsid:marinespecies.org:taxname:600490	Perumytilus purpuratus	600490	Perumytilus purpuratus	Animalia	Mollusca	Bivalvia	Mytilida	Mytilidae	Perumytilus		purpuratus	
+Chtamalus cirratus	733188	phonetic	urn:lsid:marinespecies.org:taxname:733188	Chthamalus cirratus	733188	Chthamalus cirratus	Animalia	Arthropoda	Hexanauplia	Sessilia	Chthamalidae	Chthamalus		cirratus	
+Sarcothalia crispata	371718	exact	urn:lsid:marinespecies.org:taxname:371718	Sarcothalia crispata	371718	Sarcothalia crispata	Plantae	Rhodophyta	Florideophyceae	Gigartinales	Gigartinaceae	Sarcothalia		crispata	
+Capreolia implexa	373492	exact	urn:lsid:marinespecies.org:taxname:373492	Capreolia implexa	373492	Capreolia implexa	Plantae	Rhodophyta	Florideophyceae	Gelidiales	Gelidiaceae	Capreolia		implexa	
+Phragmatopoma moerchi	337791	exact	urn:lsid:marinespecies.org:taxname:337791	Phragmatopoma moerchi	330551	Phragmatopoma virgini	Animalia	Annelida	Polychaeta		Sabellariidae	Phragmatopoma		moerchi	
+Semimytilus algosus	224601	exact	urn:lsid:marinespecies.org:taxname:224601	Semimytilus algosus	224601	Semimytilus algosus	Animalia	Mollusca	Bivalvia	Mytilida	Mytilidae	Semimytilus		algosus	
+Corallinales	15308	exact	urn:lsid:marinespecies.org:taxname:15308	Corallinales	15308	Corallinales	Plantae	Rhodophyta	Florideophyceae	Corallinales					
+Lithothamniaceae	1305091	exact	urn:lsid:marinespecies.org:taxname:1305091	Lithothamniaceae	1305091	Lithothamniaceae	Plantae	Rhodophyta	Florideophyceae	Corallinales	Lithothamniaceae				
+Mytilus chilensis	397041	exact	urn:lsid:marinespecies.org:taxname:397041	Mytilus chilensis	397041	Mytilus chilensis	Animalia	Mollusca	Bivalvia	Mytilida	Mytilidae	Mytilus		chilensis	
+Ulva intestinalis	234471	exact	urn:lsid:marinespecies.org:taxname:234471	Ulva intestinalis	234471	Ulva intestinalis	Plantae	Chlorophyta	Ulvophyceae	Ulvales	Ulvaceae	Ulva		intestinalis	
+Pyropia sp	603075	exact	urn:lsid:marinespecies.org:taxname:603075	Pyropia	603075	Pyropia	Plantae	Rhodophyta	Bangiophyceae	Bangiales	Bangiaceae	Pyropia			
+Austrolitorina araucana	446840	phonetic	urn:lsid:marinespecies.org:taxname:446840	Austrolittorina araucana	446840	Austrolittorina araucana	Animalia	Mollusca	Gastropoda	Littorinimorpha	Littorinidae	Austrolittorina		araucana	
+Bacillariophycanae	591186	exact	urn:lsid:marinespecies.org:taxname:591186	Bacillariophycanae	591186	Bacillariophycanae	Chromista	Ochrophyta	Bacillariophyceae						
+Scytosiphon lomentaria	145869	exact	urn:lsid:marinespecies.org:taxname:145869	Scytosiphon lomentaria	145869	Scytosiphon lomentaria	Chromista	Ochrophyta	Phaeophyceae	Ectocarpales	Scytosiphonaceae	Scytosiphon		lomentaria	
+Gelidium chilense	373658	exact	urn:lsid:marinespecies.org:taxname:373658	Gelidium chilense	373658	Gelidium chilense	Plantae	Rhodophyta	Florideophyceae	Gelidiales	Gelidiaceae	Gelidium		chilense	
+Ceramium sp	143834	exact	urn:lsid:marinespecies.org:taxname:143834	Ceramium	143834	Ceramium	Plantae	Rhodophyta	Florideophyceae	Ceramiales	Ceramiaceae	Ceramium			
+Rhizoclonium ambigum	214388	phonetic	urn:lsid:marinespecies.org:taxname:214388	Rhizoclonium ambiguum	214388	Rhizoclonium ambiguum	Plantae	Chlorophyta	Ulvophyceae	Cladophorales	Cladophoraceae	Rhizoclonium		ambiguum	
+Mastocarpus latissiumus	625994	phonetic	urn:lsid:marinespecies.org:taxname:625994	Mastocarpus latissimus	625994	Mastocarpus latissimus	Plantae	Rhodophyta	Florideophyceae	Gigartinales	Phyllophoraceae	Mastocarpus		latissimus	
+Nothogenia sp	206661	exact	urn:lsid:marinespecies.org:taxname:206661	Nothogenia	206661	Nothogenia	Plantae	Rhodophyta	Florideophyceae	Nemaliales	Scinaiaceae	Nothogenia			
+Notochthamalus scabrosus	733206	exact	urn:lsid:marinespecies.org:taxname:733206	Notochthamalus scabrosus	733206	Notochthamalus scabrosus	Animalia	Arthropoda	Hexanauplia	Sessilia	Chthamalidae	Notochthamalus		scabrosus	
+Trematocarpus dichotomus	373661	exact	urn:lsid:marinespecies.org:taxname:373661	Trematocarpus dichotomus	373661	Trematocarpus dichotomus	Plantae	Rhodophyta	Florideophyceae	Plocamiales	Sarcodiaceae	Trematocarpus		dichotomus	
+Haliclona sp	131834	exact	urn:lsid:marinespecies.org:taxname:131834	Haliclona	131834	Haliclona	Animalia	Porifera	Demospongiae	Haplosclerida	Chalinidae	Haliclona			
+Ahanfeltiopsis durvillae	372231	phonetic	urn:lsid:marinespecies.org:taxname:372231	Ahnfeltiopsis durvillei	372231	Ahnfeltiopsis durvillei	Plantae	Rhodophyta	Florideophyceae	Gigartinales	Phyllophoraceae	Ahnfeltiopsis		durvillei	
