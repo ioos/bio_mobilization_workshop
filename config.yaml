@@ -77,7 +77,6 @@ episodes:
 
 # Information for Learners
 learners: 
-- reference.md
 - about.md
 - helpful-tutorials.md
 - edna-extension.md
