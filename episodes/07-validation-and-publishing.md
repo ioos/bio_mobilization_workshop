@@ -98,9 +98,11 @@ _Best practices for these fields are explained in detail in the [OBIS manual](ht
 | `Bounding Box`           | Farthest North, South, East, and West coordinate. |  |
 | `Geographic Description` | A textual description of the geographic coverage.  |  |
 | `Temporal Coverage`      | This can either be a Single Date, Date Range, Formation Period, or Living Time Period. |  |
+| `Keywords`               | A list of keywords obtained from a thesaurus or controlled vocabulary collection. | This field can help others find your dataset more easily. |
 | `Study Extent`           | This field represents both a specific sampling area and the sampling frequency (temporal boundaries, frequency of occurrence) of the project. |  |
 | `Sampling Description`   | This field allows for a text-based/human readable description of the sampling procedures used in the research project. | The content of this element would be similar to a description of sampling procedures found in the methods section of a journal article.  |
 | `Step Description`       | This field allows for repeated sets of elements that document a series of methods and procedures used in the study, and the processing steps leading to the production of the data files. These include e.g. text descriptions of the procedures, relevant literature, software, instrumentation and any quality control measurements taken. | Each method should be described in enough detail to allow other researchers to interpret and repeat the study, if required. |
+| `Project Identifier` | A unique identifier for the research project. This can be used to link multiple dataset/EML document instances that are associated in some way with the same project, e.g. a monitoring series. The nature of the association can be described in the project description. |  |
 
 ::::::::::::: keypoints
 

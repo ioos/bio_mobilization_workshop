@@ -3,7 +3,7 @@ title: Marine Biological Data Mobilization Workshop 2025
 site: sandpaper::sandpaper_site
 ---
 
-OBIS-USA, IOOS, Hakai, CIOOS, MBON, OTN, OBIS, Caribbean-OBIS, OBIS-Chile
+OBIS-USA, IOOS, Hakai, CIOOS, MBON, OTN, OBIS Secretariat, Caribbean-OBIS, OBIS-Chile
 
 Online
 
@@ -51,6 +51,7 @@ What this workshop will cover:
 * Typical data cleaning tasks needed to standardize the data.
 * Getting your data into a final Darwin Core format.
 * Common QA/QC steps, data enhancement, and validation tools.
+* Understanding and using controlled vocabulary.
 * Required metadata information.
 * How to get your data into the Integrated Publishing Toolkit.
 * Tools that will help in all of the above processes.

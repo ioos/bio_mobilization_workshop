@@ -44,6 +44,9 @@ Core Archives are pretty simple. It's a zipped folder containing the data (one o
 extensions you use), an Ecological Metadata Language (EML) XML file, and a meta.xml file that describes what's in the 
 zipped folder.
 
+![Darwin Core Archive](/episodes/fig/DwC-Archive.png)
+*Image credit: [Elizabeth Lawrence](https://xkcd.com/)*
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ### Challenge
