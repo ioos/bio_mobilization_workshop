@@ -45,7 +45,7 @@ extensions you use), an Ecological Metadata Language (EML) XML file, and a meta.
 zipped folder.
 
 ![Darwin Core Archive](/episodes/fig/DwC-Archive.png)
-*Image credit: [Elizabeth Lawrence](https://xkcd.com/)*
+*Image credit: Elizabeth Lawrence*
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
