@@ -82,11 +82,8 @@ learners:
 - edna-extension.md
 - acoustic-telemetry.md
 
-# Information for Instructors
-instructors: 
-
-# Learner Profiles
-profiles:
+learner_profiles: false
+glossary: false
 
 # Customisation ---------------------------------------------
 #
