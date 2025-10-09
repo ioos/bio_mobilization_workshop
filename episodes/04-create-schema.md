@@ -38,8 +38,7 @@ etc) you will pick Event core. If there was no sampling event, then you will pic
 #### Occurrence only
 The bare minimum for sharing data to OBIS is to use the 
 [Occurrence Core](https://rs.gbif.org/core/dwc_occurrence_2022-02-02.xml) with no extensions. This core type covers 
-datasets that only include observations and/or specimen records where no information on sampling is available. 
-**Occurrence core is also used for eDNA or DNA derived data**. 
+datasets that only include observations and/or specimen records where no information on sampling is available.
 
 The Occurrence core allows you to provide all the required Darwin Core terms detailed in the 
 [intro section](01-introduction/index.html). You can produce a fully compliant Darwin Core version of your data using 
@@ -69,7 +68,7 @@ is unique to that method and will not be represented well using Occurrence core 
 Core you should follow [this guide](https://doi.org/10.35035/doc-vf1a-nr22); you will need the Occurrence core plus the 
 [DNA derived data extension](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2022-02-23.xml). Adding the DNA 
 derived data extension allows you to capture information such as the PCR primer used, DNA sequences, and other 
-information specific to this type of data.
+information specific to this type of data. This also enables more downstream usage of DNA datasets!
 
 Let's consider another example: a museum dataset that has biological measurements for each individual specimen (e.g. 
 length). All information about each organism's occurrence (taxonomic information, locality, identification, etc.) will 
@@ -78,6 +77,8 @@ accuracy, etc.) by using either the
 [Measurement or Facts extension](https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml), or the 
 [Extended Measurement or Fact extension](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) (we 
 elaborate on this extension below). Note again here we do not have information on *how* the organisms were sampled. 
+
+## What are Events and Occurrences?
 
 ## Event Core with Extended Measurement or Fact extension
 As we have indicated earlier, the Event core is for datasets that include known sampling events - details are known 
@@ -110,15 +111,15 @@ All you need to know for now is that `measurementTypeID` should be populated wit
 collection, easily accessible through the [SeaDataNet P01 facet search](https://vocab.seadatanet.org/p01-facet-search), 
 and `measurementUnitID` should be popualted with a 
 [NERC P06 code](https://vocab.nerc.ac.uk/search_nvs/P06/?searchstr=&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=). 
-OBIS is soon releasing video tutorials to help with choosing URIs, so stay tuned to their [manual](https://manual.obis.org/) 
-and [YouTube list](https://www.youtube.com/@oceanbiodiversityinformati6931/playlists) for updates.
+
+OBIS has released [video tutorials](https://www.youtube.com/watch?v=gGiSTApx1oU&list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul) to help with choosing URIs, so check this video series for additional assistance.
 
 :::::::::::: callout
 
 ## :pushpin: Tip 
 
 You can search for `measurementTypes` that other OBIS data providers have used by using the 
-[OBIS mof report](https://mof.obis.org/). BE CAREFUL though to make sure the
+[OBIS Mof Viewer](https://mof.obis.org/). BE CAREFUL when usng this tool and make sure the
 definition in the URI matches exactly your measurement type if you want to reuse it for your data.
 
 ::::::::::::::::::::
@@ -137,16 +138,16 @@ keys that keep track of each of the records, so that if you notice a mistake or 
 record in place in the global aggregators and fix the mistake or add the missing information. For instance, let's say 
 you have a record with an `occurrenceID` `Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula` and after it's 
 published to OBIS you notice that the latitude was recorded incorrectly. When you fix that record in the data you would 
-keep the `occurrenceID` `Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula`, fix the latitude, and republish 
+**keep** the `occurrenceID` `Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula`, fix the latitude, and republish 
 the data so that the record is still present in OBIS but you have fixed the mistake.
 
-With that in mind what is the best way to create an `eventID`, `occurrenceID`, or `measurementID`? Until we have a system 
+With that in mind, what is the best way to create an `eventID`, `occurrenceID`, or `measurementID`? Until we have a system 
 that mints Persistent Identififers for individual records then the best way we have seen is to build the ID from 
 information in the data itself. That way if you need to update or fix a record you simply use the same information 
 again to build the same ID for the same record. Take our example above 
 `Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula`. This is a concatenation of information from the original 
-source data of the Station number + Verbatim Date + Scientific name. Because this is unique for each row in the 
-occurrence file and we have kept the original data in its original format we can always rebuild this ID by concatenating 
+source data, including the Station number + Verbatim Date + Scientific name. Because this is unique for each row in the 
+occurrence file, and we have kept the original data in its original format we can always rebuild this ID by concatenating 
 this same information together again.
 
 **It is very important that these IDs do not change over time**. So if an ID for a museum specimen is built from 
@@ -215,7 +216,7 @@ eMoF table.
 
 ::::::::::::::::::::
 
-Over at the [IOOS Bio Data Guide repository](https://github.com/ioos/bio_data_guide) you can see [a script](https://github.com/ioos/bio_data_guide/blob/main/datasets/TPWD_HARC_BagSeine/TPWD_HARC_BagSeine_OBISENV.md) that was used to take data in its original form and align it to Darwin Core Event Core with Extended Measurement or Fact. More information on how to organize data fields into Event and Measurement or Fact can be found in the [OBIS Manual](https://manual.obis.org/)
+Over at the [IOOS Bio Data Guide repository](https://github.com/ioos/bio_data_guide) you can see [a script](https://github.com/ioos/bio_data_guide/blob/main/datasets/TPWD_HARC_BagSeine/TPWD_HARC_BagSeine_OBISENV.md) that was used to take data in its original form and align it to Darwin Core Event Core with Extended Measurement or Fact. More information on how to organize data fields into Event and Measurement or Fact can be found in the [OBIS Manual](https://manual.obis.org/).
 
 ![](fig/processing_script_screenshot.png)
 
