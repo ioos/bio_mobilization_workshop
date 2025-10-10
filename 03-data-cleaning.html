@@ -99,7 +99,7 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="reference.html">Reference</a></li><li><a class="dropdown-item" href="about.html">About</a></li><li><a class="dropdown-item" href="helpful-tutorials.html">Helpful Tutorials</a></li><li><a class="dropdown-item" href="edna-extension.html">DNA-derived Data Extension</a></li><li><a class="dropdown-item" href="acoustic-telemetry.html">Acoustic (and Satellite) Telemetry</a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="reference.html">Reference</a></li><li><a class="dropdown-item" href="about.html">About</a></li><li><a class="dropdown-item" href="helpful-tutorials.html">Helpful Tutorials</a></li><li><a class="dropdown-item" href="edna-extension.html">DNA-derived Data Extension</a></li><li><a class="dropdown-item" href="acoustic-telemetry.html">Acoustic (and Satellite) Telemetry</a></li><li><a class="dropdown-item" href="controlled-vocab.html">Controlled Vocabulary</a></li>
           </ul></li>
       </ul></div>
     <!--
@@ -310,7 +310,7 @@
                       <li>
                         <a href="profiles.html">Learner Profiles</a>
                       </li>
-                      <li><a href="reference.html">Reference</a></li><li><a href="about.html">About</a></li><li><a href="helpful-tutorials.html">Helpful Tutorials</a></li><li><a href="edna-extension.html">DNA-derived Data Extension</a></li><li><a href="acoustic-telemetry.html">Acoustic (and Satellite) Telemetry</a></li>
+                      <li><a href="reference.html">Reference</a></li><li><a href="about.html">About</a></li><li><a href="helpful-tutorials.html">Helpful Tutorials</a></li><li><a href="edna-extension.html">DNA-derived Data Extension</a></li><li><a href="acoustic-telemetry.html">Acoustic (and Satellite) Telemetry</a></li><li><a href="controlled-vocab.html">Controlled Vocabulary</a></li>
                     </ul></div>
                 </div>
               </div>
@@ -346,7 +346,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data Cleaning</h1>
-        <p>Last updated on 2025-02-28 |
+        <p>Last updated on 2025-10-10 |
 
         <a href="https://github.com/ioos/bio_mobilization_workshop/edit/main/episodes/03-data-cleaning.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -388,11 +388,14 @@ North and East.</li>
 Darwin Core standard, it’s time to start cleaning up the data to align
 with the conventions described in the standard. The following activities
 are the three most common conversions a dataset will undergo to align to
-the Darwin Core standard: 1. <a href="#getting-your-dates-in-order">Ensuring dates follow the ISO 8601
-standard</a> 2. <a href="#matching-your-scientific-names-to-worms">Matching scientific
-names to an authoritative resource</a> 3. <a href="#getting-latlon-to-decimal-degrees">Ensuring latitude and
-longitude values are in decimal degrees</a></p>
-<p>Below is a short summary of each of those conversions as well as some
+the Darwin Core standard:</p>
+<ol style="list-style-type: decimal"><li><a href="#getting-your-dates-in-order">Ensuring dates follow the ISO
+8601 standard</a></li>
+<li><a href="#matching-your-scientific-names-to-worms">Matching
+scientific names to an authoritative resource</a></li>
+<li><a href="#getting-latlon-to-decimal-degrees">Ensuring latitude and
+longitude values are in decimal degrees</a></li>
+</ol><p>Below is a short summary of each of those conversions as well as some
 example conversion scripts. The exercises are intended to give you a
 sense of the variability we’ve seen in datasets and how we went about
 converting them. While the examples use the <a href="https://pandas.pydata.org/" class="external-link">pandas package for Python</a> and the
@@ -494,7 +497,7 @@ represented dates to ISO-8601.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
 <p>When dealing with dates using pandas in Python it is best to create a
 Series as your time column with the appropriate datatype. Then, when
 writing your file(s) using <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html" class="external-link">.to_csv()</a>
@@ -742,7 +745,7 @@ simply paste strings together:</p>
 </div>
 </li>
 </ol></div>
-<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <p>When dealing with dates using R, there are a few base functions that
 are useful to wrangle your dates in the correct format. An R package
 that is useful is <a href="https://cran.r-project.org/web/packages/lubridate/lubridate.pdf" class="external-link">lubridate</a>,
@@ -1047,8 +1050,10 @@ First, you can use the <a href="https://www.marinespecies.org/aphia.php?p=match"
 Tool</a>. The tool accepts lists of scientific names (each unique name
 as a separate row in a .txt, .csv, or .xlsx file) up to 1500 names and
 provides an interface for selecting the match you want for ambiguous
-matches. A brief walk-through using the service is included <a href="#using-the-worms-taxon-match-tool">below</a>. A more detailed
-step-by-step guide on using the WoRMS Taxon Match Tool for the <a href="https://marinebon.org/p2p/" class="external-link">MBON Pole to Pole</a> can be found <a href="https://marinebon.github.io/p2p/protocols/WoRMS_quality_check.pdf" class="external-link">here</a>.
+matches. A brief walk-through using the service is included in the
+challenge box below. A more detailed step-by-step guide on using the
+WoRMS Taxon Match Tool for the <a href="https://marinebon.org/p2p/" class="external-link">MBON
+Pole to Pole</a> can be found <a href="https://marinebon.github.io/p2p/protocols/WoRMS_quality_check.pdf" class="external-link">here</a>.
 Additionally, OBIS has a three-part <a href="https://www.youtube.com/watch?v=jJ8nlMlg-cY" class="external-link">video series</a> on
 YouTube about using the tool.</p>
 <p>The other way to get the taxonomic information you need is to use <a href="https://cran.r-project.org/web/packages/worrms/worrms.pdf" class="external-link">worrms</a>
@@ -1114,7 +1119,7 @@ names to WoRMS.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-2" class="tab-content">
-<div id="nav-tabpanel-2-1" class="tab-pane show active" aria-labelledby="nav-tab-2-1" role="tabpanel">
+<div id="nav-tabpanel-2-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-2-1">
 <p>Create a CSV (comma separated value) file with the scientific name of
 the species of interest. Here we are showing some of the contents of the
 file <a href="data/species.csv"><code>species.csv</code></a>.</p>
@@ -1166,7 +1171,7 @@ information when building the Darwin Core file(s). The response from the
 example linked above can be found <a href="data/species_matched.xlsx">here</a>. A screenshot of the file can
 be seen below: <img src="fig/matched_species_screenshot.png" alt="screenshot" class="figure"></p></li>
 </ol></div>
-<div id="nav-tabpanel-2-2" class="tab-pane" aria-labelledby="nav-tab-2-2" role="tabpanel">
+<div id="nav-tabpanel-2-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-2">
 <p><a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=105838" class="external-link"><em>Carcharodon
 carcharias</em></a> (White shark)</p>
 <div class="codewrapper sourceCode" id="cb47">
@@ -1204,7 +1209,7 @@ carcharias</em></a> (White shark)</p>
 </div>
 </li>
 </ol></div>
-<div id="nav-tabpanel-2-3" class="tab-pane" aria-labelledby="nav-tab-2-3" role="tabpanel">
+<div id="nav-tabpanel-2-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-3">
 <p>Bringing in <a href="data/species.csv"><code>species.csv</code></a>
 and collecting appropriate information from WoRMS using the pyworms
 package.</p>
@@ -1330,12 +1335,16 @@ Multiple matches for scientific name "Acanthephyra brevirostris Smith, 1885"
 (<code>decimalLongitude</code>) are the geographic coordinates (in
 decimal degrees north and east, respectively), using the spatial
 reference system given in <code>geodeticDatum</code> of the geographic
-center of a location. * <code>decimalLatitude</code>, positive values
-are north of the Equator, negative values are south of it. All values
-lie between -90 and 90, inclusive. * <code>decimalLongitude</code>,
-positive values are east of the Greenwich Meridian, negative values are
-west of it. All values lie between -180 and 180, inclusive.</p>
-<p>Note, that the requirement for <code>decimalLatitude</code> and
+center of a location.</p>
+<ul><li>
+<code>decimalLatitude</code>, positive values are north of the
+Equator, negative values are south of it. All values lie between -90 and
+90, inclusive.</li>
+<li>
+<code>decimalLongitude</code>, positive values are east of the
+Greenwich Meridian, negative values are west of it. All values lie
+between -180 and 180, inclusive.</li>
+</ul><p>Note, that the requirement for <code>decimalLatitude</code> and
 <code>decimallLongitude</code> is they must be in decimal degrees in <a href="https://en.wikipedia.org/wiki/World_Geodetic_System" class="external-link">WGS84</a>.
 Since this is the requirement for Darwin Core, <strong>OBIS and GBIF
 will assume data shared using those Darwin Core terms are in the
@@ -1389,7 +1398,7 @@ inclusive.</td>
 upon which the geographic coordinates given in decimalLatitude and
 decimalLongitude as based.</td>
 <td><code>WGS84</code></td>
-</tr></tbody></table><figure><img src="https://imgs.xkcd.com/comics/coordinate_precision.png" alt="coordinate_precision" class="figure mx-auto d-block"><div class="figcaption">coordinate_precision</div>
+</tr></tbody></table><figure><img src="https://imgs.xkcd.com/comics/coordinate_precision.png" alt="Coordinate precision" class="figure mx-auto d-block"><div class="figcaption">Coordinate precision</div>
 </figure><p><em>Image credit: <a href="https://xkcd.com/" class="external-link">xkcd</a></em></p>
 <div id="examples-2" class="callout challenge">
 <div class="callout-square">
@@ -1425,7 +1434,7 @@ coordinate pairs.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-3" class="tab-content">
-<div id="nav-tabpanel-3-1" class="tab-pane show active" aria-labelledby="nav-tab-3-1" role="tabpanel">
+<div id="nav-tabpanel-3-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-3-1">
 <ul><li>This example assumes you have already split the two strings into
 discrete components (as shown in the table). An example converting the
 full strings <code>17° 51' 57.96" S</code>
@@ -1581,7 +1590,7 @@ two strings into discrete components (as shown in the table).</li>
 </div>
 </li>
 </ol></div>
-<div id="nav-tabpanel-3-2" class="tab-pane" aria-labelledby="nav-tab-3-2" role="tabpanel">
+<div id="nav-tabpanel-3-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-3-2">
 <p><code>17° 51' 57.96" S</code> <code>149° 39' 13.32" W</code></p>
 <div class="codewrapper sourceCode" id="cb63">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1851,7 +1860,7 @@ any links that you are not going to use.
   "url": "https://ioos.github.io/bio_mobilization_workshop/03-data-cleaning.html",
   "identifier": "https://ioos.github.io/bio_mobilization_workshop/03-data-cleaning.html",
   "dateCreated": "2025-09-15",
-  "dateModified": "2025-02-28",
+  "dateModified": "2025-10-10",
   "datePublished": "2025-10-10"
 }
 

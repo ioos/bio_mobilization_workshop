@@ -99,7 +99,7 @@
           <button class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             More <i data-feather="chevron-down"></i>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="reference.html">Reference</a></li><li><a class="dropdown-item" href="about.html">About</a></li><li><a class="dropdown-item" href="helpful-tutorials.html">Helpful Tutorials</a></li><li><a class="dropdown-item" href="edna-extension.html">DNA-derived Data Extension</a></li><li><a class="dropdown-item" href="acoustic-telemetry.html">Acoustic (and Satellite) Telemetry</a></li>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown"><li><a class="dropdown-item" href="reference.html">Reference</a></li><li><a class="dropdown-item" href="about.html">About</a></li><li><a class="dropdown-item" href="helpful-tutorials.html">Helpful Tutorials</a></li><li><a class="dropdown-item" href="edna-extension.html">DNA-derived Data Extension</a></li><li><a class="dropdown-item" href="acoustic-telemetry.html">Acoustic (and Satellite) Telemetry</a></li><li><a class="dropdown-item" href="controlled-vocab.html">Controlled Vocabulary</a></li>
           </ul></li>
       </ul></div>
     <!--
@@ -308,7 +308,7 @@
                       <li>
                         <a href="profiles.html">Learner Profiles</a>
                       </li>
-                      <li><a href="reference.html">Reference</a></li><li><a href="about.html">About</a></li><li><a href="helpful-tutorials.html">Helpful Tutorials</a></li><li><a href="edna-extension.html">DNA-derived Data Extension</a></li><li><a href="acoustic-telemetry.html">Acoustic (and Satellite) Telemetry</a></li>
+                      <li><a href="reference.html">Reference</a></li><li><a href="about.html">About</a></li><li><a href="helpful-tutorials.html">Helpful Tutorials</a></li><li><a href="edna-extension.html">DNA-derived Data Extension</a></li><li><a href="acoustic-telemetry.html">Acoustic (and Satellite) Telemetry</a></li><li><a href="controlled-vocab.html">Controlled Vocabulary</a></li>
                     </ul></div>
                 </div>
               </div>
@@ -344,7 +344,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>QA/QC</h1>
-        <p>Last updated on 2025-02-28 |
+        <p>Last updated on 2025-10-10 |
 
         <a href="https://github.com/ioos/bio_mobilization_workshop/edit/main/episodes/06-qa-qc.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -381,16 +381,17 @@
 <hr class="half-width"><p>OBIS performs a number of quality checks on the data it receives. Red
 quality flags are attached to occurrence records if errors are
 encountered, and records may also be rejected if they do not meet
-minimum requirements. The checks that OBIS performs are documented <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4309024/pdf/bau125.pdf" class="external-link">here</a>
-and a python implementation is available <a href="https://github.com/iobis/obis-qc" class="external-link">here</a>. Therefore, prior to
-publishing your data to OBIS and/or GBIF, it is important to perform
-quality control on your standardized data. This can help identify any
-outliers or “faulty” data. It will also help with ensuring that your
-data is compatible and interoperable with other datasets published to
-OBIS. There are numerous functions within the <a href="https://github.com/iobis/obistools" class="external-link">obistools</a> R packages that
-can serve to identify outliers, inspect quality or ensure that the
-dataset structure fits the required format for both the Event and
-Occurrence tables.</p>
+minimum requirements. The checks that OBIS performs are documented <a href="https://github.com/iobis/obis-qc" class="external-link">here</a>, and those that EurOBIS
+also implements are published in <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4309024/pdf/bau125.pdf" class="external-link">Vandepitte
+et al. 2015</a>. Therefore, prior to publishing your data to OBIS and/or
+GBIF, it is important to perform quality control on your standardized
+data. This can help identify any outliers or “faulty” data. It will also
+help with ensuring that your data is compatible and interoperable with
+other datasets published to OBIS. There are numerous functions within
+the <a href="https://github.com/iobis/obistools" class="external-link">obistools</a> R
+packages that can serve to identify outliers, inspect quality or ensure
+that the dataset structure fits the required format for both the Event
+and Occurrence tables.</p>
 <div id="recommended-initial-checks-on-your-data" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -630,21 +631,23 @@ checks:</p>
 <div class="accordion-body">
 <div class="tabs">
 <nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
-
+<button class="nav-link active" id="nav-tab-1-1" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-1" type="button" role="tab" aria-controls="nav-tabpanel-1-1" aria-selected="true">
+  <h3 class="tab-header" id="nav-tab-heading-1-1">
+  R
+  </h3>
+</button>
+<button class="nav-link" id="nav-tab-1-2" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-2" type="button" role="tab" aria-controls="nav-tabpanel-1-2" aria-selected="false">
+  <h3 class="tab-header" id="nav-tab-heading-1-2">
+  Python
+  </h3>
+</button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
 <div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
-
-</div>
-<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <p>Install <a href="https://github.com/iobis/obistools" class="external-link">obistools</a> R
 packages. Use <a href="https://readxl.tidyverse.org/" class="external-link">readxl</a> package
 to read the Excel file.</p>
-</div>
-<div id="nav-tabpanel-1-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-3">
 <p>Run a diagnostics report for the data quality</p>
-</div>
-<div id="nav-tabpanel-1-4" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-4">
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -656,14 +659,8 @@ to read the Excel file.</p>
 <span><span class="va">report</span> <span class="op">&lt;-</span> <span class="fu">obistools</span><span class="fu">::</span><span class="fu">report</span><span class="op">(</span><span class="va">trawl_fish</span><span class="op">)</span></span>
 <span><span class="va">report</span></span></code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-5" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-5">
 <figure><img src="fig/screenshot_obistools_report.png" alt="drawing" class="figure mx-auto d-block"><div class="figcaption">drawing</div>
-</figure></div>
-<div id="nav-tabpanel-1-6" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-6">
-<p>Check to make sure <code>eventID</code> are unique</p>
-</div>
-<div id="nav-tabpanel-1-7" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-7">
+</figure><p>Check to make sure <code>eventID</code> are unique</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -671,8 +668,6 @@ to read the Excel file.</p>
 <code class="sourceCode R"><span><span class="va">eventid</span> <span class="op">&lt;-</span> <span class="fu">obistools</span><span class="fu">::</span><span class="fu">check_eventids</span><span class="op">(</span><span class="va">trawl_fish</span><span class="op">)</span></span>
 <span><span class="fu">head</span><span class="op">(</span><span class="va">eventid</span><span class="op">)</span></span></code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-8" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-8">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -686,21 +681,15 @@ to read the Excel file.</p>
  5 parentEventID error     3 parentEventID IYS:GoA2019:Stn3 has no corresponding eventID
  6 parentEventID error     4 parentEventID IYS:GoA2019:Stn4 has no corresponding eventID</code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-9" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-9">
 <p>Check for proper <code>eventDate</code> to ensure they follow ISO
 8601 standards:
 <code>r     eventDate &lt;- obistools::check_eventdate(trawl_fish)     print(eventDate)</code>
 <code>output     # A tibble: 3 x 4      level   row field     message                                                             &lt;chr&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;                                                              1 error    10 eventDate eventDate 2019-02-24T07u40 does not seem to be a valid date        2 error    13 eventDate eventDate 2019-02-25 11h25min does not seem to be a valid date     3 error    15 eventDate eventDate 2019-26-2 does not seem to be a valid date</code></p>
-</div>
-<div id="nav-tabpanel-1-10" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-10">
 <p>From the report generated under exercise 1, you can already see that
 there’s measurements made on land. This information can also be gathered
 by plotting the map separately or using the <code>check_onland()</code>
 or <code>check_depth()</code> functions in the <a href="https://iobis.github.io/obistools/" class="external-link">obistools</a> package.<br><code>r     depth &lt;- obistools::check_depth(trawl_fish)     onland &lt;- obistools::check_onland(trawl_fish) # Gives the same output.                print(depth)</code>
 <code>output     # A tibble: 1 x 16      eventID parentEventID eventDate  year month   day decimalLatitude decimalLongitude footprintWKT coordinateUncer~ minimumDepthInM~      &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;           &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;            &lt;dbl&gt;     1 IYS:Go~ IYS:GoA2019:~ 2019-02-~  2019     2    22            67.4            -140. LINESTRING ~            2313.                0     # ... with 5 more variables: maximumDepthInMeters &lt;dbl&gt;, samplingProtocol &lt;chr&gt;, locality &lt;chr&gt;, locationID &lt;chr&gt;, type &lt;chr&gt;</code></p>
-</div>
-<div id="nav-tabpanel-1-11" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-11">
 <ol style="list-style-type: decimal"><li>
 <p>Run a diagnostics report for the data quality</p>
 <div class="codewrapper sourceCode" id="cb6">
@@ -751,12 +740,10 @@ the <a href="https://iobis.github.io/obistools/" class="external-link">obistools
 package.<br><code>r     depth &lt;- obistools::check_depth(trawl_fish)     onland &lt;- obistools::check_onland(trawl_fish) # Gives the same output.                print(depth)</code>
 <code>output     # A tibble: 1 x 16      eventID parentEventID eventDate  year month   day decimalLatitude decimalLongitude footprintWKT coordinateUncer~ minimumDepthInM~      &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;           &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;            &lt;dbl&gt;     1 IYS:Go~ IYS:GoA2019:~ 2019-02-~  2019     2    22            67.4            -140. LINESTRING ~            2313.                0     # ... with 5 more variables: maximumDepthInMeters &lt;dbl&gt;, samplingProtocol &lt;chr&gt;, locality &lt;chr&gt;, locationID &lt;chr&gt;, type &lt;chr&gt;</code></p></li>
 </ol></div>
-<div id="nav-tabpanel-1-12" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-12">
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <p>Install the <a href="https://pandas.pydata.org/" class="external-link">pandas</a>, <a href="https://scitools.org.uk/cartopy/docs/latest/installing.html" class="external-link">cartopy</a>,
 and <a href="https://geopandas.org/en/stable/" class="external-link">geopandas</a> Python
 packages. Use pandas to read the Excel file.</p>
-</div>
-<div id="nav-tabpanel-1-13" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-13">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -765,11 +752,7 @@ packages. Use pandas to read the Excel file.</p>
 <span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(url) <span class="co"># might need to install openpyxl</span></span>
 <span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>df[<span class="st">'row'</span>] <span class="op">=</span> df.index.to_numpy()<span class="op">+</span><span class="dv">1</span> <span class="co"># python starts at zero</span></span></code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-14" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-14">
 <p>Run a diagnostics report for the data quality.</p>
-</div>
-<div id="nav-tabpanel-1-15" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-15">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -820,14 +803,8 @@ packages. Use pandas to read the Excel file.</p>
 <span id="cb10-45"><a href="#cb10-45" tabindex="-1"></a>axs[<span class="dv">1</span>].axis(<span class="st">'off'</span>)</span>
 <span id="cb10-46"><a href="#cb10-46" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-16" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-16">
 <figure><img src="fig/screenshot_python_report.png" alt="drawing" class="figure mx-auto d-block"><div class="figcaption">drawing</div>
-</figure></div>
-<div id="nav-tabpanel-1-17" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-17">
-<p>Check to make sure <code>eventID</code> are unique</p>
-</div>
-<div id="nav-tabpanel-1-18" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-18">
+</figure><p>Check to make sure <code>eventID</code> are unique</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -837,8 +814,6 @@ packages. Use pandas to read the Excel file.</p>
 <span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>parent_not_event <span class="op">=</span> df.loc[<span class="op">~</span>df[<span class="st">'eventID'</span>].isin(df[<span class="st">'parentEventID'</span>].unique())]</span>
 <span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">parentEventID missing corresponding eventID:</span><span class="ch">\n</span><span class="st">'</span>, parent_not_event[[<span class="st">'parentEventID'</span>,<span class="st">'row'</span>]])</span></code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-19" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-19">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -862,12 +837,8 @@ parentEventID missing corresponding eventID:
 63  IYS:GoA2019:Stn64   64
 [64 rows x 2 columns]</code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-20" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-20">
 <p>Check for proper <code>eventDate</code> to ensure they follow ISO
 8601 standards:</p>
-</div>
-<div id="nav-tabpanel-1-21" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-21">
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -877,14 +848,10 @@ parentEventID missing corresponding eventID:
 <span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>    <span class="cf">except</span>:</span>
 <span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Date"</span>,date,<span class="st">"might not follow ISO 8601"</span>)</span></code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-22" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-22">
 <p>From the report generated under exercise 1, you can already see that
 there’s measurements made on land. Now let’s check the depths are within
 reason for the points. Let’s use the <a href="https://coastwatch.pfeg.noaa.gov/erddap/griddap/GEBCO_2020.html" class="external-link">GEBCO
 bathymetry dataset served in the coastwatch ERDDAP</a>.</p>
-</div>
-<div id="nav-tabpanel-1-23" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-23">
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -910,8 +877,6 @@ bathymetry dataset served in the coastwatch ERDDAP</a>.</p>
 <span id="cb14-20"><a href="#cb14-20" tabindex="-1"></a><span class="cf">else</span>:</span>
 <span id="cb14-21"><a href="#cb14-21" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">'None'</span>)</span></code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-24" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-24">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -937,8 +902,6 @@ row                                                                           5
 bathy                                                                     306.0
 neg_maximumDepthInMeters                                                  -33.2</code></pre>
 </div>
-</div>
-<div id="nav-tabpanel-1-25" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-25">
 <ol style="list-style-type: decimal"><li>
 <p>Run a diagnostics report for the data quality.</p>
 <div class="codewrapper sourceCode" id="cb16">
@@ -1195,7 +1158,7 @@ any links that you are not going to use.
   "url": "https://ioos.github.io/bio_mobilization_workshop/06-qa-qc.html",
   "identifier": "https://ioos.github.io/bio_mobilization_workshop/06-qa-qc.html",
   "dateCreated": "2025-09-15",
-  "dateModified": "2025-02-28",
+  "dateModified": "2025-10-10",
   "datePublished": "2025-10-10"
 }
 
