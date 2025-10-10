@@ -80,6 +80,21 @@ share them with those you want to work with to share data.
 **When:**
 November 4-6, 2025
 
+**Requirements:**
+
+* Must have a dataset to work on.
+* Must have some R or Python experience.
+* Must have a basic knowledge of GitHub.
+* Participants must have the software they wish to use for data standardization installed (e.g., R and RStudio, Python, or Excel software).
+
+**Accessibility:**
+We are dedicated to providing a positive and accessible learning environment for all. Please
+notify the instructors in advance of the workshop if you require any accommodations or if there is
+anything we can do to make this workshop more accessible to you.
+
+**Contact:**
+Please contact us via email or Slack if you have any questions.
+
 ## Schedule
 __Times are in EDT.__
 
@@ -98,7 +113,7 @@ The videos created for the Marine Biological Data Mobilization Workshop can be f
 
 ### November 5
 
-| 13:00 | Darwin Core and Extension Schemas                                                                                                                                                                                                                                                           |
+| 13:00 | Darwin Core and Extension Schemas     |
 |-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 13:10 | Breakout Rooms      |
 | 14:30 | Social Break   |
