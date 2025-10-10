@@ -24,7 +24,6 @@ exercises: 120
 Now that you know what the mapping is between your raw data and the Darwin Core standard, it's time to start cleaning up 
 the data to align with the conventions described in the standard. The following activities are the three most common 
 conversions a dataset will undergo to align to the Darwin Core standard:
-
 1. [Ensuring dates follow the ISO 8601 standard](#getting-your-dates-in-order)
 2. [Matching scientific names to an authoritative resource](#matching-your-scientific-names-to-worms)
 3. [Ensuring latitude and longitude values are in decimal degrees](#getting-latlon-to-decimal-degrees)
@@ -314,7 +313,7 @@ you want as well as such as `taxonRank`.
 There are two ways to grab the taxonomic information necessary. First, you can use the [WoRMS Taxon Match Tool](https://www.marinespecies.org/aphia.php?p=match). 
 The tool accepts lists of scientific names (each unique name as a separate row in a .txt, .csv, or .xlsx file) up to 
 1500 names and provides an interface for selecting the match you want for ambiguous matches. A brief walk-through using 
-the service is included in the challenge box below. A more detailed step-by-step guide on 
+the service is included [below](#using-the-worms-taxon-match-tool). A more detailed step-by-step guide on 
 using the WoRMS Taxon Match Tool for the [MBON Pole to Pole](https://marinebon.org/p2p/) can be found [here](https://marinebon.github.io/p2p/protocols/WoRMS_quality_check.pdf). Additionally, OBIS has a three-part [video series](https://www.youtube.com/watch?v=jJ8nlMlg-cY) on YouTube about using the tool.
 
 
@@ -442,7 +441,6 @@ Below are a few example tools that can be used to match scientific names to WoRM
 ## Getting lat/lon to decimal degrees
 
 Latitude (`decimalLatitude`) and longitude (`decimalLongitude`) are the geographic coordinates (in decimal degrees north and east, respectively), using the spatial reference system given in `geodeticDatum` of the geographic center of a location.
-
 * `decimalLatitude`, positive values are north of the Equator, negative values are south of it. All values lie between -90 and 90, inclusive. 
 * `decimalLongitude`, positive values are east of the Greenwich Meridian, negative values are west of it. All values lie between -180 and 180, inclusive.
 
@@ -468,7 +466,7 @@ track which values are latitude and which are longitude.
 | [decimalLongitude](https://dwc.tdwg.org/list/#dwc_decimalLongitude) | The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive. | `-121.1761111` |
 | [geodeticDatum](https://dwc.tdwg.org/list/#dwc_geodeticDatum) | The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in decimalLatitude and decimalLongitude as based. | `WGS84` |
 
-![Coordinate precision](https://imgs.xkcd.com/comics/coordinate_precision.png)
+![coordinate_precision](https://imgs.xkcd.com/comics/coordinate_precision.png)
 
 *Image credit: [xkcd](https://xkcd.com/)*
 
