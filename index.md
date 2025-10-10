@@ -3,7 +3,7 @@ title: Marine Biological Data Mobilization Workshop 2025
 site: sandpaper::sandpaper_site
 ---
 
-OBIS-USA, IOOS, Hakai, CIOOS, MBON, OTN, OBIS Secretariat, Caribbean-OBIS, OBIS-Chile
+OBIS-USA, IOOS, Hakai, CIOOS, MBON, OTN, OBIS, Caribbean-OBIS, OBIS-Chile
 
 Online
 
@@ -51,7 +51,6 @@ What this workshop will cover:
 * Typical data cleaning tasks needed to standardize the data.
 * Getting your data into a final Darwin Core format.
 * Common QA/QC steps, data enhancement, and validation tools.
-* Help you improve your understanding of controlled vocabulary.
 * Required metadata information.
 * How to get your data into the Integrated Publishing Toolkit.
 * Tools that will help in all of the above processes.
@@ -80,6 +79,21 @@ share them with those you want to work with to share data.
 **When:**
 November 4-6, 2025
 
+**Requirements:**
+
+* Must have a dataset to work on.
+* Must have some R or Python experience.
+* Must have a basic knowledge of GitHub.
+* Participants must bring a laptop with R and RStudio or Python software installed.
+
+**Accessibility:**
+We are dedicated to providing a positive and accessible learning environment for all. Please
+notify the instructors in advance of the workshop if you require any accommodations or if there is
+anything we can do to make this workshop more accessible to you.
+
+**Contact:**
+Please visit <a href="https://obis.org/contact/">https://obis.org/contact/</a> for more information. 
+
 ## Schedule
 __Times are in EDT.__
 
@@ -87,35 +101,25 @@ The videos created for the Marine Biological Data Mobilization Workshop can be f
 
 ### November 4
 
-| 13:00 | Introduction to Darwin Core  |
+| 13:00 | Introduction to Darwin Core                                                                                                                                                                                                                                                          |
 |-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 13:10 | Breakout Rooms         |
-| 14:30 | Social Break    |
-| 15:00 | Data Cleaning     |
-| 15:10 | Breakout Rooms        |
-| 16:30 | Return to Main Room      |
-| 17:00 | Finish      |
+| 13:10 | <br>          Breakout Rooms<br>          <br>            Darwin Core Terms 1<br>            Darwin Core Terms 2<br>            Data Cleaning<br>            WoRMS lookup<br>            Creating the Schema<br>            QA/QC, Metadata and Publishing<br>          <br>         |
+| 14:30 | Social Break                                                                                                                                                                                                                                                                         |
+| 15:00 | Data Cleaning                                                                                                                                                                                                                                                                        |
+| 15:10 | <br>          Breakout Rooms<br>          <br>            Darwin Core Terms 1<br>            Darwin Core Terms 2<br>            Data Cleaning<br>            WoRMS lookup<br>            Creating the Schema<br>            QA/QC, Metadata and Publishing<br>          <br>         |
+| 16:30 | Return to Main Room                                                                                                                                                                                                                                                                  |
+| 17:00 | Finish                                                                                                                                                                                                                                                                               |
 
 ### November 5
 
 | 13:00 | Darwin Core and Extension Schemas                                                                                                                                                                                                                                                           |
 |-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 13:10 | Breakout Rooms      |
-| 14:30 | Social Break   |
-| 15:00 | QA QC    |
-| 15:10 | Metadata and publishing   |
-| 15:20 | Breakout Rooms        |
-| 16:30 | Return to Main Room   |
-| 17:00 | Finish   |
-| End   | Post-workshop help & survey    |
+| 13:10 | <br>          Breakout Rooms<br>          <br>            Darwin Core Terms / WoRMS<br>            Data Cleaning<br>            Creating the Schema<br>            QA/QC, Metadata and Publishing<br>            DNA Derived Data<br>            Animal Telemetry<br>          <br>         |
+| 14:30 | Social Break                                                                                                                                                                                                                                                                                |
+| 15:00 | QA QC                                                                                                                                                                                                                                                                                       |
+| 15:10 | Metadata and publishing                                                                                                                                                                                                                                                                     |
+| 15:20 | <br>          Breakout Rooms<br>          <br>            Darwin Core Terms / WoRMS<br>            Data Cleaning<br>            Creating the Schema<br>            QA/QC, Metadata and Publishing<br>            DNA Derived Data<br>            Animal Telemetry<br>          <br>         |
+| 16:30 | Return to Main Room                                                                                                                                                                                                                                                                         |
+| 17:00 | Finish                                                                                                                                                                                                                                                                                      |
+| End   | Post-workshop help & survey                                                                                                                                                                                                                                                                 |
 
-### November 6
-
-| 13:00 | Optional 3rd work day    |
-|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 13:10 | Breakout Rooms         |
-| 14:30 | Social Break |
-| 15:00 | Data Cleaning               |
-| 15:10 | Breakout Rooms         |
-| 16:30 | Return to Main Room                     |
-| 17:00 | Finish       |
