@@ -77,43 +77,44 @@ If you would like to learn more about OBIS and a short rationale for sharing dat
 this [two minute video](https://youtu.be/E6NblAC-1uE) and this [two minute video](https://youtu.be/mmD-EYNOrFA) and 
 share them with those you want to work with to share data.
 
-**When:**
+**When:** <!-- REQUIRED SECTION -->
 November 4-6, 2025
 
-**Requirements:**
+**Requirements:** <!-- REQUIRED SECTION -->
 
 * Must have a dataset to work on.
 * Must have some R or Python experience.
 * Must have a basic knowledge of GitHub.
 * Participants must have the software they wish to use for data standardization installed (e.g., R and RStudio, Python, or Excel software).
 
-**Accessibility:**
+**Accessibility:** <!-- REQUIRED SECTION -->
 We are dedicated to providing a positive and accessible learning environment for all. Please
 notify the instructors in advance of the workshop if you require any accommodations or if there is
 anything we can do to make this workshop more accessible to you.
 
-**Contact:**
+**Contact:** <!-- REQUIRED SECTION -->
 Please contact us via email or Slack if you have any questions.
 
 ## Schedule
-__Times are in EDT.__
+__Times are in EST.__
 
 The videos created for the Marine Biological Data Mobilization Workshop can be found in [this playlist](https://youtube.com/playlist?list=PLlgUwSvpCFS7zytaWbZ6f4Szm3PnpFj_J).
 
 ### November 4
 
-| 13:00 | Introduction to Darwin Core  |
+| 13:00 | Welcome and Housekeeping |
 |-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 13:10 | Breakout Rooms         |
+| 13:10 | Introduction to Darwin Core    |
+| 13:30 | Breakout Rooms |
 | 14:30 | Social Break    |
-| 15:00 | Data Cleaning     |
+| 15:00 | Data Cleaning and Taxon Matching    |
 | 15:10 | Breakout Rooms        |
 | 16:30 | Return to Main Room      |
 | 17:00 | Finish      |
 
 ### November 5
 
-| 13:00 | Darwin Core and Extension Schemas     |
+| 13:00 | Measurements or Facts and Controlled Vocabulary     |
 |-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 13:10 | Breakout Rooms      |
 | 14:30 | Social Break   |
@@ -128,9 +129,5 @@ The videos created for the Marine Biological Data Mobilization Workshop can be f
 
 | 13:00 | Optional 3rd work day    |
 |-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 13:10 | Breakout Rooms         |
-| 14:30 | Social Break |
-| 15:00 | Data Cleaning               |
-| 15:10 | Breakout Rooms         |
-| 16:30 | Return to Main Room                     |
+| 13:10 | Breakout Rooms      |
 | 17:00 | Finish       |
