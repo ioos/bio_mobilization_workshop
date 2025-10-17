@@ -14,8 +14,8 @@ permalink: /controlled-vocab/
 
 ::::::::::: objectives
 
-- Understand the purpose of the DNA-derived data extension.
-- Understand required or (highly) recommended fields needed in the extension, depending on analytical approach taken.
+- Understand the purpose of controlled vocabulary
+- Understand the basics of how to find and select a vocabulary term
 
 ::::::::::::::::::::::
 
@@ -47,3 +47,10 @@ Let's break it down for each of the measurement ID columns in the eMoF, starting
 ### measurementValueID
 
 ### measurementTypeID
+
+
+::::::::::::: keypoints
+
+- "Controlled vocabulary is important"
+
+:::::::::::::::::::::::
