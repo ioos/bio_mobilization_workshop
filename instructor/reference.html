@@ -333,7 +333,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reference</h1>
-        <p>Last updated on 2025-02-28 |
+        <p>Last updated on 2025-10-17 |
 
         <a href="https://github.com/ioos/bio_mobilization_workshop/edit/main/learners/reference.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -347,11 +347,91 @@
 
         
 <section><h2 class="section-heading" id="glossary">Glossary<a class="anchor" aria-label="anchor" href="#glossary"></a></h2>
-<hr class="half-width"><p>This is a placeholder file. Please add content here.</p>
-<!--
+<hr class="half-width"><p><strong>Core table</strong>: The main file in a Darwin Core-Archive
+and can be linked to extension tables through the use of identifiers.
+Can be Event, Occurrence, or Taxon (for GBIF).</p>
+<p><strong>Darwin Core</strong>: A standard to facilitate the sharing of
+biological diversity information. Includes a glossary of terms based on
+taxa, their occurrence in nature as documented by observations,
+specimens, samples, and related information. This is one of the main
+standards that OBIS adheres to.</p>
+<p><strong>Ecological Metadata Language (EML)</strong>: XML syntax for
+documenting metadata about research data. For more details see <a href="https://eml.ecoinformatics.org/" class="external-link uri">https://eml.ecoinformatics.org/</a></p>
+<p><strong>Event table</strong>: Data table that contains information
+about the sampling event, including location, time/date, and sampling
+protocols. Each row is a unique event with a unique eventID. Allows for
+hierarchical event structure by nesting events into parent events with
+parentEventID.</p>
+<p><strong>eventID</strong>: A unique, persistent identifier for an
+individual sampling or observation event. Can be constructed with
+information from the data, e.g. [project]:[year or
+date]:[location]:[site]_[sample] STAR_1989-04-04_arcticsea_st3520_s01.
+When relevant, eventIDs must be connected to a parentEventID.</p>
+<p><strong>ExtendedMeasurementOrFact (eMoF) table</strong>: Table used
+to record all measurements related to the events in an Event table,
+and/or occurrence recorded in the OCcurence table. Measurements are
+linked to records using eventID and occurrenceIDs, respectively.
+Measurement data is recorded in “long” format where the fields
+measurementType, measurementValue, and measurementUnit are used. Best
+practice is to also populate measurement IDs for each field.</p>
+<p><strong>Extension table</strong>: A data table linked to the core
+table by identifiers. Can be Occurrence, ExtendedMeasurementOrFact, or
+DNA-Derived data.</p>
+<p><strong>Identifiers</strong>: A unique, persistent identifier used to
+distinguish each event, occurrence, physical sample, subsample,
+measurement, etc. in a dataset. Often constructed from elements in the
+data to create globally unique identifying strings, or can be generated.
+Examples include but are not limited to eventID, parentEventID,
+occurrenceID, measurement IDs: measurementTypeID, measurementUnitID,
+measurementValueID.</p>
+<p><strong>Integrated Publishing Toolkit (IPT)</strong>: An open source
+web application that can be customized by the OBIS node manager and is
+used to publish and register all datasets. IPTs assist users to map data
+files to Darwin Core terms, and will archive + compress files into a
+Darwin Core Archive.</p>
+<p><strong>Measurement Identifiers</strong>: Identifiers to standardize
+the measurement types, values and units used in the eMoF table. Helps to
+account for semantic heterogeneity in how measurement data is recorded,
+allowing for users to identify all measurement data of interest with a
+single identifier. Includes measurementTypeID, measurementValueID, and
+measurementUnitID</p>
+<p><strong>NERC Vocabulary Server (NVS)</strong>: Server that gives
+access to standardised and hierarchically-organized vocabularies that
+can be used for identifiers. It is managed by the British Oceanographic
+Data Centre at the National Oceanography Centre (NOC) in Liverpool.
+Vocabularies are organized into thematic collections, e.g. P01, P06
+collections.</p>
+<p><strong>Occurrence table</strong>: Table that contains information on
+the biological occurrences, including taxonomy. Each record contains the
+observation of one organism. Must indicate the type of observation in
+basisOfRecord (e.g. PreservedSpecimen, FossilSpecimen, LivingSpecimen,
+MaterialSample, HumanObservation, MachineObservation).</p>
+<p><strong>occurrenceID</strong>: An identifier for an occurrence
+record, must be globally unique and persistent. Example
+STAR_arcticsea_st3520_1989-04-04_s01_BoSai_1</p>
+<p><strong>Ocean Biodiversity Information System (OBIS)</strong>: The
+most comprehensive repository for the world’s ocean biodiversity and
+biogeographic data and information. Provides open access to
+quality-controlled marine biodiversity data.</p>
+<p><strong>P01 code</strong>: A concept from the NERC Vocabulary Server
+P01 collection. These codes should be used to populate the
+measurementTypeID field.</p>
+<p><strong>parentEventID</strong>: An identifier for a parent event,
+which is composed of one or more sub-sampling (child) events. Must be
+persistent and unique. Example: STAR_1989_arcticsea</p>
+<p><strong>scientificNameID</strong>: A strongly recommended term for
+OBIS data which contains an identifier for a scientific name. The
+identifier provided to this field must correspond with the name in the
+scientificName field. Suggested to be populated with LSIDs from WoRMS,
+but ITIS, BOLD, and NCBI identifiers are also accepted.</p>
+<p><strong>World Register of Marine Species (WoRMS)</strong>: An
+authoritative and comprehensive list of names of marine organisms,
+including information on synonymy. The taxonomic backbone for OBIS. Life
+Science Identifiers (LSIDs) obtained from WoRMS are used to populate the
+scientificNameID field. <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- -->
+ --></p>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
@@ -410,8 +490,8 @@ any links that you are not going to use.
   "url": "https://ioos.github.io/bio_mobilization_workshop/instructor/reference.html",
   "identifier": "https://ioos.github.io/bio_mobilization_workshop/instructor/reference.html",
   "dateCreated": "2025-09-15",
-  "dateModified": "2025-02-28",
-  "datePublished": "2025-10-14"
+  "dateModified": "2025-10-17",
+  "datePublished": "2025-10-17"
 }
 
   </script><script>
