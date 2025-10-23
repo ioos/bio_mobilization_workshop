@@ -1,5 +1,5 @@
 ---
-title: Marine Biological Data Mobilization Workshop 2025
+title: Marine Biodiversity Data Mobilization Workshop 2025
 site: sandpaper::sandpaper_site
 ---
 
@@ -13,7 +13,6 @@ November 4-6, 2025
 
 **Instructors:** 
 Mathew Biddle, 
-Laura Brenskelle, 
 Steve Formel, 
 Elizabeth Lawrence, 
 Tylar Murray, 
@@ -40,9 +39,9 @@ Joxmer Scott-Frias
 ## General Information
 
 This workshop is intended to be a small hands-on, interactive virtual workshop focused on mobilizing 
-marine biological observation datasets to the [Ocean Biodiversity Information System (OBIS)](https://obis.org) 
-by helping data providers standardize their data using Darwin Core including species observations from any 
-type of sampling methodologies (e.g. visual surveys, net tows, microscopy, fish trawls, imaging, 'omics, 
+marine biodiversity observation datasets to the [Ocean Biodiversity Information System (OBIS)](https://obis.org) 
+by helping data providers standardize their data using Darwin Core including species observations from a 
+range of sampling methodologies (e.g. visual surveys, net tows, microscopy, fish trawls, imaging, 'omics, 
 acoustics, telemetry).
 
 What this workshop will cover:
@@ -109,7 +108,7 @@ The videos created for the Marine Biological Data Mobilization Workshop can be f
 | 14:30 | Social Break    |
 | 15:00 | Data Cleaning and Taxon Matching    |
 | 15:10 | Breakout Rooms        |
-| 16:30 | Return to Main Room      |
+| 16:45 | Return to Main Room      |
 | 17:00 | Finish      |
 
 ### November 5
@@ -121,7 +120,7 @@ The videos created for the Marine Biological Data Mobilization Workshop can be f
 | 15:00 | QA QC    |
 | 15:10 | Metadata and publishing   |
 | 15:20 | Breakout Rooms        |
-| 16:30 | Return to Main Room   |
+| 16:45 | Return to Main Room   |
 | 17:00 | Finish   |
 | End   | Post-workshop help & survey    |
 
