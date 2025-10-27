@@ -21,19 +21,7 @@ Jonathan Pye,
 Tim van der Stap
 
 **Helpers:** 
-Pedro Pablo Aros, 
-Caitlin Bate, 
-Nicolás Bralic, 
-Bruce Delo, 
-Angela Dini, 
-Braulio Fernandez, 
-Pamela Fierro, 
-Ignacio Ibanez, 
-Brian Jones, 
-Shannon Landovskis, 
-YingHuan Niu, 
-Kyla Richards, 
-Joxmer Scott-Frias
+Carlos Carmona, Braulio Fernandez, Nicolas Bralic, Erika Montoya
 
 
 ## General Information
