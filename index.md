@@ -21,7 +21,7 @@ Jonathan Pye,
 Tim van der Stap
 
 **Helpers:** 
-Carlos Carmona, Braulio Fernandez, Nicolas Bralic, Erika Montoya, Dheemanth Kumawat, Bruce Delo
+Carlos Carmona, Braulio Fernandez, Nicolas Bralic, Erika Montoya, Dheemanth Kumawat, Bruce Delo, Stace Beaulieu
 
 
 ## General Information
