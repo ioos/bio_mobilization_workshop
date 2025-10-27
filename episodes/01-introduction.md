@@ -10,7 +10,6 @@ exercises: 90
 - What is Darwin Core?
 - What is a Darwin Core Archive?
 - Why do people use Darwin Core for their data?
-- What is an event, and what is an occurrence?
 - What are the required Darwin Core terms for sharing to OBIS?
 
 ::::::::::::::::::::::
@@ -18,7 +17,6 @@ exercises: 90
 ::::::::::: objectives
 
 - Understand the purpose of Darwin Core.
-- Understand difference between event and occurrence.
 - Understand how to map data to Darwin Core.
 - Plan for mapping to Darwin Core.
 
@@ -28,14 +26,6 @@ exercises: 90
 Darwin Core is a data standard to mobilize and share biodiversity data. Over the years, the Darwin Core standard has 
 expanded to enable exchange and sharing of diverse types of biological observations from citizen scientists, ecological 
 monitoring, eDNA, animal telemetry, taxonomic treatments, and many others. 
-
-### Events vs. occurrences
-Darwin Core is applicable to any observation of an organism (scientific name, OTU, or other methods of defining a species) 
-at a particular place and time. In Darwin Core this is an `occurrence`. It is the visual or digitally recorded observation 
-of an organism. An **event** refers to field sampling event (i.e., transect, cruise, plankton tow) through which these
-observations were made. The event information captures details about when, where, and how the biodiversity observation
-occurred, whereas the **occurrence** captures details on the taxon observed (species, lifestage, sex). To learn more about 
-the foundations of Darwin Core read [Wieczorek et al. 2012](https://doi.org/10.1371/journal.pone.0029715).
 
 ### Demonstrated Use of Darwin Core
 The power of Darwin Core is most evident in the data aggregators that harvest data using that standard. 
