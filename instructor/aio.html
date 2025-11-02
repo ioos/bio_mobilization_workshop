@@ -237,7 +237,7 @@
                   <div class="accordion accordion-flush" id="accordionFlush1">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading1">
-        <a href="index.html">Marine Biological Data Mobilization Workshop 2025</a>
+        <a href="index.html">Marine Biodiversity Data Mobilization Workshop 2025</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -404,7 +404,7 @@
         
 <section id="aio-01-introduction"><p>Content from <a href="01-introduction.html">Introduction to Darwin Core</a></p>
 <hr>
-<p>Last updated on 2025-10-10 |
+<p>Last updated on 2025-11-02 |
 
         <a href="https://github.com/ioos/bio_mobilization_workshop/edit/main/episodes/01-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 90 minutes</p>
@@ -449,12 +449,7 @@ integration<a class="anchor" aria-label="anchor" href="#darwin-core---a-global-c
 data. Over the years, the Darwin Core standard has expanded to enable
 exchange and sharing of diverse types of biological observations from
 citizen scientists, ecological monitoring, eDNA, animal telemetry,
-taxonomic treatments, and many others. Darwin Core is applicable to any
-observation of an organism (scientific name, OTU, or other methods of
-defining a species) at a particular place and time. In Darwin Core this
-is an <code>occurrence</code>. To learn more about the foundations of
-Darwin Core read <a href="https://doi.org/10.1371/journal.pone.0029715" class="external-link">Wieczorek et
-al. 2012</a>.</p>
+taxonomic treatments, and many others.</p>
 <div class="section level3">
 <h3 id="demonstrated-use-of-darwin-core">Demonstrated Use of Darwin Core<a class="anchor" aria-label="anchor" href="#demonstrated-use-of-darwin-core"></a>
 </h3>
@@ -475,7 +470,7 @@ simple. It’s a zipped folder containing the data (one or several files
 depending on how many extensions you use), an Ecological Metadata
 Language (EML) XML file, and a meta.xml file that describes what’s in
 the zipped folder.</p>
-<p><img src="../episodes/fig/DwC-Archive.png" alt="Darwin Core Archive" class="figure"><em>Image credit: Elizabeth Lawrence</em></p>
+<p><img src="../fig/DwC-Archive.png" alt="Darwin Core Archive" class="figure"><em>Image credit: Elizabeth Lawrence</em></p>
 <div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -529,9 +524,9 @@ datasets you’ll become more familiar with the terms.</p>
 <h3 class="callout-title">
 <span class="emoji" data-emoji="pushpin">📌</span> Tip</h3>
 <div class="callout-content">
-<p>If your raw column headers are Darwin Core terms verbatim then you
-can skip this step! Next time you plan data collection use the standard
-DwC term headers!</p>
+<p>If your column headers are Darwin Core terms verbatim then you can
+skip this step! Next time you plan data collection use the standard DwC
+term headers!</p>
 </div>
 </div>
 </div>
@@ -575,7 +570,7 @@ and <a href="https://dwc.tdwg.org/terms/#dwc:maximumDepthInMeters" class="extern
 and <a href="https://dwc.tdwg.org/terms/#dwc:organismQuantityType" class="external-link"><code>organismQuantityType</code></a>
 </li>
 <li>This one is tricky- it’s two terms combined and will need to be
-split. <a href="https://dwc.tdwg.org/terms/#dwc:individualCount" class="external-link"><code>indvidualCount</code></a>
+split. <a href="https://dwc.tdwg.org/terms/#dwc:individualCount" class="external-link"><code>individualCount</code></a>
 and <a href="https://dwc.tdwg.org/terms/#dwc:sex" class="external-link"><code>sex</code></a>
 </li>
 </ol>
@@ -929,7 +924,7 @@ any links that you are not going to use.
         </div>
 <p><img src="https://imgs.xkcd.com/comics/standards_2x.png" alt="xkcd 0927 (standards)" class="figure"><em>Image credit: <a href="https://xkcd.com/" class="external-link">xkcd</a></em></p></section><section id="aio-03-data-cleaning"><p>Content from <a href="03-data-cleaning.html">Data Cleaning</a></p>
 <hr>
-<p>Last updated on 2025-10-10 |
+<p>Last updated on 2025-11-02 |
 
         <a href="https://github.com/ioos/bio_mobilization_workshop/edit/main/episodes/03-data-cleaning.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 120 minutes</p>
@@ -1002,9 +997,9 @@ end times of daylight savings vary across years). There are packages in
 R and Python that can help you with these vagaries. Finally, it is
 possible to record time intervals in ISO 8601 using a slash
 (e.g. <code>2022-01-02/2022-01-12</code>). Examine the dates in your
-data to determine what format they are following and what amendments
-need to be made to ensure they are following ISO 8601. Below are some
-examples and solutions in Python and R for them.</p>
+data to determine what amendments need to be made to ensure they are
+following ISO 8601. Below are some examples and solutions in Python and
+R for them.</p>
 <p>ISO 8601 dates can represent moments in time at different
 resolutions, as well as time intervals, which use “/” as a separator.
 Date and time are separated by “T”. Timestamps can have a time zone
@@ -1042,22 +1037,18 @@ of choice to translate the dates.</p>
 </tr></thead>
 <tbody><tr class="odd">
 <td><a href="https://dwc.tdwg.org/list/#dwc_eventDate" class="external-link">eventDate</a></td>
-<td>The date-time or interval during which an Event occurred. For
-occurrences, this is the date-time when the event was recorded. Not
-suitable for a time in a geological context.</td>
+<td>The date-time or interval during which an Event occurred, or a taxa
+was recorded or observed. Not suitable for a time in a geological
+context.</td>
 <td>
 <code>1963-03-08T14:07-0600</code> (8 Mar 1963 at 2:07pm in the time
 zone six hours earlier than UTC).<br><code>2009-02-20T08:40Z</code> (20
 February 2009 8:40am UTC).<br><code>2018-08-29T15:19</code> (3:19pm
 local time on 29 August 2018).<br><code>1809-02-12</code> (some time
-during 12 February 1809).<br><code>1906-06</code> (some time in June
-1906).<br><code>1971</code> (some time in the year
-1971).<br><code>2007-03-01T13:00:00Z/2008-05-11T15:30:00Z</code> (some
+during 12 February
+1809).<br><code>2007-03-01T13:00:00Z/2008-05-11T15:30:00Z</code> (some
 time during the interval between 1 March 2007 1pm UTC and 11 May 2008
-3:30pm UTC).<br><code>1900/1909</code> (some time during the interval
-between the beginning of the year 1900 and the end of the year
-1909).<br><code>2007-11-13/15</code> (some time in the interval between
-13 November 2007 and 15 November 2007).</td>
+3:30pm UTC).</td>
 </tr></tbody>
 </table>
 <div id="examples" class="callout challenge">
@@ -1069,7 +1060,7 @@ between the beginning of the year 1900 and the end of the year
 <h3 class="callout-title">Examples</h3>
 <div class="callout-content">
 <p>Below are a few examples in R and Python for converting commonly
-represented dates to ISO-8601.</p>
+represented dates to ISO 8601.</p>
 </div>
 </div>
 </div>
@@ -1078,7 +1069,7 @@ represented dates to ISO-8601.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="tabs">
 <nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
@@ -1096,7 +1087,7 @@ represented dates to ISO-8601.</p>
 </nav><div id="nav-tabContent-1" class="tab-content">
 <div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
 <p>When dealing with dates using pandas in Python it is best to create a
-Series as your time column with the appropriate datatype. Then, when
+Series of your time column with the appropriate datatype. Then, when
 writing your file(s) using <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html" class="external-link">.to_csv()</a>
 you can specify the format which your date will be written in using the
 <code>date_format</code> parameter.</p>
@@ -1351,7 +1342,7 @@ that is useful is <a href="https://cran.r-project.org/web/packages/lubridate/lub
 which is part of the <code>tidyverse</code>. It is recommended to
 bookmark this <a href="https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_lubridate.pdf" class="external-link">lubridate
 cheatsheet</a>. The examples below show how to use the
-<code>lubridate</code> package and format your data to the ISO-8601
+<code>lubridate</code> package and format your data to the ISO 8601
 standard.</p>
 <ol style="list-style-type: decimal">
 <li><code>01/31/2021 17:00 GMT</code></li>
@@ -1645,11 +1636,11 @@ GBIF uses the <a href="https://www.catalogueoflife.org/" class="external-link">C
 Life</a>. Since WoRMS contributes to the Catalog of Life and WoRMS is a
 requirement for OBIS we will teach you how to do your taxonomic lookups
 using WoRMS. The key Darwin Core terms that we need from WoRMS are
-<code>scientificNameID</code> also known as the WoRMS LSID which looks
+<code>scientificNameID</code>, also known as the WoRMS LSID, which looks
 something like this
-<code>"urn:lsid:marinespecies.org:taxname:105838"</code> and
-<code>kingdom</code> but you can grab the other parts of the taxonomic
-hierarchy if you want as well as such as <code>taxonRank</code>.</p>
+<code>"urn:lsid:marinespecies.org:taxname:105838"</code>, and
+<code>kingdom</code>. But you can grab the other parts of the taxonomic
+hierarchy such as <code>taxonRank</code>.</p>
 <p>There are two ways to grab the taxonomic information necessary.
 First, you can use the <a href="https://www.marinespecies.org/aphia.php?p=match" class="external-link">WoRMS Taxon Match
 Tool</a>. The tool accepts lists of scientific names (each unique name
@@ -1720,7 +1711,7 @@ names to WoRMS.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="tabs">
 <nav><div id="nav-tab-2" class="nav nav-tabs" role="tablist">
@@ -2038,30 +2029,26 @@ values are latitude and which are longitude.</p>
 <td><a href="https://dwc.tdwg.org/list/#dwc_decimalLatitude" class="external-link">decimalLatitude</a></td>
 <td>The geographic latitude (in decimal degrees, using the spatial
 reference system given in geodeticDatum) of the geographic center of a
-Location. Positive values are north of the Equator, negative values are
-south of it. Legal values lie between -90 and 90, inclusive.</td>
+Location.</td>
 <td><code>-41.0983423</code></td>
 </tr>
 <tr class="even">
 <td><a href="https://dwc.tdwg.org/list/#dwc_decimalLongitude" class="external-link">decimalLongitude</a></td>
 <td>The geographic longitude (in decimal degrees, using the spatial
 reference system given in geodeticDatum) of the geographic center of a
-Location. Positive values are east of the Greenwich Meridian, negative
-values are west of it. Legal values lie between -180 and 180,
-inclusive.</td>
+Location.</td>
 <td><code>-121.1761111</code></td>
 </tr>
 <tr class="odd">
 <td><a href="https://dwc.tdwg.org/list/#dwc_geodeticDatum" class="external-link">geodeticDatum</a></td>
-<td>The ellipsoid, geodetic datum, or spatial reference system (SRS)
+<td>The ellipsoid, geodetic datum, or coordinate reference system (CRS)
 upon which the geographic coordinates given in decimalLatitude and
 decimalLongitude as based.</td>
 <td><code>WGS84</code></td>
 </tr>
 </tbody>
 </table>
-<figure><img src="https://imgs.xkcd.com/comics/coordinate_precision.png" alt="Coordinate precision" class="figure mx-auto d-block"><div class="figcaption">Coordinate precision</div>
-</figure><p><em>Image credit: <a href="https://xkcd.com/" class="external-link">xkcd</a></em></p>
+<p><img src="https://imgs.xkcd.com/comics/coordinate_precision.png" alt="Coordinate precision" class="figure"><em>Image credit: <a href="https://xkcd.com/" class="external-link">xkcd</a></em></p>
 <div id="examples-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -2080,7 +2067,7 @@ coordinate pairs.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="tabs">
 <nav><div id="nav-tab-3" class="nav nav-tabs" role="tablist">
@@ -2534,12 +2521,13 @@ strings for coordinates.</li>
 <ul>
 <li>When doing conversions it’s best to break out your data into it’s
 component pieces.</li>
-<li>Dates are messy to deal with. Some packages have easy solutions,
+<li>Dates are messy to deal with. Some packages provide easy solutions,
 otherwise use regular expressions to align date strings to ISO
 8601.</li>
 <li>WoRMS LSIDs are a requirement for OBIS.</li>
 <li>Latitude and longitudes are like dates, they can be messy to deal
-with. Take a similar approach.</li>
+with, so take a similar approach. They have to be in decimal
+degrees.</li>
 </ul>
 </div>
 </div>
@@ -2550,7 +2538,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-04-create-schema"><p>Content from <a href="04-create-schema.html">Darwin Core and Extension Schemas</a></p>
 <hr>
-<p>Last updated on 2025-10-10 |
+<p>Last updated on 2025-11-02 |
 
         <a href="https://github.com/ioos/bio_mobilization_workshop/edit/main/episodes/04-create-schema.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 90 minutes</p>
@@ -2566,8 +2554,7 @@ any links that you are not going to use.
 <h3 class="card-title">Questions</h3>
 <ul>
 <li>What is a core and what is an extension in Darwin Core?</li>
-<li>What is OBIS-ENV-DATA aka (Event Core with Extended Measurement or
-Fact)?</li>
+<li>What is the OBIS-ENV-DATA schema?</li>
 <li>How do I create Darwin Core files?</li>
 </ul>
 </div>
@@ -2606,12 +2593,24 @@ your core type and once you do that then you pick the extensions to go
 with it. For example, if your data took place as part of an event
 (cruise, transects, etc) you will pick Event core. If there was no
 sampling event, then you will pick Occurrence core.</p>
+</section><section><h2 class="section-heading" id="what-are-events-and-occurrences">What are Events and Occurrences?<a class="anchor" aria-label="anchor" href="#what-are-events-and-occurrences"></a>
+</h2>
+<hr class="half-width">
+<p>Darwin Core is applicable to any observation of an organism
+(scientific name, OTU, or other methods of defining a species) at a
+particular place and time. In Darwin Core this is an
+<code>occurrence</code>. It is the visual or digitally recorded
+observation of an organism. An <strong>event</strong> refers to field
+sampling event (i.e., transect, cruise, plankton tow) through which
+these observations were made. The event information captures details
+about when, where, and how the biodiversity observation occurred,
+whereas the <strong>occurrence</strong> captures details on the taxon
+observed (species, lifestage, sex). To learn more about the foundations
+of Darwin Core read <a href="https://doi.org/10.1371/journal.pone.0029715" class="external-link">Wieczorek et
+al. 2012</a>.</p>
 <div class="section level3">
 <h3 id="different-options-for-sharing-the-data">Different options for sharing the data<a class="anchor" aria-label="anchor" href="#different-options-for-sharing-the-data"></a>
 </h3>
-<div class="section level4">
-<h4 id="occurrence-only">Occurrence only<a class="anchor" aria-label="anchor" href="#occurrence-only"></a>
-</h4>
 <p>The bare minimum for sharing data to OBIS is to use the <a href="https://rs.gbif.org/core/dwc_occurrence_2022-02-02.xml" class="external-link">Occurrence
 Core</a> with no extensions. This core type covers datasets that only
 include observations and/or specimen records where no information on
@@ -2642,34 +2641,22 @@ information about depth or the uncertainty of the coordinates.</p>
 <p>For more examples check out the <a href="https://github.com/ioos/bio_data_guide/tree/main/datasets" class="external-link">Datasets
 folder</a> in the IOOS Bio Data Guide.</p>
 </div>
-</div>
 </section><section><h2 class="section-heading" id="occurrence-core-extensions">Occurrence Core + extensions<a class="anchor" aria-label="anchor" href="#occurrence-core-extensions"></a>
 </h2>
 <hr class="half-width">
 <p>Using the Occurrence core plus <a href="https://rs.gbif.org/extensions.html" class="external-link">relevant extensions</a> means
 that you can capture more of the data that’s been recorded. Let’s
-consider an environmental DNA dataset. eDNA datasets have information
-that is unique to that method and will not be represented well using
-Occurrence core only. To document eDNA using Darwin Core you should
-follow <a href="https://doi.org/10.35035/doc-vf1a-nr22" class="external-link">this guide</a>;
-you will need the Occurrence core plus the <a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2022-02-23.xml" class="external-link">DNA
-derived data extension</a>. Adding the DNA derived data extension allows
-you to capture information such as the PCR primer used, DNA sequences,
-and other information specific to this type of data. This also enables
-more downstream usage of DNA datasets!</p>
-<p>Let’s consider another example: a museum dataset that has biological
-measurements for each individual specimen (e.g.  length). All
-information about each organism’s occurrence (taxonomic information,
-locality, identification, etc.) will go into the Occurrence core. You
-can then capture the biotic measurement information (type of
-measurement, units, accuracy, etc.) by using either the <a href="https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml" class="external-link">Measurement
+consider a museum dataset that has biological measurements for each
+individual specimen (e.g. length). All information about each organism’s
+occurrence (taxonomic information, locality, identification, etc.) will
+go into the Occurrence core. You can then capture the biotic measurement
+information (type of measurement, units, accuracy, etc.) by using either
+the <a href="https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml" class="external-link">Measurement
 or Facts extension</a>, or the <a href="https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml" class="external-link">Extended
 Measurement or Fact extension</a> (we elaborate on this extension
 below). Note again here we do not have information on <em>how</em> the
 organisms were sampled.</p>
-</section><section><h2 class="section-heading" id="what-are-events-and-occurrences">What are Events and Occurrences?<a class="anchor" aria-label="anchor" href="#what-are-events-and-occurrences"></a>
-</h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="event-core-with-extended-measurement-or-fact-extension">Event Core with Extended Measurement or Fact extension<a class="anchor" aria-label="anchor" href="#event-core-with-extended-measurement-or-fact-extension"></a>
+</section><section><h2 class="section-heading" id="event-core-with-extended-measurement-or-fact-extension">Event Core with Extended Measurement or Fact extension<a class="anchor" aria-label="anchor" href="#event-core-with-extended-measurement-or-fact-extension"></a>
 </h2>
 <hr class="half-width">
 <p>As we have indicated earlier, the Event core is for datasets that
@@ -2679,10 +2666,11 @@ where samples were taken.</p>
 or Fact extension (also sometimes referred to as OBIS-ENV-DATA, or
 eMoF). This uses the Event core with an Occurrence extension + the <a href="https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml" class="external-link">extended
 Measurement or Fact extension</a>. The eMoF extension makes it possible
-to include measurements for <strong>both</strong> the events (salinity,
-temperature, gear type, etc.) and the occurrences (weight, length,
-etc.). Prior to this you were only able to include measurements of the
-occurrence (in the Measurement or Facts extension).</p>
+to include measurements for <strong>both</strong> the <em>events</em>
+(salinity, temperature, gear type, etc.) and the <em>occurrences</em>
+(weight, length, etc.). Prior to this you were only able to include
+measurements of the occurrence (in the Measurement or Facts
+extension).</p>
 <p>It is important to know that the structure of the eMoF table is
 likely quite a bit different than how the original data are recorded in
 your dataset. Rather than documenting each measurement in separate
@@ -2693,7 +2681,7 @@ measurement actually is (e.g. length). Finally the column
 <code>measurementUnit</code> is used to indicate the unit of the
 measurement (e.g. cm).</p>
 <p>The unconstrained nature of <code>measurementType</code> allows for
-flexibility in describing measurements, which can be quite a useful. But
+flexibility in describing measurements, which can be quite useful. But
 what if you wanted to obtain all OBIS records that have “length”
 measurements? Due to the inevitable heterogeneity in how different
 people document “length”, you would have to try to account for all these
@@ -2727,15 +2715,30 @@ additional assistance.</p>
 <div class="callout-content">
 <p>You can search for <code>measurementTypes</code> that other OBIS data
 providers have used by using the <a href="https://mof.obis.org/" class="external-link">OBIS
-Mof Viewer</a>. BE CAREFUL when usng this tool and make sure the
-definition in the URI matches exactly your measurement type if you want
-to reuse it for your data.</p>
+Mof Viewer</a>. <strong>BE CAREFUL</strong> when usng this tool and make
+sure the definition in the URI matches exactly your measurement type if
+you want to reuse it for your data.</p>
 </div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="whats-in-an-id">What’s in an ID?<a class="anchor" aria-label="anchor" href="#whats-in-an-id"></a>
 </h2>
 <hr class="half-width">
+<p>IDs are the keys in your data that are used to link tables together.
+For example, an <code>occurenceID</code> in the eMoF table records
+information about an organism with the same <code>occurrenceID</code>
+within the Occurrence table. IDs are also the keys that keep track of
+each of the records, so that if you notice a mistake or missing
+information you can keep the record in place in the global aggregators
+and fix the mistake or add the missing information. For instance, let’s
+say you have a record with an <code>occurrenceID</code>
+<code>Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</code>
+and after it’s published to OBIS you notice that the latitude was
+recorded incorrectly. When you fix that record in the data you would
+<strong>keep</strong> the <code>occurrenceID</code>
+<code>Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</code>,
+fix the latitude, and republish the data so that the record is still
+present in OBIS but you have fixed the mistake.</p>
 <table class="table">
 <colgroup>
 <col width="42%">
@@ -2779,21 +2782,6 @@ unique identifier or an identifier specific to the data set.</td>
 </tr>
 </tbody>
 </table>
-<p>IDs are the keys in your data that are used to link tables together.
-For example, an <code>occurenceID</code> in the eMoF table records
-information about an organism with the same <code>occurrenceID</code>
-within the Occurrence core table. IDs are also the keys that keep track
-of each of the records, so that if you notice a mistake or missing
-information you can keep the record in place in the global aggregators
-and fix the mistake or add the missing information. For instance, let’s
-say you have a record with an <code>occurrenceID</code>
-<code>Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</code>
-and after it’s published to OBIS you notice that the latitude was
-recorded incorrectly. When you fix that record in the data you would
-<strong>keep</strong> the <code>occurrenceID</code>
-<code>Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</code>,
-fix the latitude, and republish the data so that the record is still
-present in OBIS but you have fixed the mistake.</p>
 <p>With that in mind, what is the best way to create an
 <code>eventID</code>, <code>occurrenceID</code>, or
 <code>measurementID</code>? Until we have a system that mints Persistent
@@ -2816,6 +2804,11 @@ database and record information could be lost over time!</p>
 <figure><img src="../fig/OBISsampling-schema-example.png" class="figure mx-auto d-block"></figure><p><em>The Darwin Core file structure, demonstrating how an Event core
 table can be connected to extension tables through the use of
 identifiers. Image credit: <a href="https://manual.obis.org/" class="external-link">OBIS</a></em></p>
+</section><section><h2 class="section-heading" id="required-terms">Required Terms<a class="anchor" aria-label="anchor" href="#required-terms"></a>
+</h2>
+<hr class="half-width">
+<p>The core and extension data tables have required terms. Explore the
+required terms of each data table below.</p>
 <div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
@@ -2824,7 +2817,7 @@ identifiers. Image credit: <a href="https://manual.obis.org/" class="external-li
   Event Core
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <table class="table">
 <colgroup>
@@ -2921,7 +2914,7 @@ OBIS and GBIF but it’s best to state explicitly that it is.</td>
   Occurrence extension
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <table class="table">
 <colgroup>
@@ -3025,7 +3018,7 @@ Location.</td>
   Extended Measurement or Fact Extension
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>Nothing is <em>required</em> from the OBIS perspective but if you are
 using this extension then <code>eventID</code> is required to be able to
@@ -3157,7 +3150,7 @@ any links that you are not going to use.
         </div>
 <p><img src="https://imgs.xkcd.com/comics/iso_8601_2x.png" alt="xkcd 1179 (iso 8601)" class="figure"><em>Image credit: <a href="https://xkcd.com/" class="external-link">xkcd</a></em></p></section><section id="aio-06-qa-qc"><p>Content from <a href="06-qa-qc.html">QA/QC</a></p>
 <hr>
-<p>Last updated on 2025-10-10 |
+<p>Last updated on 2025-11-02 |
 
         <a href="https://github.com/ioos/bio_mobilization_workshop/edit/main/episodes/06-qa-qc.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 120 minutes</p>
@@ -3182,7 +3175,7 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>“Data enhancement and quality control”</li>
+<li>Quality control and enhance your data</li>
 </ul>
 </div>
 </div>
@@ -3229,7 +3222,7 @@ identify potential issues (eg. spelling).</li>
 <li>Check for uniqueness of <code>occurrenceID</code> field.</li>
 <li>Check for uniqueness of <code>eventID</code> for each event, if
 applicable.</li>
-<li>Check that dates are following <a href="https://en.wikipedia.org/wiki/ISO_8601" class="external-link">ISO-8601</a>.</li>
+<li>Check that dates are following <a href="https://en.wikipedia.org/wiki/ISO_8601" class="external-link">ISO 8601</a>.</li>
 <li>Check that the <code>scientificNameID</code> is/are valid.</li>
 </ul>
 </div>
@@ -3244,7 +3237,7 @@ notebook</a> to see how it works.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Hmisc::describe </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3433,7 +3426,7 @@ checks:</p>
 <ol style="list-style-type: decimal">
 <li>Run a diagnostics report for the data quality.</li>
 <li>Ensure that the eventIDs are unique.</li>
-<li>Make sure that the eventDates follow ISO-8601 standards.</li>
+<li>Make sure that the eventDates follow ISO 8601 standards.</li>
 <li>Determine whether reported depths are accurate.</li>
 </ol>
 <p>The event core data used in the checks below can be found in <a href="../data/trawl_fish.xlsx">this Excel file</a>.</p>
@@ -3445,7 +3438,7 @@ checks:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="tabs">
 <nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
@@ -3461,7 +3454,7 @@ checks:</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
 <p>Install <a href="https://github.com/iobis/obistools" class="external-link">obistools</a> R
 packages. Use <a href="https://readxl.tidyverse.org/" class="external-link">readxl</a> package
 to read the Excel file.</p>
@@ -3561,7 +3554,7 @@ package.<br><code>r     depth &lt;- obistools::check_depth(trawl_fish)     onlan
 <code>output     # A tibble: 1 x 16      eventID parentEventID eventDate  year month   day decimalLatitude decimalLongitude footprintWKT coordinateUncer~ minimumDepthInM~      &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;           &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;            &lt;dbl&gt;     1 IYS:Go~ IYS:GoA2019:~ 2019-02-~  2019     2    22            67.4            -140. LINESTRING ~            2313.                0     # ... with 5 more variables: maximumDepthInMeters &lt;dbl&gt;, samplingProtocol &lt;chr&gt;, locality &lt;chr&gt;, locationID &lt;chr&gt;, type &lt;chr&gt;</code></p></li>
 </ol>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
+<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
 <p>Install the <a href="https://pandas.pydata.org/" class="external-link">pandas</a>, <a href="https://scitools.org.uk/cartopy/docs/latest/installing.html" class="external-link">cartopy</a>,
 and <a href="https://geopandas.org/en/stable/" class="external-link">geopandas</a> Python
 packages. Use pandas to read the Excel file.</p>
@@ -3930,7 +3923,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-07-validation-and-publishing"><p>Content from <a href="07-validation-and-publishing.html">Metadata and publishing</a></p>
 <hr>
-<p>Last updated on 2025-10-10 |
+<p>Last updated on 2025-11-02 |
 
         <a href="https://github.com/ioos/bio_mobilization_workshop/edit/main/episodes/07-validation-and-publishing.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 120 minutes</p>
@@ -3969,11 +3962,12 @@ any links that you are not going to use.
 </h2>
 <hr class="half-width">
 <p>After going through QA/QC and being standardized to Darwin Core, the
-dataset is uploaded to an IPT (detailed below).<br>
-Metadata is added in the form of EML (below) and the dataset is
-published as a Darwin Core Archive (DwC-A). The data are then pushed to
-central OBIS. Each dataset also has the option of being pushed to GBIF
-by registering the resource with GBIF in the IPT.</p>
+dataset is uploaded to an Integrated Publishing Toolkit (IPT, detailed
+below).<br>
+Metadata is added in the form of Ecological Metadata Lanugage (EML) and
+the dataset is published as a Darwin Core Archive (DwC-A). The data are
+then pushed to central OBIS. Each dataset also has the option of being
+pushed to GBIF by registering the resource with GBIF in the IPT.</p>
 <figure><img src="../fig/DwC_workflow.jpg" alt="Image by Enrique Montes" class="figure mx-auto d-block"><div class="figcaption">Image by Enrique Montes</div>
 </figure><p><em>Data publishing pipeline. Image credit: Enrique Montes</em></p>
 </section><section><h2 class="section-heading" id="integrated-publishing-toolkit">Integrated Publishing Toolkit<a class="anchor" aria-label="anchor" href="#integrated-publishing-toolkit"></a>
@@ -3992,13 +3986,12 @@ biodiversity-related information:</p>
 </ul>
 <p>GBIF maintains a very detailed <a href="https://ipt.gbif.org/manual/en/ipt/latest/" class="external-link">IPT manual</a> and the
 <a href="https://manual.obis.org/data_publication.html" class="external-link">OBIS Manual</a>
-offers OBIS-specific details on publishing through the IPT. You can
-choose to download and install your own instance of the IPT but it might
-be complicated to register it with OBIS. Instead it’s recommended to
-work with one of the OBIS nodes to publish your data through their IPT.
-<a href="https://obis.org/contact/" class="external-link">OBIS nodes</a> publish data that are
-logical for their region or theme. After publishing the data through
-their IPT the data are harvested by central OBIS.</p>
+offers OBIS-specific details on publishing through the IPT. It’s
+recommended to work with one of the OBIS nodes to publish your data
+through their IPT. <a href="https://obis.org/contact/" class="external-link">OBIS nodes</a>
+publish data that are logical for their region or theme. After
+publishing the data through their IPT the data are harvested by central
+OBIS.</p>
 <p>The requirements for publishing via an OBIS node IPT are that:</p>
 <ol style="list-style-type: decimal">
 <li>you have contacted the node to ensure the data are a good fit for
@@ -4374,8 +4367,8 @@ any links that you are not going to use.
   "url": "https://ioos.github.io/bio_mobilization_workshop/instructor/aio.html",
   "identifier": "https://ioos.github.io/bio_mobilization_workshop/instructor/aio.html",
   "dateCreated": "2025-09-15",
-  "dateModified": "2025-10-28",
-  "datePublished": "2025-10-28"
+  "dateModified": "2025-11-02",
+  "datePublished": "2025-11-02"
 }
 
   </script><script>

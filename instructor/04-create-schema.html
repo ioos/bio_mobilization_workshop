@@ -197,7 +197,7 @@
                   <div class="accordion accordion-flush" id="accordionFlush1">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading1">
-        <a href="index.html">Marine Biological Data Mobilization Workshop 2025</a>
+        <a href="index.html">Marine Biodiversity Data Mobilization Workshop 2025</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -244,10 +244,11 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#darwin-core---cores-and-extensions">Darwin Core - Cores and Extensions</a></li>
-<li><a href="#occurrence-core-extensions">Occurrence Core + extensions</a></li>
 <li><a href="#what-are-events-and-occurrences">What are Events and Occurrences?</a></li>
+<li><a href="#occurrence-core-extensions">Occurrence Core + extensions</a></li>
 <li><a href="#event-core-with-extended-measurement-or-fact-extension">Event Core with Extended Measurement or Fact extension</a></li>
 <li><a href="#whats-in-an-id">What’s in an ID?</a></li>
+<li><a href="#required-terms">Required Terms</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -348,7 +349,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Darwin Core and Extension Schemas</h1>
-        <p>Last updated on 2025-10-10 |
+        <p>Last updated on 2025-11-02 |
 
         <a href="https://github.com/ioos/bio_mobilization_workshop/edit/main/episodes/04-create-schema.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -370,8 +371,7 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul><li>What is a core and what is an extension in Darwin Core?</li>
-<li>What is OBIS-ENV-DATA aka (Event Core with Extended Measurement or
-Fact)?</li>
+<li>What is the OBIS-ENV-DATA schema?</li>
 <li>How do I create Darwin Core files?</li>
 </ul></div>
 </div>
@@ -405,10 +405,21 @@ your core type and once you do that then you pick the extensions to go
 with it. For example, if your data took place as part of an event
 (cruise, transects, etc) you will pick Event core. If there was no
 sampling event, then you will pick Occurrence core.</p>
+</section><section><h2 class="section-heading" id="what-are-events-and-occurrences">What are Events and Occurrences?<a class="anchor" aria-label="anchor" href="#what-are-events-and-occurrences"></a></h2>
+<hr class="half-width"><p>Darwin Core is applicable to any observation of an organism
+(scientific name, OTU, or other methods of defining a species) at a
+particular place and time. In Darwin Core this is an
+<code>occurrence</code>. It is the visual or digitally recorded
+observation of an organism. An <strong>event</strong> refers to field
+sampling event (i.e., transect, cruise, plankton tow) through which
+these observations were made. The event information captures details
+about when, where, and how the biodiversity observation occurred,
+whereas the <strong>occurrence</strong> captures details on the taxon
+observed (species, lifestage, sex). To learn more about the foundations
+of Darwin Core read <a href="https://doi.org/10.1371/journal.pone.0029715" class="external-link">Wieczorek et
+al. 2012</a>.</p>
 <div class="section level3">
 <h3 id="different-options-for-sharing-the-data">Different options for sharing the data<a class="anchor" aria-label="anchor" href="#different-options-for-sharing-the-data"></a></h3>
-<div class="section level4">
-<h4 id="occurrence-only">Occurrence only<a class="anchor" aria-label="anchor" href="#occurrence-only"></a></h4>
 <p>The bare minimum for sharing data to OBIS is to use the <a href="https://rs.gbif.org/core/dwc_occurrence_2022-02-02.xml" class="external-link">Occurrence
 Core</a> with no extensions. This core type covers datasets that only
 include observations and/or specimen records where no information on
@@ -439,31 +450,20 @@ information about depth or the uncertainty of the coordinates.</p>
 <p>For more examples check out the <a href="https://github.com/ioos/bio_data_guide/tree/main/datasets" class="external-link">Datasets
 folder</a> in the IOOS Bio Data Guide.</p>
 </div>
-</div>
 </section><section><h2 class="section-heading" id="occurrence-core-extensions">Occurrence Core + extensions<a class="anchor" aria-label="anchor" href="#occurrence-core-extensions"></a></h2>
 <hr class="half-width"><p>Using the Occurrence core plus <a href="https://rs.gbif.org/extensions.html" class="external-link">relevant extensions</a> means
 that you can capture more of the data that’s been recorded. Let’s
-consider an environmental DNA dataset. eDNA datasets have information
-that is unique to that method and will not be represented well using
-Occurrence core only. To document eDNA using Darwin Core you should
-follow <a href="https://doi.org/10.35035/doc-vf1a-nr22" class="external-link">this guide</a>;
-you will need the Occurrence core plus the <a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2022-02-23.xml" class="external-link">DNA
-derived data extension</a>. Adding the DNA derived data extension allows
-you to capture information such as the PCR primer used, DNA sequences,
-and other information specific to this type of data. This also enables
-more downstream usage of DNA datasets!</p>
-<p>Let’s consider another example: a museum dataset that has biological
-measurements for each individual specimen (e.g.  length). All
-information about each organism’s occurrence (taxonomic information,
-locality, identification, etc.) will go into the Occurrence core. You
-can then capture the biotic measurement information (type of
-measurement, units, accuracy, etc.) by using either the <a href="https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml" class="external-link">Measurement
+consider a museum dataset that has biological measurements for each
+individual specimen (e.g. length). All information about each organism’s
+occurrence (taxonomic information, locality, identification, etc.) will
+go into the Occurrence core. You can then capture the biotic measurement
+information (type of measurement, units, accuracy, etc.) by using either
+the <a href="https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml" class="external-link">Measurement
 or Facts extension</a>, or the <a href="https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml" class="external-link">Extended
 Measurement or Fact extension</a> (we elaborate on this extension
 below). Note again here we do not have information on <em>how</em> the
 organisms were sampled.</p>
-</section><section><h2 class="section-heading" id="what-are-events-and-occurrences">What are Events and Occurrences?<a class="anchor" aria-label="anchor" href="#what-are-events-and-occurrences"></a></h2>
-<hr class="half-width"></section><section><h2 class="section-heading" id="event-core-with-extended-measurement-or-fact-extension">Event Core with Extended Measurement or Fact extension<a class="anchor" aria-label="anchor" href="#event-core-with-extended-measurement-or-fact-extension"></a></h2>
+</section><section><h2 class="section-heading" id="event-core-with-extended-measurement-or-fact-extension">Event Core with Extended Measurement or Fact extension<a class="anchor" aria-label="anchor" href="#event-core-with-extended-measurement-or-fact-extension"></a></h2>
 <hr class="half-width"><p>As we have indicated earlier, the Event core is for datasets that
 include known sampling events - details are known about how, when, and
 where samples were taken.</p>
@@ -471,10 +471,11 @@ where samples were taken.</p>
 or Fact extension (also sometimes referred to as OBIS-ENV-DATA, or
 eMoF). This uses the Event core with an Occurrence extension + the <a href="https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml" class="external-link">extended
 Measurement or Fact extension</a>. The eMoF extension makes it possible
-to include measurements for <strong>both</strong> the events (salinity,
-temperature, gear type, etc.) and the occurrences (weight, length,
-etc.). Prior to this you were only able to include measurements of the
-occurrence (in the Measurement or Facts extension).</p>
+to include measurements for <strong>both</strong> the <em>events</em>
+(salinity, temperature, gear type, etc.) and the <em>occurrences</em>
+(weight, length, etc.). Prior to this you were only able to include
+measurements of the occurrence (in the Measurement or Facts
+extension).</p>
 <p>It is important to know that the structure of the eMoF table is
 likely quite a bit different than how the original data are recorded in
 your dataset. Rather than documenting each measurement in separate
@@ -485,7 +486,7 @@ measurement actually is (e.g. length). Finally the column
 <code>measurementUnit</code> is used to indicate the unit of the
 measurement (e.g. cm).</p>
 <p>The unconstrained nature of <code>measurementType</code> allows for
-flexibility in describing measurements, which can be quite a useful. But
+flexibility in describing measurements, which can be quite useful. But
 what if you wanted to obtain all OBIS records that have “length”
 measurements? Due to the inevitable heterogeneity in how different
 people document “length”, you would have to try to account for all these
@@ -519,14 +520,29 @@ additional assistance.</p>
 <div class="callout-content">
 <p>You can search for <code>measurementTypes</code> that other OBIS data
 providers have used by using the <a href="https://mof.obis.org/" class="external-link">OBIS
-Mof Viewer</a>. BE CAREFUL when usng this tool and make sure the
-definition in the URI matches exactly your measurement type if you want
-to reuse it for your data.</p>
+Mof Viewer</a>. <strong>BE CAREFUL</strong> when usng this tool and make
+sure the definition in the URI matches exactly your measurement type if
+you want to reuse it for your data.</p>
 </div>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="whats-in-an-id">What’s in an ID?<a class="anchor" aria-label="anchor" href="#whats-in-an-id"></a></h2>
-<hr class="half-width"><table class="table"><colgroup><col width="42%"><col width="30%"><col width="26%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
+<hr class="half-width"><p>IDs are the keys in your data that are used to link tables together.
+For example, an <code>occurenceID</code> in the eMoF table records
+information about an organism with the same <code>occurrenceID</code>
+within the Occurrence table. IDs are also the keys that keep track of
+each of the records, so that if you notice a mistake or missing
+information you can keep the record in place in the global aggregators
+and fix the mistake or add the missing information. For instance, let’s
+say you have a record with an <code>occurrenceID</code>
+<code>Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</code>
+and after it’s published to OBIS you notice that the latitude was
+recorded incorrectly. When you fix that record in the data you would
+<strong>keep</strong> the <code>occurrenceID</code>
+<code>Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</code>,
+fix the latitude, and republish the data so that the record is still
+present in OBIS but you have fixed the mistake.</p>
+<table class="table"><colgroup><col width="42%"><col width="30%"><col width="26%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
 <th>Description</th>
 <th>Example</th>
 </tr></thead><tbody><tr class="odd"><td><a href="https://dwc.tdwg.org/terms/#dwc:eventID" class="external-link">eventID</a></td>
@@ -552,22 +568,7 @@ unique.</td>
 measurements, facts, characteristics, or assertions). May be a global
 unique identifier or an identifier specific to the data set.</td>
 <td><code>9c752d22-b09a-11e8-96f8-529269fb1459</code></td>
-</tr></tbody></table><p>IDs are the keys in your data that are used to link tables together.
-For example, an <code>occurenceID</code> in the eMoF table records
-information about an organism with the same <code>occurrenceID</code>
-within the Occurrence core table. IDs are also the keys that keep track
-of each of the records, so that if you notice a mistake or missing
-information you can keep the record in place in the global aggregators
-and fix the mistake or add the missing information. For instance, let’s
-say you have a record with an <code>occurrenceID</code>
-<code>Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</code>
-and after it’s published to OBIS you notice that the latitude was
-recorded incorrectly. When you fix that record in the data you would
-<strong>keep</strong> the <code>occurrenceID</code>
-<code>Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</code>,
-fix the latitude, and republish the data so that the record is still
-present in OBIS but you have fixed the mistake.</p>
-<p>With that in mind, what is the best way to create an
+</tr></tbody></table><p>With that in mind, what is the best way to create an
 <code>eventID</code>, <code>occurrenceID</code>, or
 <code>measurementID</code>? Until we have a system that mints Persistent
 Identififers for individual records then the best way we have seen is to
@@ -589,6 +590,9 @@ database and record information could be lost over time!</p>
 <figure><img src="../fig/OBISsampling-schema-example.png" class="figure mx-auto d-block"></figure><p><em>The Darwin Core file structure, demonstrating how an Event core
 table can be connected to extension tables through the use of
 identifiers. Image credit: <a href="https://manual.obis.org/" class="external-link">OBIS</a></em></p>
+</section><section><h2 class="section-heading" id="required-terms">Required Terms<a class="anchor" aria-label="anchor" href="#required-terms"></a></h2>
+<hr class="half-width"><p>The core and extension data tables have required terms. Explore the
+required terms of each data table below.</p>
 <div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
@@ -597,7 +601,7 @@ identifiers. Image credit: <a href="https://manual.obis.org/" class="external-li
   Event Core
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <table class="table"><colgroup><col width="16%"><col width="32%"><col width="35%"><col width="15%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
 <th>Definition</th>
@@ -670,7 +674,7 @@ OBIS and GBIF but it’s best to state explicitly that it is.</td>
   Occurrence extension
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <table class="table"><colgroup><col width="16%"><col width="32%"><col width="35%"><col width="15%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
 <th>Definition</th>
@@ -748,7 +752,7 @@ Location.</td>
   Extended Measurement or Fact Extension
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>Nothing is <em>required</em> from the OBIS perspective but if you are
 using this extension then <code>eventID</code> is required to be able to
@@ -904,8 +908,8 @@ any links that you are not going to use.
   "url": "https://ioos.github.io/bio_mobilization_workshop/instructor/04-create-schema.html",
   "identifier": "https://ioos.github.io/bio_mobilization_workshop/instructor/04-create-schema.html",
   "dateCreated": "2025-09-15",
-  "dateModified": "2025-10-10",
-  "datePublished": "2025-10-28"
+  "dateModified": "2025-11-02",
+  "datePublished": "2025-11-02"
 }
 
   </script><script>
