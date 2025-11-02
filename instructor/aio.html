@@ -490,7 +490,7 @@ or that you don’t understand what it is?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <pre class="folder"><code>dwca-tpwd_harc_texasaransasbay_bagseine-v2.3
  |-- eml.xml
@@ -555,7 +555,7 @@ term headers!</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><a href="https://dwc.tdwg.org/terms/#dwc:eventDate" class="external-link"><code>eventDate</code></a></li>
@@ -620,7 +620,34 @@ publishing to OBIS?<a class="anchor" aria-label="anchor" href="#what-are-the-req
 <hr class="half-width">
 <p>When doing your mapping some required information may be missing.
 Below are the Darwin Core terms that are required to share your data to
-OBIS plus a few that are needed for GBIF.</p>
+OBIS plus a few that are needed for GBIF. The ones with asterisks aren’t
+technically required, but we’ll give you the stink-eye if you don’t
+include them 😐.</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://dwc.tdwg.org/terms/#dwc:occurrenceID" class="external-link"><code>occurrenceID</code></a></li>
+<li><a href="https://dwc.tdwg.org/terms/#dwc:basisOfRecord" class="external-link"><code>basisOfRecord</code></a></li>
+<li><a href="https://dwc.tdwg.org/terms/#dwc:scientificName" class="external-link"><code>scientificName</code></a></li>
+<li>
+<a href="https://dwc.tdwg.org/terms/#dwc:scientificNameID" class="external-link"><code>scientificNameID</code></a>*</li>
+<li><a href="https://dwc.tdwg.org/terms/#dwc:eventDate" class="external-link"><code>eventDate</code></a></li>
+<li><a href="https://dwc.tdwg.org/terms/#dwc:decimalLatitude" class="external-link"><code>decimalLatitude</code></a></li>
+<li><a href="https://dwc.tdwg.org/terms/#dwc:decimalLongitude" class="external-link"><code>decimalLongitude</code></a></li>
+<li><a href="https://dwc.tdwg.org/terms/#dwc:occurrenceStatus" class="external-link"><code>occurrenceStatus</code></a></li>
+<li>
+<a href="https://dwc.tdwg.org/terms/#dwc:countryCode" class="external-link"><code>countryCode</code></a>*</li>
+<li>
+<a href="https://dwc.tdwg.org/terms/#dwc:kingdom" class="external-link"><code>kingdom</code></a>*</li>
+<li>
+<a href="https://dwc.tdwg.org/terms/#dwciri:geodeticDatum" class="external-link"><code>geodeticDatum</code></a>*</li>
+</ol>
+<p>Expand the section below to see these terms in more detail.</p>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Required Terms </h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div class="accordion-body">
 <table class="table">
 <colgroup>
 <col width="16%">
@@ -756,7 +783,12 @@ OBIS and GBIF but it’s best to state explicitly that it is.</td>
 <td>WGS84</td>
 </tr>
 </tbody>
-</table></section><section><h2 class="section-heading" id="what-other-terms-should-be-considered">What other terms should be considered?<a class="anchor" aria-label="anchor" href="#what-other-terms-should-be-considered"></a>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="what-other-terms-should-be-considered">What other terms should be considered?<a class="anchor" aria-label="anchor" href="#what-other-terms-should-be-considered"></a>
 </h2>
 <hr class="half-width">
 <p>While these terms are not required for publishing data to OBIS, they
@@ -767,6 +799,13 @@ always included. For the most part the ones listed below are not going
 to be sitting there in the data, so you’ll have to determine what the
 values should be and add them in. Really try your hardest to include
 them if you can.</p>
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Other Terms </h3>
+</button>
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div class="accordion-body">
 <table style="width:100%;" class="table">
 <colgroup>
 <col width="18%">
@@ -873,6 +912,10 @@ the object(s) or information referred to in the record.</td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+</div>
 <p>Other than these specific terms, work through the data that you have
 and try to crosswalk it to the Darwin Core terms that match best.</p>
 <div id="exercise" class="callout discussion">
@@ -1085,7 +1128,7 @@ represented dates to ISO 8601.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
 <p>When dealing with dates using pandas in Python it is best to create a
 Series of your time column with the appropriate datatype. Then, when
 writing your file(s) using <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html" class="external-link">.to_csv()</a>
@@ -1335,7 +1378,7 @@ simply paste strings together:</p>
 </li>
 </ol>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
+<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
 <p>When dealing with dates using R, there are a few base functions that
 are useful to wrangle your dates in the correct format. An R package
 that is useful is <a href="https://cran.r-project.org/web/packages/lubridate/lubridate.pdf" class="external-link">lubridate</a>,
@@ -1732,7 +1775,7 @@ names to WoRMS.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-2" class="tab-content">
-<div id="nav-tabpanel-2-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-2-1">
+<div id="nav-tabpanel-2-1" class="tab-pane show active" aria-labelledby="nav-tab-2-1" role="tabpanel">
 <p>Create a CSV (comma separated value) file with the scientific name of
 the species of interest. Here we are showing some of the contents of the
 file <a href="../data/species.csv"><code>species.csv</code></a>.</p>
@@ -1799,7 +1842,7 @@ example linked above can be found <a href="../data/species_matched.xlsx">here</a
 be seen below: <img src="../fig/matched_species_screenshot.png" alt="screenshot" class="figure"></p></li>
 </ol>
 </div>
-<div id="nav-tabpanel-2-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-2">
+<div id="nav-tabpanel-2-2" class="tab-pane" aria-labelledby="nav-tab-2-2" role="tabpanel">
 <p><a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=105838" class="external-link"><em>Carcharodon
 carcharias</em></a> (White shark)</p>
 <div class="codewrapper sourceCode" id="cb47">
@@ -1839,7 +1882,7 @@ carcharias</em></a> (White shark)</p>
 </li>
 </ol>
 </div>
-<div id="nav-tabpanel-2-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-3">
+<div id="nav-tabpanel-2-3" class="tab-pane" aria-labelledby="nav-tab-2-3" role="tabpanel">
 <p>Bringing in <a href="../data/species.csv"><code>species.csv</code></a>
 and collecting appropriate information from WoRMS using the pyworms
 package.</p>
@@ -2083,7 +2126,7 @@ coordinate pairs.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-3" class="tab-content">
-<div id="nav-tabpanel-3-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-3-1">
+<div id="nav-tabpanel-3-1" class="tab-pane show active" aria-labelledby="nav-tab-3-1" role="tabpanel">
 <ul>
 <li>This example assumes you have already split the two strings into
 discrete components (as shown in the table). An example converting the
@@ -2279,7 +2322,7 @@ two strings into discrete components (as shown in the table).</li>
 </li>
 </ol>
 </div>
-<div id="nav-tabpanel-3-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-3-2">
+<div id="nav-tabpanel-3-2" class="tab-pane" aria-labelledby="nav-tab-3-2" role="tabpanel">
 <p><code>17° 51' 57.96" S</code> <code>149° 39' 13.32" W</code></p>
 <div class="codewrapper sourceCode" id="cb63">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3454,7 +3497,7 @@ checks:</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
 <p>Install <a href="https://github.com/iobis/obistools" class="external-link">obistools</a> R
 packages. Use <a href="https://readxl.tidyverse.org/" class="external-link">readxl</a> package
 to read the Excel file.</p>
@@ -3554,7 +3597,7 @@ package.<br><code>r     depth &lt;- obistools::check_depth(trawl_fish)     onlan
 <code>output     # A tibble: 1 x 16      eventID parentEventID eventDate  year month   day decimalLatitude decimalLongitude footprintWKT coordinateUncer~ minimumDepthInM~      &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;           &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;            &lt;dbl&gt;     1 IYS:Go~ IYS:GoA2019:~ 2019-02-~  2019     2    22            67.4            -140. LINESTRING ~            2313.                0     # ... with 5 more variables: maximumDepthInMeters &lt;dbl&gt;, samplingProtocol &lt;chr&gt;, locality &lt;chr&gt;, locationID &lt;chr&gt;, type &lt;chr&gt;</code></p></li>
 </ol>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <p>Install the <a href="https://pandas.pydata.org/" class="external-link">pandas</a>, <a href="https://scitools.org.uk/cartopy/docs/latest/installing.html" class="external-link">cartopy</a>,
 and <a href="https://geopandas.org/en/stable/" class="external-link">geopandas</a> Python
 packages. Use pandas to read the Excel file.</p>
