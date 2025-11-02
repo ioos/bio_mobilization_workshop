@@ -68,7 +68,7 @@ For now, let's break it down for each of the measurement ID columns in the eMoF,
 
 The `measurementUnitID` field is the easiest measurement ID field to populate. It is used to provide a URI for the **unit** associated with the value provided to `measurementValue` (e.g. cm, kg, kg/m^2). OBIS recommends this field be populated with terms from the **NVS P06 collection**, *BODC-approved data storage units*. See screenshot below for an example vocabulary term from this collection, and where to find the URI on the page.
 
-![Screenshot of a unit within the NVS P06 collection. Box highlights the URI to be used in measurementUnitID field.](/episodes/fig/NVS_unit-box.png)
+![Screenshot of a unit within the NVS P06 collection. Box highlights the URI to be used in measurementUnitID field.](fig/NVS_unit-box.png)
 
 To search this collection, see **<https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/>**.
 
