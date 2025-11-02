@@ -21,10 +21,9 @@ exercises: 120
 
 ## Data Publishing Pipeline
 
- After going through QA/QC and being standardized to Darwin Core, the dataset is uploaded to an IPT (detailed below).  
- Metadata is added in the form of EML (below) and the dataset is published as a Darwin Core Archive (DwC-A).  The data are then 
- pushed to central OBIS.  Each dataset also has the option of being pushed to GBIF by registering the resource with 
- GBIF in the IPT.  
+ After going through QA/QC and being standardized to Darwin Core, the dataset is uploaded to an Integrated Publishing Toolkit (IPT, detailed below).  
+ Metadata is added in the form of Ecological Metadata Lanugage (EML) and the dataset is published as a Darwin Core Archive (DwC-A).  The data are then 
+ pushed to central OBIS. Each dataset also has the option of being pushed to GBIF by registering the resource with GBIF in the IPT.  
 
 ![Image by Enrique Montes](fig/DwC_workflow.jpg)
 
@@ -43,8 +42,7 @@ easy to share four types of biodiversity-related information:
 
 GBIF maintains a very detailed [IPT manual](https://ipt.gbif.org/manual/en/ipt/latest/) and the 
 [OBIS Manual](https://manual.obis.org/data_publication.html) offers OBIS-specific details on publishing through the IPT. 
-You can choose to download and install your own instance of the IPT but it might be complicated to register it with 
-OBIS. Instead it's recommended to work with one of the OBIS nodes to publish your data through their IPT. 
+It's recommended to work with one of the OBIS nodes to publish your data through their IPT. 
 [OBIS nodes](https://obis.org/contact/) publish data that are logical for their region or theme. After publishing the 
 data through their IPT the data are harvested by central OBIS.
 

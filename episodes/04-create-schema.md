@@ -8,7 +8,7 @@ exercises: 90
 :::::::::::: questions
 
 - What is a core and what is an extension in Darwin Core?
-- What is OBIS-ENV-DATA aka (Event Core with Extended Measurement or Fact)?
+- What is the OBIS-ENV-DATA schema?
 - How do I create Darwin Core files?
 
 :::::::::::::::::::::::
@@ -34,8 +34,16 @@ cores and extensions, what's most important to understand is that you need to pi
 then you pick the extensions to go with it. For example, if your data took place as part of an event (cruise, transects, 
 etc) you will pick Event core. If there was no sampling event, then you will pick Occurrence core.
 
+
+## What are Events and Occurrences?
+Darwin Core is applicable to any observation of an organism (scientific name, OTU, or other methods of defining a species) 
+at a particular place and time. In Darwin Core this is an `occurrence`. It is the visual or digitally recorded observation 
+of an organism. An **event** refers to field sampling event (i.e., transect, cruise, plankton tow) through which these
+observations were made. The event information captures details about when, where, and how the biodiversity observation
+occurred, whereas the **occurrence** captures details on the taxon observed (species, lifestage, sex). To learn more about 
+the foundations of Darwin Core read [Wieczorek et al. 2012](https://doi.org/10.1371/journal.pone.0029715).
+
 ### Different options for sharing the data
-#### Occurrence only
 The bare minimum for sharing data to OBIS is to use the 
 [Occurrence Core](https://rs.gbif.org/core/dwc_occurrence_2022-02-02.xml) with no extensions. This core type covers 
 datasets that only include observations and/or specimen records where no information on sampling is available.
@@ -52,8 +60,7 @@ if you use this most simple form of data structuring. However, it is faster and 
 ### Thought Experiment 
 Look at the 
 [minimum required fields example](https://github.com/ioos/bio_data_guide/blob/main/datasets/example_obis_minimum_flair/occurrences.csv). 
-What is possible
-to do in future reuse? What would not be possible? For instance, note that there is no information about depth or the 
+What is possible to do in future reuse? What would not be possible? For instance, note that there is no information about depth or the 
 uncertainty of the coordinates.
 
 ::::::::::::::::::::
@@ -63,22 +70,12 @@ Bio Data Guide.
 
 ## Occurrence Core + extensions
 Using the Occurrence core plus [relevant extensions](https://rs.gbif.org/extensions.html) means that you can capture 
-more of the data that's been recorded. Let's consider an environmental DNA dataset. eDNA datasets have information that 
-is unique to that method and will not be represented well using Occurrence core only. To document eDNA using Darwin 
-Core you should follow [this guide](https://doi.org/10.35035/doc-vf1a-nr22); you will need the Occurrence core plus the 
-[DNA derived data extension](https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2022-02-23.xml). Adding the DNA 
-derived data extension allows you to capture information such as the PCR primer used, DNA sequences, and other 
-information specific to this type of data. This also enables more downstream usage of DNA datasets!
-
-Let's consider another example: a museum dataset that has biological measurements for each individual specimen (e.g. 
-length). All information about each organism's occurrence (taxonomic information, locality, identification, etc.) will 
-go into the Occurrence core. You can then capture the biotic measurement information (type of measurement, units, 
-accuracy, etc.) by using either the 
-[Measurement or Facts extension](https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml), or the 
-[Extended Measurement or Fact extension](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) (we 
+more of the data that's been recorded. Let's consider a museum dataset that has biological measurements for each individual 
+specimen (e.g. length). All information about each organism's occurrence (taxonomic information, locality, identification, etc.) 
+will go into the Occurrence core. You can then capture the biotic measurement information (type of measurement, units, 
+accuracy, etc.) by using either the [Measurement or Facts extension](https://rs.gbif.org/extension/dwc/measurements_or_facts_2022-02-02.xml), 
+or the [Extended Measurement or Fact extension](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml) (we 
 elaborate on this extension below). Note again here we do not have information on *how* the organisms were sampled. 
-
-## What are Events and Occurrences?
 
 ## Event Core with Extended Measurement or Fact extension
 As we have indicated earlier, the Event core is for datasets that include known sampling events - details are known 
@@ -87,8 +84,8 @@ about how, when, and where samples were taken.
 An innovation that OBIS made was introducing the Extended Measurement or Fact extension (also sometimes referred to as 
 OBIS-ENV-DATA, or eMoF). This uses the Event core with an Occurrence extension + the 
 [extended Measurement or Fact extension](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml). The eMoF 
-extension makes it possible to include measurements for **both** the events (salinity, temperature, gear type, etc.) and 
-the occurrences (weight, length, etc.). Prior to this you were only able to include measurements of the occurrence (in 
+extension makes it possible to include measurements for **both** the _events_ (salinity, temperature, gear type, etc.) and 
+the _occurrences_ (weight, length, etc.). Prior to this you were only able to include measurements of the occurrence (in 
 the Measurement or Facts extension).
 
 It is important to know that the structure of the eMoF table is likely quite a bit different than how the original data 
@@ -103,20 +100,21 @@ The unconstrained nature of `measurementType` allows for flexibility in describi
 
 ## What's in an ID?
 
-| Darwin Core Term | Description | Example   |
-|------------------|-------------|-----------|
-| [eventID](https://dwc.tdwg.org/terms/#dwc:eventID) | An identifier for the set of information associated with an Event (something that occurs at a place and time). May be a global unique identifier or an identifier specific to the data set. | `INBO:VIS:Ev:00009375`<br/>`Station_95_Date_09JAN1997:14:35:00.000` <br/> `FFS-216:2007-09-21:A:replicateID1024`|
-|[occurrenceID](https://dwc.tdwg.org/terms/#dwc:occurrenceID)|An identifier for the Occurrence (as opposed to a particular digital record of the occurrence). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the occurrenceID globally unique.|`urn:catalog:UWBM:Bird:89776` <br/> `Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula` <br/> `FFS-216:2007-09-21:A:replicateID1024:objectID1345330`|
-|[measurementID](https://dwc.tdwg.org/terms/#dwc:measurementID)| An identifier for the MeasurementOrFact (information pertaining to measurements, facts, characteristics, or assertions). May be a global unique identifier or an identifier specific to the data set.| `9c752d22-b09a-11e8-96f8-529269fb1459`|
 
 IDs are the keys in your data that are used to link tables together. For example, an `occurenceID` in the eMoF table 
-records information about an organism with the same `occurrenceID` within the Occurrence core table. IDs are also the 
+records information about an organism with the same `occurrenceID` within the Occurrence table. IDs are also the 
 keys that keep track of each of the records, so that if you notice a mistake or missing information you can keep the 
 record in place in the global aggregators and fix the mistake or add the missing information. For instance, let's say 
 you have a record with an `occurrenceID` `Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula` and after it's 
 published to OBIS you notice that the latitude was recorded incorrectly. When you fix that record in the data you would 
 **keep** the `occurrenceID` `Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula`, fix the latitude, and republish 
 the data so that the record is still present in OBIS but you have fixed the mistake.
+
+| Darwin Core Term | Description | Example   |
+|------------------|-------------|-----------|
+| [eventID](https://dwc.tdwg.org/terms/#dwc:eventID) | An identifier for the set of information associated with an Event (something that occurs at a place and time). May be a global unique identifier or an identifier specific to the data set. | `INBO:VIS:Ev:00009375`<br/>`Station_95_Date_09JAN1997:14:35:00.000` <br/> `FFS-216:2007-09-21:A:replicateID1024`|
+|[occurrenceID](https://dwc.tdwg.org/terms/#dwc:occurrenceID)| An identifier for the Occurrence (as opposed to a particular digital record of the occurrence). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the occurrenceID globally unique.|`urn:catalog:UWBM:Bird:89776` <br/> `Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula` <br/> `FFS-216:2007-09-21:A:replicateID1024:objectID1345330`|
+|[measurementID](https://dwc.tdwg.org/terms/#dwc:measurementID)| An identifier for the MeasurementOrFact (information pertaining to measurements, facts, characteristics, or assertions). May be a global unique identifier or an identifier specific to the data set.| `9c752d22-b09a-11e8-96f8-529269fb1459`|
 
 With that in mind, what is the best way to create an `eventID`, `occurrenceID`, or `measurementID`? Until we have a system 
 that mints Persistent Identififers for individual records then the best way we have seen is to build the ID from 
@@ -136,6 +134,10 @@ information could be lost over time!
 
 *The Darwin Core file structure, demonstrating how an Event core table can be connected to extension tables through the 
 use of identifiers. Image credit: [OBIS](https://manual.obis.org/)*
+
+## Required Terms
+
+The core and extension data tables have required terms. Explore the required terms of each data table below.
 
 :::::::::::: spoiler
 

@@ -25,10 +25,7 @@ exercises: 90
 ## Darwin Core - A global community of data sharing and integration
 Darwin Core is a data standard to mobilize and share biodiversity data. Over the years, the Darwin Core standard has 
 expanded to enable exchange and sharing of diverse types of biological observations from citizen scientists, ecological 
-monitoring, eDNA, animal telemetry, taxonomic treatments, and many others. Darwin Core is applicable to any observation 
-of an organism (scientific name, OTU, or other methods of defining a species) at a particular place and time. In Darwin 
-Core this is an `occurrence`. To learn more about the foundations of Darwin Core read 
-[Wieczorek et al. 2012](https://doi.org/10.1371/journal.pone.0029715).
+monitoring, eDNA, animal telemetry, taxonomic treatments, and many others. 
 
 ### Demonstrated Use of Darwin Core
 The power of Darwin Core is most evident in the data aggregators that harvest data using that standard. 
@@ -44,7 +41,7 @@ Core Archives are pretty simple. It's a zipped folder containing the data (one o
 extensions you use), an Ecological Metadata Language (EML) XML file, and a meta.xml file that describes what's in the 
 zipped folder.
 
-![Darwin Core Archive](/episodes/fig/DwC-Archive.png)
+![Darwin Core Archive](/fig/DwC-Archive.png)
 *Image credit: Elizabeth Lawrence*
 
 ::::::::::::::::::::::::::::::::::::: challenge
@@ -82,7 +79,7 @@ more familiar with the terms.
 
 #### :pushpin: Tip 
 
-If your raw column headers are Darwin Core terms verbatim then you can skip this step! Next time you plan data 
+If your column headers are Darwin Core terms verbatim then you can skip this step! Next time you plan data 
 collection use the standard DwC term headers!
 
 ::::::::::::
@@ -108,7 +105,7 @@ Find the matching Darwin Core term for these column headers.
 3. [`minimumDepthInMeters`](https://dwc.tdwg.org/terms/#dwc:minimumDepthInMeters) and [`maximumDepthInMeters`](https://dwc.tdwg.org/terms/#dwc:maximumDepthInMeters)
 4. [`vernacularName`](https://dwc.tdwg.org/terms/#dwc:vernacularName)
 5. [`organismQuantity`](https://dwc.tdwg.org/terms/#dwc:organismQuantity) and [`organismQuantityType`](https://dwc.tdwg.org/terms/#dwc:organismQuantityType)
-6. This one is tricky- it's two terms combined and will need to be split. [`indvidualCount`](https://dwc.tdwg.org/terms/#dwc:individualCount) and [`sex`](https://dwc.tdwg.org/terms/#dwc:sex)
+6. This one is tricky- it's two terms combined and will need to be split. [`individualCount`](https://dwc.tdwg.org/terms/#dwc:individualCount) and [`sex`](https://dwc.tdwg.org/terms/#dwc:sex)
 
 ::::::::::::::::::::::::
 
@@ -132,7 +129,25 @@ term(s) in a second column. For example:
 
 ## What are the **required** Darwin Core terms for publishing to OBIS?
 When doing your mapping some required information may be missing. Below are the Darwin Core terms that are required to 
-share your data to OBIS plus a few that are needed for GBIF.
+share your data to OBIS plus a few that are needed for GBIF. The ones with asterisks aren't technically required, but we'll give you the stink-eye if you don't include them 😐.
+
+1. [`occurrenceID`](https://dwc.tdwg.org/terms/#dwc:occurrenceID)
+2. [`basisOfRecord`](https://dwc.tdwg.org/terms/#dwc:basisOfRecord)
+3. [`scientificName`](https://dwc.tdwg.org/terms/#dwc:scientificName)
+4. [`scientificNameID`](https://dwc.tdwg.org/terms/#dwc:scientificNameID)*
+5. [`eventDate`](https://dwc.tdwg.org/terms/#dwc:eventDate)
+6. [`decimalLatitude`](https://dwc.tdwg.org/terms/#dwc:decimalLatitude)
+7. [`decimalLongitude`](https://dwc.tdwg.org/terms/#dwc:decimalLongitude)
+8. [`occurrenceStatus`](https://dwc.tdwg.org/terms/#dwc:occurrenceStatus)
+9. [`countryCode`](https://dwc.tdwg.org/terms/#dwc:countryCode)*
+10. [`kingdom`](https://dwc.tdwg.org/terms/#dwc:kingdom)*
+11. [`geodeticDatum`](https://dwc.tdwg.org/terms/#dwciri:geodeticDatum)*
+
+Expand the section below to see these terms in more detail.
+
+:::::::::::: spoiler
+
+## Required Terms
 
 | Darwin Core Term | Definition | Comment | Example |
 |------------------|------------------------------------|---------------------------------------|-----------------|
@@ -148,12 +163,18 @@ share your data to OBIS plus a few that are needed for GBIF.
 | [`kingdom`](https://dwc.tdwg.org/terms/#dwc:kingdom) | The full scientific name of the kingdom in which the taxon is classified.| Not required for OBIS but GBIF needs this to disambiguate scientific names that are the same but in different kingdoms. | Animalia |
 | [`geodeticDatum`](https://dwc.tdwg.org/terms/#dwciri:geodeticDatum) | The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in decimalLatitude and decimalLongitude as based. | Must be [WGS84](https://epsg.io/4326) for data shared to OBIS and GBIF but it's best to state explicitly that it is. | WGS84 |
 
+::::::::::::
+
 ## What other terms should be considered?
 While these terms are not required for publishing data to OBIS, they are extremely helpful for downstream users because 
 without them the data are less useful for future analyses. For instance, `depth` is a crucial piece of information for 
 marine observations, but it is not always included. For the most part the ones listed below are not going to be sitting 
 there in the data, so you'll have to determine what the values should be and add them in. Really try your hardest to 
 include them if you can.
+
+:::::::::::: spoiler
+
+## Other Terms
 
 | Darwin Core Term | Definition | Comment | Example |
 |------------------|------------------------------------|---------------------------------------|--| 
@@ -168,6 +189,8 @@ include them if you can.
 | [`dataGeneralizations`](https://dwc.tdwg.org/terms/#dwc:dataGeneralizations) | Actions taken to make the shared data less specific or complete than in its original form. Suggests that alternative data of higher quality may be available on request. | This veers somewhat into the realm of metadata and will not be applicable to all datasets but if the data were modified such as due to sensitive species then it's important to note that for future users. | Coordinates generalized from original GPS coordinates to the nearest half degree grid cell |
 | [`informationWithheld`](https://dwc.tdwg.org/terms/#dwc:informationWithheld) | 	Additional information that exists, but that has not been shared in the given record. | Also useful if the data have been modified this way for sensitive species or for other reasons. | location information not given for endangered species |
 | [`institutionCode`](https://dwc.tdwg.org/terms/#dwc:institutionCode) | 	The name (or acronym) in use by the institution having custody of the object(s) or information referred to in the record. |  | TPWD |
+
+::::::::::::
 
 Other than these specific terms, work through the data that you have and try to crosswalk it to the Darwin Core terms 
 that match best. 

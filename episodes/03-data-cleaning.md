@@ -36,7 +36,6 @@ examples use the [pandas package for Python](https://pandas.pydata.org/) and the
 those are not the only options for dealing with these conversions but simply the ones we use more frequently in our 
 experiences. 
 
-
 ## Getting your dates in order
 Dates can be surprisingly tricky because people record them in many different ways. For our purposes we must follow 
 [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) which means using a four digit year, two digit month, and two digit 
@@ -44,9 +43,8 @@ day with dashes as separators (i.e. `YYYY-MM-DD`). You can also record time in I
 zone which can also get tricky if your data take place across time zones and throughout the year where daylight savings 
 time may or may not be in effect (and start and end times of daylight savings vary across years). There are packages in 
 R and Python that can help you with these vagaries. Finally, it is possible to record time intervals in ISO 8601 using a 
-slash (e.g. `2022-01-02/2022-01-12`). Examine the dates in your data to determine what format they are following and what 
-amendments need to be made to ensure they are following ISO 8601. Below are some examples and solutions in Python and R 
-for them.
+slash (e.g. `2022-01-02/2022-01-12`). Examine the dates in your data to determine what amendments need to be made to 
+ensure they are following ISO 8601. Below are some examples and solutions in Python and R for them.
 
 ISO 8601 dates can represent moments in time at different resolutions, as well as time intervals, which use "/" as a separator. Date and time are separated by "T". Timestamps can have a time zone indicator at the end. If not, then they are assumed to be local time. When a time is UTC, the letter "Z" is added at the end (e.g. 2009-02-20T08:40Z, which is the equivalent of 2009-02-20T08:40+00:00). 
 
@@ -62,12 +60,12 @@ your package of choice to translate the dates.
  
 | Darwin Core Term | Description | Example   |
 |------------------|-------------|-----------|
-| [eventDate](https://dwc.tdwg.org/list/#dwc_eventDate) | The date-time or interval during which an Event occurred. For occurrences, this is the date-time when the event was recorded. Not suitable for a time in a geological context. | `1963-03-08T14:07-0600` (8 Mar 1963 at 2:07pm in the time zone six hours earlier than UTC).<br/>`2009-02-20T08:40Z` (20 February 2009 8:40am UTC).<br/>`2018-08-29T15:19` (3:19pm local time on 29 August 2018).<br/>`1809-02-12` (some time during 12 February 1809).<br/>`1906-06` (some time in June 1906).<br/>`1971` (some time in the year 1971).<br/>`2007-03-01T13:00:00Z/2008-05-11T15:30:00Z` (some time during the interval between 1 March 2007 1pm UTC and 11 May 2008 3:30pm UTC).<br/>`1900/1909` (some time during the interval between the beginning of the year 1900 and the end of the year 1909).<br/>`2007-11-13/15` (some time in the interval between 13 November 2007 and 15 November 2007). |
+| [eventDate](https://dwc.tdwg.org/list/#dwc_eventDate) | The date-time or interval during which an Event occurred, or a taxa was recorded or observed. Not suitable for a time in a geological context. | `1963-03-08T14:07-0600` (8 Mar 1963 at 2:07pm in the time zone six hours earlier than UTC).<br/>`2009-02-20T08:40Z` (20 February 2009 8:40am UTC).<br/>`2018-08-29T15:19` (3:19pm local time on 29 August 2018).<br/>`1809-02-12` (some time during 12 February 1809).<br/>`2007-03-01T13:00:00Z/2008-05-11T15:30:00Z` (some time during the interval between 1 March 2007 1pm UTC and 11 May 2008 3:30pm UTC). |
 
 ::::::::::::::::::::::::::::::::: challenge
 ### Examples
 
-Below are a few examples in R and Python for converting commonly represented dates to ISO-8601.
+Below are a few examples in R and Python for converting commonly represented dates to ISO 8601.
 
 ::::::::::::::::: solution
 
@@ -75,7 +73,7 @@ Below are a few examples in R and Python for converting commonly represented dat
 
 ### Python
 
-When dealing with dates using pandas in Python it is best to create a Series as your time column with the appropriate 
+When dealing with dates using pandas in Python it is best to create a Series of your time column with the appropriate 
 datatype. Then, when writing your file(s) using [.to_csv()](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html)
 you can specify the format which your date will be written in using the `date_format` parameter. 
 
@@ -175,7 +173,7 @@ function to read various date formats. The process can be applied to entire colu
 ### R
 
 When dealing with dates using R, there are a few base functions that are useful to wrangle your dates in the correct format. An R package that is useful is [lubridate](https://cran.r-project.org/web/packages/lubridate/lubridate.pdf), which is part of the `tidyverse`. It is recommended to bookmark this [lubridate cheatsheet](https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_lubridate.pdf).
-The examples below show how to use the `lubridate` package and format your data to the ISO-8601 standard.
+The examples below show how to use the `lubridate` package and format your data to the ISO 8601 standard.
 
 1.  `01/31/2021 17:00 GMT`
 
@@ -307,16 +305,15 @@ into ISO 8601.
 OBIS uses the [World Register of Marine Species (WoRMS)](https://www.marinespecies.org/) as the taxonomic backbone for 
 its system. GBIF uses the [Catalog of Life](https://www.catalogueoflife.org/). Since WoRMS contributes to the Catalog of 
 Life and WoRMS is a requirement for OBIS we will teach you how to do your taxonomic lookups using WoRMS. The key Darwin 
-Core terms that we need from WoRMS are `scientificNameID` also known as the WoRMS LSID which looks something like this 
-`"urn:lsid:marinespecies.org:taxname:105838"` and `kingdom` but you can grab the other parts of the taxonomic hierarchy if 
-you want as well as such as `taxonRank`. 
+Core terms that we need from WoRMS are `scientificNameID`, also known as the WoRMS LSID, which looks something like this 
+`"urn:lsid:marinespecies.org:taxname:105838"`, and `kingdom`. But you can grab the other parts of the taxonomic hierarchy
+such as `taxonRank`. 
 
 There are two ways to grab the taxonomic information necessary. First, you can use the [WoRMS Taxon Match Tool](https://www.marinespecies.org/aphia.php?p=match). 
 The tool accepts lists of scientific names (each unique name as a separate row in a .txt, .csv, or .xlsx file) up to 
 1500 names and provides an interface for selecting the match you want for ambiguous matches. A brief walk-through using 
 the service is included in the challenge box below. A more detailed step-by-step guide on 
 using the WoRMS Taxon Match Tool for the [MBON Pole to Pole](https://marinebon.org/p2p/) can be found [here](https://marinebon.github.io/p2p/protocols/WoRMS_quality_check.pdf). Additionally, OBIS has a three-part [video series](https://www.youtube.com/watch?v=jJ8nlMlg-cY) on YouTube about using the tool.
-
 
 
 The other way to get the taxonomic information you need is to use [worrms](https://cran.r-project.org/web/packages/worrms/worrms.pdf)
@@ -464,12 +461,12 @@ track which values are latitude and which are longitude.
 
 | Darwin Core Term | Description | Example        |
 |------------------|-------------|----------------|
-| [decimalLatitude](https://dwc.tdwg.org/list/#dwc_decimalLatitude) | The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive. | `-41.0983423`  |
-| [decimalLongitude](https://dwc.tdwg.org/list/#dwc_decimalLongitude) | The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive. | `-121.1761111` |
-| [geodeticDatum](https://dwc.tdwg.org/list/#dwc_geodeticDatum) | The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in decimalLatitude and decimalLongitude as based. | `WGS84` |
+| [decimalLatitude](https://dwc.tdwg.org/list/#dwc_decimalLatitude) | The geographic latitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. | `-41.0983423`  |
+| [decimalLongitude](https://dwc.tdwg.org/list/#dwc_decimalLongitude) | The geographic longitude (in decimal degrees, using the spatial reference system given in geodeticDatum) of the geographic center of a Location. | `-121.1761111` |
+| [geodeticDatum](https://dwc.tdwg.org/list/#dwc_geodeticDatum) | The ellipsoid, geodetic datum, or coordinate reference system (CRS) upon which the geographic coordinates given in decimalLatitude and decimalLongitude as based. | `WGS84` |
+
 
 ![Coordinate precision](https://imgs.xkcd.com/comics/coordinate_precision.png)
-
 *Image credit: [xkcd](https://xkcd.com/)*
 
 ::::::::::::::::::::::::::::::::: challenge
@@ -639,8 +636,8 @@ Below are a few examples in R and Python to convert some common coordinate pairs
 ::::::::::::: keypoints
 
 - When doing conversions it's best to break out your data into it's component pieces.
-- Dates are messy to deal with. Some packages have easy solutions, otherwise use regular expressions to align date strings to ISO 8601.
+- Dates are messy to deal with. Some packages provide easy solutions, otherwise use regular expressions to align date strings to ISO 8601.
 - WoRMS LSIDs are a requirement for OBIS.
-- Latitude and longitudes are like dates, they can be messy to deal with. Take a similar approach.
+- Latitude and longitudes are like dates, they can be messy to deal with, so take a similar approach. They have to be in decimal degrees. 
 
 :::::::::::::::::::::::
