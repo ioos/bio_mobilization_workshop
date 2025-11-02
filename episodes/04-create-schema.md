@@ -89,37 +89,14 @@ the _occurrences_ (weight, length, etc.). Prior to this you were only able to in
 the Measurement or Facts extension).
 
 It is important to know that the structure of the eMoF table is likely quite a bit different than how the original data 
-are recorded in your dataset. Rather than documenting each measurement in separate columns, measurements will be 
-condensed into one column: `measurementValue` (e.g. 15). Then, the column `measurementType`  allows free text 
-describing what the measurement actually is (e.g. length). Finally the column `measurementUnit` is used to indicate the 
-unit of the measurement (e.g. cm).
+are recorded in your dataset. Rather than documenting each measurement in separate columns, measurements will be:
 
-The unconstrained nature of `measurementType` allows for flexibility in describing measurements, which can be quite 
-useful. But what if you wanted to obtain all OBIS records that have "length" measurements? Due to the inevitable 
-heterogeneity in how different people document "length", you would have to try to account for all these different ways! 
-Fortunately the eMoF table can get around this challenge by providing a way to include Unique Resource Identifiers 
-(URIs). These URIs are used to populate the `measurementTypeID` field, as well as `measurementUnitID` and 
-`measurementValueID`. URIs mean that if you call the `measurementType` "abundance" but I call it "Abundance per square 
-meter" and we both use the `measurementTypeID` "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/" then we know 
-this is the same measurement type even if we didn't use the same words to describe it. Choosing the right URI can be 
-difficult but you can read about finding codes in 
-[the OBIS Manual](https://manual.obis.org/vocabulary.html#map-emof-measurement-identifiers-to-preferred-bodc-vocabulary). 
-All you need to know for now is that `measurementTypeID` should be populated with a URI belonging to the NERC P01 
-collection, easily accessible through the [SeaDataNet P01 facet search](https://vocab.seadatanet.org/p01-facet-search), 
-and `measurementUnitID` should be popualted with a 
-[NERC P06 code](https://vocab.nerc.ac.uk/search_nvs/P06/?searchstr=&options=identifier,preflabel,altlabel,status_accepted&rbaddfilter=inc&searchstr2=). 
+1. condensed into one column: `measurementValue` (e.g. 15)
+2. `measurementType` is populated with free text describing what the measurement actually is (e.g. length)
+3. `measurementUnit` is used to indicate the unit of the measurement (e.g. cm).
 
-OBIS has released [video tutorials](https://www.youtube.com/watch?v=gGiSTApx1oU&list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul) to help with choosing URIs, so check this video series for additional assistance.
-
-:::::::::::: callout
-
-## :pushpin: Tip 
-
-You can search for `measurementTypes` that other OBIS data providers have used by using the 
-[OBIS Mof Viewer](https://mof.obis.org/). **BE CAREFUL** when usng this tool and make sure the
-definition in the URI matches exactly your measurement type if you want to reuse it for your data.
-
-::::::::::::::::::::
+The unconstrained nature of `measurementType` allows for flexibility in describing measurements, which can be quite useful. But what if you wanted to obtain all OBIS records that have "length" measurements? Due to the inevitable heterogeneity in how different people document "length", you would have to try to account for all these different ways! Fortunately the eMoF table can get around this challenge by providing a way to include Unique Resource Identifiers (URIs). These URIs are used to populate the `measurementTypeID` field, as well as `measurementUnitID` and 
+`measurementValueID`. More details about these URIs and how to populate them are covered in the Controlled Vocabulary section.
 
 ## What's in an ID?
 
