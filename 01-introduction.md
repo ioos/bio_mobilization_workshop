@@ -25,10 +25,7 @@ exercises: 90
 ## Darwin Core - A global community of data sharing and integration
 Darwin Core is a data standard to mobilize and share biodiversity data. Over the years, the Darwin Core standard has 
 expanded to enable exchange and sharing of diverse types of biological observations from citizen scientists, ecological 
-monitoring, eDNA, animal telemetry, taxonomic treatments, and many others. Darwin Core is applicable to any observation 
-of an organism (scientific name, OTU, or other methods of defining a species) at a particular place and time. In Darwin 
-Core this is an `occurrence`. To learn more about the foundations of Darwin Core read 
-[Wieczorek et al. 2012](https://doi.org/10.1371/journal.pone.0029715).
+monitoring, eDNA, animal telemetry, taxonomic treatments, and many others. 
 
 ### Demonstrated Use of Darwin Core
 The power of Darwin Core is most evident in the data aggregators that harvest data using that standard. 
@@ -44,7 +41,7 @@ Core Archives are pretty simple. It's a zipped folder containing the data (one o
 extensions you use), an Ecological Metadata Language (EML) XML file, and a meta.xml file that describes what's in the 
 zipped folder.
 
-![Darwin Core Archive](/episodes/fig/DwC-Archive.png)
+![Darwin Core Archive](/fig/DwC-Archive.png)
 *Image credit: Elizabeth Lawrence*
 
 ::::::::::::::::::::::::::::::::::::: challenge
@@ -82,7 +79,7 @@ more familiar with the terms.
 
 #### :pushpin: Tip 
 
-If your raw column headers are Darwin Core terms verbatim then you can skip this step! Next time you plan data 
+If your column headers are Darwin Core terms verbatim then you can skip this step! Next time you plan data 
 collection use the standard DwC term headers!
 
 ::::::::::::
@@ -108,7 +105,7 @@ Find the matching Darwin Core term for these column headers.
 3. [`minimumDepthInMeters`](https://dwc.tdwg.org/terms/#dwc:minimumDepthInMeters) and [`maximumDepthInMeters`](https://dwc.tdwg.org/terms/#dwc:maximumDepthInMeters)
 4. [`vernacularName`](https://dwc.tdwg.org/terms/#dwc:vernacularName)
 5. [`organismQuantity`](https://dwc.tdwg.org/terms/#dwc:organismQuantity) and [`organismQuantityType`](https://dwc.tdwg.org/terms/#dwc:organismQuantityType)
-6. This one is tricky- it's two terms combined and will need to be split. [`indvidualCount`](https://dwc.tdwg.org/terms/#dwc:individualCount) and [`sex`](https://dwc.tdwg.org/terms/#dwc:sex)
+6. This one is tricky- it's two terms combined and will need to be split. [`individualCount`](https://dwc.tdwg.org/terms/#dwc:individualCount) and [`sex`](https://dwc.tdwg.org/terms/#dwc:sex)
 
 ::::::::::::::::::::::::
 
