@@ -12,7 +12,7 @@ exercises: 120
 
 :::::::::::: objectives
 
-- "Data enhancement and quality control"
+- Quality control and enhance your data
 
 :::::::::::::::::::::::
 
@@ -30,7 +30,7 @@ OBIS performs a number of quality checks on the data it receives. Red quality fl
 * Look at unique values of columns containing string entries to identify potential issues (eg. spelling). 
 * Check for uniqueness of `occurrenceID` field.
 * Check for uniqueness of `eventID` for each event, if applicable. 
-* Check that dates are following [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601).
+* Check that dates are following [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601).
 * Check that the `scientificNameID` is/are valid. 
 
 ::::::::::::::::::::
@@ -218,7 +218,7 @@ Perform the following minimal quality assurance and control checks:
  
 1. Run a diagnostics report for the data quality. 
 1. Ensure that the eventIDs are unique. 
-1. Make sure that the eventDates follow ISO-8601 standards. 
+1. Make sure that the eventDates follow ISO 8601 standards. 
 1. Determine whether reported depths are accurate. 
  
 The event core data used in the checks below can be found in [this Excel file](data/trawl_fish.xlsx).
