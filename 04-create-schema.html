@@ -477,13 +477,16 @@ extension).</p>
 <p>It is important to know that the structure of the eMoF table is
 likely quite a bit different than how the original data are recorded in
 your dataset. Rather than documenting each measurement in separate
-columns, measurements will be condensed into one column:
-<code>measurementValue</code> (e.g. 15). Then, the column
-<code>measurementType</code> allows free text describing what the
-measurement actually is (e.g. length). Finally the column
+columns, measurements will be:</p>
+<ol style="list-style-type: decimal"><li>condensed into one column: <code>measurementValue</code>
+(e.g. 15)</li>
+<li>
+<code>measurementType</code> is populated with free text describing
+what the measurement actually is (e.g. length)</li>
+<li>
 <code>measurementUnit</code> is used to indicate the unit of the
-measurement (e.g. cm).</p>
-<p>The unconstrained nature of <code>measurementType</code> allows for
+measurement (e.g. cm).</li>
+</ol><p>The unconstrained nature of <code>measurementType</code> allows for
 flexibility in describing measurements, which can be quite useful. But
 what if you wanted to obtain all OBIS records that have “length”
 measurements? Due to the inevitable heterogeneity in how different
@@ -492,38 +495,8 @@ different ways! Fortunately the eMoF table can get around this challenge
 by providing a way to include Unique Resource Identifiers (URIs). These
 URIs are used to populate the <code>measurementTypeID</code> field, as
 well as <code>measurementUnitID</code> and
-<code>measurementValueID</code>. URIs mean that if you call the
-<code>measurementType</code> “abundance” but I call it “Abundance per
-square meter” and we both use the <code>measurementTypeID</code> “<a href="http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/" class="external-link uri">http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/</a>”
-then we know this is the same measurement type even if we didn’t use the
-same words to describe it. Choosing the right URI can be difficult but
-you can read about finding codes in <a href="https://manual.obis.org/vocabulary.html#map-emof-measurement-identifiers-to-preferred-bodc-vocabulary" class="external-link">the
-OBIS Manual</a>. All you need to know for now is that
-<code>measurementTypeID</code> should be populated with a URI belonging
-to the NERC P01 collection, easily accessible through the <a href="https://vocab.seadatanet.org/p01-facet-search" class="external-link">SeaDataNet P01
-facet search</a>, and <code>measurementUnitID</code> should be popualted
-with a <a href="https://vocab.nerc.ac.uk/search_nvs/P06/?searchstr=&amp;options=identifier,preflabel,altlabel,status_accepted&amp;rbaddfilter=inc&amp;searchstr2=" class="external-link">NERC
-P06 code</a>.</p>
-<p>OBIS has released <a href="https://www.youtube.com/watch?v=gGiSTApx1oU&amp;list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul" class="external-link">video
-tutorials</a> to help with choosing URIs, so check this video series for
-additional assistance.</p>
-<div id="tip" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="tip" class="callout-inner">
-<h3 class="callout-title">
-<span class="emoji" data-emoji="pushpin">📌</span> Tip</h3>
-<div class="callout-content">
-<p>You can search for <code>measurementTypes</code> that other OBIS data
-providers have used by using the <a href="https://mof.obis.org/" class="external-link">OBIS
-Mof Viewer</a>. <strong>BE CAREFUL</strong> when usng this tool and make
-sure the definition in the URI matches exactly your measurement type if
-you want to reuse it for your data.</p>
-</div>
-</div>
-</div>
+<code>measurementValueID</code>. More details about these URIs and how
+to populate them are covered in the Controlled Vocabulary section.</p>
 </section><section><h2 class="section-heading" id="whats-in-an-id">What’s in an ID?<a class="anchor" aria-label="anchor" href="#whats-in-an-id"></a></h2>
 <hr class="half-width"><p>IDs are the keys in your data that are used to link tables together.
 For example, an <code>occurenceID</code> in the eMoF table records
@@ -599,7 +572,7 @@ required terms of each data table below.</p>
   Event Core
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <table class="table"><colgroup><col width="16%"><col width="32%"><col width="35%"><col width="15%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
 <th>Definition</th>
@@ -672,7 +645,7 @@ OBIS and GBIF but it’s best to state explicitly that it is.</td>
   Occurrence extension
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <table class="table"><colgroup><col width="16%"><col width="32%"><col width="35%"><col width="15%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
 <th>Definition</th>
@@ -750,7 +723,7 @@ Location.</td>
   Extended Measurement or Fact Extension
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>Nothing is <em>required</em> from the OBIS perspective but if you are
 using this extension then <code>eventID</code> is required to be able to

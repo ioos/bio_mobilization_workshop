@@ -333,7 +333,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Controlled Vocabulary</h1>
-        <p>Last updated on 2025-10-17 |
+        <p>Last updated on 2025-11-02 |
 
         <a href="https://github.com/ioos/bio_mobilization_workshop/edit/main/learners/controlled-vocab.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -354,7 +354,7 @@
 <h3 class="card-title">Questions</h3>
 <ul><li>What is controlled vocabulary?</li>
 <li>Why should we use it?</li>
-<li>How do we use and choose controlled vocabulary in our data?</li>
+<li>How do we choose and use controlled vocabulary in our data?</li>
 </ul></div>
 </div>
 </div>
@@ -363,54 +363,233 @@
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul><li>Understand the purpose of controlled vocabulary</li>
-<li>Understand the basics of how to find and select a vocabulary
-term</li>
+<li>Understand the basics of how to find and select a vocabulary term
+for the eMoF table</li>
+<li>Learn how to populate measurementTypeID, measurementValueID, and
+measurementUnitID</li>
 </ul></div>
 </div>
 </div>
 </div>
 </div>
 <section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h2>
-<hr class="half-width"><p>Controlled vocabulary is simply the use of a standardized set of
-terms to populate or describe data. This could include specific data
-fields, It even includes (technically) the use of DwC terms in our
-header columns!</p>
-<p>As we have learned earlier in this course, the
-extendedMeasurementOrFact (eMoF) terms measurementType,
-measurementValue, and measurementUnit are completely unconstrained and
-can be populated with free text. While free text offers the advantage of
-capturing complex and unclassified information, there is inevitable
-semantic heterogeneity (e.g., of spelling, wording, or language) that
-becomes a challenge for effective data interoperability and
+<hr class="half-width"><p>Controlled vocabulary is simply the use of a standardized and defined
+set of terms to populate or describe data. This could include specific
+data column names, a set of specific terms within a field, and the use
+of identifiers that point to a defined term. For the purposes of this
+workshop, we focus on using controlled vocabulary as identifiers in the
+extendedMeasurementOrFact (eMoF) extension table.</p>
+<p>As we have learned in Episode 4: Darwin Core and Extension Schemas,
+the eMoF terms <code>measurementType</code>,
+<code>measurementValue</code>, and <code>measurementUnit</code> are
+completely unconstrained and can be populated with <strong>free
+text</strong>. While free text offers the advantage of capturing complex
+and unclassified information, there is inevitable semantic
+<strong>heterogeneity</strong> (e.g., of spelling, wording, or language)
+that becomes a challenge for effective data interoperability and
 analysis.</p>
 <p>For example, if you were interested in finding all records related to
 weight measurements, you would have to try to account for all the
 different ways “weight” was recorded by data providers (weight, wgt,
-Weight, wet weight, dry weight, etc.).</p>
-</section><section><h2 class="section-heading" id="why">Why?<a class="anchor" aria-label="anchor" href="#why"></a></h2>
-<hr class="half-width"><p>Controlled vocabularies are incredibly important to ensure data are
+Weight, wet weight, dry weight, etc.). This is where using controlled
+vocabulary in the <code>measurementTypeID</code>,
+<code>measurementValueID</code>, and <code>measurementUnitID</code>
+fields is helpful! These 3 identifier fields are used to standardize
+measurement types, values and units. Identifiers used in these columns
+are populated with <strong>Unique Resource Identifiers (URIs)</strong>
+that provide clear and unambiguous definitions of the data.</p>
+<p>Using URIs mean that if you call the <code>measurementType</code>
+“abundance” but I call it “Abundance per square meter” and we both use
+the <code>measurementTypeID</code> “<a href="http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/" class="external-link uri">http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL02/</a>”
+then we know this is the same measurement type even if we didn’t use the
+same words to describe it. Choosing the right URI can be difficult but
+we will provide some basic guidance on this page. More details on
+controlled vocabulary and finding codes can be found in the <a href="https://manual.obis.org/vocabulary.html" class="external-link">OBIS Manual</a>.</p>
+</section><section><h2 class="section-heading" id="why-use-controlled-vocabulary">Why use controlled vocabulary?<a class="anchor" aria-label="anchor" href="#why-use-controlled-vocabulary"></a></h2>
+<hr class="half-width"><p>Using controlled vocabulary will:</p>
+<ul><li>ensure datasets are <strong>consistently</strong> documented</li>
+<li>simplify <strong>data aggregation</strong> and analysis of
+measurements</li>
+<li>decrease the potential that data will be <strong>misunderstood or
+misused</strong>
+</li>
+</ul><p>Controlled vocabularies are also important to ensure data are
 <strong>interoperable</strong> - readable by both humans and machines -
 and that the information is presented in an unambiguous manner.
-Vocabulary collections like NVS compile vocabularies from different
+Vocabulary collections like the <a href="https://vocab.nerc.ac.uk/" class="external-link">NERC
+Vocabulary Server (NVS)</a> compile vocabularies from different
 institutions and authorities (e.g., ISO, ICES, EUNIS), allowing you to
-map your data to them. In this way, you could search for a single
-measurementTypeID and obtain all related records, regardless of
-differences in wording or language used in the data.</p>
-</section><section><h2 class="section-heading" id="how">How?<a class="anchor" aria-label="anchor" href="#how"></a></h2>
-<hr class="half-width"><p>When selecting keep in mind these principles:</p>
-<ul><li>machine operable (IRI, URI)</li>
-<li>standardized terms</li>
+map your data to them. OBIS recommends selecting terms from NVS whenever
+possible, but other vocabulary collections may be used (e.g. ICES,
+EcoPortal, ENVO, etc.) as long as the URIs provided are machine readable
+and interoperable.</p>
+<p>When we all correctly use controlled vocabulary with our measurement
+data, we can search for a single <code>measurementTypeID</code> and
+obtain all related records, regardless of differences in wording or
+language used in the data.</p>
+<div id="tip" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="tip" class="callout-inner">
+<h3 class="callout-title">
+<span class="emoji" data-emoji="pushpin">📌</span> Tip</h3>
+<div class="callout-content">
+<p>You can search for <code>measurementTypes</code> that other OBIS data
+providers have used by using the <a href="https://mof.obis.org/" class="external-link">OBIS
+Mof Viewer</a>. <strong>BE CAREFUL</strong> when using this tool and
+make sure the definition in the URI matches exactly your measurement
+type if you want to reuse it for your data.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="how-to-select-controlled-vocabulary">How to select controlled vocabulary?<a class="anchor" aria-label="anchor" href="#how-to-select-controlled-vocabulary"></a></h2>
+<hr class="half-width"><p>Where do we start when selecting controlled vocabularies? As
+mentioned above, OBIS strongly recommends selecting terms from the NERC
+Vocabulary Server. If your institution already recommends a
+machine-readable vocabulary collection, it is okay to continue using
+that, as long as the URIs are publicly accessible and
+machine-readable.</p>
+<p>When selecting a vocabulary term keep in mind these general
+principles:</p>
+<ul><li>machine operable (URI, IRI)</li>
 <li>human readable</li>
-</ul><p>Let’s break it down for each of the measurement ID columns in the
-eMoF, starting with the “simplest” column</p>
+<li>clear, unambiguous definitions</li>
+</ul><p>OBIS has created a <a href="https://manual.obis.org/vocab_tree.html" class="external-link"><strong>decision
+tree</strong></a> and has released <a href="https://www.youtube.com/watch?v=gGiSTApx1oU&amp;list=PLlgUwSvpCFS4hADB7Slf44V1KJauEU6Ul" class="external-link">video
+tutorials</a> to help with choosing URIs. While we won’t go over the
+decision tree in detail here, you can watch the video series for
+additional assistance.</p>
+<p>For now, let’s break it down for each of the measurement ID columns
+in the eMoF, starting with the “simplest” column.</p>
 <div class="section level3">
 <h3 id="measurementunitid">measurementUnitID<a class="anchor" aria-label="anchor" href="#measurementunitid"></a></h3>
-</div>
+<p>The <code>measurementUnitID</code> field is the easiest measurement
+ID field to populate. It is used to provide a URI for the
+<strong>unit</strong> associated with the value provided to
+<code>measurementValue</code> (e.g. cm, kg, kg/m^2). OBIS recommends
+this field be populated with terms from the <strong>NVS P06
+collection</strong>, <em>BODC-approved data storage units</em>. See
+screenshot below for an example vocabulary term from this collection,
+and where to find the URI on the page.</p>
+<figure><img src="/episodes/fig/NVS_unit-box.png" alt="Screenshot of a unit within the NVS P06 collection. Box highlights the URI to be used in measurementUnitID field." class="figure mx-auto d-block"><div class="figcaption">Screenshot of a unit within the NVS P06
+collection. Box highlights the URI to be used in measurementUnitID
+field.</div>
+</figure><p>To search this collection, see <strong><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/" class="external-link uri">https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/P06/</a></strong>.</p>
+<p>Other examples for <code>measurementUnit</code> and associated
+<code>measurementUnitID</code> include:</p>
+<ul><li>Metres: <a href="http://vocab.nerc.ac.uk/collection/P06/current/ULAA/" class="external-link uri">http://vocab.nerc.ac.uk/collection/P06/current/ULAA/</a>
+</li>
+<li>Days: <a href="http://vocab.nerc.ac.uk/collection/P06/current/UTAA/" class="external-link uri">http://vocab.nerc.ac.uk/collection/P06/current/UTAA/</a>
+</li>
+<li>Metres per second: <a href="http://vocab.nerc.ac.uk/collection/P06/current/UVAA/" class="external-link uri">http://vocab.nerc.ac.uk/collection/P06/current/UVAA/</a>
+</li>
+<li>Percent: <a href="http://vocab.nerc.ac.uk/collection/P06/current/UPCT/" class="external-link uri">http://vocab.nerc.ac.uk/collection/P06/current/UPCT/</a>
+</li>
+<li>Milligrams per litre: <a href="http://vocab.nerc.ac.uk/collection/P06/current/UMGL/" class="external-link uri">http://vocab.nerc.ac.uk/collection/P06/current/UMGL/</a>
+</li>
+</ul></div>
 <div class="section level3">
 <h3 id="measurementvalueid">measurementValueID<a class="anchor" aria-label="anchor" href="#measurementvalueid"></a></h3>
+<p>The <code>measurementValueID</code> field is used to provide an
+identifying code when <code>measurementValue</code> is populated with
+<strong>non-numerical values</strong> (e.g. sampling related, sex or
+life stage designation, etc.).</p>
+<div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
 </div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p><code>measurementValueID</code> is NOT used for standardizing numeric
+measurements!</p>
+</div>
+</div>
+</div>
+<p>Unlike <code>measurementUnitID</code>, there are <strong>multiple NVS
+collections</strong> that may be used to search for and select terms
+from. The collection is dependent on which type of
+<code>measurementValue</code> you have. See the table below for some
+common, non-exhaustive examples. Note that when documenting behaviour
+values in the eMoF, OBIS recommends using codes from the <a href="https://vocab.ices.dk/" class="external-link"><strong>ICES Vocabulary
+Server</strong></a>.</p>
+<table class="table"><colgroup><col width="68%"><col width="31%"></colgroup><thead><tr class="header"><th>Type of measurementValue</th>
+<th>Vocabulary Collection</th>
+</tr></thead><tbody><tr class="odd"><td>Sex (gender)</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S10/" class="external-link">S10</a></td>
+</tr><tr class="even"><td>Lifestage</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/S11/" class="external-link">S11</a></td>
+</tr><tr class="odd"><td>Sampling instruments and sensors (SeaVoX Device Catalogue)</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L22/" class="external-link">L22</a></td>
+</tr><tr class="even"><td>Sampling instrument categories (SeaDataNet device categories)</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/L05/" class="external-link">L05</a></td>
+</tr><tr class="odd"><td>Vessels (ICES Platform Codes)</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C17/" class="external-link">C17</a></td>
+</tr><tr class="even"><td>European Nature Information System Level 3 Habitats</td>
+<td><a href="https://www.bodc.ac.uk/resources/vocabularies/vocabulary_search/C35/" class="external-link">C35</a></td>
+</tr><tr class="odd"><td>Behaviour</td>
+<td><a href="https://vocab.ices.dk/?codetypeguid=d0268a96-afc9-436e-a4db-4f61c2b9f6ba" class="external-link">ICES
+Behaviour collection</a></td>
+</tr></tbody></table><p>You may also populate <code>measurementValueID</code> with references
+to papers or manuals that document, for example, the sampling protocol
+used to obtain the measurement. To do this you should use either:</p>
+<ul><li>The DOI of a paper or manual</li>
+<li>Handle for publications on IOC’s Ocean Best Practices repository,
+e.g. <a href="http://hdl.handle.net/11329/304" class="external-link uri">http://hdl.handle.net/11329/304</a>
+</li>
+</ul></div>
 <div class="section level3">
 <h3 id="measurementtypeid">measurementTypeID<a class="anchor" aria-label="anchor" href="#measurementtypeid"></a></h3>
+<p>This is likely the most important, yet most difficult column to
+populate. It is the field that provides the URI defining your
+measurement or fact, and is most likely to be used to filter and
+aggregate measurement data in OBIS. Therefore it is important to do your
+best to select the <strong>most appropriate</strong> vocabulary term
+that best defines all important elements related to your measurement.
+Important elements may include:</p>
+<ul><li>the property or attribute being measured</li>
+<li>the object or entity of interest (e.g. a chemical, a biological
+organism)</li>
+<li>the environmental context of the measurement (e.g. per unit volume,
+per unit area)</li>
+<li>specific methods required to interpret, understand, or contextualize
+the measurement (e.g. optical microscopy, filtration, computation,
+correction algorithms)</li>
+</ul><p>Think about what information a user would need to know in order to
+reuse your measurement data, then try to find a vocabulary term that
+includes all those measurements. Not all of the above may be necessary
+to include in your vocabulary term.</p>
+<p>OBIS recommends selecting a vocabulary term from the <strong>NVS P01
+collection</strong>. This is because the terms in this collection are
+built on a semantic structure that allows the elements listed above to
+be directly included in the vocabulary term. While you can search for
+terms in this collection at <a href="https://vocab.nerc.ac.uk/search_nvs/P01/" class="external-link uri">https://vocab.nerc.ac.uk/search_nvs/P01/</a>, we strongly
+suggest using the <strong><a href="https://vocab.seadatanet.org/p01-facet-search" class="external-link">SeaDataNet Facet
+Search</a></strong>, which is a bit more user friendly to use.</p>
+<p>Here are a few examples of vocabulary terms mapped to the P01
+collection:</p>
+<ul><li>Description of sub-sampling protocol: <a href="https://vocab.nerc.ac.uk/collection/P01/current/DSPSSP01/" class="external-link uri">https://vocab.nerc.ac.uk/collection/P01/current/DSPSSP01/</a>
+</li>
+<li>Length of sampling track <a href="https://vocab.nerc.ac.uk/collection/P01/current/LENTRACK/" class="external-link uri">https://vocab.nerc.ac.uk/collection/P01/current/LENTRACK/</a>
+</li>
+<li>Height of sample collector (e.g. a grab) <a href="https://vocab.nerc.ac.uk/collection/P01/current/MTHHGHT1/0" class="external-link uri">https://vocab.nerc.ac.uk/collection/P01/current/MTHHGHT1/0</a>
+</li>
+<li>Name of sampling instrument <a href="https://vocab.nerc.ac.uk/collection/P01/current/NMSPINST/" class="external-link uri">https://vocab.nerc.ac.uk/collection/P01/current/NMSPINST/</a>
+</li>
+<li>Sample duration <a href="https://vocab.nerc.ac.uk/collection/P01/current/AZDRZZ01/" class="external-link uri">https://vocab.nerc.ac.uk/collection/P01/current/AZDRZZ01/</a>
+</li>
+</ul></div>
+</section><section><h2 class="section-heading" id="requesting-new-vocabulary-terms">Requesting new vocabulary terms<a class="anchor" aria-label="anchor" href="#requesting-new-vocabulary-terms"></a></h2>
+<hr class="half-width"><p>If you are unable to find a suitable vocabulary term for any of your
+measurementType, measurementValue, or measurementUnit, then you can
+<strong>request a suitable term be created</strong> for you. To do this,
+you can submit a request through the <strong>OBIS Vocabulary GitHub
+repository</strong> (<a href="https://github.com/nvs-vocabs/OBISVocabs/issues" class="external-link uri">https://github.com/nvs-vocabs/OBISVocabs/issues</a>).</p>
+<p>If you are unsure about whether a code fits your specific case,
+please feel free to ask questions in the Vocab channel on the OBIS
+Slack, or in the SMBD Slack.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -418,7 +597,14 @@ eMoF, starting with the “simplest” column</p>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>“Controlled vocabulary is important”</li>
+<ul><li>Controlled vocabulary ensures datasets are consistently documented,
+simplifies data aggregation, and can decrease data misuse</li>
+<li>OBIS recommends populating measurementTypeID, measurementValueID,
+and measurementUnitID with terms from the NERC Vocabulary Server</li>
+<li>Other vocabulary terms may be used as long as the URIs are machine
+readable</li>
+<li>You can request new vocabulary terms to be created through the OBIS
+Vocab GitHub repository</li>
 </ul></div>
 </div>
 </div>
@@ -426,7 +612,6 @@ eMoF, starting with the “simplest” column</p>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
@@ -485,7 +670,7 @@ any links that you are not going to use.
   "url": "https://ioos.github.io/bio_mobilization_workshop/controlled-vocab.html",
   "identifier": "https://ioos.github.io/bio_mobilization_workshop/controlled-vocab.html",
   "dateCreated": "2025-09-15",
-  "dateModified": "2025-10-17",
+  "dateModified": "2025-11-02",
   "datePublished": "2025-11-02"
 }
 
