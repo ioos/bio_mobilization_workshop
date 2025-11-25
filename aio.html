@@ -1125,7 +1125,7 @@ represented dates to ISO 8601.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
 <p>When dealing with dates using pandas in Python it is best to create a
 Series of your time column with the appropriate datatype. Then, when
 writing your file(s) using <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_csv.html" class="external-link">.to_csv()</a>
@@ -1375,7 +1375,7 @@ simply paste strings together:</p>
 </li>
 </ol>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <p>When dealing with dates using R, there are a few base functions that
 are useful to wrangle your dates in the correct format. An R package
 that is useful is <a href="https://cran.r-project.org/web/packages/lubridate/lubridate.pdf" class="external-link">lubridate</a>,
@@ -1772,7 +1772,7 @@ names to WoRMS.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-2" class="tab-content">
-<div id="nav-tabpanel-2-1" class="tab-pane show active" aria-labelledby="nav-tab-2-1" role="tabpanel">
+<div id="nav-tabpanel-2-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-2-1">
 <p>Create a CSV (comma separated value) file with the scientific name of
 the species of interest. Here we are showing some of the contents of the
 file <a href="data/species.csv"><code>species.csv</code></a>.</p>
@@ -1839,7 +1839,7 @@ example linked above can be found <a href="data/species_matched.xlsx">here</a>. 
 be seen below: <img src="fig/matched_species_screenshot.png" alt="screenshot" class="figure"></p></li>
 </ol>
 </div>
-<div id="nav-tabpanel-2-2" class="tab-pane" aria-labelledby="nav-tab-2-2" role="tabpanel">
+<div id="nav-tabpanel-2-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-2">
 <p><a href="https://www.marinespecies.org/aphia.php?p=taxdetails&amp;id=105838" class="external-link"><em>Carcharodon
 carcharias</em></a> (White shark)</p>
 <div class="codewrapper sourceCode" id="cb47">
@@ -1879,7 +1879,7 @@ carcharias</em></a> (White shark)</p>
 </li>
 </ol>
 </div>
-<div id="nav-tabpanel-2-3" class="tab-pane" aria-labelledby="nav-tab-2-3" role="tabpanel">
+<div id="nav-tabpanel-2-3" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-2-3">
 <p>Bringing in <a href="data/species.csv"><code>species.csv</code></a>
 and collecting appropriate information from WoRMS using the pyworms
 package.</p>
@@ -2123,7 +2123,7 @@ coordinate pairs.</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-3" class="tab-content">
-<div id="nav-tabpanel-3-1" class="tab-pane show active" aria-labelledby="nav-tab-3-1" role="tabpanel">
+<div id="nav-tabpanel-3-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-3-1">
 <ul>
 <li>This example assumes you have already split the two strings into
 discrete components (as shown in the table). An example converting the
@@ -2319,7 +2319,7 @@ two strings into discrete components (as shown in the table).</li>
 </li>
 </ol>
 </div>
-<div id="nav-tabpanel-3-2" class="tab-pane" aria-labelledby="nav-tab-3-2" role="tabpanel">
+<div id="nav-tabpanel-3-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-3-2">
 <p><code>17° 51' 57.96" S</code> <code>149° 39' 13.32" W</code></p>
 <div class="codewrapper sourceCode" id="cb63">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2831,7 +2831,7 @@ required terms of each data table below.</p>
   Event Core
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <table class="table">
 <colgroup>
@@ -2928,7 +2928,7 @@ OBIS and GBIF but it’s best to state explicitly that it is.</td>
   Occurrence extension
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <table class="table">
 <colgroup>
@@ -3032,7 +3032,7 @@ Location.</td>
   Extended Measurement or Fact Extension
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>Nothing is <em>required</em> from the OBIS perspective but if you are
 using this extension then <code>eventID</code> is required to be able to
@@ -4378,8 +4378,8 @@ any links that you are not going to use.
   "url": "https://ioos.github.io/bio_mobilization_workshop/aio.html",
   "identifier": "https://ioos.github.io/bio_mobilization_workshop/aio.html",
   "dateCreated": "2025-09-15",
-  "dateModified": "2025-11-18",
-  "datePublished": "2025-11-18"
+  "dateModified": "2025-11-25",
+  "datePublished": "2025-11-25"
 }
 
   </script><script>
