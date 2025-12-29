@@ -4,6 +4,7 @@ Workshop Digital Object Identifiers (DOI):
 | DOI | Year |
 |-----|------|
 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7401979.svg)](https://doi.org/10.5281/zenodo.7401979) | ALL |
+| [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18087438.svg)](https://doi.org/10.5281/zenodo.18087438) | 2025 |
 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11085142.svg)](https://doi.org/10.5281/zenodo.11085142) | 2024 |
 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7896606.svg)](https://doi.org/10.5281/zenodo.7896606) | 2023 |
 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7401980.svg)](https://doi.org/10.5281/zenodo.7401980) | 2022 |
