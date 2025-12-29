@@ -1,7 +1,8 @@
 ---
 layout: break
 title: "Social Break"
-break: 30
+teaching: 0
+exercises: 30
 ---
 
 ![xkcd 0927 (standards)](https://imgs.xkcd.com/comics/standards_2x.png)
