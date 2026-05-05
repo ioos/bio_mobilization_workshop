@@ -432,7 +432,7 @@ or that you don’t understand what it is?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <pre class="folder"><code>dwca-tpwd_harc_texasaransasbay_bagseine-v2.3
  |-- eml.xml
@@ -493,7 +493,7 @@ term headers!</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><a href="https://dwc.tdwg.org/terms/#dwc:eventDate" class="external-link"><code>eventDate</code></a></li>
 <li><a href="https://dwc.tdwg.org/terms/#dwc:decimalLatitude" class="external-link"><code>decimalLatitude</code></a></li>
@@ -527,13 +527,13 @@ and <a href="https://dwc.tdwg.org/terms/#dwc:sex" class="external-link"><code>se
 mapping document/spreadsheet (or document it as a comment in your
 script). List out all of your column headers in one column and document
 the appropriate Dawin Core term(s) in a second column. For example:</p>
-<table class="table"><thead><tr class="header"><th>my term</th>
+<table class="table"><thead><tr><th>my term</th>
 <th>DwC term</th>
-</tr></thead><tbody><tr class="odd"><td>lat</td>
+</tr></thead><tbody><tr><td>lat</td>
 <td>decimalLatitude</td>
-</tr><tr class="even"><td>date</td>
+</tr><tr><td>date</td>
 <td>eventDate</td>
-</tr><tr class="odd"><td>species</td>
+</tr><tr><td>species</td>
 <td>scientificName</td>
 </tr></tbody></table></div>
 </div>
@@ -566,13 +566,13 @@ include them 😐.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Required Terms </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
-<table class="table"><colgroup><col width="16%"><col width="32%"><col width="35%"><col width="15%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
+<table class="table"><colgroup><col width="16%"><col width="32%"><col width="35%"><col width="15%"></colgroup><thead><tr><th>Darwin Core Term</th>
 <th>Definition</th>
 <th>Comment</th>
 <th>Example</th>
-</tr></thead><tbody><tr class="odd"><td><a href="https://dwc.tdwg.org/terms/#dwc:occurrenceID" class="external-link"><code>occurrenceID</code></a></td>
+</tr></thead><tbody><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:occurrenceID" class="external-link"><code>occurrenceID</code></a></td>
 <td>An identifier for the Occurrence (as opposed to a particular digital
 record of the occurrence). In the absence of a persistent global unique
 identifier, construct one from a combination of identifiers in the
@@ -586,7 +586,7 @@ in the future for this. For ways to check the uniqueness of your
 occurrenceIDs see the <a href="../%7B%7B%20page.root%20%7D%7D/06-qa-qc/index.html">QA / QC</a>
 section of the workshop.</td>
 <td>Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</td>
-</tr><tr class="even"><td><a href="https://dwc.tdwg.org/terms/#dwc:basisOfRecord" class="external-link"><code>basisOfRecord</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:basisOfRecord" class="external-link"><code>basisOfRecord</code></a></td>
 <td>The specific nature of the data record.</td>
 <td>Pick from these controlled vocabulary terms: <a href="http://rs.tdwg.org/dwc/terms/HumanObservation" class="external-link">HumanObservation</a>,
 <a href="http://rs.tdwg.org/dwc/terms/MachineObservation" class="external-link">MachineObservation</a>,
@@ -598,7 +598,7 @@ section of the workshop.</td>
 <a href="http://rs.tdwg.org/dwc/terms/Event" class="external-link">Event</a>, <a href="http://rs.tdwg.org/dwc/terms/Taxon" class="external-link">Taxon</a>, <a href="http://rs.tdwg.org/dwc/terms/Occurrence" class="external-link">Occurrence</a>, <a href="http://rs.tdwg.org/dwc/terms/MaterialCitation" class="external-link">MaterialCitation</a>
 </td>
 <td>HumanObservation</td>
-</tr><tr class="odd"><td><a href="https://dwc.tdwg.org/terms/#dwc:scientificName" class="external-link"><code>scientificName</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:scientificName" class="external-link"><code>scientificName</code></a></td>
 <td>The full scientific name, with authorship and date information if
 known. When forming part of an Identification, this should be the name
 in lowest level taxonomic rank that can be determined. This term should
@@ -608,13 +608,13 @@ supplied in the <code>identificationQualifier</code> term.</td>
 <code>identificationQualifier</code> term. For a more thorough review of
 <code>identificationQualifier</code> see <a href="https://doi.org/10.3389/fmars.2021.620702" class="external-link">this paper</a>.</td>
 <td>Atractosteus spatula</td>
-</tr><tr class="even"><td><a href="https://dwc.tdwg.org/terms/#dwc:scientificNameID" class="external-link"><code>scientificNameID</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:scientificNameID" class="external-link"><code>scientificNameID</code></a></td>
 <td>An identifier for the nomenclatural (not taxonomic) details of a
 scientific name.</td>
 <td>Must be a WoRMS LSID for sharing to OBIS. Note that the numbers at
 the end are the AphiaID from WoRMS.</td>
 <td><a href="../urn:lsid:marinespecies.org:taxname:218214" class="uri">urn:lsid:marinespecies.org:taxname:218214</a></td>
-</tr><tr class="odd"><td><a href="https://dwc.tdwg.org/terms/#dwc:eventDate" class="external-link"><code>eventDate</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:eventDate" class="external-link"><code>eventDate</code></a></td>
 <td>The date-time or interval during which an Event occurred. For
 occurrences, this is the date-time when the event was recorded. Not
 suitable for a time in a geological context.</td>
@@ -622,7 +622,7 @@ suitable for a time in a geological context.</td>
 8601</a>. See more information on dates in the <a href="../%7B%7B%20page.root%20%7D%7D/03-data-cleaning/index.html">Data
 Cleaning</a> section of the workshop.</td>
 <td>2009-02-20T08:40Z</td>
-</tr><tr class="even"><td><a href="https://dwc.tdwg.org/terms/#dwc:decimalLatitude" class="external-link"><code>decimalLatitude</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:decimalLatitude" class="external-link"><code>decimalLatitude</code></a></td>
 <td>The geographic latitude (in decimal degrees, using the spatial
 reference system given in geodeticDatum) of the geographic center of a
 Location. Positive values are north of the Equator, negative values are
@@ -634,7 +634,7 @@ sampling event was a transect) can be recorded in
 coordinates in the <a href="../%7B%7B%20page.root%20%7D%7D/03-data-cleaning/index.html">Data
 Cleaning</a> section of the workshop.</td>
 <td>-41.0983423</td>
-</tr><tr class="odd"><td><a href="https://dwc.tdwg.org/terms/#dwc:decimalLongitude" class="external-link"><code>decimalLongitude</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:decimalLongitude" class="external-link"><code>decimalLongitude</code></a></td>
 <td>The geographic longitude (in decimal degrees, using the spatial
 reference system given in geodeticDatum) of the geographic center of a
 Location. Positive values are east of the Greenwich Meridian, negative
@@ -644,26 +644,26 @@ inclusive</td>
 See more information on coordinates in the <a href="../%7B%7B%20page.root%20%7D%7D/03-data-cleaning/index.html">Data
 Cleaning</a> section of the workshop.</td>
 <td>-121.1761111</td>
-</tr><tr class="even"><td><a href="https://dwc.tdwg.org/terms/#dwc:occurrenceStatus" class="external-link"><code>occurrenceStatus</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:occurrenceStatus" class="external-link"><code>occurrenceStatus</code></a></td>
 <td>A statement about the presence or absence of a Taxon at a
 Location.</td>
 <td>For OBIS, only valid values are <code>present</code> and
 <code>absent</code>.</td>
 <td>present</td>
-</tr><tr class="odd"><td><a href="https://dwc.tdwg.org/terms/#dwc:countryCode" class="external-link"><code>countryCode</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:countryCode" class="external-link"><code>countryCode</code></a></td>
 <td>The standard code for the country in which the location occurs.</td>
 <td>Use an <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2" class="external-link">ISO
 3166-1-alpha-2</a> country code. Not required for OBIS but GBIF prefers
 to have this for their system. For international waters, leave
 blank.</td>
 <td>US, MX, CA</td>
-</tr><tr class="even"><td><a href="https://dwc.tdwg.org/terms/#dwc:kingdom" class="external-link"><code>kingdom</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:kingdom" class="external-link"><code>kingdom</code></a></td>
 <td>The full scientific name of the kingdom in which the taxon is
 classified.</td>
 <td>Not required for OBIS but GBIF needs this to disambiguate scientific
 names that are the same but in different kingdoms.</td>
 <td>Animalia</td>
-</tr><tr class="odd"><td><a href="https://dwc.tdwg.org/terms/#dwciri:geodeticDatum" class="external-link"><code>geodeticDatum</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwciri:geodeticDatum" class="external-link"><code>geodeticDatum</code></a></td>
 <td>The ellipsoid, geodetic datum, or spatial reference system (SRS)
 upon which the geographic coordinates given in decimalLatitude and
 decimalLongitude as based.</td>
@@ -688,26 +688,26 @@ them if you can.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Other Terms </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
-<table style="width:100%;" class="table"><colgroup><col width="18%"><col width="37%"><col width="41%"><col width="2%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
+<table style="width:100%;" class="table"><colgroup><col width="18%"><col width="37%"><col width="41%"><col width="2%"></colgroup><thead><tr><th>Darwin Core Term</th>
 <th>Definition</th>
 <th>Comment</th>
 <th>Example</th>
-</tr></thead><tbody><tr class="odd"><td><a href="https://dwc.tdwg.org/terms/#dwc:minimumDepthInMeters" class="external-link"><code>minimumDepthInMeters</code></a></td>
+</tr></thead><tbody><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:minimumDepthInMeters" class="external-link"><code>minimumDepthInMeters</code></a></td>
 <td>The lesser depth of a range of depth below the local surface, in
 meters.</td>
 <td>There isn’t a single depth value so even if you have a single value
 you’ll put that in both minimum and maximum depth fields.</td>
 <td>0.1</td>
-</tr><tr class="even"><td><a href="https://dwc.tdwg.org/terms/#dwc:maximumDepthInMeters" class="external-link"><code>maximumDepthInMeters</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:maximumDepthInMeters" class="external-link"><code>maximumDepthInMeters</code></a></td>
 <td>The greater depth of a range of depth below the local surface, in
 meters.</td>
 <td>For observations above sea level consider using <a href="https://dwc.tdwg.org/terms/#dwc:minimumDistanceAboveSurfaceInMeters" class="external-link"><code>minimumDistanceAboveSurfaceInMeters</code></a>
 and <a href="https://dwc.tdwg.org/terms/#dwc:maximumDistanceAboveSurfaceInMeters" class="external-link"><code>maximumDistanceAboveSurfaceInMeters</code></a>
 </td>
 <td>10.5</td>
-</tr><tr class="odd"><td><a href="https://dwc.tdwg.org/terms/#dwc:coordinateUncertaintyInMeters" class="external-link"><code>coordinateUncertaintyInMeters</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:coordinateUncertaintyInMeters" class="external-link"><code>coordinateUncertaintyInMeters</code></a></td>
 <td>The horizontal distance (in meters) from the given decimalLatitude
 and decimalLongitude describing the smallest circle containing the whole
 of the Location. Leave the value empty if the uncertainty is unknown,
@@ -716,32 +716,32 @@ coordinates). Zero is not a valid value for this term</td>
 <td>There’s always uncertainty associated with locations. Recording the
 uncertainty is crucial for downstream analyses.</td>
 <td>15</td>
-</tr><tr class="even"><td><a href="https://dwc.tdwg.org/terms/#dwc:samplingProtocol" class="external-link"><code>samplingProtocol</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:samplingProtocol" class="external-link"><code>samplingProtocol</code></a></td>
 <td>The names of, references to, or descriptions of the methods or
 protocols used during an Event.</td>
 <td></td>
 <td>Bag Seine</td>
-</tr><tr class="odd"><td><a href="https://dwc.tdwg.org/terms/#dwc:taxonRank" class="external-link"><code>taxonRank</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:taxonRank" class="external-link"><code>taxonRank</code></a></td>
 <td>The taxonomic rank of the most specific name in the
 scientificName.</td>
 <td>Also helps with disambiguation of scientific names.</td>
 <td>Species</td>
-</tr><tr class="even"><td><a href="https://dwc.tdwg.org/terms/#dwc:organismQuantity" class="external-link"><code>organismQuantity</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:organismQuantity" class="external-link"><code>organismQuantity</code></a></td>
 <td>A number or enumeration value for the quantity of organisms.</td>
 <td>OBIS also likes to see this in the Extended Measurement or Fact
 extension.</td>
 <td>2.6</td>
-</tr><tr class="odd"><td><a href="https://dwc.tdwg.org/terms/#dwc:organismQuantityType" class="external-link"><code>organismQuantityType</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:organismQuantityType" class="external-link"><code>organismQuantityType</code></a></td>
 <td>The type of quantification system used for the quantity of
 organisms.</td>
 <td></td>
 <td>Relative Abundance</td>
-</tr><tr class="even"><td><a href="https://dwc.tdwg.org/terms/#dwc:datasetName" class="external-link"><code>datasetName</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:datasetName" class="external-link"><code>datasetName</code></a></td>
 <td>The name identifying the data set from which the record was
 derived.</td>
 <td></td>
 <td>TPWD HARC Texas Coastal Fisheries Aransas Bag Bay Seine</td>
-</tr><tr class="odd"><td><a href="https://dwc.tdwg.org/terms/#dwc:dataGeneralizations" class="external-link"><code>dataGeneralizations</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:dataGeneralizations" class="external-link"><code>dataGeneralizations</code></a></td>
 <td>Actions taken to make the shared data less specific or complete than
 in its original form. Suggests that alternative data of higher quality
 may be available on request.</td>
@@ -751,13 +751,13 @@ sensitive species then it’s important to note that for future
 users.</td>
 <td>Coordinates generalized from original GPS coordinates to the nearest
 half degree grid cell</td>
-</tr><tr class="even"><td><a href="https://dwc.tdwg.org/terms/#dwc:informationWithheld" class="external-link"><code>informationWithheld</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:informationWithheld" class="external-link"><code>informationWithheld</code></a></td>
 <td>Additional information that exists, but that has not been shared in
 the given record.</td>
 <td>Also useful if the data have been modified this way for sensitive
 species or for other reasons.</td>
 <td>location information not given for endangered species</td>
-</tr><tr class="odd"><td><a href="https://dwc.tdwg.org/terms/#dwc:institutionCode" class="external-link"><code>institutionCode</code></a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/terms/#dwc:institutionCode" class="external-link"><code>institutionCode</code></a></td>
 <td>The name (or acronym) in use by the institution having custody of
 the object(s) or information referred to in the record.</td>
 <td></td>
@@ -866,7 +866,7 @@ any links that you are not going to use.
   "identifier": "https://ioos.github.io/bio_mobilization_workshop/instructor/01-introduction.html",
   "dateCreated": "2025-09-15",
   "dateModified": "2025-11-02",
-  "datePublished": "2026-04-28"
+  "datePublished": "2026-05-05"
 }
 
   </script><script>

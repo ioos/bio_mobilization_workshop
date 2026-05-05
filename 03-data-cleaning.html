@@ -440,10 +440,10 @@ of choice to translate the dates.</p>
 </div>
 </div>
 </div>
-<table class="table"><colgroup><col width="42%"><col width="30%"><col width="26%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
+<table class="table"><colgroup><col width="42%"><col width="30%"><col width="26%"></colgroup><thead><tr><th>Darwin Core Term</th>
 <th>Description</th>
 <th>Example</th>
-</tr></thead><tbody><tr class="odd"><td><a href="https://dwc.tdwg.org/list/#dwc_eventDate" class="external-link">eventDate</a></td>
+</tr></thead><tbody><tr><td><a href="https://dwc.tdwg.org/list/#dwc_eventDate" class="external-link">eventDate</a></td>
 <td>The date-time or interval during which an Event occurred, or a taxa
 was recorded or observed. Not suitable for a time in a geological
 context.</td>
@@ -1051,14 +1051,14 @@ Additionally, OBIS has a three-part <a href="https://www.youtube.com/watch?v=jJ8
 YouTube about using the tool.</p>
 <p>The other way to get the taxonomic information you need is to use <a href="https://cran.r-project.org/web/packages/worrms/worrms.pdf" class="external-link">worrms</a>
 (yes there are two <strong>r</strong>’s in the package name) or <a href="https://github.com/iobis/pyworms" class="external-link">pyworms</a>.</p>
-<table class="table"><colgroup><col width="15%"><col width="50%"><col width="33%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
+<table class="table"><colgroup><col width="15%"><col width="50%"><col width="33%"></colgroup><thead><tr><th>Darwin Core Term</th>
 <th>Description</th>
 <th>Example</th>
-</tr></thead><tbody><tr class="odd"><td><a href="https://dwc.tdwg.org/list/#dwc_scientificNameID" class="external-link">scientificNameID</a></td>
+</tr></thead><tbody><tr><td><a href="https://dwc.tdwg.org/list/#dwc_scientificNameID" class="external-link">scientificNameID</a></td>
 <td>An identifier for the nomenclatural (not taxonomic) details of a
 scientific name.</td>
 <td><code>urn:lsid:ipni.org:names:37829-1:1.3</code></td>
-</tr><tr class="even"><td><a href="https://dwc.tdwg.org/list/#dwc_kingdom" class="external-link">kingdom</a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/list/#dwc_kingdom" class="external-link">kingdom</a></td>
 <td>The full scientific name of the kingdom in which the taxon is
 classified.</td>
 <td>
@@ -1066,7 +1066,7 @@ classified.</td>
 <code>Chromista</code>, <code>Fungi</code>, <code>Plantae</code>,
 <code>Protozoa</code>, <code>Viruses</code>
 </td>
-</tr><tr class="odd"><td><a href="https://dwc.tdwg.org/list/#dwc_taxonRank" class="external-link">taxonRank</a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/list/#dwc_taxonRank" class="external-link">taxonRank</a></td>
 <td>The taxonomic rank of the most specific name in the
 scientificName.</td>
 <td>
@@ -1370,20 +1370,20 @@ values are latitude and which are longitude.</p>
 </div>
 </div>
 </div>
-<table class="table"><colgroup><col width="38%"><col width="27%"><col width="34%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
+<table class="table"><colgroup><col width="38%"><col width="27%"><col width="34%"></colgroup><thead><tr><th>Darwin Core Term</th>
 <th>Description</th>
 <th>Example</th>
-</tr></thead><tbody><tr class="odd"><td><a href="https://dwc.tdwg.org/list/#dwc_decimalLatitude" class="external-link">decimalLatitude</a></td>
+</tr></thead><tbody><tr><td><a href="https://dwc.tdwg.org/list/#dwc_decimalLatitude" class="external-link">decimalLatitude</a></td>
 <td>The geographic latitude (in decimal degrees, using the spatial
 reference system given in geodeticDatum) of the geographic center of a
 Location.</td>
 <td><code>-41.0983423</code></td>
-</tr><tr class="even"><td><a href="https://dwc.tdwg.org/list/#dwc_decimalLongitude" class="external-link">decimalLongitude</a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/list/#dwc_decimalLongitude" class="external-link">decimalLongitude</a></td>
 <td>The geographic longitude (in decimal degrees, using the spatial
 reference system given in geodeticDatum) of the geographic center of a
 Location.</td>
 <td><code>-121.1761111</code></td>
-</tr><tr class="odd"><td><a href="https://dwc.tdwg.org/list/#dwc_geodeticDatum" class="external-link">geodeticDatum</a></td>
+</tr><tr><td><a href="https://dwc.tdwg.org/list/#dwc_geodeticDatum" class="external-link">geodeticDatum</a></td>
 <td>The ellipsoid, geodetic datum, or coordinate reference system (CRS)
 upon which the geographic coordinates given in decimalLatitude and
 decimalLongitude as based.</td>
@@ -1490,7 +1490,7 @@ two strings into discrete components (as shown in the table).</li>
 discrete components (as shown in the table). An example converting the
 full strings <code>17° 51' 57.96" S</code>
 <code>149° 39' 13.32" W</code> to decimal degrees can be found <a href="https://github.com/MathewBiddle/misc/blob/07d643da831255069fd1f6e936ca0902e21c0d0c/data302_DON_Oxidation_working_hollibaugh_20190514_process.py#L24-L62" class="external-link">here</a>.</li>
-</ul><table class="table"><colgroup><col width="11%"><col width="12%"><col width="12%"><col width="14%"><col width="12%"><col width="12%"><col width="12%"><col width="13%"></colgroup><thead><tr class="header"><th>lat_degrees</th>
+</ul><table class="table"><colgroup><col width="11%"><col width="12%"><col width="12%"><col width="14%"><col width="12%"><col width="12%"><col width="12%"><col width="13%"></colgroup><thead><tr><th>lat_degrees</th>
 <th>lat_minutes</th>
 <th>lat_seconds</th>
 <th>lat_hemisphere</th>
@@ -1498,7 +1498,7 @@ full strings <code>17° 51' 57.96" S</code>
 <th>lon_minutes</th>
 <th>lon_seconds</th>
 <th>lon_hemisphere</th>
-</tr></thead><tbody><tr class="odd"><td>17</td>
+</tr></thead><tbody><tr><td>17</td>
 <td>51</td>
 <td>57.96</td>
 <td>S</td>
@@ -1539,13 +1539,13 @@ full strings <code>17° 51' 57.96" S</code>
 <code>33° 22.967' N</code> <code>117° 35.321' W</code>
 <ul><li>Similar to above, this example assumes you have already split the
 two strings into discrete components (as shown in the table).</li>
-</ul><table style="width:100%;" class="table"><colgroup><col width="13%"><col width="18%"><col width="17%"><col width="14%"><col width="18%"><col width="16%"></colgroup><thead><tr class="header"><th>lat_degrees</th>
+</ul><table style="width:100%;" class="table"><colgroup><col width="13%"><col width="18%"><col width="17%"><col width="14%"><col width="18%"><col width="16%"></colgroup><thead><tr><th>lat_degrees</th>
 <th>lat_dec_minutes</th>
 <th>lat_hemisphere</th>
 <th>lon_degrees</th>
 <th>lon_dec_minutes</th>
 <th>lon_hemisphere</th>
-</tr></thead><tbody><tr class="odd"><td>33</td>
+</tr></thead><tbody><tr><td>33</td>
 <td>22.967</td>
 <td>N</td>
 <td>117</td>
@@ -1641,7 +1641,7 @@ package</a> the <code>conv_unit()</code> can work with space separated
 strings for coordinates.</li>
 </ul><ol style="list-style-type: decimal"><li>
 <p><code>17° 51' 57.96" S</code> <code>149° 39' 13.32" W</code></p>
-<table class="table"><colgroup><col width="11%"><col width="12%"><col width="12%"><col width="14%"><col width="12%"><col width="12%"><col width="12%"><col width="13%"></colgroup><thead><tr class="header"><th>lat_degrees</th>
+<table class="table"><colgroup><col width="11%"><col width="12%"><col width="12%"><col width="14%"><col width="12%"><col width="12%"><col width="12%"><col width="13%"></colgroup><thead><tr><th>lat_degrees</th>
 <th>lat_minutes</th>
 <th>lat_seconds</th>
 <th>lat_hemisphere</th>
@@ -1649,7 +1649,7 @@ strings for coordinates.</li>
 <th>lon_minutes</th>
 <th>lon_seconds</th>
 <th>lon_hemisphere</th>
-</tr></thead><tbody><tr class="odd"><td>17</td>
+</tr></thead><tbody><tr><td>17</td>
 <td>51</td>
 <td>57.96</td>
 <td>S</td>
@@ -1688,13 +1688,13 @@ strings for coordinates.</li>
 </li>
 <li>
 <p><code>33° 22.967' N</code> <code>117° 35.321' W</code></p>
-<table style="width:100%;" class="table"><colgroup><col width="13%"><col width="18%"><col width="17%"><col width="14%"><col width="18%"><col width="16%"></colgroup><thead><tr class="header"><th>lat_degrees</th>
+<table style="width:100%;" class="table"><colgroup><col width="13%"><col width="18%"><col width="17%"><col width="14%"><col width="18%"><col width="16%"></colgroup><thead><tr><th>lat_degrees</th>
 <th>lat_dec_minutes</th>
 <th>lat_hemisphere</th>
 <th>lon_degrees</th>
 <th>lon_dec_minutes</th>
 <th>lon_hemisphere</th>
-</tr></thead><tbody><tr class="odd"><td>33</td>
+</tr></thead><tbody><tr><td>33</td>
 <td>22.967</td>
 <td>N</td>
 <td>117</td>
@@ -1731,11 +1731,11 @@ strings for coordinates.</li>
 <ul><li>Using the <a href="https://cran.r-project.org/web/packages/measurements/measurements.pdf" class="external-link">measurements
 package</a> the <code>conv_unit()</code> can work with space separated
 strings for coordinates.</li>
-</ul><table class="table"><thead><tr class="header"><th>lat</th>
+</ul><table class="table"><thead><tr><th>lat</th>
 <th>lat_hemisphere</th>
 <th>lon</th>
 <th>lon_hemisphere</th>
-</tr></thead><tbody><tr class="odd"><td>33 22.967</td>
+</tr></thead><tbody><tr><td>33 22.967</td>
 <td>N</td>
 <td>117 35.321</td>
 <td>W</td>
@@ -1853,7 +1853,7 @@ any links that you are not going to use.
   "identifier": "https://ioos.github.io/bio_mobilization_workshop/03-data-cleaning.html",
   "dateCreated": "2025-09-15",
   "dateModified": "2025-11-02",
-  "datePublished": "2026-04-28"
+  "datePublished": "2026-05-05"
 }
 
   </script><script>

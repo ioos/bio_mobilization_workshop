@@ -448,43 +448,43 @@ the amount of time it takes to load the data into the IPT.</p>
 <div class="section level3">
 <h3 id="required-eml-metadata-fields-for-sharing-to-obis">Required EML metadata fields for sharing to OBIS<a class="anchor" aria-label="anchor" href="#required-eml-metadata-fields-for-sharing-to-obis"></a></h3>
 <p><em>Best practices for these fields are explained in detail in the <a href="https://manual.obis.org/eml" class="external-link">OBIS manual</a></em></p>
-<table class="table"><colgroup><col width="37%"><col width="37%"><col width="25%"></colgroup><thead><tr class="header"><th>EML Fields</th>
+<table class="table"><colgroup><col width="37%"><col width="37%"><col width="25%"></colgroup><thead><tr><th>EML Fields</th>
 <th>Definition</th>
 <th>Comment</th>
-</tr></thead><tbody><tr class="odd"><td><code>Title</code></td>
+</tr></thead><tbody><tr><td><code>Title</code></td>
 <td>A good descriptive title is indispensable and can provide the user
 with valuable information, making the discovery of data easier.</td>
 <td>The IPT also requires you to provide a Shortname. Shortnames serve
 as an identifier for the resource within the IPT installation and should
 be unique, descriptive and short (max. 100 characters). Spell out
 acronyms in Title but they are ok to use in the shortname.</td>
-</tr><tr class="even"><td><code>Abstract</code></td>
+</tr><tr><td><code>Abstract</code></td>
 <td>The abstract or description of a dataset provides basic information
 on the content of the dataset. The information in the abstract should
 improve understanding and interpretation of the data.</td>
 <td></td>
-</tr><tr class="odd"><td><code>Data License</code></td>
+</tr><tr><td><code>Data License</code></td>
 <td>The license that you apply to the resource. The license provides a
 standardized way to define appropriate uses of your work.</td>
 <td>Must use CC-0, CC-BY, or CC-BY-NC. Description of the licenses can
 be found <a href="https://manual.obis.org/policy.html#data-sharing-agreement" class="external-link">here</a>.</td>
-</tr><tr class="even"><td><code>Resource Contact(s)</code></td>
+</tr><tr><td><code>Resource Contact(s)</code></td>
 <td>The list of people and organizations that should be contacted to get
 more information about the resource, that curate the resource or to whom
 putative problems with the resource or its data should be
 addressed.</td>
 <td>Last name, Position, and Organization are required, helpful to
 include an ORCID and a contact method like email or phone number.</td>
-</tr><tr class="odd"><td><code>Resource Creator(s)</code></td>
+</tr><tr><td><code>Resource Creator(s)</code></td>
 <td>The people and organizations who created the resource, in priority
 order. The list will be used to auto-generate the resource citation (if
 auto-generation is turned on).</td>
 <td></td>
-</tr><tr class="even"><td><code>Metadata Provider(s)</code></td>
+</tr><tr><td><code>Metadata Provider(s)</code></td>
 <td>the people and organizations responsible for producing the resource
 metadata.</td>
 <td></td>
-</tr><tr class="odd"><td><code>Citation</code></td>
+</tr><tr><td><code>Citation</code></td>
 <td>The dataset citation allows users to properly cite the datasets in
 further publications or other uses of the data. The OBIS download
 function provides a list of the dataset citations packaged with the data
@@ -493,35 +493,35 @@ in a zipped file.</td>
 </tr></tbody></table></div>
 <div class="section level3">
 <h3 id="other-eml-fields-to-consider">Other EML fields to consider<a class="anchor" aria-label="anchor" href="#other-eml-fields-to-consider"></a></h3>
-<table class="table"><colgroup><col width="55%"><col width="25%"><col width="19%"></colgroup><thead><tr class="header"><th>EML Fields</th>
+<table class="table"><colgroup><col width="55%"><col width="25%"><col width="19%"></colgroup><thead><tr><th>EML Fields</th>
 <th>Definition</th>
 <th>Comment</th>
-</tr></thead><tbody><tr class="odd"><td><code>Bounding Box</code></td>
+</tr></thead><tbody><tr><td><code>Bounding Box</code></td>
 <td>Farthest North, South, East, and West coordinate.</td>
 <td></td>
-</tr><tr class="even"><td><code>Geographic Description</code></td>
+</tr><tr><td><code>Geographic Description</code></td>
 <td>A textual description of the geographic coverage.</td>
 <td></td>
-</tr><tr class="odd"><td><code>Temporal Coverage</code></td>
+</tr><tr><td><code>Temporal Coverage</code></td>
 <td>This can either be a Single Date, Date Range, Formation Period, or
 Living Time Period.</td>
 <td></td>
-</tr><tr class="even"><td><code>Keywords</code></td>
+</tr><tr><td><code>Keywords</code></td>
 <td>A list of keywords obtained from a thesaurus or controlled
 vocabulary collection.</td>
 <td>This field can help others find your dataset more easily.</td>
-</tr><tr class="odd"><td><code>Study Extent</code></td>
+</tr><tr><td><code>Study Extent</code></td>
 <td>This field represents both a specific sampling area and the sampling
 frequency (temporal boundaries, frequency of occurrence) of the
 project.</td>
 <td></td>
-</tr><tr class="even"><td><code>Sampling Description</code></td>
+</tr><tr><td><code>Sampling Description</code></td>
 <td>This field allows for a text-based/human readable description of the
 sampling procedures used in the research project.</td>
 <td>The content of this element would be similar to a description of
 sampling procedures found in the methods section of a journal
 article.</td>
-</tr><tr class="odd"><td><code>Step Description</code></td>
+</tr><tr><td><code>Step Description</code></td>
 <td>This field allows for repeated sets of elements that document a
 series of methods and procedures used in the study, and the processing
 steps leading to the production of the data files. These include
@@ -529,7 +529,7 @@ e.g. text descriptions of the procedures, relevant literature, software,
 instrumentation and any quality control measurements taken.</td>
 <td>Each method should be described in enough detail to allow other
 researchers to interpret and repeat the study, if required.</td>
-</tr><tr class="even"><td><code>Project Identifier</code></td>
+</tr><tr><td><code>Project Identifier</code></td>
 <td>A unique identifier for the research project. This can be used to
 link multiple dataset/EML document instances that are associated in some
 way with the same project, e.g. a monitoring series. The nature of the
@@ -616,7 +616,7 @@ any links that you are not going to use.
   "identifier": "https://ioos.github.io/bio_mobilization_workshop/07-validation-and-publishing.html",
   "dateCreated": "2025-09-15",
   "dateModified": "2025-11-02",
-  "datePublished": "2026-04-28"
+  "datePublished": "2026-05-05"
 }
 
   </script><script>

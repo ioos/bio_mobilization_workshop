@@ -482,7 +482,7 @@ or that you don’t understand what it is?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <pre class="folder"><code>dwca-tpwd_harc_texasaransasbay_bagseine-v2.3
  |-- eml.xml
@@ -547,7 +547,7 @@ term headers!</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><a href="https://dwc.tdwg.org/terms/#dwc:eventDate" class="external-link"><code>eventDate</code></a></li>
@@ -584,20 +584,20 @@ mapping document/spreadsheet (or document it as a comment in your
 script). List out all of your column headers in one column and document
 the appropriate Dawin Core term(s) in a second column. For example:</p>
 <table class="table">
-<thead><tr class="header">
+<thead><tr>
 <th>my term</th>
 <th>DwC term</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>lat</td>
 <td>decimalLatitude</td>
 </tr>
-<tr class="even">
+<tr>
 <td>date</td>
 <td>eventDate</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>species</td>
 <td>scientificName</td>
 </tr>
@@ -638,7 +638,7 @@ include them 😐.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Required Terms </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <table class="table">
 <colgroup>
@@ -647,14 +647,14 @@ include them 😐.</p>
 <col width="35%">
 <col width="15%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Darwin Core Term</th>
 <th>Definition</th>
 <th>Comment</th>
 <th>Example</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:occurrenceID" class="external-link"><code>occurrenceID</code></a></td>
 <td>An identifier for the Occurrence (as opposed to a particular digital
 record of the occurrence). In the absence of a persistent global unique
@@ -670,7 +670,7 @@ occurrenceIDs see the <a href="%7B%7B%20page.root%20%7D%7D/06-qa-qc/index.html">
 section of the workshop.</td>
 <td>Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:basisOfRecord" class="external-link"><code>basisOfRecord</code></a></td>
 <td>The specific nature of the data record.</td>
 <td>Pick from these controlled vocabulary terms: <a href="http://rs.tdwg.org/dwc/terms/HumanObservation" class="external-link">HumanObservation</a>,
@@ -684,7 +684,7 @@ section of the workshop.</td>
 </td>
 <td>HumanObservation</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:scientificName" class="external-link"><code>scientificName</code></a></td>
 <td>The full scientific name, with authorship and date information if
 known. When forming part of an Identification, this should be the name
@@ -696,7 +696,7 @@ supplied in the <code>identificationQualifier</code> term.</td>
 <code>identificationQualifier</code> see <a href="https://doi.org/10.3389/fmars.2021.620702" class="external-link">this paper</a>.</td>
 <td>Atractosteus spatula</td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:scientificNameID" class="external-link"><code>scientificNameID</code></a></td>
 <td>An identifier for the nomenclatural (not taxonomic) details of a
 scientific name.</td>
@@ -704,7 +704,7 @@ scientific name.</td>
 the end are the AphiaID from WoRMS.</td>
 <td><a href="urn:lsid:marinespecies.org:taxname:218214" class="uri">urn:lsid:marinespecies.org:taxname:218214</a></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:eventDate" class="external-link"><code>eventDate</code></a></td>
 <td>The date-time or interval during which an Event occurred. For
 occurrences, this is the date-time when the event was recorded. Not
@@ -714,7 +714,7 @@ suitable for a time in a geological context.</td>
 Cleaning</a> section of the workshop.</td>
 <td>2009-02-20T08:40Z</td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:decimalLatitude" class="external-link"><code>decimalLatitude</code></a></td>
 <td>The geographic latitude (in decimal degrees, using the spatial
 reference system given in geodeticDatum) of the geographic center of a
@@ -728,7 +728,7 @@ coordinates in the <a href="%7B%7B%20page.root%20%7D%7D/03-data-cleaning/index.h
 Cleaning</a> section of the workshop.</td>
 <td>-41.0983423</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:decimalLongitude" class="external-link"><code>decimalLongitude</code></a></td>
 <td>The geographic longitude (in decimal degrees, using the spatial
 reference system given in geodeticDatum) of the geographic center of a
@@ -740,7 +740,7 @@ See more information on coordinates in the <a href="%7B%7B%20page.root%20%7D%7D/
 Cleaning</a> section of the workshop.</td>
 <td>-121.1761111</td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:occurrenceStatus" class="external-link"><code>occurrenceStatus</code></a></td>
 <td>A statement about the presence or absence of a Taxon at a
 Location.</td>
@@ -748,7 +748,7 @@ Location.</td>
 <code>absent</code>.</td>
 <td>present</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:countryCode" class="external-link"><code>countryCode</code></a></td>
 <td>The standard code for the country in which the location occurs.</td>
 <td>Use an <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2" class="external-link">ISO
@@ -757,7 +757,7 @@ to have this for their system. For international waters, leave
 blank.</td>
 <td>US, MX, CA</td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:kingdom" class="external-link"><code>kingdom</code></a></td>
 <td>The full scientific name of the kingdom in which the taxon is
 classified.</td>
@@ -765,7 +765,7 @@ classified.</td>
 names that are the same but in different kingdoms.</td>
 <td>Animalia</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwciri:geodeticDatum" class="external-link"><code>geodeticDatum</code></a></td>
 <td>The ellipsoid, geodetic datum, or spatial reference system (SRS)
 upon which the geographic coordinates given in decimalLatitude and
@@ -796,7 +796,7 @@ them if you can.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Other Terms </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <table style="width:100%;" class="table">
 <colgroup>
@@ -805,14 +805,14 @@ them if you can.</p>
 <col width="41%">
 <col width="2%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Darwin Core Term</th>
 <th>Definition</th>
 <th>Comment</th>
 <th>Example</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:minimumDepthInMeters" class="external-link"><code>minimumDepthInMeters</code></a></td>
 <td>The lesser depth of a range of depth below the local surface, in
 meters.</td>
@@ -820,7 +820,7 @@ meters.</td>
 you’ll put that in both minimum and maximum depth fields.</td>
 <td>0.1</td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:maximumDepthInMeters" class="external-link"><code>maximumDepthInMeters</code></a></td>
 <td>The greater depth of a range of depth below the local surface, in
 meters.</td>
@@ -829,7 +829,7 @@ and <a href="https://dwc.tdwg.org/terms/#dwc:maximumDistanceAboveSurfaceInMeters
 </td>
 <td>10.5</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:coordinateUncertaintyInMeters" class="external-link"><code>coordinateUncertaintyInMeters</code></a></td>
 <td>The horizontal distance (in meters) from the given decimalLatitude
 and decimalLongitude describing the smallest circle containing the whole
@@ -840,42 +840,42 @@ coordinates). Zero is not a valid value for this term</td>
 uncertainty is crucial for downstream analyses.</td>
 <td>15</td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:samplingProtocol" class="external-link"><code>samplingProtocol</code></a></td>
 <td>The names of, references to, or descriptions of the methods or
 protocols used during an Event.</td>
 <td></td>
 <td>Bag Seine</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:taxonRank" class="external-link"><code>taxonRank</code></a></td>
 <td>The taxonomic rank of the most specific name in the
 scientificName.</td>
 <td>Also helps with disambiguation of scientific names.</td>
 <td>Species</td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:organismQuantity" class="external-link"><code>organismQuantity</code></a></td>
 <td>A number or enumeration value for the quantity of organisms.</td>
 <td>OBIS also likes to see this in the Extended Measurement or Fact
 extension.</td>
 <td>2.6</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:organismQuantityType" class="external-link"><code>organismQuantityType</code></a></td>
 <td>The type of quantification system used for the quantity of
 organisms.</td>
 <td></td>
 <td>Relative Abundance</td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:datasetName" class="external-link"><code>datasetName</code></a></td>
 <td>The name identifying the data set from which the record was
 derived.</td>
 <td></td>
 <td>TPWD HARC Texas Coastal Fisheries Aransas Bag Bay Seine</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:dataGeneralizations" class="external-link"><code>dataGeneralizations</code></a></td>
 <td>Actions taken to make the shared data less specific or complete than
 in its original form. Suggests that alternative data of higher quality
@@ -887,7 +887,7 @@ users.</td>
 <td>Coordinates generalized from original GPS coordinates to the nearest
 half degree grid cell</td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:informationWithheld" class="external-link"><code>informationWithheld</code></a></td>
 <td>Additional information that exists, but that has not been shared in
 the given record.</td>
@@ -895,7 +895,7 @@ the given record.</td>
 species or for other reasons.</td>
 <td>location information not given for endangered species</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:institutionCode" class="external-link"><code>institutionCode</code></a></td>
 <td>The name (or acronym) in use by the institution having custody of
 the object(s) or information referred to in the record.</td>
@@ -1102,12 +1102,12 @@ of choice to translate the dates.</p>
 <col width="30%">
 <col width="26%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Darwin Core Term</th>
 <th>Description</th>
 <th>Example</th>
 </tr></thead>
-<tbody><tr class="odd">
+<tbody><tr>
 <td><a href="https://dwc.tdwg.org/list/#dwc_eventDate" class="external-link">eventDate</a></td>
 <td>The date-time or interval during which an Event occurred, or a taxa
 was recorded or observed. Not suitable for a time in a geological
@@ -1732,19 +1732,19 @@ YouTube about using the tool.</p>
 <col width="50%">
 <col width="33%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Darwin Core Term</th>
 <th>Description</th>
 <th>Example</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/list/#dwc_scientificNameID" class="external-link">scientificNameID</a></td>
 <td>An identifier for the nomenclatural (not taxonomic) details of a
 scientific name.</td>
 <td><code>urn:lsid:ipni.org:names:37829-1:1.3</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/list/#dwc_kingdom" class="external-link">kingdom</a></td>
 <td>The full scientific name of the kingdom in which the taxon is
 classified.</td>
@@ -1754,7 +1754,7 @@ classified.</td>
 <code>Protozoa</code>, <code>Viruses</code>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/list/#dwc_taxonRank" class="external-link">taxonRank</a></td>
 <td>The taxonomic rank of the most specific name in the
 scientificName.</td>
@@ -2091,27 +2091,27 @@ values are latitude and which are longitude.</p>
 <col width="27%">
 <col width="34%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Darwin Core Term</th>
 <th>Description</th>
 <th>Example</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/list/#dwc_decimalLatitude" class="external-link">decimalLatitude</a></td>
 <td>The geographic latitude (in decimal degrees, using the spatial
 reference system given in geodeticDatum) of the geographic center of a
 Location.</td>
 <td><code>-41.0983423</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/list/#dwc_decimalLongitude" class="external-link">decimalLongitude</a></td>
 <td>The geographic longitude (in decimal degrees, using the spatial
 reference system given in geodeticDatum) of the geographic center of a
 Location.</td>
 <td><code>-121.1761111</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/list/#dwc_geodeticDatum" class="external-link">geodeticDatum</a></td>
 <td>The ellipsoid, geodetic datum, or coordinate reference system (CRS)
 upon which the geographic coordinates given in decimalLatitude and
@@ -2240,7 +2240,7 @@ full strings <code>17° 51' 57.96" S</code>
 <col width="12%">
 <col width="13%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>lat_degrees</th>
 <th>lat_minutes</th>
 <th>lat_seconds</th>
@@ -2250,7 +2250,7 @@ full strings <code>17° 51' 57.96" S</code>
 <th>lon_seconds</th>
 <th>lon_hemisphere</th>
 </tr></thead>
-<tbody><tr class="odd">
+<tbody><tr>
 <td>17</td>
 <td>51</td>
 <td>57.96</td>
@@ -2305,7 +2305,7 @@ two strings into discrete components (as shown in the table).</li>
 <col width="18%">
 <col width="16%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>lat_degrees</th>
 <th>lat_dec_minutes</th>
 <th>lat_hemisphere</th>
@@ -2313,7 +2313,7 @@ two strings into discrete components (as shown in the table).</li>
 <th>lon_dec_minutes</th>
 <th>lon_hemisphere</th>
 </tr></thead>
-<tbody><tr class="odd">
+<tbody><tr>
 <td>33</td>
 <td>22.967</td>
 <td>N</td>
@@ -2427,7 +2427,7 @@ strings for coordinates.</li>
 <col width="12%">
 <col width="13%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>lat_degrees</th>
 <th>lat_minutes</th>
 <th>lat_seconds</th>
@@ -2437,7 +2437,7 @@ strings for coordinates.</li>
 <th>lon_seconds</th>
 <th>lon_hemisphere</th>
 </tr></thead>
-<tbody><tr class="odd">
+<tbody><tr>
 <td>17</td>
 <td>51</td>
 <td>57.96</td>
@@ -2488,7 +2488,7 @@ strings for coordinates.</li>
 <col width="18%">
 <col width="16%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>lat_degrees</th>
 <th>lat_dec_minutes</th>
 <th>lat_hemisphere</th>
@@ -2496,7 +2496,7 @@ strings for coordinates.</li>
 <th>lon_dec_minutes</th>
 <th>lon_hemisphere</th>
 </tr></thead>
-<tbody><tr class="odd">
+<tbody><tr>
 <td>33</td>
 <td>22.967</td>
 <td>N</td>
@@ -2539,13 +2539,13 @@ package</a> the <code>conv_unit()</code> can work with space separated
 strings for coordinates.</li>
 </ul>
 <table class="table">
-<thead><tr class="header">
+<thead><tr>
 <th>lat</th>
 <th>lat_hemisphere</th>
 <th>lon</th>
 <th>lon_hemisphere</th>
 </tr></thead>
-<tbody><tr class="odd">
+<tbody><tr>
 <td>33 22.967</td>
 <td>N</td>
 <td>117 35.321</td>
@@ -2791,13 +2791,13 @@ present in OBIS but you have fixed the mistake.</p>
 <col width="30%">
 <col width="26%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Darwin Core Term</th>
 <th>Description</th>
 <th>Example</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:eventID" class="external-link">eventID</a></td>
 <td>An identifier for the set of information associated with an Event
 (something that occurs at a place and time). May be a global unique
@@ -2807,7 +2807,7 @@ identifier or an identifier specific to the data set.</td>
 <br><code>FFS-216:2007-09-21:A:replicateID1024</code>
 </td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:occurrenceID" class="external-link">occurrenceID</a></td>
 <td>An identifier for the Occurrence (as opposed to a particular digital
 record of the occurrence). In the absence of a persistent global unique
@@ -2819,7 +2819,7 @@ unique.</td>
 <br><code>FFS-216:2007-09-21:A:replicateID1024:objectID1345330</code>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:measurementID" class="external-link">measurementID</a></td>
 <td>An identifier for the MeasurementOrFact (information pertaining to
 measurements, facts, characteristics, or assertions). May be a global
@@ -2863,7 +2863,7 @@ required terms of each data table below.</p>
   Event Core
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <table class="table">
 <colgroup>
@@ -2872,14 +2872,14 @@ required terms of each data table below.</p>
 <col width="35%">
 <col width="15%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Darwin Core Term</th>
 <th>Definition</th>
 <th>Comment</th>
 <th>Example</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:eventID" class="external-link"><code>eventID</code></a></td>
 <td>An identifier for the set of information associated with an Event
 (something that occurs at a place and time). May be a global unique
@@ -2893,7 +2893,7 @@ data.</td>
 <br><code>FFS-216:2007-09-21:A:replicateID1024</code>
 </td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:eventDate" class="external-link"><code>eventDate</code></a></td>
 <td>The date-time or interval during which an Event occurred. For
 occurrences, this is the date-time when the event was recorded. Not
@@ -2903,7 +2903,7 @@ suitable for a time in a geological context.</td>
 workshop.</td>
 <td><code>2009-02-20T08:40Z</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:decimalLatitude" class="external-link"><code>decimalLatitude</code></a></td>
 <td>The geographic latitude (in decimal degrees, using the spatial
 reference system given in geodeticDatum) of the geographic center of a
@@ -2917,7 +2917,7 @@ coordinates in the <a href="03-data-cleaning/index.html">Data
 Cleaning</a> section of the workshop.</td>
 <td><code>-41.0983423</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:decimalLongitude" class="external-link"><code>decimalLongitude</code></a></td>
 <td>The geographic longitude (in decimal degrees, using the spatial
 reference system given in geodeticDatum) of the geographic center of a
@@ -2929,7 +2929,7 @@ See more information on coordinates in the <a href="03-data-cleaning/index.html"
 workshop.</td>
 <td><code>-121.1761111</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:countryCode" class="external-link"><code>countryCode</code></a></td>
 <td>The standard code for the country in which the location occurs.</td>
 <td>Use an <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2" class="external-link">ISO
@@ -2937,7 +2937,7 @@ workshop.</td>
 this for their system.</td>
 <td><code>US</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwciri:geodeticDatum" class="external-link"><code>geodeticDatum</code></a></td>
 <td>The ellipsoid, geodetic datum, or spatial reference system (SRS)
 upon which the geographic coordinates given in decimalLatitude and
@@ -2960,7 +2960,7 @@ OBIS and GBIF but it’s best to state explicitly that it is.</td>
   Occurrence extension
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <table class="table">
 <colgroup>
@@ -2969,14 +2969,14 @@ OBIS and GBIF but it’s best to state explicitly that it is.</td>
 <col width="35%">
 <col width="15%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Darwin Core Term</th>
 <th>Definition</th>
 <th>Comment</th>
 <th>Example</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:eventID" class="external-link"><code>eventID</code></a></td>
 <td>An identifier for the set of information associated with an Event
 (something that occurs at a place and time). May be a global unique
@@ -2989,7 +2989,7 @@ correctly.</td>
 <br><code>FFS-216:2007-09-21:A:replicateID1024</code>
 </td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:occurrenceID" class="external-link"><code>occurrenceID</code></a></td>
 <td>An identifier for the Occurrence (as opposed to a particular digital
 record of the occurrence). In the absence of a persistent global unique
@@ -3002,7 +3002,7 @@ similar) but you’ll need to check this is unique for each row in your
 data.</td>
 <td><code>Station_95_Date_09JAN1997:14:35:00.000_Atractosteus_spatula</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:basisOfRecord" class="external-link"><code>basisOfRecord</code></a></td>
 <td>The specific nature of the data record.</td>
 <td>Pick from these controlled vocabulary terms: <a href="http://rs.tdwg.org/dwc/terms/HumanObservation" class="external-link">HumanObservation</a>,
@@ -3015,7 +3015,7 @@ data.</td>
 </td>
 <td><code>HumanObservation</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:scientificName" class="external-link"><code>scientificName</code></a></td>
 <td>The full scientific name, with authorship and date information if
 known. When forming part of an Identification, this should be the name
@@ -3026,7 +3026,7 @@ supplied in the <code>identificationQualifier</code> term.</td>
 <code>identificationQualifier</code> term.</td>
 <td><code>Atractosteus spatula</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:scientificNameID" class="external-link"><code>scientificNameID</code></a></td>
 <td>An identifier for the nomenclatural (not taxonomic) details of a
 scientific name.</td>
@@ -3034,7 +3034,7 @@ scientific name.</td>
 the end are the AphiaID from WoRMS.</td>
 <td><code>urn:lsid:marinespecies.org:taxname:218214</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:kingdom" class="external-link"><code>kingdom</code></a></td>
 <td>The full scientific name of the kingdom in which the taxon is
 classified.</td>
@@ -3042,7 +3042,7 @@ classified.</td>
 names that are the same but in different kingdoms.</td>
 <td><code>Animalia</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://dwc.tdwg.org/terms/#dwc:occurrenceStatus" class="external-link"><code>occurrenceStatus</code></a></td>
 <td>A statement about the presence or absence of a Taxon at a
 Location.</td>
@@ -3064,7 +3064,7 @@ Location.</td>
   Extended Measurement or Fact Extension
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <p>Nothing is <em>required</em> from the OBIS perspective but if you are
 using this extension then <code>eventID</code> is required to be able to
@@ -3080,14 +3080,14 @@ below of the most relevant terms to be included in the eMoF table.</p>
 <col width="35%">
 <col width="15%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Darwin Core Term</th>
 <th>Definition</th>
 <th>Comment</th>
 <th>Example</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><code>eventID</code></td>
 <td>An identifier for the set of information associated with an Event
 (something that occurs at a place and time). May be a global unique
@@ -3100,7 +3100,7 @@ correctly.</td>
 <br><code>FFS-216:2007-09-21:A:replicateID1024</code>
 </td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>occurrenceID</code></td>
 <td>The identifier of the occurrence the measurement or fact refers to.
 If not applicable, it should be left empty.</td>
@@ -3111,7 +3111,7 @@ an occurrence like weight, length, abundance, etc.</td>
 <br><code>FFS-216:2007-09-21:A:replicateID1024:objectID1345330</code>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>measurementID</code></td>
 <td>An identifier for the MeasurementOrFact (information pertaining to
 measurements, facts, characteristics, or assertions). May be a global
@@ -3121,7 +3121,7 @@ be useful, especially if you would like a way to identify a specific
 measurement in the data</td>
 <td><code>9c752d22-b09a-11e8-96f8-529269fb1459</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>measurementType</code></td>
 <td>The nature of the measurement, fact, characteristic, or assertion.
 Recommended best practice is to use a controlled vocabulary.</td>
@@ -3130,7 +3130,7 @@ Recommended best practice is to use a controlled vocabulary.</td>
 <code>temperature</code><br><code>salinity</code><br><code>length</code><br><code>device type</code>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>measurementTypeID</code></td>
 <td>An identifier for the measurementType (global unique identifier,
 URI). The identifier should reference the measurementType in a
@@ -3320,7 +3320,7 @@ notebook</a> to see how it works.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Hmisc::describe </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3521,7 +3521,7 @@ checks:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="tabs">
 <nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
@@ -3537,7 +3537,7 @@ checks:</p>
 </button>
 </div>
 </nav><div id="nav-tabContent-1" class="tab-content">
-<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" role="tabpanel" aria-labelledby="nav-tab-1-1">
 <p>Install <a href="https://github.com/iobis/obistools" class="external-link">obistools</a> R
 packages. Use <a href="https://readxl.tidyverse.org/" class="external-link">readxl</a> package
 to read the Excel file.</p>
@@ -3577,13 +3577,13 @@ to read the Excel file.</p>
 </div>
 <p>Check for proper <code>eventDate</code> to ensure they follow ISO
 8601 standards:
-<code>r     eventDate &lt;- obistools::check_eventdate(trawl_fish)     print(eventDate)</code>
-<code>output     # A tibble: 3 x 4      level   row field     message                                                             &lt;chr&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;                                                              1 error    10 eventDate eventDate 2019-02-24T07u40 does not seem to be a valid date        2 error    13 eventDate eventDate 2019-02-25 11h25min does not seem to be a valid date     3 error    15 eventDate eventDate 2019-26-2 does not seem to be a valid date</code></p>
+<code>r  eventDate &lt;- obistools::check_eventdate(trawl_fish)  print(eventDate)</code>
+<code>output  # A tibble: 3 x 4   level   row field     message                                                          &lt;chr&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;                                                           1 error    10 eventDate eventDate 2019-02-24T07u40 does not seem to be a valid date     2 error    13 eventDate eventDate 2019-02-25 11h25min does not seem to be a valid date  3 error    15 eventDate eventDate 2019-26-2 does not seem to be a valid date</code></p>
 <p>From the report generated under exercise 1, you can already see that
 there’s measurements made on land. This information can also be gathered
 by plotting the map separately or using the <code>check_onland()</code>
-or <code>check_depth()</code> functions in the <a href="https://iobis.github.io/obistools/" class="external-link">obistools</a> package.<br><code>r     depth &lt;- obistools::check_depth(trawl_fish)     onland &lt;- obistools::check_onland(trawl_fish) # Gives the same output.                print(depth)</code>
-<code>output     # A tibble: 1 x 16      eventID parentEventID eventDate  year month   day decimalLatitude decimalLongitude footprintWKT coordinateUncer~ minimumDepthInM~      &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;           &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;            &lt;dbl&gt;     1 IYS:Go~ IYS:GoA2019:~ 2019-02-~  2019     2    22            67.4            -140. LINESTRING ~            2313.                0     # ... with 5 more variables: maximumDepthInMeters &lt;dbl&gt;, samplingProtocol &lt;chr&gt;, locality &lt;chr&gt;, locationID &lt;chr&gt;, type &lt;chr&gt;</code></p>
+or <code>check_depth()</code> functions in the <a href="https://iobis.github.io/obistools/" class="external-link">obistools</a> package.<br><code>r  depth &lt;- obistools::check_depth(trawl_fish)  onland &lt;- obistools::check_onland(trawl_fish) # Gives the same output.             print(depth)</code>
+<code>output  # A tibble: 1 x 16   eventID parentEventID eventDate  year month   day decimalLatitude decimalLongitude footprintWKT coordinateUncer~ minimumDepthInM~   &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;           &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;            &lt;dbl&gt;  1 IYS:Go~ IYS:GoA2019:~ 2019-02-~  2019     2    22            67.4            -140. LINESTRING ~            2313.                0  # ... with 5 more variables: maximumDepthInMeters &lt;dbl&gt;, samplingProtocol &lt;chr&gt;, locality &lt;chr&gt;, locationID &lt;chr&gt;, type &lt;chr&gt;</code></p>
 <ol style="list-style-type: decimal">
 <li>
 <p>Run a diagnostics report for the data quality</p>
@@ -3626,18 +3626,18 @@ or <code>check_depth()</code> functions in the <a href="https://iobis.github.io/
 </li>
 <li><p>Check for proper <code>eventDate</code> to ensure they follow ISO
 8601 standards:
-<code>r     eventDate &lt;- obistools::check_eventdate(trawl_fish)     print(eventDate)</code>
-<code>output     # A tibble: 3 x 4      level   row field     message                                                             &lt;chr&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;                                                              1 error    10 eventDate eventDate 2019-02-24T07u40 does not seem to be a valid date        2 error    13 eventDate eventDate 2019-02-25 11h25min does not seem to be a valid date     3 error    15 eventDate eventDate 2019-26-2 does not seem to be a valid date</code></p></li>
+<code>r  eventDate &lt;- obistools::check_eventdate(trawl_fish)  print(eventDate)</code>
+<code>output  # A tibble: 3 x 4   level   row field     message                                                          &lt;chr&gt; &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;                                                           1 error    10 eventDate eventDate 2019-02-24T07u40 does not seem to be a valid date     2 error    13 eventDate eventDate 2019-02-25 11h25min does not seem to be a valid date  3 error    15 eventDate eventDate 2019-26-2 does not seem to be a valid date</code></p></li>
 <li><p>From the report generated under exercise 1, you can already see
 that there’s measurements made on land. This information can also be
 gathered by plotting the map separately or using the
 <code>check_onland()</code> or <code>check_depth()</code> functions in
 the <a href="https://iobis.github.io/obistools/" class="external-link">obistools</a>
-package.<br><code>r     depth &lt;- obistools::check_depth(trawl_fish)     onland &lt;- obistools::check_onland(trawl_fish) # Gives the same output.                print(depth)</code>
-<code>output     # A tibble: 1 x 16      eventID parentEventID eventDate  year month   day decimalLatitude decimalLongitude footprintWKT coordinateUncer~ minimumDepthInM~      &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;           &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;            &lt;dbl&gt;     1 IYS:Go~ IYS:GoA2019:~ 2019-02-~  2019     2    22            67.4            -140. LINESTRING ~            2313.                0     # ... with 5 more variables: maximumDepthInMeters &lt;dbl&gt;, samplingProtocol &lt;chr&gt;, locality &lt;chr&gt;, locationID &lt;chr&gt;, type &lt;chr&gt;</code></p></li>
+package.<br><code>r  depth &lt;- obistools::check_depth(trawl_fish)  onland &lt;- obistools::check_onland(trawl_fish) # Gives the same output.             print(depth)</code>
+<code>output  # A tibble: 1 x 16   eventID parentEventID eventDate  year month   day decimalLatitude decimalLongitude footprintWKT coordinateUncer~ minimumDepthInM~   &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;           &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;                   &lt;dbl&gt;            &lt;dbl&gt;  1 IYS:Go~ IYS:GoA2019:~ 2019-02-~  2019     2    22            67.4            -140. LINESTRING ~            2313.                0  # ... with 5 more variables: maximumDepthInMeters &lt;dbl&gt;, samplingProtocol &lt;chr&gt;, locality &lt;chr&gt;, locationID &lt;chr&gt;, type &lt;chr&gt;</code></p></li>
 </ol>
 </div>
-<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<div id="nav-tabpanel-1-2" class="tab-pane" role="tabpanel" aria-labelledby="nav-tab-1-2">
 <p>Install the <a href="https://pandas.pydata.org/" class="external-link">pandas</a>, <a href="https://scitools.org.uk/cartopy/docs/latest/installing.html" class="external-link">cartopy</a>,
 and <a href="https://geopandas.org/en/stable/" class="external-link">geopandas</a> Python
 packages. Use pandas to read the Excel file.</p>
@@ -4125,13 +4125,13 @@ the amount of time it takes to load the data into the IPT.</p>
 <col width="37%">
 <col width="25%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>EML Fields</th>
 <th>Definition</th>
 <th>Comment</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><code>Title</code></td>
 <td>A good descriptive title is indispensable and can provide the user
 with valuable information, making the discovery of data easier.</td>
@@ -4140,21 +4140,21 @@ as an identifier for the resource within the IPT installation and should
 be unique, descriptive and short (max. 100 characters). Spell out
 acronyms in Title but they are ok to use in the shortname.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>Abstract</code></td>
 <td>The abstract or description of a dataset provides basic information
 on the content of the dataset. The information in the abstract should
 improve understanding and interpretation of the data.</td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>Data License</code></td>
 <td>The license that you apply to the resource. The license provides a
 standardized way to define appropriate uses of your work.</td>
 <td>Must use CC-0, CC-BY, or CC-BY-NC. Description of the licenses can
 be found <a href="https://manual.obis.org/policy.html#data-sharing-agreement" class="external-link">here</a>.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>Resource Contact(s)</code></td>
 <td>The list of people and organizations that should be contacted to get
 more information about the resource, that curate the resource or to whom
@@ -4163,20 +4163,20 @@ addressed.</td>
 <td>Last name, Position, and Organization are required, helpful to
 include an ORCID and a contact method like email or phone number.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>Resource Creator(s)</code></td>
 <td>The people and organizations who created the resource, in priority
 order. The list will be used to auto-generate the resource citation (if
 auto-generation is turned on).</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>Metadata Provider(s)</code></td>
 <td>the people and organizations responsible for producing the resource
 metadata.</td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>Citation</code></td>
 <td>The dataset citation allows users to properly cite the datasets in
 further publications or other uses of the data. The OBIS download
@@ -4196,42 +4196,42 @@ in a zipped file.</td>
 <col width="25%">
 <col width="19%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>EML Fields</th>
 <th>Definition</th>
 <th>Comment</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><code>Bounding Box</code></td>
 <td>Farthest North, South, East, and West coordinate.</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>Geographic Description</code></td>
 <td>A textual description of the geographic coverage.</td>
 <td></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>Temporal Coverage</code></td>
 <td>This can either be a Single Date, Date Range, Formation Period, or
 Living Time Period.</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>Keywords</code></td>
 <td>A list of keywords obtained from a thesaurus or controlled
 vocabulary collection.</td>
 <td>This field can help others find your dataset more easily.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>Study Extent</code></td>
 <td>This field represents both a specific sampling area and the sampling
 frequency (temporal boundaries, frequency of occurrence) of the
 project.</td>
 <td></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>Sampling Description</code></td>
 <td>This field allows for a text-based/human readable description of the
 sampling procedures used in the research project.</td>
@@ -4239,7 +4239,7 @@ sampling procedures used in the research project.</td>
 sampling procedures found in the methods section of a journal
 article.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>Step Description</code></td>
 <td>This field allows for repeated sets of elements that document a
 series of methods and procedures used in the study, and the processing
@@ -4249,7 +4249,7 @@ instrumentation and any quality control measurements taken.</td>
 <td>Each method should be described in enough detail to allow other
 researchers to interpret and repeat the study, if required.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>Project Identifier</code></td>
 <td>A unique identifier for the research project. This can be used to
 link multiple dataset/EML document instances that are associated in some
@@ -4450,8 +4450,8 @@ any links that you are not going to use.
   "url": "https://ioos.github.io/bio_mobilization_workshop/aio.html",
   "identifier": "https://ioos.github.io/bio_mobilization_workshop/aio.html",
   "dateCreated": "2025-09-15",
-  "dateModified": "2026-04-28",
-  "datePublished": "2026-04-28"
+  "dateModified": "2026-05-05",
+  "datePublished": "2026-05-05"
 }
 
   </script><script>

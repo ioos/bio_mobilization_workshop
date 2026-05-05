@@ -495,40 +495,40 @@ fields in DwC the following (free-text) fields are also included:</p>
 <p><strong>Table 1.</strong> Recommended fields for Occurrence core or
 extension. An extended version of this table is found in <a href="https://docs.gbif-uat.org/publishing-dna-derived-data/1.0/en/#mapping-metabarcoding-edna-and-barcoding-data" class="external-link">GBIF
 manual</a>.</p>
-<table class="table"><colgroup><col width="32%"><col width="25%"><col width="21%"><col width="21%"></colgroup><thead><tr class="header"><th align="left"></th>
+<table class="table"><colgroup><col width="32%"><col width="25%"><col width="21%"><col width="21%"></colgroup><thead><tr><th align="left"></th>
 <th align="left">Metabarcoding</th>
 <th align="left">qPCR</th>
 <th align="left"></th>
-</tr></thead><tbody><tr class="odd"><td align="left"><strong>Darwin Core Term</strong></td>
+</tr></thead><tbody><tr><td align="left"><strong>Darwin Core Term</strong></td>
 <td align="left"><strong>Description</strong></td>
 <td align="left"><strong>Description</strong></td>
 <td align="left"><strong>Required</strong></td>
-</tr><tr class="even"><td align="left"><a href="https://dwc.tdwg.org/terms/#dwc:organismQuantity" class="external-link"><code>organismQuantity</code></a></td>
+</tr><tr><td align="left"><a href="https://dwc.tdwg.org/terms/#dwc:organismQuantity" class="external-link"><code>organismQuantity</code></a></td>
 <td align="left">Number of reads of this sequence variant in the
 sample</td>
 <td align="left">Number of positive droplets/chambers in the sample</td>
 <td align="left">Highly recommended</td>
-</tr><tr class="odd"><td align="left"><a href="https://dwc.tdwg.org/terms/#dwc:organismQuantityType" class="external-link"><code>organismQuantityType</code></a></td>
+</tr><tr><td align="left"><a href="https://dwc.tdwg.org/terms/#dwc:organismQuantityType" class="external-link"><code>organismQuantityType</code></a></td>
 <td align="left">Should always be <strong>DNA sequence
 reads</strong>
 </td>
 <td align="left">The partition type</td>
 <td align="left">Highly recommended</td>
-</tr><tr class="even"><td align="left"><a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeValue" class="external-link"><code>sampleSizeValue</code></a></td>
+</tr><tr><td align="left"><a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeValue" class="external-link"><code>sampleSizeValue</code></a></td>
 <td align="left">Total number of reads in the sample. This important
 since it allows calculating the relative abundance of the sequence
 variant within the sample</td>
 <td align="left">The number of accepted partitions (n), e.g. meaning
 accepted droplets in ddPCR or chambers in dPCR.</td>
 <td align="left">Highly recommended</td>
-</tr><tr class="odd"><td align="left"><a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit" class="external-link"><code>sampleSizeUnit</code></a></td>
+</tr><tr><td align="left"><a href="https://dwc.tdwg.org/terms/#dwc:sampleSizeUnit" class="external-link"><code>sampleSizeUnit</code></a></td>
 <td align="left">Should always be <strong>DNA sequence
 reads</strong>
 </td>
 <td align="left">The partition type, should be equal to the value in
 organismQuantityType</td>
 <td align="left">Highly recommended</td>
-</tr><tr class="even"><td align="left"><a href="https://dwc.tdwg.org/terms/#dwc:materialSampleID" class="external-link"><code>materialSampleID</code></a></td>
+</tr><tr><td align="left"><a href="https://dwc.tdwg.org/terms/#dwc:materialSampleID" class="external-link"><code>materialSampleID</code></a></td>
 <td align="left">An identifier for the MaterialSample (as opposed to a
 particular digital record of the material sample). Use the biosample ID
 if one was obtained from a nucleotide archive. In the absence of a
@@ -542,19 +542,19 @@ persistent global unique identifier, construct one from a combination of
 identifiers in the record that will most closely make the
 materialSampleID globally unique.</td>
 <td align="left">Highly recommended</td>
-</tr><tr class="odd"><td align="left"><a href="https://dwc.tdwg.org/terms/#dwc:samplingProtocol" class="external-link"><code>samplingProtocol</code></a></td>
+</tr><tr><td align="left"><a href="https://dwc.tdwg.org/terms/#dwc:samplingProtocol" class="external-link"><code>samplingProtocol</code></a></td>
 <td align="left">The name of, or reference to, or description of the
 method or protocol used during the sampling event.</td>
 <td align="left">The name of, or reference to, or description of the
 method or protocol used during the sampling event.</td>
 <td align="left">Recommended</td>
-</tr><tr class="even"><td align="left"><a href="https://dwc.tdwg.org/terms/#dwc:taxonID" class="external-link"><code>taxonID</code></a></td>
+</tr><tr><td align="left"><a href="https://dwc.tdwg.org/terms/#dwc:taxonID" class="external-link"><code>taxonID</code></a></td>
 <td align="left">For eDNA data, it is recommended to use an MD5 hash of
 the sequence and prepend it with <strong>ASV</strong>.</td>
 <td align="left"></td>
 <td align="left">metabarcoding: Highly recommended if DNA_sequence is
 not provided. for qPCR data, this field is not required.</td>
-</tr><tr class="odd"><td align="left"><a href="https://dwc.tdwg.org/terms/#dwc:scientificName" class="external-link"><code>scientificName</code></a></td>
+</tr><tr><td align="left"><a href="https://dwc.tdwg.org/terms/#dwc:scientificName" class="external-link"><code>scientificName</code></a></td>
 <td align="left"></td>
 <td align="left">Latin name of the closest known taxon (species or
 higher) or an OTU identifier from BOLD or UNITE</td>
@@ -578,42 +578,42 @@ DNA-derived Data Extension Manual</a>).</p>
   DNA-derived Data Extension Terms for Metabarcoding Data
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
-<table class="table"><colgroup><col width="19%"><col width="38%"><col width="41%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
+<table class="table"><colgroup><col width="19%"><col width="38%"><col width="41%"></colgroup><thead><tr><th>Darwin Core Term</th>
 <th>Description</th>
 <th>Required</th>
-</tr></thead><tbody><tr class="odd"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#DNA_sequence" class="external-link"><code>DNA_sequence</code></a></td>
+</tr></thead><tbody><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#DNA_sequence" class="external-link"><code>DNA_sequence</code></a></td>
 <td>The DNA sequence (ASV).</td>
 <td>Highly recommended</td>
-</tr><tr class="even"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#sop" class="external-link"><code>sop</code></a></td>
+</tr><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#sop" class="external-link"><code>sop</code></a></td>
 <td>Standard operating procedures used in assembly and/or annotation of
 genomes, metagenomes or environmental sequences (e.g. through
 protocols.io)</td>
 <td>Recommended</td>
-</tr><tr class="odd"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#target_gene" class="external-link"><code>target_gene</code></a></td>
+</tr><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#target_gene" class="external-link"><code>target_gene</code></a></td>
 <td>Targeted gene or marker name for marker-based studies</td>
 <td>Highly recommended</td>
-</tr><tr class="even"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#target_gene" class="external-link"><code>target_subfragment</code></a></td>
+</tr><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#target_gene" class="external-link"><code>target_subfragment</code></a></td>
 <td>Name of subfragment of a gene or markerImportant to e.g. identify
 special regions on marker genes like the hypervariable V6 region of the
 16S rRNA gene</td>
 <td>Highly recommended</td>
-</tr><tr class="odd"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_forward" class="external-link"><code>pcr_primer_forward</code></a></td>
+</tr><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_forward" class="external-link"><code>pcr_primer_forward</code></a></td>
 <td>Forward PCR primer that was used to amplify the sequence of the
 targeted gene, locus or subfragment.</td>
 <td>Highly recommended</td>
-</tr><tr class="even"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_reverse" class="external-link"><code>pcr_primer_reverse</code></a></td>
+</tr><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_reverse" class="external-link"><code>pcr_primer_reverse</code></a></td>
 <td>Reverse PCR primer that was used to amplify the sequence of the
 targeted gene, locus or subfragment.</td>
 <td>Highly recommended</td>
-</tr><tr class="odd"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_name_forward" class="external-link"><code>pcr_primer_name_forward</code></a></td>
+</tr><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_name_forward" class="external-link"><code>pcr_primer_name_forward</code></a></td>
 <td>Name of the forward PCR primer</td>
 <td>Highly recommended</td>
-</tr><tr class="even"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_name_reverse" class="external-link"><code>pcr_primer_name_reverse</code></a></td>
+</tr><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_name_reverse" class="external-link"><code>pcr_primer_name_reverse</code></a></td>
 <td>Name of the reverse PCR primer</td>
 <td>Highly recommended</td>
-</tr><tr class="odd"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_reference" class="external-link"><code>pcr_primer_reference</code></a></td>
+</tr><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_primer_reference" class="external-link"><code>pcr_primer_reference</code></a></td>
 <td>Reference for the primers</td>
 <td>Highly recommended</td>
 </tr></tbody></table></div>
@@ -628,46 +628,46 @@ targeted gene, locus or subfragment.</td>
   DNA-derived Data Extension Terms for qPCR Data
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
-<table class="table"><colgroup><col width="19%"><col width="38%"><col width="41%"></colgroup><thead><tr class="header"><th>Darwin Core Term</th>
+<table class="table"><colgroup><col width="19%"><col width="38%"><col width="41%"></colgroup><thead><tr><th>Darwin Core Term</th>
 <th>Description</th>
 <th>Required</th>
-</tr></thead><tbody><tr class="odd"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#sop" class="external-link"><code>sop</code></a></td>
+</tr></thead><tbody><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#sop" class="external-link"><code>sop</code></a></td>
 <td>Standard operating procedures used in assembly and/or annotation of
 genomes, metagenomes or environmental sequences. A reference to a well
 documented protocol, e.g. using protocols.io</td>
 <td>Highly recommended</td>
-</tr><tr class="even"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#annealingTemp" class="external-link"><code>annealingTemp</code></a></td>
+</tr><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#annealingTemp" class="external-link"><code>annealingTemp</code></a></td>
 <td>The reaction temperature during the annealing phase of PCR.</td>
 <td>Required if annealingTemp was supplied</td>
-</tr><tr class="odd"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#annealingTempUnit" class="external-link"><code>annealinTempUnit</code></a></td>
+</tr><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#annealingTempUnit" class="external-link"><code>annealinTempUnit</code></a></td>
 <td></td>
 <td>Highly recommended</td>
-</tr><tr class="even"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_cond" class="external-link"><code>pcr_cond</code></a></td>
+</tr><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#pcr_cond" class="external-link"><code>pcr_cond</code></a></td>
 <td>Description of reaction conditions and components of PCR in the form
 of “initial denaturation:94degC_1.5min; annealing=…”</td>
 <td>Highly recommended</td>
-</tr><tr class="odd"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#probeReporter" class="external-link"><code>probeReporter</code></a></td>
+</tr><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#probeReporter" class="external-link"><code>probeReporter</code></a></td>
 <td>Type of fluorophore (reporter) used. Probe anneals within amplified
 target DNA. Polymerase activity degrades the probe that has annealed to
 the template, and the probe releases the fluorophore from it and breaks
 the proximity to the quencher, thus allowing fluorescence of the
 fluorophore.</td>
 <td>Highly recommended</td>
-</tr><tr class="even"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#probeQuencher" class="external-link"><code>probeQuencher</code></a></td>
+</tr><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#probeQuencher" class="external-link"><code>probeQuencher</code></a></td>
 <td>Type of quencher used. The quencher molecule quenches the
 fluorescence emitted by the fluorophore when excited by the cycler’s
 light source as long as fluorophore and the quencher are in proximity,
 quenching inhibits any fluorescence signals.</td>
 <td>Highly recommended</td>
-</tr><tr class="odd"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#ampliconSize" class="external-link"><code>ampliconSize</code></a></td>
+</tr><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#ampliconSize" class="external-link"><code>ampliconSize</code></a></td>
 <td>The length of the amplicon in basepairs</td>
 <td>Highly recommended</td>
-</tr><tr class="even"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#thresholdQuantificationCycle" class="external-link"><code>thresholdQuantificationCycle</code></a></td>
+</tr><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#thresholdQuantificationCycle" class="external-link"><code>thresholdQuantificationCycle</code></a></td>
 <td>Threshold for change in fluorescence signal between cycles</td>
 <td>qPCR: Highly recommended</td>
-</tr><tr class="odd"><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#baselineValue" class="external-link"><code>baselineValue</code></a></td>
+</tr><tr><td><a href="https://rs.gbif.org/extension/gbif/1.0/dna_derived_data_2021-07-05.xml#baselineValue" class="external-link"><code>baselineValue</code></a></td>
 <td>The number of cycles when fluorescence signal from the target
 amplification is below background fluorescence not originated from the
 real target amplification.</td>
@@ -784,7 +784,7 @@ any links that you are not going to use.
   "identifier": "https://ioos.github.io/bio_mobilization_workshop/edna-extension.html",
   "dateCreated": "2025-09-15",
   "dateModified": "2025-02-28",
-  "datePublished": "2026-04-28"
+  "datePublished": "2026-05-05"
 }
 
   </script><script>
