@@ -7,6 +7,9 @@ on:
     types:
       ["opened", "synchronize", "reopened"]
 
+# Deny all permissions by default
+permissions: {}
+
 jobs:
   test-pr:
     name: "Test if pull request is valid"
@@ -25,7 +28,7 @@ jobs:
           EOF" >> $GITHUB_OUTPUT
       - name: "Check PR"
         id: check-pr
-        uses: carpentries/actions/check-valid-pr@main
+        uses: carpentries/actions/check-valid-pr@24898f898388e129d2bbc1f2d8634d7f79cc356b  # v1.0.0
         with:
           pr: ${{ github.event.number }}
           invalid: ${{ fromJSON(steps.hash.outputs.json)[github.repository] }}
@@ -33,7 +36,7 @@ jobs:
       - name: "Comment result of validation"
         id: comment-diff
         if: ${{ always() }}
-        uses: carpentries/actions/comment-diff@main
+        uses: carpentries/actions/comment-diff@24898f898388e129d2bbc1f2d8634d7f79cc356b  # v1.0.0
         with:
           pr: ${{ github.event.number }}
           body: ${{ steps.check-pr.outputs.MSG }}

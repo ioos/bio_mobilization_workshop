@@ -6,6 +6,9 @@ on:
     types:
       - completed
 
+# Deny all permissions by default
+permissions: {}
+
 jobs:
   delete:
     name: "Delete branch from Pull Request"
@@ -17,7 +20,7 @@ jobs:
       contents: write
     steps:
       - name: 'Download artifact'
-        uses: carpentries/actions/download-workflow-artifact@main
+        uses: carpentries/actions/download-workflow-artifact@24898f898388e129d2bbc1f2d8634d7f79cc356b  # v1.0.0
         with:
           run: ${{ github.event.workflow_run.id }}
           name: pr
@@ -27,6 +30,6 @@ jobs:
           unzip pr.zip
           echo "NUM=$(<./NUM)" >> $GITHUB_OUTPUT
       - name: 'Remove branch'
-        uses: carpentries/actions/remove-branch@main
+        uses: carpentries/actions/remove-branch@24898f898388e129d2bbc1f2d8634d7f79cc356b  # v1.0.0
         with:
           pr: ${{ steps.get-pr.outputs.NUM }}
