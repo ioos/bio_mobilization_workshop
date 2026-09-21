@@ -18,6 +18,10 @@ on:
         required: false
         default: false
         type: boolean
+
+# Deny all permissions by default
+permissions: {}
+
 jobs:
   full-build:
     name: "Build Full Site"
@@ -35,24 +39,26 @@ jobs:
     steps:
 
       - name: "Checkout Lesson"
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: "Set up R"
-        uses: r-lib/actions/setup-r@v2
+        uses: r-lib/actions/setup-r@f9a764fea8d5c63df6ef9a5c7795bf7deb5d7e05  # v2
         with:
           use-public-rspm: true
           install-r: false
 
       - name: "Set up Pandoc"
-        uses: r-lib/actions/setup-pandoc@v2
+        uses: r-lib/actions/setup-pandoc@f9a764fea8d5c63df6ef9a5c7795bf7deb5d7e05  # v2
 
       - name: "Setup Lesson Engine"
-        uses: carpentries/actions/setup-sandpaper@main
+        uses: carpentries/actions/setup-sandpaper@24898f898388e129d2bbc1f2d8634d7f79cc356b  # v1.0.0
         with:
           cache-version: ${{ secrets.CACHE_VERSION }}
 
       - name: "Setup Package Cache"
-        uses: carpentries/actions/setup-lesson-deps@main
+        uses: carpentries/actions/setup-lesson-deps@24898f898388e129d2bbc1f2d8634d7f79cc356b  # v1.0.0
         with:
           cache-version: ${{ secrets.CACHE_VERSION }}
 

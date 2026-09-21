@@ -15,6 +15,9 @@ on:
     # Run every Tuesday
     - cron: '0 0 * * 2'
 
+# Deny all permissions by default
+permissions: {}
+
 jobs:
   check_token:
     name: "Check SANDPAPER_WORKFLOW token"
@@ -25,29 +28,33 @@ jobs:
     steps:
       - name: "validate token"
         id: validate
-        uses: carpentries/actions/check-valid-credentials@main
+        uses: carpentries/actions/check-valid-credentials@24898f898388e129d2bbc1f2d8634d7f79cc356b  # v1.0.0
         with:
           token: ${{ secrets.SANDPAPER_WORKFLOW }}
 
   update_workflow:
     name: "Update Workflow"
     runs-on: ubuntu-22.04
+    permissions:
+      actions: write
     needs: check_token
     if: ${{ needs.check_token.outputs.workflow == 'true' }}
     steps:
       - name: "Checkout Repository"
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Update Workflows
         id: update
-        uses: carpentries/actions/update-workflows@main
+        uses: carpentries/actions/update-workflows@24898f898388e129d2bbc1f2d8634d7f79cc356b  # v1.0.0
         with:
           clean: ${{ github.event.inputs.clean }}
 
       - name: Create Pull Request
         id: cpr
         if: "${{ steps.update.outputs.new }}"
-        uses: carpentries/create-pull-request@main
+        uses: carpentries/create-pull-request@24898f898388e129d2bbc1f2d8634d7f79cc356b  # v1.0.0
         with:
           token: ${{ secrets.SANDPAPER_WORKFLOW }}
           delete-branch: true

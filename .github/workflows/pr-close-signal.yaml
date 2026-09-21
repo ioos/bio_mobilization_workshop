@@ -5,6 +5,9 @@ on:
     types:
       [closed]
 
+# Deny all permissions by default
+permissions: {}
+
 jobs:
   send-close-signal:
     name: "Send closing signal"
@@ -16,7 +19,8 @@ jobs:
           mkdir -p ./pr
           printf ${{ github.event.number }} > ./pr/NUM
       - name: Upload Diff
-        uses: actions/upload-artifact@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
+          persist-credentials: false
           name: pr
           path: ./pr

@@ -11,6 +11,9 @@ on:
     # Run every tuesday
     - cron: '0 0 * * 2'
 
+# Deny all permissions by default
+permissions: {}
+
 jobs:
   preflight:
     name: "Preflight Check"
@@ -43,7 +46,9 @@ jobs:
       needed: ${{ steps.renv.outputs.exists }}
     steps:
       - name: "Checkout Lesson"
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
       - id: renv
         run: |
           if [[ -d renv ]]; then
@@ -61,7 +66,7 @@ jobs:
     steps:
       - name: "validate token"
         id: validate
-        uses: carpentries/actions/check-valid-credentials@main
+        uses: carpentries/actions/check-valid-credentials@24898f898388e129d2bbc1f2d8634d7f79cc356b  # v1.0.0
         with:
           token: ${{ secrets.SANDPAPER_WORKFLOW }}
 
@@ -70,30 +75,34 @@ jobs:
     needs: check_token
     if: ${{ needs.check_token.outputs.repo== 'true' }}
     runs-on: ubuntu-22.04
+    permissions:
+      actions: write
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       RENV_PATHS_ROOT: ~/.local/share/renv/
     steps:
 
       - name: "Checkout Lesson"
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: "Set up R"
-        uses: r-lib/actions/setup-r@v2
+        uses: r-lib/actions/setup-r@f9a764fea8d5c63df6ef9a5c7795bf7deb5d7e05  # v2
         with:
           use-public-rspm: true
           install-r: false
 
       - name: "Update {renv} deps and determine if a PR is needed"
         id: update
-        uses: carpentries/actions/update-lockfile@main
+        uses: carpentries/actions/update-lockfile@24898f898388e129d2bbc1f2d8634d7f79cc356b  # v1.0.0
         with:
           cache-version: ${{ secrets.CACHE_VERSION }}
 
       - name: Create Pull Request
         id: cpr
         if: ${{ steps.update.outputs.n > 0 }}
-        uses: carpentries/create-pull-request@main
+        uses: carpentries/create-pull-request@24898f898388e129d2bbc1f2d8634d7f79cc356b  # v1.0.0
         with:
           token: ${{ secrets.SANDPAPER_WORKFLOW }}
           delete-branch: true
